@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss"
-import { open, varela } from "./lib/fonts"
 
 const config = {
   darkMode: ["class"],
@@ -13,7 +12,13 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "3rem",
+      // padding: {
+      //   default: "5rem",
+      //   sm: "5rem",
+      //   md: "5rem",
+      //   lg: "5rem"
+      // },
       screens: {
         "2xl": "1400px",
       },

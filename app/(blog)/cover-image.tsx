@@ -11,9 +11,11 @@ export default function CoverImage(props: CoverImageProps) {
   const { image: source, priority } = props;
   const image = source?.asset?._ref ? (
     <Image
-      className="h-auto w-full"
-      width={2000}
-      height={1000}
+      className="object-cover w-full h-full rounded-lg"
+      // width={2000}
+      // height={1000}
+      width={700}
+      height={300}
       alt={source?.alt || ""}
       src={urlForImage(source)?.height(1000).width(2000).url() as string}
       sizes="100vw"
@@ -24,8 +26,10 @@ export default function CoverImage(props: CoverImageProps) {
   );
 
   return (
-    <div className="shadow-md transition-shadow duration-200 group-hover:shadow-lg sm:mx-0">
+    <>
+      {/* <div className="shadow-md transition-shadow duration-200 group-hover:shadow-lg sm:mx-0"> */}
       {image}
-    </div>
+      {/* </div> */}
+    </>
   );
 }

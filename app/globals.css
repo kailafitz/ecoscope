@@ -85,6 +85,11 @@ nav div:nth-child(2) {
   background-color: #ffffffc9;
 }
 
+.bg-primary-dark-blurry {
+  background-color: #40C1AC80;
+  backdrop-filter: blur(5px);
+}
+
 .video-overlay {
   height: calc(100vh - 78px);
 }
