@@ -1,22 +1,23 @@
 import React from "react";
 import Container from "./Container";
+import { H3 } from "./Headings";
 
 type Props = {};
 
 const ContactUs = (props: Props) => {
   return (
-    <Container className="w-full flex flex-row justify-end pb-16">
+    <Container className="w-full flex flex-row justify-end pb-32">
       <div className="w-full md:w-7/12">
-        <h3 className="font-heading text-right text-5xl mb-6">
+        <h3 className="font-heading text-right mb-6 text-3xl">
           For more queries, contact us
         </h3>
-        <p className="text-right mb-6">
+        <p className="text-right mb-6 w-full">
           For any other queries, information etc. Quam tincidunt ut dignissim
           tristique consequat tristique sed. Proin iaculis consectetur lacus
           luctus sed. Turpis odio augue sagittis risus sollicitudin commodo.
         </p>
-        <div className="flex flex-row justify-end items-center">
-          <div className="flex flex-row items-center mr-8">
+        <div className="flex flex-col md:flex-row justify-end items-center">
+          <div className="w-full flex flex-row items-center justify-end md:mr-8 mb-6 md:mb-0">
             <svg
               className="w-8 mr-2"
               viewBox="0 0 45 37"
@@ -34,7 +35,7 @@ const ContactUs = (props: Props) => {
 
             <p>Dublin, Ireland</p>
           </div>
-          <div className="flex flex-row items-center">
+          <div className="w-full flex flex-row items-center justify-end">
             <svg
               className="w-8 mr-2"
               viewBox="0 0 30 25"
@@ -53,7 +54,7 @@ const ContactUs = (props: Props) => {
               />
             </svg>
 
-            <p>info@ecoscope.ie</p>
+            <a href="mailto:info@ecoscope.ie">info@ecoscope.ie</a>
           </div>
         </div>
       </div>

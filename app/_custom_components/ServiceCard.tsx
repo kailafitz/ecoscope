@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import EcoscopeButton from "./Button";
 import Container from "./Container";
+import { H3 } from "./Headings";
 type ServiceProps = {
   icon?: ReactNode;
   name?: string;
@@ -98,9 +99,7 @@ const services_data = [
 const Services = () => {
   return (
     <Container className="flex flex-col justify-center py-32 md:py-0 md:min-h-screen">
-      <h2 className="text-5xl text-secondary text-center mb-20 font-heading">
-        Our Accreditation Services
-      </h2>
+      <H3 className="text-center">Our Services</H3>
       <div className="flex flex-wrap flex-col md:flex-row items-center md:justify-evenly space-y-9 md:space-y-0">
         {services_data.map((service, i) => {
           let href = service?.name.replace(" ", "-");

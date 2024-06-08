@@ -1,6 +1,7 @@
 import React from "react";
 import EcoscopeButton from "./Button";
 import Container from "./Container";
+import { H3 } from "./Headings";
 
 const About = () => {
   return (
@@ -8,7 +9,7 @@ const About = () => {
       <Container className="flex flex-col justify-center py-32 md:py-0 md:h-screen">
         <div className="flex flex-col md:flex-row justify-center md:justify-between text-white space-y-16 md:space-y-0 md:space-x-20 lg:space-x-32">
           <div>
-            <h2 className="text-5xl font-heading mb-20">About Us</h2>
+            <H3>About Us</H3>
             <p className="text-2xl mb-4">
               Lorem ipsum dolor sit amet consectetur. Lacus arcu risus
               pellentesque interdum at et nunc nisl blandit. Mission statement

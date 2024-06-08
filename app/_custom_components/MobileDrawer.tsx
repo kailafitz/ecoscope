@@ -35,10 +35,10 @@ export const MobileDrawer = () => {
         </div>
       </DrawerTrigger>
       <DrawerContent>
-        <div className="mx-auto w-full max-w-sm pt-4 flex flex-1 flex-col justify-between">
-          <NavigationMenu>
-            <Container className="flex flex-col">
-              <NavigationMenuList className="">
+        <div className="mx-auto w-full max-w-sm flex flex-1 flex-col justify-between p-6">
+          <NavigationMenu className="block">
+            <div className="flex flex-col">
+              <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Our Services</NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -83,8 +83,11 @@ export const MobileDrawer = () => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
+                <Button variant="default" className="w-full" size="lg">
+                  Book a Consultation
+                </Button>
               </NavigationMenuList>
-            </Container>
+            </div>
           </NavigationMenu>
           <DrawerFooter>
             <DrawerClose asChild>
