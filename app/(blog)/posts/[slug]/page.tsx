@@ -19,6 +19,7 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { postQuery, settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import Container from "@/app/_custom_components/Container";
 
 type Props = {
   params: { slug: string };
@@ -37,7 +38,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(
   { params }: Props,
-  parent: ResolvingMetadata,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const post = await sanityFetch<PostQueryResult>({
     query: postQuery,
@@ -73,7 +74,7 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <div className="container mx-auto px-5">
+    <Container className="mx-auto px-5">
       <h2 className="mb-16 mt-10 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
         <Link href="/" className="hover:underline">
           {settings?.title || demo.title}
@@ -119,6 +120,6 @@ export default async function PostPage({ params }: Props) {
           <MoreStories skip={post._id} limit={2} />
         </Suspense>
       </aside>
-    </div>
+    </Container>
   );
 }

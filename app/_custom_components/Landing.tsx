@@ -1,6 +1,7 @@
 import React from "react";
 import LandingMontage from "./LandingMontage";
 import EcoscopeButton from "./Button";
+import Container from "./Container";
 
 type Props = {};
 
@@ -8,7 +9,7 @@ const Landing = (props: Props) => {
   return (
     <>
       <LandingMontage />
-      <div className="container flex flex-col justify-center video-overlay">
+      <Container className="flex flex-col justify-center video-overlay">
         <div className="w-full md:w-5/12 bg-white-75 p-7 backdrop-blur rounded-lg">
           <h1 className="font-heading text-5xl mb-6 text-left md:text-left">
             Your Guide to <br className="hidden md:block" />
@@ -27,7 +28,7 @@ const Landing = (props: Props) => {
             </EcoscopeButton>
           </div>
         </div>
-      </div>
+      </Container>
     </>
   );
 };

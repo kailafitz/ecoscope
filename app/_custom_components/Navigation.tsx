@@ -14,11 +14,12 @@ import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import Link from "next/link";
 import { MobileDrawer } from "./MobileDrawer";
+import Container from "./Container";
 
 const Navigation = () => {
   return (
     <NavigationMenu>
-      <div className="container flex flex-row justify-between">
+      <Container className="flex flex-row justify-between">
         <NavigationMenuList className="pt-4 pr-4 pb-4">
           <NavigationMenuItem className="hover:cursor-pointer">
             <Link href="/" legacyBehavior passHref>
@@ -71,7 +72,7 @@ const Navigation = () => {
             </NavigationMenuItem>
           </NavigationMenuList>
         </div>
-      </div>
+      </Container>
     </NavigationMenu>
   );
 };

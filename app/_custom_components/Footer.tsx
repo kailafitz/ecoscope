@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import Container from "./Container";
 
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <div className="bg-primary pt-16">
-      <div className="container flex flex-col md:flex-row justify-between items-stretch md:space-x-24">
+      <Container className="flex flex-col md:flex-row justify-between items-stretch md:space-x-24">
         <img
           src="/_assets/logo-white-vertical-full.png"
           alt="Ecoscope white logo"
@@ -103,7 +104,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

@@ -1,10 +1,11 @@
 import React from "react";
 import EcoscopeButton from "./Button";
+import Container from "./Container";
 
 const About = () => {
   return (
     <div className="bg-secondary">
-      <div className="container flex flex-col justify-center py-32 md:py-0 md:h-screen">
+      <Container className="flex flex-col justify-center py-32 md:py-0 md:h-screen">
         <div className="flex flex-col md:flex-row justify-center md:justify-between text-white space-y-16 md:space-y-0 md:space-x-20 lg:space-x-32">
           <div>
             <h2 className="text-5xl font-heading mb-20">About Us</h2>
@@ -40,7 +41,7 @@ const About = () => {
             src="/_assets/about-us.png"
           />
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

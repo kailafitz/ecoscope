@@ -12,7 +12,7 @@ import { Card } from "@/components/ui/card";
 export default async function MoreStories(params: {
   skip: string;
   limit: number;
-  homePage: boolean;
+  homePage?: boolean;
 }) {
   const data = await sanityFetch<MoreStoriesQueryResult>({
     query: moreStoriesQuery,
@@ -25,8 +25,11 @@ export default async function MoreStories(params: {
         {data?.map((post) => {
           const { _id, title, slug, coverImage, excerpt, author } = post;
           return (
-            <article key={_id} className="flex flex-col h-96">
-              <Card className="service-card flex flex-col flex-1 relative">
+            <article
+              key={_id}
+              className="flex flex-col h-96 rounded-lg shadow-2xl"
+            >
+              <Card className="service-card flex flex-col flex-1 relative rounded-lg">
                 <Link
                   href={`/posts/${slug}`}
                   className="group absolute top-0 left-0 h-full w-full z-0 rounded-lg"
@@ -34,7 +37,7 @@ export default async function MoreStories(params: {
                   <CoverImage image={coverImage} priority={false} />
                 </Link>
                 <div className="h-full flex flex-col justify-end">
-                  <div className="bg-primary-dark-blurry p-5">
+                  <div className="bg-primary-dark-blurry p-5 rounded-b-lg">
                     <h3 className="text-balance mb-5 text-3xl leading-snug font-heading text-white">
                       <Link href={`/posts/${slug}`} className="hover:underline">
                         {title}

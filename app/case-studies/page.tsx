@@ -18,6 +18,7 @@ import DateComponent from "../(blog)/date";
 import Avatar from "../(blog)/avatar";
 import Onboarding from "../(blog)/onboarding";
 import MoreStories from "../(blog)/more-stories";
+import Container from "../_custom_components/Container";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
@@ -88,7 +89,7 @@ export default async function Page() {
   ]);
 
   return (
-    <div className="container">
+    <Container>
       <Intro title={settings?.title} description={settings?.description} />
       {heroPost ? (
         <HeroPost
@@ -112,6 +113,6 @@ export default async function Page() {
           </Suspense>
         </aside>
       )}
-    </div>
+    </Container>
   );
 }

@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
+import Container from "./Container";
 
 export const MobileDrawer = () => {
   const [isOpen, setOpen] = useState(false);
@@ -36,7 +37,7 @@ export const MobileDrawer = () => {
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm pt-4 flex flex-1 flex-col justify-between">
           <NavigationMenu>
-            <div className="container flex flex-col">
+            <Container className="flex flex-col">
               <NavigationMenuList className="">
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Our Services</NavigationMenuTrigger>
@@ -83,7 +84,7 @@ export const MobileDrawer = () => {
                   </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
-            </div>
+            </Container>
           </NavigationMenu>
           <DrawerFooter>
             <DrawerClose asChild>

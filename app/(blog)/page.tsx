@@ -12,6 +12,7 @@ import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
+import Container from "../_custom_components/Container";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
@@ -82,7 +83,7 @@ export default async function Page() {
   ]);
 
   return (
-    <div className="container mx-auto px-5">
+    <Container className="mx-auto px-5">
       <Intro title={settings?.title} description={settings?.description} />
       {heroPost ? (
         <HeroPost
@@ -106,6 +107,6 @@ export default async function Page() {
           </Suspense>
         </aside>
       )}
-    </div>
+    </Container>
   );
 }
