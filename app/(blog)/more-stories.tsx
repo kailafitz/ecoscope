@@ -8,6 +8,7 @@ import type { MoreStoriesQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { moreStoriesQuery } from "@/sanity/lib/queries";
 import { Card } from "@/components/ui/card";
+import EcoscopeButton from "../_custom_components/Button";
 
 export default async function MoreStories(params: {
   skip: string;
@@ -27,7 +28,7 @@ export default async function MoreStories(params: {
           return (
             <article
               key={_id}
-              className="flex flex-col h-96 rounded-lg shadow-2xl"
+              className="group flex flex-col h-96 rounded-lg shadow-2xl"
             >
               <Card className="service-card flex flex-col flex-1 relative rounded-lg">
                 <Link
@@ -37,13 +38,21 @@ export default async function MoreStories(params: {
                   <CoverImage image={coverImage} priority={false} />
                 </Link>
                 <div className="h-full flex flex-col justify-end">
-                  <div className="bg-primary-dark-blurry p-5 rounded-b-lg">
-                    <h3 className="text-balance mb-5 text-3xl leading-snug font-heading text-white">
+                  <div className="bg-primary-dark-blurry bottom-0 flex flex-col justify-between group-hover:justify-center p-5 rounded-b-lg h-32 group-hover:h-full group-hover:rounded-t-lg group-hover:transition-all transition-all">
+                    <h3 className="text-balance mb-5 text-3xl leading-snug font-heading text-white group-hover:hidden">
                       <Link href={`/posts/${slug}`} className="hover:underline">
                         {title}
                       </Link>
                     </h3>
-                    <p className="font-body text-white">Film and Production</p>
+                    <p className="font-body text-white group-hover:hidden">
+                      Film and Production
+                    </p>
+                    <EcoscopeButton
+                      className="hidden group-hover:block text-center"
+                      href={`/posts/${slug}`}
+                    >
+                      Read more
+                    </EcoscopeButton>
                   </div>
                 </div>
                 {/* <div className="mb-4 text-lg">
