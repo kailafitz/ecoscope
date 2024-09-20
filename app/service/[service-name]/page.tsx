@@ -73,7 +73,10 @@ const Service = (props: Props) => {
           <div className="w-full flex flex-col md:flex-row gap-y-10 lg:gap-10 justify-between flex-wrap lg:flex-nowrap">
             {service?.steps.map((step, i) => {
               return (
-                <div className="bg-white rounded-lg w-full sm:w-1/2 lg:w-1/4 z-20 relative p-5 shadow-xl">
+                <div
+                  key={`Service steps ${i}`}
+                  className="bg-white rounded-lg w-full sm:w-1/2 lg:w-1/4 z-20 relative p-5 shadow-xl"
+                >
                   <p className="opacity-50 text-2xl font-heading">0{i + 1}</p>
                   <p className="text-xl mb-5">{step.name}</p>
                   <ul>
