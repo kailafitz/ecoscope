@@ -130,3 +130,7 @@ nav div:nth-child(2) {
 .google-meet-iframe {
   height: 636px;
 }
+
+.bg-landscape {
+  background: url("/_assets/landscape.png") no-repeat center / cover;
+}

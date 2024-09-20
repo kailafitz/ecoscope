@@ -18,6 +18,7 @@ import MoreStories from "../(blog)/more-stories";
 import Container from "../_custom_components/Container";
 import { H1 } from "../_custom_components/Headings";
 import { Button } from "@/components/ui/button";
+import ActionBanner from "../_custom_components/ActionBanner";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
@@ -116,6 +117,7 @@ export default async function Page() {
           </Suspense>
         </aside>
       )}
+      <ActionBanner pt />
     </Container>
   );
 }

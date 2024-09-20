@@ -2,9 +2,17 @@ import React from "react";
 import Container from "./Container";
 import Button from "./Button";
 
-const ActionBanner = () => {
+type Props = {
+  pt?: boolean;
+};
+
+const ActionBanner = (props: Props) => {
   return (
-    <Container className="flex flex-col justify-center pb-40 w-full gap-y-5">
+    <Container
+      className={`flex flex-col justify-center pb-40 w-full gap-y-5 ${
+        props.pt ? "pt-40" : ""
+      }`}
+    >
       <p className="text-center text-2xl font-heading">
         Start the Conversation
       </p>

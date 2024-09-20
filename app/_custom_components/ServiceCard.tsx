@@ -112,14 +112,14 @@ const Services = () => {
       <H3 className="text-center">Our Services</H3>
       <div className="flex flex-wrap flex-col md:flex-row items-center md:justify-evenly space-y-9 md:space-y-0">
         {services_data.map((service, i) => {
-          let href = service?.name.replace(" ", "-");
+          let href = service?.name.replace(/ /g, "-").toLowerCase();
           return (
             <ServiceCard
               key={i}
               name={service?.name}
               description={service?.description}
               icon={service?.icon}
-              href={href}
+              href={`service/${href}`}
             />
           );
         })}
