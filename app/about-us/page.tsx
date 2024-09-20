@@ -9,7 +9,7 @@ const AboutUs = () => {
   return (
     <>
       <div className="about-top relative w-full mb-40">
-        <div className="bg-primary top-0 left-0 absolute z-10 w-full h-full opacity-80" />
+        <div className="bg-primary top-0 left-0 absolute w-full h-full opacity-80" />
         <Container py topViewHeight className="flex flex-col justify-center">
           <div className="w-full md:w-6/12 relative z-20 text-primary-foreground">
             <H1 className="mb-20">About Us</H1>
