@@ -3,6 +3,20 @@ import React, { ReactNode } from "react";
 type Props = {
   children: ReactNode;
   className?: string;
+  subtitle?: string;
+};
+
+export const DualHeading = (props: Props) => {
+  return (
+    <>
+      <h1 className={`${props.className} font-heading text-xl mb-0`}>
+        {props.children}
+      </h1>
+      <p className="text-3xl md:text-5xl text-primary font-heading opacity-60">
+        {props.subtitle}
+      </p>
+    </>
+  );
 };
 
 export const H1 = (props: Props) => {

@@ -76,18 +76,17 @@
   }
 }
 
+.top-height {
+  height: calc(100vh - 78.7px);
+}
+
+p {
+  font-size: 13px;
+}
+
 nav div:nth-child(2) {
   display: flex;
   justify-content: center;
-}
-
-.bg-white-75 {
-  background-color: #ffffffc9;
-}
-
-.bg-primary-dark-blurry {
-  background-color: #40C1AC80;
-  backdrop-filter: blur(5px);
 }
 
 .video-overlay {
@@ -114,4 +113,20 @@ nav div:nth-child(2) {
   a:not(:last-child) {
     padding-bottom: 1rem;
   }
+}
+
+.about-top {
+  background: url("/_assets/dublin.png");
+}
+
+.primary-gradient {
+  background: linear-gradient(90deg, rgba(64, 193, 172, 1) 0%, rgba(255, 255, 255, 1) 82%);
+}
+
+.email-icon-padding {
+  padding: 3px;
+}
+
+.google-meet-iframe {
+  height: 636px;
 }

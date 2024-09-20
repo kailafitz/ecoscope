@@ -38,7 +38,7 @@ const About = () => {
             </EcoscopeButton>
           </div>
           <img
-            className="w-4/5 m-auto sm:w-1/3 lg:w-5/12 object-contain"
+            className="w-4/5 m-auto sm:w-1/3 lg:w-5/12 object-contain rounded-full"
             src="/_assets/about-us.png"
           />
         </div>

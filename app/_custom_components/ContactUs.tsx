@@ -14,7 +14,7 @@ const ContactUs = (props: Props) => {
         <p className="text-right mb-6 w-full">
           For any other queries, information etc. Quam tincidunt ut dignissim
           tristique consequat tristique sed. Proin iaculis consectetur lacus
-          luctus sed. Turpis odio augue sagittis risus sollicitudin commodo.
+          luctus sed. Turpis odio augue sagittis risus sollicitudin.
         </p>
         <div className="flex flex-col md:flex-row justify-end items-center">
           <div className="w-full flex flex-row items-center justify-end md:mr-8 mb-6 md:mb-0">
@@ -35,7 +35,7 @@ const ContactUs = (props: Props) => {
 
             <p>Dublin, Ireland</p>
           </div>
-          <div className="w-full flex flex-row items-center justify-end">
+          <div className="w-full md:w-fit flex flex-row items-center justify-end">
             <svg
               className="w-8 mr-2"
               viewBox="0 0 30 25"

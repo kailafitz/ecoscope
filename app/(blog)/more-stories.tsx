@@ -38,7 +38,7 @@ export default async function MoreStories(params: {
                   <CoverImage image={coverImage} priority={false} />
                 </Link>
                 <div className="h-full flex flex-col justify-end">
-                  <div className="bg-primary-dark-blurry bottom-0 flex flex-col justify-between group-hover:justify-center p-5 rounded-b-lg h-32 group-hover:h-full group-hover:rounded-t-lg group-hover:transition-all transition-all">
+                  <div className="bg-transparent-primary backdrop-blur bottom-0 flex flex-col justify-between group-hover:justify-center p-5 rounded-b-lg h-32 group-hover:h-full group-hover:rounded-t-lg group-hover:transition-all transition-all">
                     <h3 className="text-balance mb-5 text-3xl leading-snug font-heading text-white group-hover:hidden">
                       <Link href={`/posts/${slug}`} className="hover:underline">
                         {title}

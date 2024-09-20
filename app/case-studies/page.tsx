@@ -12,14 +12,12 @@ import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
-import PortableText from "../(blog)/portable-text";
 import CoverImage from "../(blog)/cover-image";
-import DateComponent from "../(blog)/date";
-import Avatar from "../(blog)/avatar";
 import Onboarding from "../(blog)/onboarding";
 import MoreStories from "../(blog)/more-stories";
 import Container from "../_custom_components/Container";
 import { H1 } from "../_custom_components/Headings";
+import { Button } from "@/components/ui/button";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
@@ -27,16 +25,19 @@ function Intro(props: { title: string | null | undefined; description: any }) {
     ? props.description
     : demo.description;
   return (
-    <section className="mt-16 mb-16 flex flex-col items-center lg:mb-12 lg:flex-row lg:justify-between">
-      <H1 className="text-balance text-6xl font-bold leading-tight tracking-tighter lg:pr-8 lg:text-8xl">
-        {title || demo.title}
+    <section className="mb-16 lg:mb-12">
+      <H1 className="text-left mb-20">
+        {/* {title || demo.title} */}
+        Case Studies
       </H1>
-      <h2 className="text-pretty mt-5 text-center text-lg lg:pl-8 lg:text-left">
-        <PortableText
-          className="prose-lg"
-          value={description?.length ? description : demo.description}
-        />
-      </h2>
+      <p className="w-full lg:w-2/3">
+        Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id
+        laoreet ultrices. Sit diam risus tempus dis amet varius. Duis eu pretium
+        felis a semper et. Dignissim mauris commodo lectus ultrices aliquam.
+        Dignissim sed aliquam odio aliquet molestie. Consequat in eget sed amet
+        ornare nunc penatibus egestas. Blandit massa tempor lacus a sollicitudin
+        malesuada mi.
+      </p>
     </section>
   );
 }
@@ -53,28 +54,32 @@ function HeroPost({
   "title" | "coverImage" | "date" | "excerpt" | "author" | "slug"
 >) {
   return (
-    <article>
-      <Link className="group mb-8 block md:mb-16" href={`/posts/${slug}`}>
-        <CoverImage image={coverImage} priority />
+    <article className="flex flex-col md:flex-row mb-16">
+      <Link className="group block w-full md:w-2/3" href={`/posts/${slug}`}>
+        <CoverImage feature image={coverImage} priority />
       </Link>
-      <div className="mb-20 md:mb-28 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8">
+      <div className="md:w-1/3 flex flex-col p-6 bg-transparent-primary rounded-b-lg md:rounded-r-lg md:rounded-bl-none">
         <div>
-          <h3 className="text-pretty mb-4 text-4xl leading-tight lg:text-6xl">
-            <Link href={`/posts/${slug}`} className="hover:underline">
-              {title}
+          <h3 className="text-pretty mb-1 text-2xl leading-tight">
+            <Link href={`/posts/${slug}`} className="font-heading">
+              {title} Title
             </Link>
           </h3>
-          <div className="mb-4 text-lg md:mb-0">
+          <p className="mb-6 font-heading opacity-70">Film and Television</p>
+          {/* <div className="mb-4 text-lg md:mb-0">
             <DateComponent dateString={date} />
-          </div>
+          </div> */}
         </div>
-        <div>
+        <div className="flex flex-1 flex-col justify-between">
           {excerpt && (
-            <p className="text-pretty mb-4 text-lg leading-relaxed">
-              {excerpt}
+            <p className="text-pretty mb-4 leading-relaxed">
+              {excerpt} Lorem ipsum dolor sit amet consectetur. Vestibulum
+              aliquam semper id laoreet ultrices. Sit diam risus tempus dis amet
+              varius. Duis eu pretium felis a semper et.
             </p>
           )}
-          {author && <Avatar name={author.name} picture={author.picture} />}
+          <Button>Read more</Button>
+          {/* {author && <Avatar name={author.name} picture={author.picture} />} */}
         </div>
       </div>
     </article>
@@ -90,7 +95,7 @@ export default async function Page() {
   ]);
 
   return (
-    <Container>
+    <Container py>
       <Intro title={settings?.title} description={settings?.description} />
       {heroPost ? (
         <HeroPost
@@ -106,9 +111,6 @@ export default async function Page() {
       )}
       {heroPost?._id && (
         <aside>
-          <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
-            More Stories
-          </h2>
           <Suspense>
             <MoreStories skip={heroPost._id} limit={100} />
           </Suspense>

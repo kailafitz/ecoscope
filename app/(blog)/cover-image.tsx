@@ -5,13 +5,18 @@ import { urlForImage } from "@/sanity/lib/utils";
 interface CoverImageProps {
   image: any;
   priority?: boolean;
+  feature?: boolean;
 }
 
 export default function CoverImage(props: CoverImageProps) {
   const { image: source, priority } = props;
   const image = source?.asset?._ref ? (
     <Image
-      className="object-cover w-full h-full rounded-lg"
+      className={`object-cover w-full h-full ${
+        props.feature
+          ? "rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
+          : "rounded-lg"
+      }`}
       // width={2000}
       // height={1000}
       width={700}

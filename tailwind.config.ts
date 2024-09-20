@@ -23,6 +23,8 @@ const config = {
     },
     extend: {
       colors: {
+        "transparent-white": "hsl(0deg 0% 100% / 78.82%)",
+        "transparent-primary": "hsl(170.23deg 50.99% 50.39% / 50.2%)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
