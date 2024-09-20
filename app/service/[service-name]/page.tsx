@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import Container from "@/app/_custom_components/Container";
 import { DualHeading } from "@/app/_custom_components/Headings";
 import { data } from "@/data";
-import Link from "next/link";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
@@ -22,9 +21,9 @@ const Service = (props: Props) => {
   const params = useParams();
 
   useEffect(() => {
-    let test = params["service-name"];
-    setService(data["a"]);
-    console.log(service);
+    let key: string = params["service-name"][0];
+    setService(data[key as keyof typeof data]);
+    // console.log(key);
   });
 
   return (
