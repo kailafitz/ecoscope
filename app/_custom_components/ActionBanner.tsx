@@ -9,10 +9,11 @@ type Props = {
 const ActionBanner = (props: Props) => {
   return (
     <Container
-      className={`flex flex-col justify-center pb-40 w-full gap-y-5 ${
-        props.pt ? "pt-40" : ""
+      className={`flex flex-col justify-center pb-20 w-full gap-y-5 ${
+        props.pt ? "pt-20" : ""
       }`}
     >
+      <div className="bg-primary w-full h-px mb-10"></div>
       <p className="text-center text-2xl font-heading">
         Start the Conversation
       </p>

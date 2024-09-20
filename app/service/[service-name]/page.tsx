@@ -61,7 +61,7 @@ const Service = (props: Props) => {
           className="h-fit"
         />
       </Container>
-      <div className="relative w-full mb-40">
+      <div className="relative w-full mb-20">
         <div className="bg-landscape absolute top-0 left-0 w-full h-full lg:h-1/2"></div>
         <Container className="py-10">
           <h1 className={`font-heading text-xl mb-0 relative z-20`}>

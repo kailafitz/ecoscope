@@ -8,7 +8,7 @@ import CompanyValues from "../_custom_components/CompanyValues";
 const AboutUs = () => {
   return (
     <>
-      <div className="about-top relative w-full mb-40">
+      <div className="about-top relative w-full mb-20">
         <div className="bg-primary top-0 left-0 absolute w-full h-full opacity-80" />
         <Container py topViewHeight className="flex flex-col justify-center">
           <div className="w-full md:w-6/12 relative z-20 text-primary-foreground">

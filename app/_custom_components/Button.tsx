@@ -7,7 +7,7 @@ type Props = {
   href: string;
   full?: boolean;
   className?: string;
-  variant?: 2;
+  variant?: string;
   children: string;
 };
 

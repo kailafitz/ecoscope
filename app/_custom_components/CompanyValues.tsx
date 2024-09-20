@@ -39,7 +39,7 @@ const values = [
 
 const CompanyValues = (props: Props) => {
   return (
-    <Container className="flex flex-col pb-40">
+    <Container className="flex flex-col pb-20">
       <DualHeading subtitle="How we work">Our Company Values</DualHeading>
       <div className="flex flex-col md:flex-row justify-between flex-wrap gap-x-10 mt-10">
         {values.map((value, i) => {

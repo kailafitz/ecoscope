@@ -14,12 +14,13 @@ type Props = {};
 const ContactUs = (props: Props) => {
   return (
     <Container className="flex flex-col">
-      <div className="flex flex-col py-10 md:py-20">
+      <div className="flex flex-col pt-10 pb-20">
         <div className="flex flex-col lg:flex-row gap-y-20 lg:gap-x-10 lg:gap-y-0">
           <div className="flex flex-col w-full lg:w-1/3 bg-primary shadow-2xl p-10 rounded-xl text-primary-foreground">
             <H1 className="mb-20">Contact Us</H1>
             <div className="mb-20">
-              <h6 className="mb-5 text-2xl md:text-3xl">Get in Touch</h6>
+              <h6 className="text-2xl md:text-3xl">Get in Touch</h6>
+              <div className="primary-gradient-reverse h-px mb-5 mt-2"></div>
               <Link
                 href=""
                 className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 mb-3 text-xl"
@@ -28,7 +29,7 @@ const ContactUs = (props: Props) => {
                 Dublin, Ireland
               </Link>
               <Link
-                href=""
+                href="mailto:info@ecoscope.ie"
                 className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 text-xl break-all"
               >
                 <EmailIcon />
@@ -37,7 +38,8 @@ const ContactUs = (props: Props) => {
               </Link>
             </div>
             <div>
-              <h6 className="mb-5 text-2xl md:text-3xl">Follow Us</h6>
+              <h6 className="text-2xl md:text-3xl">Follow Us</h6>
+              <div className="primary-gradient-reverse h-px mb-5 mt-2"></div>
               <Link
                 href=""
                 className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 mb-3 text-xl"
@@ -56,6 +58,7 @@ const ContactUs = (props: Props) => {
           </div>
           {/* <div className="min-h-fit relative md:w-3/4"> */}
           <iframe
+            id="book-a-consultation"
             src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3I9y0PE6xsbT-FHTUoVAdqD3NYlvN1fRBHrNwFNvTTKwM0Tnd9qMwJQbNq3Amb-Y713xf5ZW1t?gv=true"
             style={{ border: 0 }}
             width="100%"

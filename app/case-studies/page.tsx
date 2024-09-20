@@ -17,8 +17,8 @@ import Onboarding from "../(blog)/onboarding";
 import MoreStories from "../(blog)/more-stories";
 import Container from "../_custom_components/Container";
 import { H1 } from "../_custom_components/Headings";
-import { Button } from "@/components/ui/button";
 import ActionBanner from "../_custom_components/ActionBanner";
+import EcoscopeButton from "../_custom_components/Button";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
@@ -79,7 +79,9 @@ function HeroPost({
               varius. Duis eu pretium felis a semper et.
             </p>
           )}
-          <Button>Read more</Button>
+          <EcoscopeButton variant="secondary" href={`/posts/${slug}`}>
+            Read more
+          </EcoscopeButton>
           {/* {author && <Avatar name={author.name} picture={author.picture} />} */}
         </div>
       </div>
@@ -96,7 +98,7 @@ export default async function Page() {
   ]);
 
   return (
-    <Container py>
+    <Container className="pt-16">
       <Intro title={settings?.title} description={settings?.description} />
       {heroPost ? (
         <HeroPost
