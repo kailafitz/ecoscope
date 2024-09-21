@@ -70,8 +70,8 @@ const Service = (props: Props) => {
           className="h-fit"
         />
       </Container>
-      <div className="relative w-full mb-20">
-        <div className="bg-landscape absolute top-0 left-0 w-full h-full lg:h-1/2"></div>
+      <div className="relative w-full">
+        <div className="bg-landscape absolute top-0 left-0 w-full h-full 2xl:h-1/2"></div>
         <Container className="py-10">
           <h1 className={`font-heading text-xl mb-0 relative z-20`}>
             The Process
@@ -79,12 +79,12 @@ const Service = (props: Props) => {
           <p className="text-3xl md:text-5xl text-white font-heading opacity-60 relative z-20 mb-20">
             How It Works
           </p>
-          <div className="w-full flex flex-col md:flex-row gap-y-10 lg:gap-10 justify-between flex-wrap lg:flex-nowrap">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-10">
             {service?.steps.map((step, i) => {
               return (
                 <div
                   key={`Service steps ${i}`}
-                  className="bg-white rounded-lg w-full sm:w-1/2 lg:w-1/4 z-20 relative p-5 shadow-xl"
+                  className="bg-white rounded-lg z-20 relative p-5 shadow-xl"
                 >
                   <p className="opacity-50 text-2xl font-heading">0{i + 1}</p>
                   <p className="text-xl mb-5">{step.name}</p>
@@ -108,7 +108,9 @@ const Service = (props: Props) => {
           </div>
         </Container>
       </div>
-      <ActionBanner />
+      <Container>
+        <ActionBanner />
+      </Container>
     </>
   );
 };
