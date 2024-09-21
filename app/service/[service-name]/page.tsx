@@ -7,14 +7,16 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
 
-type Props = {
-  title: string;
-  description: string;
-  steps: {
-    name: string;
-    details: string;
-  }[];
-};
+// type Steps = {
+//   name: string;
+//   details: string;
+// };
+
+// type Props = {
+//   title: string;
+//   description: string;
+//   steps: Steps[];
+// };
 
 interface IProps {
   title: string;
@@ -25,7 +27,7 @@ interface IProps {
   }[];
 }
 
-const Service = (props: Props) => {
+const Service = () => {
   const [service, setService] = useState<IProps>();
   const params = useParams();
 
