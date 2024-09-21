@@ -28,7 +28,6 @@ const Navigation = () => {
                 alt="Navigation bar"
                 width={200}
                 height={50}
-                // className="nav-logo"
               />
             </Link>
           </NavigationMenuItem>

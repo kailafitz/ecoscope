@@ -42,7 +42,7 @@ const ContactUs = (props: Props) => {
               <div className="primary-gradient-reverse h-px mb-5 mt-2"></div>
               <Link
                 href=""
-                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 mb-3 text-md md:text-xl"
+                className="flex flex-row items-center [&_svg]:w-7 [&_svg]:text-inherit [&_svg]:mr-4 mb-3 text-md md:text-xl"
               >
                 <LinkedInIcon />
                 Ecoscope
