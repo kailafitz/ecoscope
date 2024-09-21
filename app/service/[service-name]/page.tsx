@@ -16,8 +16,17 @@ type Props = {
   }[];
 };
 
+interface IProps {
+  title: string;
+  description: string;
+  steps: {
+    name: string;
+    details: string;
+  }[];
+}
+
 const Service = (props: Props) => {
-  const [service, setService] = useState<Props>();
+  const [service, setService] = useState<IProps>();
   const params = useParams();
 
   useEffect(() => {
