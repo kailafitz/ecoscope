@@ -8,7 +8,7 @@ type Props = {
 
 const ActionBanner = (props: Props) => {
   return (
-    <Container
+    <div
       className={`flex flex-col justify-center pb-20 w-full gap-y-5 ${
         props.pt ? "pt-20" : ""
       }`}
@@ -27,7 +27,7 @@ const ActionBanner = (props: Props) => {
           Book a Consultation
         </Button>
       </div>
-    </Container>
+    </div>
   );
 };
 
