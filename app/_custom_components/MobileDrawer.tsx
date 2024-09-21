@@ -42,21 +42,25 @@ export const MobileDrawer = () => {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Our Services</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <Link href="/about" legacyBehavior passHref>
+                    <Link
+                      href="/service/film-and-television"
+                      legacyBehavior
+                      passHref
+                    >
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
                       >
                         Film and Television
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/about" legacyBehavior passHref>
+                    <Link href="/service/advertising" legacyBehavior passHref>
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
                       >
                         Advertising
                       </NavigationMenuLink>
                     </Link>
-                    <Link href="/about" legacyBehavior passHref>
+                    <Link href="/service/hospitality" legacyBehavior passHref>
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
                       >
@@ -66,7 +70,7 @@ export const MobileDrawer = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/about" legacyBehavior passHref>
+                  <Link href="/about-us" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >

@@ -16,21 +16,21 @@ const ContactUs = (props: Props) => {
     <Container className="flex flex-col">
       <div className="flex flex-col pt-10 pb-20">
         <div className="flex flex-col lg:flex-row gap-y-20 lg:gap-x-10 lg:gap-y-0">
-          <div className="flex flex-col w-full lg:w-1/3 bg-primary shadow-2xl p-10 rounded-xl text-primary-foreground">
-            <H1 className="mb-20">Contact Us</H1>
-            <div className="mb-20">
+          <div className="flex flex-col w-full lg:w-1/3 bg-primary shadow-2xl p-7 md:p-10 rounded-xl text-primary-foreground">
+            <H1 className="mb-10 md:mb-20">Contact Us</H1>
+            <div className="mb-5 md:mb-20">
               <h6 className="text-2xl md:text-3xl">Get in Touch</h6>
               <div className="primary-gradient-reverse h-px mb-5 mt-2"></div>
               <Link
                 href=""
-                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 mb-3 text-xl"
+                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 mb-3 text-md md:text-xl"
               >
                 <MapIcon />
                 Dublin, Ireland
               </Link>
               <Link
                 href="mailto:info@ecoscope.ie"
-                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 text-xl break-all"
+                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 text-md md:text-xl break-all"
               >
                 <EmailIcon />
                 {/* <MailIcon /> */}
@@ -42,14 +42,14 @@ const ContactUs = (props: Props) => {
               <div className="primary-gradient-reverse h-px mb-5 mt-2"></div>
               <Link
                 href=""
-                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 mb-3 text-xl"
+                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 mb-3 text-md md:text-xl"
               >
                 <LinkedInIcon />
                 Ecoscope
               </Link>
               <Link
                 href=""
-                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 text-xl"
+                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 text-md md:text-xl"
               >
                 <InstagramIcon />
                 @ecoscope
