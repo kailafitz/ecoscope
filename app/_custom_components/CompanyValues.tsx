@@ -2,8 +2,6 @@ import React from "react";
 import { DualHeading } from "./Headings";
 import Container from "./Container";
 
-type Props = {};
-
 const values = [
   {
     name: "Lorem Ipsum",
@@ -37,7 +35,7 @@ const values = [
   },
 ];
 
-const CompanyValues = (props: Props) => {
+const CompanyValues = () => {
   return (
     <Container className="flex flex-col pb-20">
       <DualHeading subtitle="How we work">Our Company Values</DualHeading>

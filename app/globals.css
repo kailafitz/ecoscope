@@ -84,11 +84,6 @@ p {
   font-size: 13px;
 }
 
-nav div:nth-child(2) {
-  display: flex;
-  justify-content: center;
-}
-
 .video-overlay {
   height: calc(100vh - 78px);
 }

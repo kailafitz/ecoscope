@@ -73,15 +73,15 @@ const Service = () => {
         />
       </Container>
       <div className="relative w-full">
-        <div className="bg-landscape absolute top-0 left-0 w-full h-full 2xl:h-1/2"></div>
-        <Container className="py-10">
+        <div className="bg-landscape absolute top-0 left-0 w-full h-full lg:h-1/2"></div>
+        <Container className="pb-20 pt-10 lg:pb-20">
           <h1 className={`font-heading text-xl mb-0 relative z-20`}>
             The Process
           </h1>
           <p className="text-3xl md:text-5xl text-white font-heading opacity-60 relative z-20 mb-20">
             How It Works
           </p>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-10">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {service?.steps.map((step, i) => {
               return (
                 <div

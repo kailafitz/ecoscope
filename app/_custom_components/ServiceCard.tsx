@@ -108,7 +108,10 @@ const services_data = [
 
 const Services = () => {
   return (
-    <Container className="flex flex-col justify-center py-32 md:py-0 md:min-h-screen">
+    <Container
+      id="services"
+      className="flex flex-col justify-center py-32 md:py-0 md:min-h-screen"
+    >
       <H3 className="text-center">Our Services</H3>
       <div className="flex flex-wrap flex-col md:flex-row items-center md:justify-evenly space-y-9 md:space-y-0">
         {services_data.map((service, i) => {

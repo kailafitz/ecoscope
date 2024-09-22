@@ -1,11 +1,8 @@
-"use client";
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+import React from "react";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerFooter,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import {
@@ -26,13 +23,15 @@ import MailIcon from "./MailIcon";
 import EcoscopeButton from "./Button";
 
 export const MobileDrawer = () => {
-  const [isOpen, setOpen] = useState(false);
-
-  console.log(isOpen);
   return (
     <Drawer>
-      <DrawerTrigger asChild>
-        <Button className="block md:hidden">Open</Button>
+      <DrawerTrigger asChild className="flex flex-col justify-center">
+        <div className="flex flex-col gap-y-2 w-9 md:hidden group/root">
+          <span className="h-0.5 bg-primary w-full group-data-[state=open]/root:rotate-45 group-data-[state=open]/root:translate-x-1 group-data-[state=open]/root:translate-y-4 group-data-[state=open]/root:transition-all transition-all group-data-[state=open]/root:duration-500"></span>
+          <span className="h-0.5 bg-primary w-full"></span>
+          {/* rotate(45deg) translateY(11px) translateX(8px) */}
+          <span className="h-0.5 bg-primary w-full"></span>
+        </div>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm flex flex-1 flex-col p-6">

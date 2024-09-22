@@ -24,7 +24,7 @@ const Landing = (props: Props) => {
             </h2>
           </div>
           <div className="flex flex-col md:flex-row justify-between space-y-3 md:space-x-6 md:space-y-0">
-            <EcoscopeButton href="about-us" className="w-full">
+            <EcoscopeButton href="#services" className="w-full">
               Our Services
             </EcoscopeButton>
             <EcoscopeButton href="contact-us" className="w-full">

@@ -15,40 +15,31 @@ const ContactUs = () => {
         <div className="flex flex-col lg:flex-row gap-y-20 lg:gap-x-10 lg:gap-y-0">
           <div className="flex flex-col w-full lg:w-1/3 bg-primary shadow-2xl p-7 md:p-10 rounded-xl text-primary-foreground">
             <H1 className="mb-10 md:mb-20">Contact Us</H1>
-            <div className="mb-5 md:mb-20">
-              <h6 className="text-2xl md:text-3xl">Get in Touch</h6>
+            <div className="mb-10 sm:mb-16 lg:mb-20">
+              <h6 className="text-xl md:text-2xl">Get in Touch</h6>
               <div className="primary-gradient-reverse h-px mb-5 mt-2"></div>
-              <Link
-                href=""
-                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 mb-3 text-md md:text-xl"
-              >
-                <MapIcon />
+              <Link href="" className="flex flex-row items-center mb-3 text-md">
+                <MapIcon className="w-6 text-inherit mr-4" />
                 Dublin, Ireland
               </Link>
               <Link
                 href="mailto:info@ecoscope.ie"
-                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 text-md md:text-xl break-all"
+                className="flex flex-row items-center text-md break-all"
               >
                 {/* <EmailIcon /> */}
-                <MailIcon />
+                <MailIcon className="w-6 text-inherit mr-4" />
                 info@ecoscope.ie
               </Link>
             </div>
             <div>
-              <h6 className="text-2xl md:text-3xl">Follow Us</h6>
+              <h6 className="text-xl md:text-2xl">Follow Us</h6>
               <div className="primary-gradient-reverse h-px mb-5 mt-2"></div>
-              <Link
-                href=""
-                className="flex flex-row items-center [&_svg]:w-7 [&_svg]:text-inherit [&_svg]:mr-4 mb-3 text-md md:text-xl"
-              >
-                <LinkedInIcon />
+              <Link href="" className="flex flex-row items-center mb-3">
+                <LinkedInIcon className="w-6 text-inherit mr-4" />
                 Ecoscope
               </Link>
-              <Link
-                href=""
-                className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 text-md md:text-xl"
-              >
-                <InstagramIcon />
+              <Link href="" className="flex flex-row items-center">
+                <InstagramIcon className="w-6 text-inherit mr-4" />
                 @ecoscope
               </Link>
             </div>

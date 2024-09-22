@@ -60,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={"bg-white text-black"}>
+    <html lang="en" className={"bg-white text-black scroll-smooth"}>
       <body
         className={cn(
           "min-h-screen bg-background font-body antialiased flex flex-col",
