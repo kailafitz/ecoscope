@@ -69,8 +69,11 @@ export default async function MoreStories(params: {
           );
         })}
         {params.homePage && (
-          <Card className="bg-primary h-96 flex flex-col justify-center service-card">
-            <Link href="/case-studies" className="text-white text-center">
+          <Card className="bg-primary h-96 flex flex-col justify-center service-card hover:bg-teal-500 transition-all hover:transition-all">
+            <Link
+              href="/case-studies"
+              className="text-white text-center h-full flex flex-col justify-center"
+            >
               View more
             </Link>
           </Card>

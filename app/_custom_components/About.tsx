@@ -5,7 +5,7 @@ import { H3 } from "./Headings";
 
 const About = () => {
   return (
-    <div className="bg-secondary">
+    <div className="bg-neutral-600">
       <Container className="flex flex-col justify-center py-32 md:py-0 md:h-screen">
         <div className="flex flex-col md:flex-row justify-center md:justify-between text-white space-y-16 md:space-y-0 md:space-x-20 lg:space-x-32">
           <div>
@@ -39,7 +39,7 @@ const About = () => {
           </div>
           <img
             className="w-4/5 m-auto sm:w-1/3 lg:w-5/12 object-contain rounded-full"
-            src="/_assets/about-us.png"
+            src="/_assets/about.png"
           />
         </div>
       </Container>
