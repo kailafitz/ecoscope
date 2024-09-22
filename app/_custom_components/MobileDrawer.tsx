@@ -21,9 +21,9 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import Link from "next/link";
-import Hamburger from "hamburger-react";
 import LinkedInIcon from "./LinkedInIcon";
 import MailIcon from "./MailIcon";
+import EcoscopeButton from "./Button";
 
 export const MobileDrawer = () => {
   const [isOpen, setOpen] = useState(false);
@@ -32,14 +32,10 @@ export const MobileDrawer = () => {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <div className="flex md:hidden flex-col justify-center">
-          <div className="block md:hidden">
-            <Hamburger toggled={isOpen} toggle={setOpen} />
-          </div>
-        </div>
+        <Button className="block md:hidden">Open</Button>
       </DrawerTrigger>
       <DrawerContent>
-        <div className="mx-auto w-full max-w-sm flex flex-1 flex-col justify-between p-6">
+        <div className="mx-auto w-full max-w-sm flex flex-1 flex-col p-6">
           <NavigationMenuList className="pt-4 pr-4 pb-10">
             <NavigationMenuItem className="hover:cursor-pointer">
               <Link href="/" legacyBehavior passHref>
@@ -59,56 +55,63 @@ export const MobileDrawer = () => {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Our Services</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <Link
-                      href="/service/film-and-television"
-                      legacyBehavior
-                      passHref
-                    >
-                      <DrawerClose asChild>
-                        <NavigationMenuLink
-                          className={navigationMenuTriggerStyle()}
-                        >
+                    <DrawerClose asChild>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                        asChild
+                      >
+                        <Link href="/service/film-and-television">
                           Film and Television
-                        </NavigationMenuLink>
-                      </DrawerClose>
-                    </Link>
-                    <Link href="/service/advertising" legacyBehavior passHref>
+                        </Link>
+                      </NavigationMenuLink>
+                    </DrawerClose>
+
+                    <DrawerClose asChild>
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
+                        asChild
                       >
-                        Advertising
+                        <Link href="/service/advertising">Advertising</Link>
                       </NavigationMenuLink>
-                    </Link>
-                    <Link href="/service/hospitality" legacyBehavior passHref>
+                    </DrawerClose>
+
+                    <DrawerClose asChild>
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
+                        asChild
                       >
-                        Hospitality
+                        <Link href="/service/hospitality">Hospitality</Link>
                       </NavigationMenuLink>
-                    </Link>
+                    </DrawerClose>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/about-us" legacyBehavior passHref>
+                  <DrawerClose asChild>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
+                      asChild
                     >
-                      About Us
+                      <Link href="/about-us">About Us</Link>
                     </NavigationMenuLink>
-                  </Link>
+                  </DrawerClose>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/contact-us" legacyBehavior passHref>
+                  <DrawerClose asChild>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
+                      asChild
                     >
-                      Contact Us
+                      <Link href="/contact-us">Contact Us</Link>
                     </NavigationMenuLink>
-                  </Link>
+                  </DrawerClose>
                 </NavigationMenuItem>
-                <Button variant="default" className="w-full" size="lg">
-                  Book a Consultation
-                </Button>
+                <DrawerClose asChild>
+                  <NavigationMenuItem asChild>
+                    <EcoscopeButton href="contact-us#book-a-consultation">
+                      Book a Consultation
+                    </EcoscopeButton>
+                  </NavigationMenuItem>
+                </DrawerClose>
               </NavigationMenuList>
             </div>
             <div className="bg-primary h-px w-full my-10"></div>
@@ -117,13 +120,6 @@ export const MobileDrawer = () => {
               <MailIcon className="w-10" />
             </div>
           </NavigationMenu>
-          <DrawerFooter className="px-0">
-            <DrawerClose asChild>
-              <Button variant="default" onClick={() => setOpen(false)}>
-                Close
-              </Button>
-            </DrawerClose>
-          </DrawerFooter>
         </div>
       </DrawerContent>
     </Drawer>

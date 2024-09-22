@@ -5,13 +5,10 @@ import LinkedInIcon from "../_custom_components/LinkedInIcon";
 import MapIcon from "../_custom_components/MapIcon";
 import EmailIcon from "../_custom_components/EmailIcon";
 import InstagramIcon from "../_custom_components/InstagramIcon";
-import Script from "next/script";
 import Link from "next/link";
 import MailIcon from "../_custom_components/MailIcon";
 
-type Props = {};
-
-const ContactUs = (props: Props) => {
+const ContactUs = () => {
   return (
     <Container className="flex flex-col">
       <div className="flex flex-col pt-10 pb-20">
@@ -32,8 +29,8 @@ const ContactUs = (props: Props) => {
                 href="mailto:info@ecoscope.ie"
                 className="flex flex-row items-center [&_svg]:w-8 [&_svg]:text-inherit [&_svg]:mr-4 text-md md:text-xl break-all"
               >
-                <EmailIcon />
-                {/* <MailIcon /> */}
+                {/* <EmailIcon /> */}
+                <MailIcon />
                 info@ecoscope.ie
               </Link>
             </div>

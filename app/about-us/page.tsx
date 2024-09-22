@@ -36,7 +36,9 @@ const AboutUs = () => {
         </Container>
       </div>
       <CompanyValues />
-      <ActionBanner />
+      <Container>
+        <ActionBanner />
+      </Container>
       <MeetOurFounder />
     </>
   );
