@@ -18,7 +18,7 @@ const ContactUs = () => {
             <div className="mb-10 sm:mb-16 lg:mb-20">
               <h6 className="text-xl md:text-2xl">Get in Touch</h6>
               <div className="primary-gradient-reverse h-px mb-5 mt-2"></div>
-              <Link href="" className="flex flex-row items-center mb-3 text-md">
+              <Link href="" className="flex flex-row items-center mb-4 text-md">
                 <MapIcon className="w-6 text-inherit mr-4" />
                 Dublin, Ireland
               </Link>
@@ -34,7 +34,7 @@ const ContactUs = () => {
             <div>
               <h6 className="text-xl md:text-2xl">Follow Us</h6>
               <div className="primary-gradient-reverse h-px mb-5 mt-2"></div>
-              <Link href="" className="flex flex-row items-center mb-3">
+              <Link href="" className="flex flex-row items-center mb-4">
                 <LinkedInIcon className="w-6 text-inherit mr-4" />
                 Ecoscope
               </Link>

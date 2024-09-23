@@ -15,6 +15,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MobileDrawer } from "./MobileDrawer";
 import Container from "./Container";
+import EcoscopeButton from "./Button";
 
 const Navigation = () => {
   return (
@@ -73,6 +74,9 @@ const Navigation = () => {
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
+            <EcoscopeButton href="contact-us#book-a-consultation">
+              Book a Consultation
+            </EcoscopeButton>
           </NavigationMenuList>
         </div>
       </Container>

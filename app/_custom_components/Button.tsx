@@ -17,7 +17,7 @@ const EcoscopeButton = (props: Props) => {
       className={cn(
         buttonVariants({ variant: props.variant ? "secondary" : "default" }),
         props.full ? "w-full" : "",
-        `${props.className} min-w-full sm:min-w-40 text-md`
+        `${props.className} min-w-full sm:min-w-40 text-md md:text-sm`
       )}
       href={props.href}
     >

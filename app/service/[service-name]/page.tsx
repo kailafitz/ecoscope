@@ -91,15 +91,15 @@ const Service = () => {
                   <p className="opacity-50 text-2xl font-heading">0{i + 1}</p>
                   <p className="text-xl mb-5">{step.name}</p>
                   <ul>
-                    <li className="list-disc ml-5">
+                    <li className="list-disc ml-5 text-sm">
                       Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam
                       semper id
                     </li>
-                    <li className="list-disc ml-5">
+                    <li className="list-disc ml-5 text-sm">
                       Lorem amet consectetur. Vestibulum aliquam semper id
                       laoreet ultrices
                     </li>
-                    <li className="list-disc ml-5">
+                    <li className="list-disc ml-5 text-sm">
                       Lorem ipsum dolor estibulum aliquam semper id laoreet
                       ultrices
                     </li>
