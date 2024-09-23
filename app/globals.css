@@ -133,3 +133,16 @@ p {
 .bg-landscape {
   background: url("/_assets/landscape.png") no-repeat center / cover;
 }
+
+.bg-curve {
+  background: url("/_assets/bg-curve-xs.png") no-repeat bottom / contain;
+  background-position: bottom;
+
+  @media only screen and (min-width: 500px) {
+    background: url("/_assets/bg-curve-md.png") no-repeat bottom / contain;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    background: url("/_assets/bg-curve-lg.png") no-repeat bottom / contain;
+  }
+}
