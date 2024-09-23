@@ -3,9 +3,7 @@ import MoreStories from "../(blog)/more-stories";
 import Container from "./Container";
 import { H3 } from "./Headings";
 
-type Props = {};
-
-const CaseStudies = (props: Props) => {
+const CaseStudies = () => {
   return (
     <Container className="py-32 md:min-h-screen flex flex-col justify-center">
       <div>

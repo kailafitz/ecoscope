@@ -84,10 +84,6 @@ p {
   font-size: 13px;
 }
 
-.video-overlay {
-  height: calc(100vh - 78px);
-}
-
 .service-card {
   width: 300px;
   max-width: 100%;
