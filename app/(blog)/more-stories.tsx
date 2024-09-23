@@ -28,7 +28,7 @@ export default async function MoreStories(params: {
           return (
             <article
               key={_id}
-              className="group flex flex-col h-96 rounded-lg shadow-2xl"
+              className="group flex flex-col h-96 rounded-lg shadow-2xl max-w-full"
             >
               <Card className="service-card flex flex-col flex-1 relative rounded-lg">
                 <Link
@@ -38,13 +38,13 @@ export default async function MoreStories(params: {
                   <CoverImage image={coverImage} priority={false} />
                 </Link>
                 <div className="h-full flex flex-col justify-end">
-                  <div className="bg-transparent-primary backdrop-blur bottom-0 flex flex-col justify-between group-hover:justify-center p-5 rounded-b-lg h-32 group-hover:h-full group-hover:rounded-t-lg group-hover:transition-all transition-all">
+                  <div className="bg-transparent-primary backdrop-blur bottom-0 flex flex-col justify-between group-hover:justify-center p-5 rounded-b-lg h-44 sm:h-32 group-hover:h-full group-hover:rounded-t-lg group-hover:transition-all transition-all">
                     <h3 className="text-balance mb-5 text-3xl leading-snug font-heading text-white group-hover:hidden">
                       <Link href={`/posts/${slug}`} className="hover:underline">
                         {title}
                       </Link>
                     </h3>
-                    <p className="font-body text-white group-hover:hidden">
+                    <p className="font-body text-lg md:text-md text-white group-hover:hidden">
                       Film and Production
                     </p>
                     <EcoscopeButton

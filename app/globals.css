@@ -90,6 +90,7 @@ p {
 
 .service-card {
   width: 300px;
+  max-width: 100%;
 
   svg {
     display: block;
@@ -135,14 +136,13 @@ p {
 }
 
 .bg-curve {
-  background: url("/_assets/bg-curve-xs.png") no-repeat bottom / contain;
-  background-position: bottom;
+  background: url("/_assets/bg-curve-xs.png") no-repeat top / cover;
 
   @media only screen and (min-width: 500px) {
-    background: url("/_assets/bg-curve-md.png") no-repeat bottom / contain;
+    background: url("/_assets/bg-curve-md.png") no-repeat top / cover;
   }
 
   @media only screen and (min-width: 1000px) {
-    background: url("/_assets/bg-curve-lg.png") no-repeat bottom / contain;
+    background: url("/_assets/bg-curve-lg.png") no-repeat top / cover;
   }
 }

@@ -37,7 +37,7 @@ const Landing = () => {
             </EcoscopeButton>
           </div>
         </div> */}
-        <div className="bg-curve absolute bottom-0 left-0 w-full h-full" />
+        <div className="bg-curve absolute bottom-0 left-0 w-full h-2/3" />
         <Container className="absolute bottom-12 left-0">
           <div className="w-full md:w-fit">
             <div className="table">

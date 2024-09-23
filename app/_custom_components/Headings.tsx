@@ -37,7 +37,9 @@ export const H2 = (props: Props) => {
 
 export const H3 = (props: Props) => {
   return (
-    <h3 className={`${props.className} font-heading text-5xl mb-20`}>
+    <h3
+      className={`${props.className} font-heading text-3xl md:text-5xl mb-10 md:mb-20`}
+    >
       {props.children}
     </h3>
   );

@@ -9,6 +9,7 @@ import {
 import EcoscopeButton from "./Button";
 import Container from "./Container";
 import { H3 } from "./Headings";
+
 type ServiceProps = {
   icon?: ReactNode;
   name?: string;
