@@ -44,7 +44,7 @@ export default async function MoreStories(params: {
                         {title}
                       </Link>
                     </h3>
-                    <p className="font-body text-lg md:text-md text-white group-hover:hidden">
+                    <p className="font-body text-lg md:text-sm text-white group-hover:hidden">
                       Film and Production
                     </p>
                     <EcoscopeButton

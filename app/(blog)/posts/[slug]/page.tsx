@@ -22,6 +22,7 @@ import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Container from "@/app/_custom_components/Container";
 import { H1 } from "@/app/_custom_components/Headings";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
+import EcoscopeButton from "@/app/_custom_components/Button";
 
 type Props = {
   params: { slug: string };
@@ -77,11 +78,12 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <Container className="mx-auto px-5">
-      <h2 className="mb-20 mt-10 text-2xl font-heading opacity-30 leading-tight tracking-tight md:text-4xl md:tracking-tighter">
-        <Link href="/" className="hover:underline">
+      <h2 className="my-10 text-xl font-heading opacity-50 leading-tight tracking-tight md:text-2xl md:tracking-tighter">
+        <Link href="/case-studies" className="hover:underline">
           {/* {settings?.title || demo.title} */}
-          Case Study / [Service Type]
-        </Link>
+          Case Studies
+        </Link>{" "}
+        / [Service Type]
       </h2>
       <article>
         <H1 className="text-balance font-heading mb-12 text-2xl leading-tight tracking-tighter md:text-4xl md:leading-none">
