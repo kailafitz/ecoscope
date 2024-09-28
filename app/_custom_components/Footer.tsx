@@ -30,9 +30,14 @@ const Footer = () => {
             <div className="w-full text-white flex flex-row justify-between pt-6">
               <p>Dublin, Ireland</p>
               <div className="[&_svg]:h-7 flex flex-row space-x-3 text-white">
-                <LinkedInIcon />
+                <Link href={""}>
+                  <LinkedInIcon />
+                </Link>
 
-                <InstagramIcon />
+                <Link href={""}>
+                  {" "}
+                  <InstagramIcon />
+                </Link>
               </div>
             </div>
           </div>
