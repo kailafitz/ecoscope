@@ -42,7 +42,7 @@ const Service = () => {
       <Container className="flex flex-col md:flex-row items-center justify-between py-20 gap-y-10">
         <div className="flex flex-col md:w-7/12">
           <DualHeading subtitle={service?.title}>Services</DualHeading>
-          <p className="py-10">
+          <p className="pt-10">
             Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id
             laoreet ultrices. Sit diam risus tempus dis amet varius. Duis eu
             pretium felis a semper et. Dignissim mauris commodo lectus ultrices

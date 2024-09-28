@@ -35,7 +35,7 @@ const Navigation = () => {
         </NavigationMenuList>
         <MobileDrawer />
         <div className="hidden md:flex md:flex-col md:justify-center [&>div]:flex [&>div]:flex-1">
-          <NavigationMenuList className="nav-links">
+          <NavigationMenuList className="[&_li:not(:last-child)]:pr-6">
             <NavigationMenuItem>
               <NavigationMenuTrigger>Our Services</NavigationMenuTrigger>
               <NavigationMenuContent>
