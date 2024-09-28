@@ -95,12 +95,6 @@ p {
   }
 }
 
-.nav-links {
-  li:not(:last-child) {
-    padding-right: 3rem;
-  }
-}
-
 .content-links {
   a:not(:last-child) {
     padding-bottom: 1rem;
