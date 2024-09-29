@@ -56,13 +56,16 @@ function HeroPost({
 >) {
   return (
     <article className="flex flex-col md:flex-row mb-16">
-      <Link className="group block w-full md:w-2/3" href={`/posts/${slug}`}>
+      <Link
+        className="group block w-full md:w-2/3"
+        href={`/case-studies/posts/${slug}`}
+      >
         <CoverImage feature image={coverImage} priority />
       </Link>
       <div className="md:w-1/3 flex flex-col p-6 bg-transparent-primary rounded-b-lg md:rounded-r-lg md:rounded-bl-none">
         <div>
           <h3 className="text-pretty mb-1 text-2xl leading-tight">
-            <Link href={`case-studies/posts/${slug}`} className="font-heading">
+            <Link href={`/case-studies/posts/${slug}`} className="font-heading">
               {title} Title
             </Link>
           </h3>
@@ -81,7 +84,7 @@ function HeroPost({
           )}
           <EcoscopeButton
             variant="secondary"
-            href={`case-studies/posts/${slug}`}
+            href={`/case-studies/posts/${slug}`}
           >
             Read more
           </EcoscopeButton>
