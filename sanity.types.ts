@@ -337,13 +337,13 @@ export type SanityAssistInstructionPrompt = Array<{
     text?: string;
     _type: "span";
     _key: string;
-  } | ({
+  } | {
     _key: string;
-  } & SanityAssistInstructionFieldRef) | ({
+  } & SanityAssistInstructionFieldRef | {
     _key: string;
-  } & SanityAssistInstructionContext) | ({
+  } & SanityAssistInstructionContext | {
     _key: string;
-  } & SanityAssistInstructionUserInput)>;
+  } & SanityAssistInstructionUserInput>;
   style?: "normal";
   listItem?: never;
   markDefs?: null;
@@ -364,11 +364,11 @@ export type SanityAssistInstruction = {
   title?: string;
   userId?: string;
   createdById?: string;
-  output?: Array<({
+  output?: Array<{
     _key: string;
-  } & SanityAssistOutputField) | ({
+  } & SanityAssistOutputField | {
     _key: string;
-  } & SanityAssistOutputType)>;
+  } & SanityAssistOutputType>;
 };
 
 export type SanityAssistSchemaTypeField = {
@@ -378,8 +378,9 @@ export type SanityAssistSchemaTypeField = {
     _key: string;
   } & SanityAssistInstruction>;
 };
-export declare const internalGroqTypeReferenceTo: unique symbol;
 
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Post | Author | Slug | Settings | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | SanityAssistInstructionTask | SanityAssistTaskStatus | SanityAssistSchemaTypeAnnotations | SanityAssistOutputType | SanityAssistOutputField | SanityAssistInstructionContext | AssistInstructionContext | SanityAssistInstructionUserInput | SanityAssistInstructionPrompt | SanityAssistInstructionFieldRef | SanityAssistInstruction | SanityAssistSchemaTypeField;
+export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: sanity/lib/queries.ts
 // Variable: settingsQuery
 // Query: *[_type == "settings"][0]
@@ -595,3 +596,14 @@ export type PostSlugsResult = Array<{
   slug: Slug | null;
 }>;
 
+// Query TypeMap
+import "@sanity/client";
+declare module "@sanity/client" {
+  interface SanityQueries {
+    "*[_type == \"settings\"][0]": SettingsQueryResult;
+    "*[_type == \"post\" && defined(slug.current)] | order(date desc, _updatedAt desc) [0] {\n  content,\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": HeroQueryResult;
+    "*[_type == \"post\" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": MoreStoriesQueryResult;
+    "*[_type == \"post\" && slug.current == $slug] [0] {\n  content,\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": PostQueryResult;
+    "*[_type == \"post\"]{slug}": PostSlugsResult;
+  }
+}

@@ -16,6 +16,11 @@ import author from "@/sanity/schemas/documents/author";
 import post from "@/sanity/schemas/documents/post";
 import settings from "@/sanity/schemas/singletons/settings";
 
+// const SANITY_STUDIO_PREVIEW_URL = (
+//   process.env.SANITY_STUDIO_PREVIEW_URL
+//   || 'http://localhost:3000'
+// );
+
 export default defineConfig({
   basePath: studioUrl,
   projectId,
@@ -32,7 +37,7 @@ export default defineConfig({
   plugins: [
     presentationTool({
       locate,
-      previewUrl: { previewMode: { enable: "/api/draft" } },
+      previewUrl: { previewMode: { enable: "/case-studies/api/draft" } },
     }),
     structureTool({ structure: pageStructure([settings]) }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
@@ -45,6 +50,7 @@ export default defineConfig({
     // Vision lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     process.env.NODE_ENV === "development" &&
-      visionTool({ defaultApiVersion: apiVersion }),
+    visionTool({ defaultApiVersion: apiVersion }),
   ].filter(Boolean) as PluginOptions[],
 });
+

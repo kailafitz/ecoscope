@@ -8,7 +8,7 @@ import type { MoreStoriesQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { moreStoriesQuery } from "@/sanity/lib/queries";
 import { Card } from "@/components/ui/card";
-import EcoscopeButton from "../_custom_components/Button";
+import EcoscopeButton from "@/app/_custom_components/Button";
 
 export default async function MoreStories(params: {
   skip: string;
@@ -49,7 +49,7 @@ export default async function MoreStories(params: {
                     </p>
                     <EcoscopeButton
                       className="hidden group-hover:block text-center"
-                      href={`/posts/${slug}`}
+                      href={`/case-studies/posts/${slug}`}
                     >
                       Read more
                     </EcoscopeButton>

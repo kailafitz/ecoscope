@@ -12,13 +12,13 @@ import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
-import CoverImage from "../(blog)/cover-image";
-import Onboarding from "../(blog)/onboarding";
-import MoreStories from "../(blog)/more-stories";
 import Container from "../_custom_components/Container";
 import { H1 } from "../_custom_components/Headings";
 import ActionBanner from "../_custom_components/ActionBanner";
 import EcoscopeButton from "../_custom_components/Button";
+import CoverImage from "./(blog)/cover-image";
+import MoreStories from "./(blog)/more-stories";
+import Onboarding from "./(blog)/onboarding";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
@@ -62,7 +62,7 @@ function HeroPost({
       <div className="md:w-1/3 flex flex-col p-6 bg-transparent-primary rounded-b-lg md:rounded-r-lg md:rounded-bl-none">
         <div>
           <h3 className="text-pretty mb-1 text-2xl leading-tight">
-            <Link href={`/posts/${slug}`} className="font-heading">
+            <Link href={`case-studies/posts/${slug}`} className="font-heading">
               {title} Title
             </Link>
           </h3>
@@ -79,7 +79,10 @@ function HeroPost({
               varius. Duis eu pretium felis a semper et.
             </p>
           )}
-          <EcoscopeButton variant="secondary" href={`/posts/${slug}`}>
+          <EcoscopeButton
+            variant="secondary"
+            href={`case-studies/posts/${slug}`}
+          >
             Read more
           </EcoscopeButton>
           {/* {author && <Avatar name={author.name} picture={author.picture} />} */}
