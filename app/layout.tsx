@@ -10,9 +10,6 @@ import {
 import { draftMode } from "next/headers";
 import { Suspense } from "react";
 
-import AlertBanner from "./(blog)/alert-banner";
-import PortableText from "./(blog)/portable-text";
-
 import type { SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
@@ -69,14 +66,7 @@ export default function RootLayout({
       >
         <Navigation />
         <main className={`${varela} flex-1 flex flex-col`}>{children}</main>
-        {/* <section className="min-h-screen"> */}
-        {/* {draftMode().isEnabled && <AlertBanner />} */}
-        {/* <Suspense>
-            <Footer />
-          </Suspense>
-        </section> */}
-        {/*{draftMode().isEnabled && <VisualEditing />}
-        <SpeedInsights /> */}
+
         <Footer />
       </body>
     </html>

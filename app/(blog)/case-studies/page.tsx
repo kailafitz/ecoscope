@@ -10,15 +10,15 @@ import { Suspense } from "react";
 
 import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
-import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
-import Container from "../_custom_components/Container";
-import { H1 } from "../_custom_components/Headings";
-import ActionBanner from "../_custom_components/ActionBanner";
-import EcoscopeButton from "../_custom_components/Button";
-import CoverImage from "./(blog)/cover-image";
-import MoreStories from "./(blog)/more-stories";
-import Onboarding from "./(blog)/onboarding";
+import Container from "../../_custom_components/Container";
+import { H1 } from "../../_custom_components/Headings";
+import ActionBanner from "../../_custom_components/ActionBanner";
+import EcoscopeButton from "../../_custom_components/Button";
+import CoverImage from "../cover-image";
+import MoreStories from "../more-stories";
+import Onboarding from "../onboarding";
+import { sanityFetch } from "@/sanity/lib/fetch";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;

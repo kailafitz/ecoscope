@@ -5,21 +5,21 @@
 import { visionTool } from "@sanity/vision";
 import { PluginOptions, defineConfig } from "sanity";
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
-import { presentationTool } from "sanity/presentation";
+import { defineDocuments, defineLocations, DocumentLocation, presentationTool } from "sanity/presentation";
 import { structureTool } from "sanity/structure";
 
 import { apiVersion, dataset, projectId, studioUrl } from "@/sanity/lib/api";
-import { locate } from "@/sanity/plugins/locate";
 import { pageStructure, singletonPlugin } from "@/sanity/plugins/settings";
 import { assistWithPresets } from "@/sanity/plugins/assist";
 import author from "@/sanity/schemas/documents/author";
 import post from "@/sanity/schemas/documents/post";
 import settings from "@/sanity/schemas/singletons/settings";
+import { resolveHref } from "./sanity/lib/utils";
 
-// const SANITY_STUDIO_PREVIEW_URL = (
-//   process.env.SANITY_STUDIO_PREVIEW_URL
-//   || 'http://localhost:3000'
-// );
+const homeLocation = {
+  title: "Home",
+  href: "/",
+} satisfies DocumentLocation;
 
 export default defineConfig({
   basePath: studioUrl,
@@ -36,8 +36,37 @@ export default defineConfig({
   },
   plugins: [
     presentationTool({
-      locate,
-      previewUrl: { previewMode: { enable: "/case-studies/api/draft" } },
+      // resolve: {
+      //   mainDocuments: defineDocuments([
+      //     {
+      //       route: "/case-studies/posts/:slug",
+      //       filter: `_type == "post" && slug.current == $slug`,
+      //     },
+      //   ]),
+      //   locations: {
+      //     settings: defineLocations({
+      //       locations: [homeLocation],
+      //       message: "This document is used on all pages",
+      //       tone: "caution",
+      //     }),
+      //     post: defineLocations({
+      //       select: {
+      //         title: "title",
+      //         slug: "slug.current",
+      //       },
+      //       resolve: (doc) => ({
+      //         locations: [
+      //           {
+      //             title: doc?.title || "Untitled",
+      //             href: resolveHref("post", doc?.slug)!,
+      //           },
+      //           homeLocation,
+      //         ],
+      //       }),
+      //     }),
+      //   },
+      // },
+      previewUrl: { previewMode: { enable: "/case-studies" } }
     }),
     structureTool({ structure: pageStructure([settings]) }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
@@ -50,7 +79,6 @@ export default defineConfig({
     // Vision lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     process.env.NODE_ENV === "development" &&
-    visionTool({ defaultApiVersion: apiVersion }),
+    visionTool({ defaultApiVersion: apiVersion, defaultDataset: dataset }),
   ].filter(Boolean) as PluginOptions[],
 });
-

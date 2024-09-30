@@ -13,9 +13,14 @@ import { token } from "@/sanity/lib/token";
 const clientWithToken = client.withConfig({ token });
 
 export async function GET(request: Request) {
+  if (!process.env.SANITY_API_READ_TOKEN) {
+    return new Response("Missing environment variable SANITY_API_READ_TOKEN", {
+      status: 500,
+    });
+  }
   const { isValid, redirectTo = "/" } = await validatePreviewUrl(
     clientWithToken,
-    request.url,
+    request.url
   );
   if (!isValid) {
     return new Response("Invalid secret", { status: 401 });

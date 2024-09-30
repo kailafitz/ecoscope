@@ -4,11 +4,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
-import Avatar from "../../avatar";
-import CoverImage from "../../cover-image";
-import DateComponent from "../../date";
-import MoreStories from "../../more-stories";
-import PortableText from "../../portable-text";
+import Avatar from "../../../avatar";
+import CoverImage from "../../../cover-image";
+import DateComponent from "../../../date";
+import MoreStories from "../../../more-stories";
+import PortableText from "../../../portable-text";
 
 import type {
   PostQueryResult,
@@ -75,6 +75,8 @@ export default async function PostPage({ params }: Props) {
   if (!post?._id) {
     return notFound();
   }
+
+  console.log("post", post);
 
   return (
     <Container className="mx-auto px-5">
