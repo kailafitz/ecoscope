@@ -140,3 +140,9 @@ p {
     background: url("/_assets/bg-curve-lg.png") no-repeat top / cover;
   }
 }
+
+#sanity {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}

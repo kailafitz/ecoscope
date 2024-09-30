@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../../globals.css";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
@@ -7,18 +7,19 @@ import {
   toPlainText,
   type PortableTextBlock,
 } from "next-sanity";
+import { Inter } from "next/font/google";
 import { draftMode } from "next/headers";
 import { Suspense } from "react";
 
-import type { SettingsQueryResult } from "@/sanity.types";
+import AlertBanner from "../alert-banner";
+import PortableText from "../portable-text";
+
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
-import { cn } from "@/lib/utils";
-import { open, varela } from "@/lib/fonts";
-import Navigation from "./_custom_components/Navigation";
-import Footer from "./_custom_components/Footer";
+import { varela } from "@/lib/fonts";
+import { PostQueryResult, SettingsQueryResult } from "@/sanity.types";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -51,23 +52,17 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({
+export default function BlogLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={"bg-white text-black scroll-smooth"}>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-body antialiased flex flex-col HOME LAYOUT",
-          open
-        )}
-      >
-        <Navigation />
-        <main className={`${varela} flex-1 flex flex-col`}>{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <>
+      {draftMode().isEnabled && <AlertBanner />}
+      {children}
+      {draftMode().isEnabled && <VisualEditing />}
+      <SpeedInsights />
+    </>
   );
 }

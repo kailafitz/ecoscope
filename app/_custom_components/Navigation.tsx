@@ -19,7 +19,7 @@ import EcoscopeButton from "./Button";
 
 const Navigation = () => {
   return (
-    <NavigationMenu>
+    <NavigationMenu id="NAVIGATION">
       <Container className="flex flex-row justify-between">
         <NavigationMenuList className="pt-4 pr-4 pb-4">
           <NavigationMenuItem className="hover:cursor-pointer">

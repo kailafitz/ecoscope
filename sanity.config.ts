@@ -66,7 +66,7 @@ export default defineConfig({
       //     }),
       //   },
       // },
-      previewUrl: { previewMode: { enable: "/case-studies" } }
+      previewUrl: { previewMode: { enable: "/api/draft/enable" } }
     }),
     structureTool({ structure: pageStructure([settings]) }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
