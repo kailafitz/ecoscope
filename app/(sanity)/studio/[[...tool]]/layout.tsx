@@ -7,7 +7,7 @@ import { varela } from "@/lib/fonts";
 
 export { metadata, viewport } from "next-sanity/studio";
 
-export default function RootLayout({
+export default function SanityLayout({
   children,
 }: {
   children: React.ReactNode;

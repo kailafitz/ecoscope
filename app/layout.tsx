@@ -66,7 +66,6 @@ export default function RootLayout({
       >
         <Navigation />
         <main className={`${varela} flex-1 flex flex-col`}>{children}</main>
-
         <Footer />
       </body>
     </html>
