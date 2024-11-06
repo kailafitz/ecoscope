@@ -42,7 +42,7 @@ const About = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 lg:gap-x-16 xl:gap-x-40 gap-y-10 lg:gap-y-24">
         {aboutValues.map((value, i) => {
           return (
-            <div>
+            <div key={`${i}-what-we-do`}>
               <h6 className="text-2xl">
                 <span className="text-primary text-2xl opacity-70 mr-3">
                   0{i + 1}
