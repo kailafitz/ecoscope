@@ -20,8 +20,8 @@ const Footer = () => {
               <Link href="/news" className="text-white">
                 News
               </Link>
-              <Link href="/case-studies" className="text-white">
-                Case Studies
+              <Link href="/news" className="text-white">
+                News
               </Link>
               <Link href="/research-and-development" className="text-white">
                 Research and Development

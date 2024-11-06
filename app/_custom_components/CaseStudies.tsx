@@ -7,7 +7,7 @@ const CaseStudies = () => {
   return (
     <Container className="py-32 md:min-h-screen flex flex-col justify-center">
       <div>
-        <H3 className="text-center">Case Studies</H3>
+        <H3 className="text-center">News</H3>
         <MoreStories skip={""} limit={2} homePage />
       </div>
     </Container>
