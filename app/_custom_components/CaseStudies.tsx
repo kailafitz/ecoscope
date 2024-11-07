@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "./Container";
 import { H3 } from "./Headings";
-import MoreStories from "../(blog)/more-stories";
+import MoreStories from "../(blog)/news/_blog_components/MoreStories";
 
 const CaseStudies = () => {
   return (

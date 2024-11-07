@@ -8,7 +8,7 @@ interface Props {
   picture: Exclude<Author["picture"], undefined> | null;
 }
 
-export default function Avatar({ name, picture }: Props) {
+export default function Author({ name, picture }: Props) {
   return (
     <div className="flex items-center text-xl">
       {picture?.asset?._ref ? (

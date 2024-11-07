@@ -1,9 +1,5 @@
 import Link from "next/link";
-
-import Avatar from "./avatar";
-import CoverImage from "./cover-image";
-import DateComponent from "./date";
-
+import CoverImage from "./CoverImage";
 import type { MoreStoriesQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { moreStoriesQuery } from "@/sanity/lib/queries";
@@ -22,7 +18,7 @@ export default async function MoreStories(params: {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center md:justify-evenly space-y-9 md:space-y-0">
+      <div className="flex flex-col md:flex-row items-center md:justify-between space-y-9 md:space-y-0">
         {data?.map((post) => {
           const { _id, title, slug, coverImage, excerpt, author } = post;
           return (
@@ -63,7 +59,7 @@ export default async function MoreStories(params: {
                     {excerpt}
                   </p>
                 )} */}
-                {/* {author && <Avatar name={author.name} picture={author.picture} />} */}
+                {/* {author && <Author name={author.name} picture={author.picture} />} */}
               </Card>
             </article>
           );

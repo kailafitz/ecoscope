@@ -4,10 +4,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
-import Avatar from "../../../avatar";
-import CoverImage from "../../../cover-image";
-import DateComponent from "../../../date";
-import MoreStories from "../../../more-stories";
+import Avatar from "../../_blog_components/Author";
+import CoverImage from "../../_blog_components/CoverImage";
+import DateComponent from "../../_blog_components/Date";
+import MoreStories from "../../_blog_components/MoreStories";
 import PortableText from "../../../portable-text";
 
 import type {
@@ -15,14 +15,12 @@ import type {
   PostSlugsResult,
   SettingsQueryResult,
 } from "@/sanity.types";
-import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { postQuery, settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Container from "@/app/_custom_components/Container";
 import { H1 } from "@/app/_custom_components/Headings";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
-import EcoscopeButton from "@/app/_custom_components/Button";
 
 type Props = {
   params: { slug: string };
@@ -91,25 +89,25 @@ export default async function PostPage({ params }: Props) {
         <H1 className="text-balance font-heading mb-12 text-2xl leading-tight tracking-tighter md:text-4xl md:leading-none">
           {post.title}
         </H1>
-        {/* <div className="hidden md:mb-12 md:block">
+        <div className="hidden md:mb-12 md:block">
           {post.author && (
             <Avatar name={post.author.name} picture={post.author.picture} />
           )}
-        </div> */}
+        </div>
         <div className="mb-8 sm:mx-0 md:mb-16">
           <CoverImage image={post.coverImage} priority />
         </div>
-        <div className="mx-auto max-w-2xl">
-          {/* <div className="mb-6 block md:hidden">
+        <div className="max-w-2xl">
+          <div className="mb-6 block md:hidden">
             {post.author && (
               <Avatar name={post.author.name} picture={post.author.picture} />
             )}
-          </div> */}
-          {/* <div className="mb-6 text-lg">
+          </div>
+          <div className="mb-6 text-lg">
             <div className="mb-4 text-lg">
               <DateComponent dateString={post.date} />
             </div>
-          </div> */}
+          </div>
         </div>
         {/* {post.content?.length && (
           <PortableText
