@@ -29,7 +29,7 @@ function Intro(props: { title: string | null | undefined; description: any }) {
     <section className="mb-16 lg:mb-12">
       <H1 className="text-left mb-20">
         {/* {title || demo.title} */}
-        Case Studies
+        News
       </H1>
       <p className="w-full lg:w-2/3">
         Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id
@@ -58,14 +58,14 @@ function HeroPost({
     <article className="flex flex-col md:flex-row mb-16">
       <Link
         className="group block w-full md:w-2/3"
-        href={`/case-studies/posts/${slug}`}
+        href={`/news/posts/${slug}`}
       >
         <CoverImage feature image={coverImage} priority />
       </Link>
       <div className="md:w-1/3 flex flex-col p-6 bg-transparent-primary rounded-b-lg md:rounded-r-lg md:rounded-bl-none">
         <div>
           <h3 className="text-pretty mb-1 text-2xl leading-tight">
-            <Link href={`/case-studies/posts/${slug}`} className="font-heading">
+            <Link href={`/news/posts/${slug}`} className="font-heading">
               {title} Title
             </Link>
           </h3>
@@ -82,10 +82,7 @@ function HeroPost({
               varius. Duis eu pretium felis a semper et.
             </p>
           )}
-          <EcoscopeButton
-            variant="secondary"
-            href={`/case-studies/posts/${slug}`}
-          >
+          <EcoscopeButton variant="secondary" href={`/news/posts/${slug}`}>
             Read more
           </EcoscopeButton>
           {/* {author && <Avatar name={author.name} picture={author.picture} />} */}

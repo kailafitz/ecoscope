@@ -80,10 +80,6 @@
   height: calc(100vh - 78.7px);
 }
 
-p {
-  font-size: 13px;
-}
-
 .service-card {
   width: 300px;
   max-width: 100%;

@@ -49,7 +49,7 @@ export default async function MoreStories(params: {
                     </p>
                     <EcoscopeButton
                       className="hidden group-hover:block text-center"
-                      href={`/case-studies/posts/${slug}`}
+                      href={`/news/posts/${slug}`}
                     >
                       Read more
                     </EcoscopeButton>
@@ -71,7 +71,7 @@ export default async function MoreStories(params: {
         {params.homePage && (
           <Card className="bg-primary h-96 flex flex-col justify-center service-card hover:bg-teal-500 transition-all hover:transition-all">
             <Link
-              href="/case-studies"
+              href="/news"
               className="text-white text-center h-full flex flex-col justify-center"
             >
               View more

@@ -39,7 +39,7 @@ export default defineConfig({
       // resolve: {
       //   mainDocuments: defineDocuments([
       //     {
-      //       route: "/case-studies/posts/:slug",
+      //       route: "/news/posts/:slug",
       //       filter: `_type == "post" && slug.current == $slug`,
       //     },
       //   ]),

@@ -81,9 +81,9 @@ export default async function PostPage({ params }: Props) {
   return (
     <Container className="mx-auto px-5">
       <h2 className="my-10 text-xl font-heading opacity-50 leading-tight tracking-tight md:text-2xl md:tracking-tighter">
-        <Link href="/case-studies" className="hover:underline">
+        <Link href="/news" className="hover:underline">
           {/* {settings?.title || demo.title} */}
-          Case Studies
+          News
         </Link>{" "}
         / [Service Type]
       </h2>
@@ -127,7 +127,7 @@ export default async function PostPage({ params }: Props) {
       <aside className="mb-20">
         <hr className="border-accent-2 mb-24 mt-28" />
         <h2 className="mb-8 text-2xl font-heading leading-tight tracking-tighter md:text-4xl">
-          Related Case Studies
+          Related News
         </h2>
         <Suspense>
           <MoreStories skip={post._id} limit={2} />
