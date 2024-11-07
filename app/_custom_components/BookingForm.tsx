@@ -22,17 +22,17 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { formSchema } from "./FormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { H3 } from "./Headings";
+import { H1 } from "./Headings";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
 const BookingForm = () => {
-  const [loading, setLoading] = useState<Boolean>(true);
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
-      phone: 0,
+      phone: "",
       companyName: "",
       industry: "Film",
       companySize: "0-10",
@@ -40,19 +40,15 @@ const BookingForm = () => {
     },
   });
 
-  const handleLoading = () => {
-    setLoading(false);
-  };
-
   return (
     <Form {...form}>
-      <form className="flex-1 grid sm:grid-cols-2 sm:gap-x-10 p-10">
+      <form className="flex-1 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-10 sm:gap-x-10">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              {/* <FormLabel>Name</FormLabel> */}
               <FormControl>
                 <Input type="text" id="name" placeholder="Name" {...field} />
               </FormControl>
@@ -68,7 +64,7 @@ const BookingForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              {/* <FormLabel>Email</FormLabel> */}
               <FormControl>
                 <Input type="email" id="email" placeholder="Email" {...field} />
               </FormControl>
@@ -84,7 +80,7 @@ const BookingForm = () => {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Phone</FormLabel>
+              {/* <FormLabel>Phone</FormLabel> */}
               <FormControl>
                 <Input type="tel" id="phone" placeholder="Phone" {...field} />
               </FormControl>
@@ -100,7 +96,7 @@ const BookingForm = () => {
           name="companyName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Company Name</FormLabel>
+              {/* <FormLabel>Company Name</FormLabel> */}
               <FormControl>
                 <Input
                   type="text"
@@ -121,7 +117,7 @@ const BookingForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Industry</FormLabel>
+              {/* <FormLabel>Industry</FormLabel> */}
               <Select>
                 <SelectTrigger>
                   <SelectValue placeholder="Industry" />
@@ -139,31 +135,10 @@ const BookingForm = () => {
         />
         <FormField
           control={form.control}
-          name="name"
+          name="companySize"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Certification</FormLabel>
-              <FormControl>
-                <Input
-                  type="text"
-                  id="certification"
-                  placeholder="Certification"
-                  {...field}
-                />
-              </FormControl>
-              {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Company Size</FormLabel>
+              {/* <FormLabel>Company Size</FormLabel> */}
               <Select>
                 <SelectTrigger>
                   <SelectValue placeholder="Company Size" />
@@ -185,15 +160,15 @@ const BookingForm = () => {
         />
         <FormField
           control={form.control}
-          name="name"
+          name="certification"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              {/* <FormLabel>Certification</FormLabel> */}
               <FormControl>
                 <Input
                   type="text"
-                  id="message"
-                  placeholder="Message"
+                  id="certification"
+                  placeholder="Certification"
                   {...field}
                 />
               </FormControl>
@@ -204,6 +179,31 @@ const BookingForm = () => {
             </FormItem>
           )}
         />
+        <div className="hidden md:grid"></div>
+        <div className="hidden md:grid"></div>
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem className="md:col-span-2">
+              {/* <FormLabel>Message</FormLabel> */}
+              <FormControl>
+                <Textarea
+                  placeholder="Tell us a little bit more..."
+                  className="resize-none"
+                  {...field}
+                />
+              </FormControl>
+              {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <div className="flex flex-col justify-end">
+          <Button>Submit</Button>
+        </div>
       </form>
     </Form>
   );

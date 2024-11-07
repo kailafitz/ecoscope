@@ -12,7 +12,7 @@ const Footer = () => {
         <img
           src="/_assets/logo-white-vertical-full.png"
           alt="Ecoscope white logo"
-          className="w-full md:w-3/12 pb-16"
+          className="w-full max-w-xs mx-auto sm:max-w-sm md:max-w-none md:w-3/12 pb-16"
         />
         <div className="flex flex-1 flex-col justify-between pb-3">
           <div>

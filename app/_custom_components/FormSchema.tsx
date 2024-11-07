@@ -5,7 +5,7 @@ import { z } from "zod";
 export const formSchema = z.object({
   name: z.string().min(2).max(50),
   email: z.string().email().min(2).max(50),
-  phone: z.number().min(2).max(50),
+  phone: z.string().min(10).max(10),
   companyName: z.string().min(2).max(50),
   industry: z.enum(["Film", "Commercial", "Hospitality", "Other"]),
   certification: z.string().min(2).max(50),
