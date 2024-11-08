@@ -42,7 +42,10 @@ const BookingForm = () => {
 
   return (
     <Form {...form}>
-      <form className="flex-1 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-10 sm:gap-x-10">
+      <form
+        className="flex-1 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-10 sm:gap-x-10"
+        id="booking-form"
+      >
         <FormField
           control={form.control}
           name="name"

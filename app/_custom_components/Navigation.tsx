@@ -74,7 +74,7 @@ const Navigation = () => {
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
-            <EcoscopeButton href="contact-us#book-a-consultation">
+            <EcoscopeButton href="contact-us#booking-form">
               Book a Consultation
             </EcoscopeButton>
           </NavigationMenuList>
