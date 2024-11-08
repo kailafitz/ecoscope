@@ -6,8 +6,6 @@ import CoverImage from "./CoverImage";
 import { HeroQueryResult } from "@/sanity.types";
 import Author from "./Author";
 
-type Props = {};
-
 const LatestFeaturesPost = ({
   title,
   slug,
@@ -34,8 +32,8 @@ const LatestFeaturesPost = ({
               {title} Title
             </Link>
           </h3>
-          <p className="mb-6 font-heading opacity-70">Film and Television</p>
-          <div className="mb-4 text-lg md:mb-0">
+          {/* <p className="mb-6 font-heading opacity-70">Film and Television</p> */}
+          <div className="mb-4 text-sm">
             <DateComponent dateString={date} />
           </div>
         </div>
@@ -50,7 +48,7 @@ const LatestFeaturesPost = ({
           <EcoscopeButton variant="secondary" href={`/news/posts/${slug}`}>
             Read more
           </EcoscopeButton>
-          {author && <Author name={author.name} picture={author.picture} />}
+          {/* {author && <Author name={author.name} picture={author.picture} />} */}
         </div>
       </div>
     </article>

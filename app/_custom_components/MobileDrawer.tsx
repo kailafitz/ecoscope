@@ -18,8 +18,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import Link from "next/link";
-import LinkedInIcon from "./LinkedInIcon";
-import MailIcon from "./MailIcon";
+import LinkedInIcon from "./icons/LinkedInIcon";
+import MailIcon from "./icons/MailIcon";
 import EcoscopeButton from "./Button";
 
 export const MobileDrawer = () => {
