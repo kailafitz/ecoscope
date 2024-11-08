@@ -18,8 +18,6 @@ type Props = {
 
 const ShareButtons = (props: Props) => {
   const shareUrl = `https://ecoscope/news/${props.slug}`;
-
-  console.log(shareUrl);
   return (
     <div className="flex flex-row gap-x-2 mb-16">
       <FacebookShareButton url={shareUrl}>
