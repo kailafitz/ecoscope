@@ -4,38 +4,38 @@ import Container from "./Container";
 
 const values = [
   {
-    name: "Lorem Ipsum",
+    name: "Certification",
     description:
       "Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id laoreet ultrices. Sit diam risus tempus dis amet varius. Duis eu pretium felis a semper et.",
   },
   {
-    name: "Lorem Ipsum",
+    name: "Consultancy",
     description:
       "Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id laoreet ultrices. Sit diam risus tempus dis amet varius. Duis eu pretium felis a semper et.",
   },
   {
-    name: "Lorem Ipsum",
+    name: "Strategy",
     description:
       "Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id laoreet ultrices. Sit diam risus tempus dis amet varius. Duis eu pretium felis a semper et.",
   },
   {
-    name: "Lorem Ipsum",
+    name: "Training",
     description:
       "Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id laoreet ultrices. Sit diam risus tempus dis amet varius. Duis eu pretium felis a semper et.",
   },
   {
-    name: "Lorem Ipsum",
+    name: "Carbon Reporting",
     description:
       "Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id laoreet ultrices. Sit diam risus tempus dis amet varius. Duis eu pretium felis a semper et.",
   },
   {
-    name: "Lorem Ipsum",
+    name: "Raising Awareness",
     description:
       "Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id laoreet ultrices. Sit diam risus tempus dis amet varius. Duis eu pretium felis a semper et.",
   },
 ];
 
-const CompanyValues = () => {
+const WhatWeDo = () => {
   return (
     <Container className="flex flex-col pb-20">
       <DualHeading subtitle="How we work">Our Company Values</DualHeading>
@@ -62,4 +62,4 @@ const CompanyValues = () => {
   );
 };
 
-export default CompanyValues;
+export default WhatWeDo;
