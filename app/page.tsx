@@ -2,7 +2,7 @@ import React from "react";
 import Landing from "./_custom_components/Landing";
 import Services from "./_custom_components/ServiceCard";
 import WhatWeDo from "./_custom_components/WhatWeDo";
-import CaseStudies from "./_custom_components/CaseStudies";
+import News from "./_custom_components/News";
 import ContactUs from "./_custom_components/ContactUs";
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
       <Landing />
       <Services />
       <WhatWeDo />
-      <CaseStudies />
+      <News />
       <ContactUs />
     </>
   );

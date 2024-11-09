@@ -60,7 +60,9 @@ const ContactUs = () => {
               </div>
             </div>
           </div>
-          <BookingForm />
+          <div>
+            <BookingForm />
+          </div>
         </div>
       </div>
     </Container>

@@ -2,7 +2,7 @@ import React from "react";
 import Container from "./Container";
 import { H3 } from "./Headings";
 
-const aboutValues = [
+const whatWeDo = [
   {
     name: "Certification",
     description:
@@ -40,7 +40,7 @@ const WhatWeDo = () => {
     <Container className="flex flex-col justify-center py-32">
       <H3 className="text-center">What We Do</H3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 lg:gap-x-16 xl:gap-x-40 gap-y-10 lg:gap-y-24">
-        {aboutValues.map((value, i) => {
+        {whatWeDo.map((value, i) => {
           return (
             <div key={`${i}-what-we-do`}>
               <h6 className="text-2xl">

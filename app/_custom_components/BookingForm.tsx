@@ -22,11 +22,14 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { formSchema } from "./FormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { H1 } from "./Headings";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 
-const BookingForm = () => {
+type Props = {
+  homepage?: boolean;
+};
+
+const BookingForm = (props: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -43,7 +46,7 @@ const BookingForm = () => {
   return (
     <Form {...form}>
       <form
-        className="flex-1 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-10 sm:gap-x-10"
+        className={`flex-1 grid grid-cols-1 ${props.homepage ? "md:grid-cols-3" : "md:grid-cols-1 lg:grid-cols-2"} gap-x-5 gap-y-10 sm:gap-x-10`}
         id="booking-form"
       >
         <FormField
