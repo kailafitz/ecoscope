@@ -3,7 +3,6 @@ import Container from "../_custom_components/Container";
 import { H1 } from "../_custom_components/Headings";
 import ActionBanner from "../_custom_components/ActionBanner";
 import MeetOurFounder from "../_custom_components/MeetOurFounder";
-import WhatWeDo from "../_custom_components/WhatWeDo";
 
 const AboutUs = () => {
   return (
@@ -35,7 +34,6 @@ const AboutUs = () => {
           </div>
         </Container>
       </div>
-      <WhatWeDo />
       <Container>
         <ActionBanner />
       </Container>
