@@ -1,79 +1,87 @@
 import Link from "next/link";
-import CoverImage from "./CoverImage";
 import type { MoreStoriesQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { moreStoriesQuery } from "@/sanity/lib/queries";
 import { Card } from "@/components/ui/card";
-import EcoscopeButton from "@/app/_custom_components/Button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import NewsCard from "./NewsCard";
+import React from "react";
 
-export default async function MoreStories(params: {
-  skip: string;
-  limit: number;
-  homePage?: boolean;
-}) {
+const ViewMoreCardButton = () => {
+  return (
+    <Card className="bg-primary h-96 flex flex-col justify-center max-w-full w-[300px] hover:bg-teal-500 transition-all hover:transition-all">
+      <Link
+        href="/news"
+        className="text-white text-center h-full flex flex-col justify-center"
+      >
+        View more
+      </Link>
+    </Card>
+  );
+};
+
+const MobileCarousel = () => {
+  return (
+    <Carousel className="lg:hidden">
+      <CarouselContent className="[&_div:not(:last-child)]:pr-6">
+        <MoreStoriesData skip={""} limit={2} />
+        <CarouselItem className="sm:basis-96 lg:hidden">
+          <ViewMoreCardButton />
+        </CarouselItem>
+      </CarouselContent>
+      {/* <CarouselPrevious />
+      <CarouselNext /> */}
+    </Carousel>
+  );
+};
+
+const MoreStoriesData = async (params: { skip: string; limit: number }) => {
   const data = await sanityFetch<MoreStoriesQueryResult>({
     query: moreStoriesQuery,
     params,
   });
 
+  return data?.map((post) => {
+    const { _id, title, slug, coverImage, excerpt, author, date } = post;
+
+    const NewsCards = (
+      <NewsCard
+        key={_id}
+        _id={_id}
+        title={title}
+        slug={slug}
+        coverImage={coverImage}
+      />
+    );
+
+    return (
+      <>
+        <CarouselItem className="sm:basis-96 lg:hidden">
+          {NewsCards}
+        </CarouselItem>
+        {/* {NewsCards} */}
+      </>
+    );
+  });
+};
+
+export default async function MoreStories(params: {
+  skip: string;
+  limit: number;
+  homepage: boolean;
+}) {
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center md:justify-between space-y-9 md:space-y-0">
-        {data?.map((post) => {
-          const { _id, title, slug, coverImage, excerpt, author } = post;
-          return (
-            <article
-              key={_id}
-              className="group flex flex-col h-96 rounded-lg shadow-2xl max-w-full"
-            >
-              <Card className="service-card flex flex-col flex-1 relative rounded-lg">
-                <Link
-                  href={`/posts/${slug}`}
-                  className="group absolute top-0 left-0 h-full w-full z-0 rounded-lg"
-                >
-                  <CoverImage image={coverImage} priority={false} />
-                </Link>
-                <div className="h-full flex flex-col justify-end">
-                  <div className="bg-transparent-primary backdrop-blur bottom-0 flex flex-col justify-between group-hover:justify-center p-5 rounded-b-lg h-44 sm:h-32 group-hover:h-full group-hover:rounded-t-lg group-hover:transition-all transition-all">
-                    <h3 className="text-balance mb-5 text-3xl leading-snug font-heading text-white group-hover:hidden">
-                      <Link href={`/posts/${slug}`} className="hover:underline">
-                        {title}
-                      </Link>
-                    </h3>
-                    <p className="font-body text-lg md:text-sm text-white group-hover:hidden">
-                      Film and Production
-                    </p>
-                    <EcoscopeButton
-                      className="hidden group-hover:block text-center"
-                      href={`/news/posts/${slug}`}
-                    >
-                      Read more
-                    </EcoscopeButton>
-                  </div>
-                </div>
-                {/* <div className="mb-4 text-lg">
-                <DateComponent dateString={post.date} />
-              </div> */}
-                {/* {excerpt && (
-                  <p className="text-pretty mb-4 text-lg leading-relaxed">
-                    {excerpt}
-                  </p>
-                )} */}
-                {/* {author && <Author name={author.name} picture={author.picture} />} */}
-              </Card>
-            </article>
-          );
-        })}
-        {params.homePage && (
-          <Card className="bg-primary h-96 flex flex-col justify-center service-card hover:bg-teal-500 transition-all hover:transition-all">
-            <Link
-              href="/news"
-              className="text-white text-center h-full flex flex-col justify-center"
-            >
-              View more
-            </Link>
-          </Card>
-        )}
+      <MobileCarousel />
+      <div className="hidden lg:flex flex-col lg:flex-row items-center lg:justify-between space-y-9 lg:space-y-0">
+        <MoreStoriesData skip={params.skip} limit={params.limit} />
+        {params.homepage && <ViewMoreCardButton />}
       </div>
     </>
   );

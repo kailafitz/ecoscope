@@ -80,17 +80,6 @@
   height: calc(100vh - 78.7px);
 }
 
-.service-card {
-  width: 300px;
-  max-width: 100%;
-
-  svg {
-    display: block;
-    margin: 0 auto;
-    width: 6rem;
-  }
-}
-
 .content-links {
   a:not(:last-child) {
     padding-bottom: 1rem;
@@ -113,14 +102,6 @@
   padding: 3px;
 }
 
-.google-meet-iframe {
-  height: 1330px;
-
-  @media only screen and (min-width: 1000px) {
-    height: 636px;
-  }
-}
-
 .bg-landscape {
   background: url("/_assets/landscape.png") no-repeat center / cover;
 }
@@ -141,4 +122,8 @@
   position: absolute;
   width: 100%;
   left: 0;
+}
+
+.max-w-80 {
+  max-width: 80%;
 }

@@ -19,8 +19,8 @@ type ServiceProps = {
 
 const ServiceCard = (props: ServiceProps) => {
   return (
-    <Card className="service-card">
-      <CardHeader className="text-center">
+    <Card className="max-w-full w-[300px]">
+      <CardHeader className="text-center [&_svg]:block [&_svg]:mx-auto [&_svg]:w-28">
         {props.icon}
         <CardTitle>{props.name}</CardTitle>
         <CardDescription>{props.description}</CardDescription>
