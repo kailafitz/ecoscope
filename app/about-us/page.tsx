@@ -1,8 +1,9 @@
 import React from "react";
 import Container from "../_custom_components/Container";
-import { H1 } from "../_custom_components/Headings";
+import { H2 } from "../_custom_components/Headings";
 import ActionBanner from "../_custom_components/ActionBanner";
 import MeetOurFounder from "../_custom_components/MeetOurFounder";
+import WhatWeDo from "../_custom_components/WhatWeDo";
 
 const AboutUs = () => {
   return (
@@ -11,7 +12,7 @@ const AboutUs = () => {
         <div className="bg-primary top-0 left-0 absolute w-full h-full opacity-80" />
         <Container py topViewHeight className="flex flex-col justify-center">
           <div className="w-full md:w-6/12 relative z-20 text-primary-foreground">
-            <H1 mb>About Us</H1>
+            <H2 mb>About Us</H2>
             <p className="text-xl mb-8">
               Lorem ipsum dolor sit amet consectetur. Mi ut eu vel libero. Quam
               tincidunt ut dignissim tristique consequat tristique sed.
@@ -34,6 +35,7 @@ const AboutUs = () => {
           </div>
         </Container>
       </div>
+      <WhatWeDo />
       <Container>
         <ActionBanner />
       </Container>
