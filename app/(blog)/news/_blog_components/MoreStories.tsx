@@ -74,7 +74,7 @@ const MoreStoriesData = async (params: { skip: string; limit: number }) => {
 export default async function MoreStories(params: {
   skip: string;
   limit: number;
-  homepage: boolean;
+  homepage?: boolean;
 }) {
   return (
     <>

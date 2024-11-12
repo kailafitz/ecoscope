@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "./Container";
 import LinkedInIcon from "./icons/LinkedInIcon";
 import InstagramIcon from "./icons/InstagramIcon";
+import FacebookIcon from "./icons/FacebookIcon";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -32,8 +33,11 @@ const Footer = () => {
                 </Link>
 
                 <Link href={""}>
-                  {" "}
                   <InstagramIcon />
+                </Link>
+
+                <Link href={""}>
+                  <FacebookIcon />
                 </Link>
               </div>
             </div>
