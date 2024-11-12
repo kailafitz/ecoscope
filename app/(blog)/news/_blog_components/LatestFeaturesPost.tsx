@@ -18,7 +18,7 @@ const LatestFeaturesPost = ({
   "title" | "coverImage" | "date" | "excerpt" | "author" | "slug"
 >) => {
   return (
-    <article className="flex flex-col md:flex-row mb-16 h-96">
+    <article className="flex flex-col md:flex-row mb-16">
       <Link
         className="group block w-full md:w-2/3"
         href={`/news/posts/${slug}`}

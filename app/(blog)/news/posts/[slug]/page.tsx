@@ -19,7 +19,7 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { postQuery, settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Container from "@/app/_custom_components/Container";
-import { H1 } from "@/app/_custom_components/Headings";
+import { H1, H3 } from "@/app/_custom_components/Headings";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
 import ShareButtons from "../../_blog_components/ShareButtons";
 
@@ -129,10 +129,7 @@ export default async function PostPage({ params }: Props) {
         )}
       </article>
       <aside className="my-20">
-        {/* <hr className="border-1 border-primary mb-24 mt-28" /> */}
-        <h2 className="mb-8 text-2xl font-heading leading-tight tracking-tighter md:text-4xl">
-          Other News Articles
-        </h2>
+        <H3 mb>Other News Articles</H3>
         <Suspense>
           <MoreStories skip={post._id} limit={3} />
         </Suspense>

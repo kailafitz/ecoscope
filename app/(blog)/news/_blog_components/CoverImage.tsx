@@ -12,10 +12,10 @@ export default function CoverImage(props: CoverImageProps) {
   const { image: source, priority } = props;
   const image = source?.asset?._ref ? (
     <Image
-      className={`object-cover w-full h-full ${
+      className={`object-cover w-full md:h-full ${
         props.feature
-          ? "rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
-          : "rounded-lg"
+          ? "rounded-t-lg md:rounded-l-lg md:rounded-tr-none h-96"
+          : "rounded-lg h-full"
       }`}
       // width={2000}
       // height={1000}

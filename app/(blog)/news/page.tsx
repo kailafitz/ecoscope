@@ -8,7 +8,6 @@ import ActionBanner from "../../_custom_components/ActionBanner";
 import EcoscopeButton from "../../_custom_components/Button";
 import CoverImage from "./_blog_components/CoverImage";
 import MoreStories from "./_blog_components/MoreStories";
-import Onboarding from "../onboarding";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import DateComponent from "./_blog_components/Date";
 import Avatar from "./_blog_components/Author";
@@ -24,9 +23,9 @@ export default async function Page() {
   ]);
 
   return (
-    <Container className="pt-16">
+    <Container py>
       <Intro />
-      {heroPost ? (
+      {heroPost && (
         <LatestFeaturesPost
           title={heroPost.title}
           slug={heroPost.slug}
@@ -35,17 +34,15 @@ export default async function Page() {
           date={heroPost.date}
           author={heroPost.author}
         />
-      ) : (
-        <Onboarding />
       )}
       {heroPost?._id && (
         <aside>
           <Suspense>
-            <MoreStories skip={heroPost._id} limit={100} />
+            <MoreStories skip={heroPost._id} limit={10} />
           </Suspense>
         </aside>
       )}
-      <ActionBanner pt />
+      <ActionBanner mt />
     </Container>
   );
 }

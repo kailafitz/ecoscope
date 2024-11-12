@@ -28,7 +28,7 @@ const ViewMoreCardButton = () => {
 
 const MobileCarousel = () => {
   return (
-    <Carousel className="lg:hidden">
+    <Carousel className="lg:hidden overflow-hidden">
       <CarouselContent className="[&_div:not(:last-child)]:pr-6">
         <MoreStoriesData skip={""} limit={2} />
         <CarouselItem className="sm:basis-96 lg:hidden">
