@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import EcoscopeButton from "./Button";
 import Container from "./Container";
-import { H3 } from "./Headings";
+import { H2 } from "./Headings";
 
 type ServiceProps = {
   icon?: ReactNode;
@@ -34,7 +34,7 @@ const ServiceCard = (props: ServiceProps) => {
   );
 };
 
-const services_data = [
+const servicesData = [
   {
     icon: (
       <svg viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -111,11 +111,11 @@ const Services = () => {
   return (
     <Container
       id="services"
-      className="flex flex-col justify-center py-32 md:py-0 md:min-h-screen"
+      className="flex flex-col justify-center py-32 md:py-0 md:min-h-screen text-center"
     >
-      <H3 className="text-center">Our Services</H3>
+      <H2 mb>Our Services</H2>
       <div className="flex flex-wrap flex-col md:flex-row items-center md:justify-evenly space-y-9 md:space-y-0">
-        {services_data.map((service, i) => {
+        {servicesData.map((service, i) => {
           let href = service?.name.replace(/ /g, "-").toLowerCase();
           return (
             <ServiceCard

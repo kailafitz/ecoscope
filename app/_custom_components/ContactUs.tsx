@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "./Container";
-import { H3 } from "./Headings";
+import { H2, H3 } from "./Headings";
 import MapIcon from "./icons/MapIcon";
 import MailIcon from "./icons/MailIcon";
 import BookingForm from "./BookingForm";
@@ -8,17 +8,23 @@ import BookingForm from "./BookingForm";
 const ContactUs = () => {
   return (
     <>
-      <Container className="py-32">
-        <H3 className="text-center">Book a Consultation</H3>
-        <div className="w-full md:w-4/5 mx-auto">
+      <Container className="py-32 text-center">
+        <H2
+          mb
+          subtitle="If you're interested in certifying your business today, fill out the
+          form below and our team will get back to you as soon as possible!"
+        >
+          Book a Consultation
+        </H2>
+        <div className="w-full md:w-4/5 mx-auto rounded-md shadow-2xl p-10">
           <BookingForm homepage />
         </div>
       </Container>
       <Container className="w-full flex flex-row justify-end pb-32">
         <div className="w-full md:w-7/12">
-          <h3 className="font-heading text-right mb-6 text-3xl">
+          <H3 mb className="text-right">
             For any queries, contact us
-          </h3>
+          </H3>
           <p className="text-right mb-6 w-full">
             For any other queries, information etc. Quam tincidunt ut dignissim
             tristique consequat tristique sed. Proin iaculis consectetur lacus

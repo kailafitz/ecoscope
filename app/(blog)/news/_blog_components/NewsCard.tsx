@@ -29,7 +29,10 @@ type Props = {
 
 const NewsCard = (props: Props) => {
   return (
-    <article key={props._id} className="group flex flex-col h-96 rounded-lg">
+    <article
+      key={props._id}
+      className="group flex flex-col h-96 rounded-lg text-left"
+    >
       <Card className="max-w-full w-[300px] flex flex-col flex-1 relative rounded-lg">
         <Link
           href={`/posts/${props.slug}`}
