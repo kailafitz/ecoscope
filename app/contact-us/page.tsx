@@ -16,8 +16,8 @@ const ContactUs = () => {
           <div className="w-full flex-1">
             <H4>Book a Consultation</H4>
             <p className="mb-5">
-              Please fill out the form below if you're interested in finding out
-              more about what Ecoscope can do for yoru business
+              Please fill out the form below if you&#39;re interested in finding
+              out more about what Ecoscope can do for yoru business
             </p>
             <BookingForm />
           </div>
