@@ -6,9 +6,7 @@ import Link from "next/link";
 import MailIcon from "../_custom_components/icons/MailIcon";
 import FacebookIcon from "../_custom_components/icons/FacebookIcon";
 
-type Props = {};
-
-const ContactDetails = (props: Props) => {
+const ContactDetails = () => {
   return (
     <div className="bg-primary shadow-2xl p-7 md:p-10 rounded-xl text-primary-foreground">
       <div className="mb-10 sm:mb-16 lg:mb-20">
@@ -22,7 +20,6 @@ const ContactDetails = (props: Props) => {
           href="mailto:info@ecoscope.ie"
           className="flex flex-row items-center text-md break-all"
         >
-          {/* <EmailIcon /> */}
           <MailIcon className="w-6 text-inherit mr-4" />
           info@ecoscope.ie
         </Link>

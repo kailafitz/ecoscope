@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 type Props = {
   children: ReactNode;
   className?: string;
+  mb?: boolean;
   subtitle?: string;
 };
 
@@ -21,7 +22,9 @@ export const DualHeading = (props: Props) => {
 
 export const H1 = (props: Props) => {
   return (
-    <h1 className={`${props.className} font-heading text-3xl md:text-5xl`}>
+    <h1
+      className={`${props.className} ${props.mb && "mb-5 md:mb-10"} font-heading text-3xl md:text-5xl`}
+    >
       {props.children}
     </h1>
   );
@@ -42,5 +45,13 @@ export const H3 = (props: Props) => {
     >
       {props.children}
     </h3>
+  );
+};
+
+export const H4 = (props: Props) => {
+  return (
+    <h4 className={`${props.className} font-heading text-xl md:text-3xl mb-2`}>
+      {props.children}
+    </h4>
   );
 };

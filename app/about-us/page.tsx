@@ -11,7 +11,7 @@ const AboutUs = () => {
         <div className="bg-primary top-0 left-0 absolute w-full h-full opacity-80" />
         <Container py topViewHeight className="flex flex-col justify-center">
           <div className="w-full md:w-6/12 relative z-20 text-primary-foreground">
-            <H1 className="mb-20">About Us</H1>
+            <H1 mb>About Us</H1>
             <p className="text-xl mb-8">
               Lorem ipsum dolor sit amet consectetur. Mi ut eu vel libero. Quam
               tincidunt ut dignissim tristique consequat tristique sed.
