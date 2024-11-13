@@ -1,5 +1,4 @@
 import { Image } from "next-sanity/image";
-
 import { urlForImage } from "@/sanity/lib/utils";
 
 interface CoverImageProps {
@@ -15,10 +14,8 @@ export default function CoverImage(props: CoverImageProps) {
       className={`object-cover w-full md:h-full ${
         props.feature
           ? "rounded-t-lg md:rounded-l-lg md:rounded-tr-none h-96"
-          : "rounded-lg h-full"
+          : "rounded-lg h-full shadow-md"
       }`}
-      // width={2000}
-      // height={1000}
       width={700}
       height={300}
       alt={source?.alt || ""}
@@ -30,11 +27,5 @@ export default function CoverImage(props: CoverImageProps) {
     <div className="bg-slate-50" style={{ paddingTop: "50%" }} />
   );
 
-  return (
-    <>
-      {/* <div className="shadow-md transition-shadow duration-200 group-hover:shadow-lg sm:mx-0"> */}
-      {image}
-      {/* </div> */}
-    </>
-  );
+  return <>{image}</>;
 }

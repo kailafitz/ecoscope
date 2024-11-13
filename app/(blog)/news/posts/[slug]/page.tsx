@@ -76,65 +76,67 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <Container className="mx-auto px-5">
-      <h2 className="mt-10 mb-3 text-xl font-heading opacity-50 leading-tight tracking-tight md:text-2xl md:tracking-tighter">
-        <Link href="/news" className="hover:underline">
-          Back to News
-        </Link>
-      </h2>
-      <article>
-        <H1
-          mb
-          className="text-balance font-heading text-2xl leading-tight tracking-tighter md:text-4xl md:leading-none"
-        >
-          {post.title}
-        </H1>
-        <div className="hidden md:mb-6 md:block">
-          {post.author && (
-            <Avatar name={post.author.name} picture={post.author.picture} />
-          )}
-          <div className="my-6 text-lg">
-            <div className="mb-4 text-lg">
-              <DateComponent dateString={post.date} />
-            </div>
-          </div>
-        </div>
-        <div className="mb-8 sm:mx-0 md:mb-6">
-          <CoverImage image={post.coverImage} priority />
-        </div>
-        <ShareButtons slug={post.slug || ""} />
-        <div className="max-w-2xl">
-          <div className="mb-6 block md:hidden">
+    <>
+      <Container className="mx-auto px-5">
+        <h2 className="mt-10 mb-3 text-xl font-heading opacity-50 leading-tight tracking-tight md:text-2xl md:tracking-tighter">
+          <Link href="/news" className="hover:underline">
+            Back to News
+          </Link>
+        </h2>
+        <article>
+          <H1
+            mb
+            className="text-balance font-heading text-2xl leading-tight tracking-tighter md:text-4xl md:leading-none"
+          >
+            {post.title}
+          </H1>
+          <div className="hidden md:mb-6 md:block">
             {post.author && (
               <Avatar name={post.author.name} picture={post.author.picture} />
             )}
+            <div className="my-6 text-lg">
+              <div className="mb-4 text-lg">
+                <DateComponent dateString={post.date} />
+              </div>
+            </div>
           </div>
-        </div>
-        {/* {post.content?.length && (
+          <div className="mb-8 sm:mx-0 md:mb-6">
+            <CoverImage image={post.coverImage} priority />
+          </div>
+          <ShareButtons slug={post.slug || ""} />
+          <div className="max-w-2xl">
+            <div className="mb-6 block md:hidden">
+              {post.author && (
+                <Avatar name={post.author.name} picture={post.author.picture} />
+              )}
+            </div>
+          </div>
+          {/* {post.content?.length && (
           <PortableText
             className="mx-auto max-w-2xl"
             value={post.content as PortableTextBlock[]}
           />
         )} */}
-        {/* <FacebookShareButton
+          {/* <FacebookShareButton
           hashtag="ecoscope"
           url={`https://ecoscope/news/posts/${post.slug}`}
           children={undefined}
         /> */}
-        {post.content?.length && (
-          <PortableText
-            className="mx-auto"
-            value={post.content as PortableTextBlock[]}
-          />
-        )}
-      </article>
-      <aside className="my-20">
-        <H3 mb>Other News Articles</H3>
-        <Suspense>
-          <MoreStories skip={post._id} limit={3} />
-        </Suspense>
-      </aside>
+          {post.content?.length && (
+            <PortableText
+              className="mx-auto"
+              value={post.content as PortableTextBlock[]}
+            />
+          )}
+        </article>
+        <aside className="my-20">
+          <H3 mb>Other News Articles</H3>
+          <Suspense>
+            <MoreStories skip={post._id} limit={3} />
+          </Suspense>
+        </aside>
+      </Container>
       <ActionBanner />
-    </Container>
+    </>
   );
 }

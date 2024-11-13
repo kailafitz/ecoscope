@@ -110,9 +110,7 @@ const Service = () => {
           </div>
         </Container>
       </div>
-      <Container py>
-        <ActionBanner />
-      </Container>
+      <ActionBanner />
     </>
   );
 };

@@ -36,9 +36,7 @@ const AboutUs = () => {
         </Container>
       </div>
       <WhatWeDo />
-      <Container py>
-        <ActionBanner />
-      </Container>
+      <ActionBanner />
       <MeetOurFounder />
     </>
   );

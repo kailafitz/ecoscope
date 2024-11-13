@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import Container from "./Container";
 
 type Props = {
   mt?: boolean;
@@ -7,11 +8,7 @@ type Props = {
 
 const ActionBanner = (props: Props) => {
   return (
-    <div
-      className={`flex flex-col justify-center w-full gap-y-5 ${
-        props.mt ? "mt-20" : ""
-      }`}
-    >
+    <Container py className={"flex flex-col justify-center gap-y-5"}>
       <div className="bg-primary w-full h-px mb-10"></div>
       <p className="text-center text-2xl font-heading">
         Start the Conversation
@@ -26,7 +23,7 @@ const ActionBanner = (props: Props) => {
           Book a Consultation
         </Button>
       </div>
-    </div>
+    </Container>
   );
 };
 

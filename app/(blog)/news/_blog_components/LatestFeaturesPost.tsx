@@ -5,6 +5,7 @@ import Link from "next/link";
 import CoverImage from "./CoverImage";
 import { HeroQueryResult } from "@/sanity.types";
 import Author from "./Author";
+import { H3 } from "@/app/_custom_components/Headings";
 
 const LatestFeaturesPost = ({
   title,
@@ -18,20 +19,18 @@ const LatestFeaturesPost = ({
   "title" | "coverImage" | "date" | "excerpt" | "author" | "slug"
 >) => {
   return (
-    <article className="flex flex-col md:flex-row mb-16">
+    <article className="flex flex-col md:flex-row mb-16 shadow-xl rounded-lg">
       <Link
         className="group block w-full md:w-2/3"
         href={`/news/posts/${slug}`}
       >
         <CoverImage feature image={coverImage} priority />
       </Link>
-      <div className="md:w-1/3 flex flex-col p-6 bg-transparent-primary rounded-b-lg md:rounded-r-lg md:rounded-bl-none">
+      <div className="md:w-1/3 flex flex-col p-6">
         <div>
-          <h3 className="text-pretty mb-1 text-2xl leading-tight">
-            <Link href={`/news/posts/${slug}`} className="font-heading">
-              {title} Title
-            </Link>
-          </h3>
+          <H3>
+            <Link href={`/news/posts/${slug}`}>{title} Title</Link>
+          </H3>
           {/* <p className="mb-6 font-heading opacity-70">Film and Television</p> */}
           <div className="mb-4 text-sm">
             <DateComponent dateString={date} />
@@ -45,7 +44,7 @@ const LatestFeaturesPost = ({
               varius. Duis eu pretium felis a semper et.
             </p>
           )}
-          <EcoscopeButton variant="secondary" href={`/news/posts/${slug}`}>
+          <EcoscopeButton href={`/news/posts/${slug}`}>
             Read more
           </EcoscopeButton>
           {/* {author && <Author name={author.name} picture={author.picture} />} */}

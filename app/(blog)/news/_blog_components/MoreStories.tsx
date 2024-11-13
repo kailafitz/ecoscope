@@ -62,10 +62,10 @@ const MoreStoriesData = async (params: { skip: string; limit: number }) => {
 
     return (
       <>
-        <CarouselItem className="sm:basis-96 lg:hidden">
+        {/* <CarouselItem className="sm:basis-96 lg:hidden">
           {NewsCards}
-        </CarouselItem>
-        {/* {NewsCards} */}
+        </CarouselItem> */}
+        {NewsCards}
       </>
     );
   });

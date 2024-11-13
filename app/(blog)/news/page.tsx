@@ -23,26 +23,28 @@ export default async function Page() {
   ]);
 
   return (
-    <Container py>
-      <Intro />
-      {heroPost && (
-        <LatestFeaturesPost
-          title={heroPost.title}
-          slug={heroPost.slug}
-          coverImage={heroPost.coverImage}
-          excerpt={heroPost.excerpt}
-          date={heroPost.date}
-          author={heroPost.author}
-        />
-      )}
-      {heroPost?._id && (
-        <aside>
-          <Suspense>
-            <MoreStories skip={heroPost._id} limit={10} />
-          </Suspense>
-        </aside>
-      )}
+    <>
+      <Container py>
+        <Intro />
+        {heroPost && (
+          <LatestFeaturesPost
+            title={heroPost.title}
+            slug={heroPost.slug}
+            coverImage={heroPost.coverImage}
+            excerpt={heroPost.excerpt}
+            date={heroPost.date}
+            author={heroPost.author}
+          />
+        )}
+        {heroPost?._id && (
+          <aside>
+            <Suspense>
+              <MoreStories skip={heroPost._id} limit={10} />
+            </Suspense>
+          </aside>
+        )}
+      </Container>
       <ActionBanner mt />
-    </Container>
+    </>
   );
 }
