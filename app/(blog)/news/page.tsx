@@ -13,6 +13,14 @@ import DateComponent from "./_blog_components/Date";
 import Avatar from "./_blog_components/Author";
 import Intro from "./_blog_components/Intro";
 import LatestFeaturesPost from "./_blog_components/LatestFeaturesPost";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import Button from "../../_custom_components/Button";
 
 export default async function Page() {
   const [settings, heroPost] = await Promise.all([
@@ -36,6 +44,19 @@ export default async function Page() {
             author={heroPost.author}
           />
         )}
+        <div className="w-full sm:w-1/3 md:w-1/5 lg:w-1/6 mb-10">
+          <Select>
+            <SelectTrigger>
+              <SelectValue placeholder="Filter" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="film">Film</SelectItem>
+              <SelectItem value="commercial">Commercial</SelectItem>
+              <SelectItem value="hospitality">Hospitality</SelectItem>
+              <SelectItem value="other">Other</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
         {heroPost?._id && (
           <aside>
             <Suspense>

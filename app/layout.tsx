@@ -1,6 +1,4 @@
 import "./globals.css";
-
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import {
   VisualEditing,
@@ -19,6 +17,7 @@ import { cn } from "@/lib/utils";
 import { open, varela } from "@/lib/fonts";
 import Navigation from "./_custom_components/Navigation";
 import Footer from "./_custom_components/Footer";
+import AlertBanner from "./(blog)/alert-banner";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -57,17 +56,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={"bg-white text-black scroll-smooth"}>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-body antialiased flex flex-col HOME LAYOUT",
-          open
-        )}
-      >
-        <Navigation />
-        <main className={`${varela} flex-1 flex flex-col`}>{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <>
+      {draftMode().isEnabled && <AlertBanner />}
+
+      <html lang="en" className={"bg-white text-black scroll-smooth"}>
+        <body
+          className={cn(
+            "min-h-screen bg-background font-body antialiased flex flex-col HOME LAYOUT",
+            open
+          )}
+        >
+          <Navigation />
+          <main className={`${varela} flex-1 flex flex-col`}>{children}</main>
+          <Footer />
+        </body>
+      </html>
+
+      {draftMode().isEnabled && <VisualEditing />}
+    </>
   );
 }

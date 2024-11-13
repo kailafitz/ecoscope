@@ -77,7 +77,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <>
-      <Container className="mx-auto px-5">
+      <Container className="mx-auto px-5" id="news-article">
         <h2 className="mt-10 mb-3 text-xl font-heading opacity-50 leading-tight tracking-tight md:text-2xl md:tracking-tighter">
           <Link href="/news" className="hover:underline">
             Back to News

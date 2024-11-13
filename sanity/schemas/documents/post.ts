@@ -41,6 +41,19 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "industry",
+      title: "Industry",
+      type: "text",
+      options: {
+        list: [
+          { title: "Film", value: "film" },
+          { title: "Commercial", value: "commercial" },
+          { title: "Hospitality", value: "hospitality" },
+          { title: "Other", value: "other" }
+        ],
+      }
+    }),
+    defineField({
       name: "content",
       title: "Content",
       type: "array",

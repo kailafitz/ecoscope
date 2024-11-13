@@ -9,7 +9,7 @@ const News = () => {
       <div>
         <H2
           mb
-          subtitle="Get insights into our company and the ever-growing industry of sustainabiliy in business"
+          subtitle="Get insights into our company and the ever-growing industry of sustainability in business"
         >
           Explore our News
         </H2>

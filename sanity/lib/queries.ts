@@ -27,3 +27,8 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug] [0] {
   content,
   ${postFields}
 }`;
+
+export const filmPostQuery = groq`*[industry == "film"] [0] {
+  content,
+  ${postFields}
+}`;

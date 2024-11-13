@@ -124,6 +124,11 @@
   left: 0;
 }
 
-.max-w-80 {
-  max-width: 80%;
+#news-article ul {
+  margin-left: 3rem;
+
+  li {
+    list-style-type: disc;
+    padding-left: 10px;
+  }
 }

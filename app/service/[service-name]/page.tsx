@@ -34,7 +34,6 @@ const Service = () => {
   useEffect(() => {
     let key: string = params["service-name"][0];
     setService(data[key as keyof typeof data]);
-    // console.log(key);
   });
 
   return (
