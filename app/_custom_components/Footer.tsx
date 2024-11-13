@@ -21,8 +21,14 @@ const Footer = () => {
               <Link href="/news" className="text-white">
                 News
               </Link>
+              <Link href="/faqs" className="text-white">
+                FAQs
+              </Link>
               <Link href="/research-and-development" className="text-white">
                 Research and Development
+              </Link>
+              <Link href="/terms-and-conditions" className="text-white">
+                Terms and Conditions
               </Link>
             </div>
             <div className="w-full text-white flex flex-row justify-between pt-6">
