@@ -36,10 +36,14 @@ const ContactUs = () => {
 
               <p>Dublin, Ireland</p>
             </div>
-            <div className="w-full md:w-fit flex flex-row items-center justify-end">
-              <MailIcon className="w-8 mr-2 text-primary" />
-
-              <a href="mailto:info@ecoscope.ie">info@ecoscope.ie</a>
+            <div className="w-full md:w-fit">
+              <a
+                className=" flex flex-row items-center justify-end"
+                href="mailto:info@ecoscope.ie"
+              >
+                <MailIcon className="w-8 mr-2 text-primary" />
+                info@ecoscope.ie
+              </a>
             </div>
           </div>
         </div>

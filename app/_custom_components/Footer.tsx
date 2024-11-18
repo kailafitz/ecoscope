@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-row justify-end opacity-65 pt-10 md:pt-0">
-            <p className="text-white text-right [&_svg]:w-4 [&_svg]:mr-1 flex flex-row items-center">
+            <p className="text-white text-sm text-right [&_svg]:w-3.5 [&_svg]:mr-1 [&_svg]:mt-0.5 flex flex-row items-center">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -67,7 +67,7 @@ const Footer = () => {
                   strokeLinecap="round"
                 />
               </svg>{" "}
-              copyright {year}
+              copyright Ecoscope {year}
             </p>
           </div>
         </div>

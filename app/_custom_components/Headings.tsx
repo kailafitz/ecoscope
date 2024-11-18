@@ -82,11 +82,11 @@ export const H3 = (props: Props) => {
 export const H4 = (props: Props) => {
   return (
     <>
-      <h3
+      <h4
         className={`font-heading text-2xl md:text-3xl ${props.mb && !props.subtitle && mb} ${props.subtitle && "mb-3"} ${props.className} `}
       >
         {props.children}
-      </h3>
+      </h4>
       {props.subtitle && (
         <p className={`text-md md:text-lg ${props.mb && props.subtitle && mb}`}>
           {props.subtitle}

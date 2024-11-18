@@ -1,6 +1,6 @@
 "use client";
-import { Skeleton } from "@/components/ui/skeleton";
-import React, { useState } from "react";
+import React, { useRef, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -37,15 +37,51 @@ const BookingForm = (props: Props) => {
       email: "",
       phone: "",
       companyName: "",
-      industry: "Film",
-      companySize: "0-10",
+      industry: undefined,
+      companySize: undefined,
       message: "",
     },
   });
 
+  const test = form.watch();
+
+  useEffect(() => {
+    console.log("watch ", test);
+    console.log(form.formState.errors);
+  }, [test]);
+
+  const formRef = useRef(null);
+
+  const onSubmit = () => {
+    if (formRef.current) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+          // "service_5ray5ke",
+          // "template_rl67ufg",
+          formRef.current,
+          {
+            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+          }
+        )
+        .then(
+          () => {
+            form.reset(); // clear the fields after submission
+          },
+          (error) => {
+            console.warn("FAILED...", JSON.stringify(error));
+          }
+        );
+    }
+  };
+
   return (
     <Form {...form}>
       <form
+        noValidate
+        ref={formRef}
+        onSubmit={form.handleSubmit(onSubmit)}
         className={`flex-1 grid grid-cols-1 ${props.homepage ? "md:grid-cols-3" : "md:grid-cols-1 lg:grid-cols-2"} gap-x-5 gap-y-10 sm:gap-x-10`}
         id="booking-form"
       >
@@ -54,60 +90,12 @@ const BookingForm = (props: Props) => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              {/* <FormLabel>Name</FormLabel> */}
-              <FormControl>
-                <Input type="text" id="name" placeholder="Name" {...field} />
-              </FormControl>
-              {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              {/* <FormLabel>Email</FormLabel> */}
-              <FormControl>
-                <Input type="email" id="email" placeholder="Email" {...field} />
-              </FormControl>
-              {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="phone"
-          render={({ field }) => (
-            <FormItem>
-              {/* <FormLabel>Phone</FormLabel> */}
-              <FormControl>
-                <Input type="tel" id="phone" placeholder="Phone" {...field} />
-              </FormControl>
-              {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="companyName"
-          render={({ field }) => (
-            <FormItem>
-              {/* <FormLabel>Company Name</FormLabel> */}
+              <FormLabel>* Name</FormLabel>
               <FormControl>
                 <Input
                   type="text"
-                  id="company-name"
-                  placeholder="Company Name"
+                  id="name"
+                  placeholder="Hi there!"
                   {...field}
                 />
               </FormControl>
@@ -123,10 +111,73 @@ const BookingForm = (props: Props) => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              {/* <FormLabel>Industry</FormLabel> */}
-              <Select>
+              <FormLabel>* Email</FormLabel>
+              <FormControl>
+                <Input
+                  type="email"
+                  id="email"
+                  placeholder="xxxx@xxx.xxxx"
+                  {...field}
+                />
+              </FormControl>
+              {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>* Phone</FormLabel>
+              <FormControl>
+                <Input
+                  type="tel"
+                  id="phone"
+                  placeholder="+123456789"
+                  {...field}
+                />
+              </FormControl>
+              {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="companyName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>* Company Name</FormLabel>
+              <FormControl>
+                <Input
+                  type="text"
+                  id="company-name"
+                  placeholder=""
+                  {...field}
+                />
+              </FormControl>
+              {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="industry"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>* Industry</FormLabel>
+              <Select onValueChange={field.onChange}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Industry" />
+                  <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="film">Film</SelectItem>
@@ -144,10 +195,10 @@ const BookingForm = (props: Props) => {
           name="companySize"
           render={({ field }) => (
             <FormItem>
-              {/* <FormLabel>Company Size</FormLabel> */}
-              <Select>
+              <FormLabel>* Company Size</FormLabel>
+              <Select onValueChange={field.onChange}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Company Size" />
+                  <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="0-10">0-10</SelectItem>
@@ -169,17 +220,17 @@ const BookingForm = (props: Props) => {
           name="certification"
           render={({ field }) => (
             <FormItem>
-              {/* <FormLabel>Certification</FormLabel> */}
+              <FormLabel>Certification</FormLabel>
               <FormControl>
                 <Input
                   type="text"
                   id="certification"
-                  placeholder="Certification"
+                  placeholder="ESG, CPD, etc."
                   {...field}
                 />
               </FormControl>
               {/* <FormDescription>
-                This is your public display name.
+                Is there a particular certification 
               </FormDescription> */}
               <FormMessage />
             </FormItem>
@@ -192,17 +243,17 @@ const BookingForm = (props: Props) => {
           name="message"
           render={({ field }) => (
             <FormItem className="md:col-span-2">
-              {/* <FormLabel>Message</FormLabel> */}
+              <FormLabel>More Information</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Tell us a little bit more..."
+                  placeholder="Write your messager here"
                   className="resize-none"
                   {...field}
                 />
               </FormControl>
-              {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
+              <FormDescription>
+                Please inform us of any other important information
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
