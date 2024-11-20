@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import emailjs from "@emailjs/browser";
 import { Input } from "@/components/ui/input";
 import {
@@ -18,7 +18,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { formSchema } from "./FormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -29,58 +29,54 @@ type Props = {
   homepage?: boolean;
 };
 
+const defaultValues = {
+  name: "",
+  email: "",
+  phone: "",
+  companyName: "",
+  certification: "",
+  industry: undefined,
+  companySize: undefined,
+  message: "",
+};
+
 const BookingForm = (props: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      companyName: "",
-      industry: undefined,
-      companySize: undefined,
-      message: "",
-    },
+    defaultValues: defaultValues,
   });
 
-  const test = form.watch();
-
-  useEffect(() => {
-    console.log("watch ", test);
-    console.log(form.formState.errors);
-  }, [test]);
-
-  const formRef = useRef(null);
-
   const onSubmit = () => {
-    if (formRef.current) {
-      emailjs
-        .sendForm(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-          // "service_5ray5ke",
-          // "template_rl67ufg",
-          formRef.current,
-          {
-            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-          }
-        )
-        .then(
-          () => {
-            form.reset(); // clear the fields after submission
-          },
-          (error) => {
-            console.warn("FAILED...", JSON.stringify(error));
-          }
-        );
-    }
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        form.getValues(),
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          form.reset(defaultValues); // clear the fields after submission
+        },
+        (error) => {
+          console.warn("FAILED...", JSON.stringify(error));
+        }
+      );
+    // }
   };
+
+  // const wrapperFunction = (e: React.FormEvent<HTMLFormElement>) => {
+  //   console.log("Hi");
+  //   e.preventDefault();
+  //   form.handleSubmit(onSubmit);
+  // };
 
   return (
     <Form {...form}>
       <form
         noValidate
-        ref={formRef}
         onSubmit={form.handleSubmit(onSubmit)}
         className={`flex-1 grid grid-cols-1 ${props.homepage ? "md:grid-cols-3" : "md:grid-cols-1 lg:grid-cols-2"} gap-x-5 gap-y-10 sm:gap-x-10`}
         id="booking-form"
@@ -137,7 +133,7 @@ const BookingForm = (props: Props) => {
                 <Input
                   type="tel"
                   id="phone"
-                  placeholder="+123456789"
+                  placeholder="1234567890"
                   {...field}
                 />
               </FormControl>
@@ -173,9 +169,9 @@ const BookingForm = (props: Props) => {
           control={form.control}
           name="industry"
           render={({ field }) => (
-            <FormItem>
+            <FormItem key={field.value}>
               <FormLabel>* Industry</FormLabel>
-              <Select onValueChange={field.onChange}>
+              <Select onValueChange={field.onChange} value={field.value}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
@@ -194,9 +190,9 @@ const BookingForm = (props: Props) => {
           control={form.control}
           name="companySize"
           render={({ field }) => (
-            <FormItem>
+            <FormItem key={field.value}>
               <FormLabel>* Company Size</FormLabel>
-              <Select onValueChange={field.onChange}>
+              <Select onValueChange={field.onChange} value={field.value}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
@@ -246,6 +242,7 @@ const BookingForm = (props: Props) => {
               <FormLabel>More Information</FormLabel>
               <FormControl>
                 <Textarea
+                  // defaultValue={field.value}
                   placeholder="Write your messager here"
                   className="resize-none"
                   {...field}
