@@ -1,22 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Container from "@/app/_custom_components/Container";
-import { DualHeading } from "@/app/_custom_components/Headings";
+import { DualHeading, H2 } from "@/app/_custom_components/Headings";
 import { data } from "@/data";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
-
-// type Steps = {
-//   name: string;
-//   details: string;
-// };
-
-// type Props = {
-//   title: string;
-//   description: string;
-//   steps: Steps[];
-// };
 
 interface IProps {
   title: string;
@@ -38,7 +27,10 @@ const Service = () => {
 
   return (
     <>
-      <Container className="flex flex-col md:flex-row items-center justify-between py-20 gap-y-10">
+      <Container
+        mb
+        className="flex flex-col md:flex-row items-center justify-between gap-y-10"
+      >
         <div className="flex flex-col md:w-7/12">
           <DualHeading subtitle={service?.title}>Services</DualHeading>
           <p className="pt-10">
@@ -73,13 +65,8 @@ const Service = () => {
       </Container>
       <div className="relative w-full">
         <div className="bg-landscape absolute top-0 left-0 w-full h-full lg:h-1/2"></div>
-        <Container className="pb-20 pt-10 lg:pb-20">
-          <h1 className={`font-heading text-xl mb-0 relative z-20`}>
-            The Process
-          </h1>
-          <p className="text-3xl md:text-5xl text-white font-heading opacity-60 relative z-20 mb-20">
-            How It Works
-          </p>
+        <Container mb className="pt-20">
+          {/* <H2 className="z-20">How We Work</H2> */}
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {service?.steps.map((step, i) => {
               return (
@@ -87,7 +74,9 @@ const Service = () => {
                   key={`Service steps ${i}`}
                   className="bg-white rounded-lg z-20 relative p-5 shadow-xl"
                 >
-                  <p className="opacity-50 text-2xl font-heading">0{i + 1}</p>
+                  <p className="opacity-50 text-2xl text-primary font-heading">
+                    0{i + 1}
+                  </p>
                   <p className="text-xl mb-5">{step.name}</p>
                   <ul>
                     <li className="list-disc ml-5 text-sm">

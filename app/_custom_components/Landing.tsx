@@ -3,19 +3,12 @@ import LandingMontage from "./LandingMontage";
 import EcoscopeButton from "./Button";
 import Container from "./Container";
 import { H1 } from "./Headings";
-import Image from "next/image";
 
 const Landing = () => {
   return (
     <>
       <LandingMontage />
-      {/* <Image
-        src="/_assets/curve-background.png"
-        alt="curve"
-        height={800}
-        width={600}
-      /> */}
-      <div className="flex flex-col justify-end top-height relative">
+      <div className="flex flex-col justify-end top-height relative mb-16 md:mb-32">
         <div className="bg-curve block pt-32 -m-1">
           <Container className="pb-10">
             <div className="w-full md:w-fit">

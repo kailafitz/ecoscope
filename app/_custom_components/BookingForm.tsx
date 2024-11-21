@@ -1,5 +1,5 @@
 "use client";
-import React, { CSSProperties, useState } from "react";
+import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Input } from "@/components/ui/input";
 import {
@@ -24,7 +24,6 @@ import { formSchema } from "./FormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import ClipLoader from "react-spinners/ClipLoader";
 import { PhoneInput } from "./PhoneInput";
 import { Loader2 } from "lucide-react";
 
@@ -41,11 +40,6 @@ const defaultValues = {
   industry: undefined,
   companySize: undefined,
   message: "",
-};
-
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
 };
 
 const BookingForm = (props: Props) => {
@@ -79,8 +73,6 @@ const BookingForm = (props: Props) => {
         }
       );
   };
-
-  console.log(props.homepage);
 
   return (
     <Form {...form}>

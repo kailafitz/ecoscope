@@ -32,7 +32,7 @@ export default async function Page() {
 
   return (
     <>
-      <Container py>
+      <Container mb>
         <Intro />
         {heroPost && (
           <LatestFeaturesPost

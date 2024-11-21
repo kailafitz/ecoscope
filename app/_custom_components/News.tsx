@@ -5,7 +5,7 @@ import MoreStories from "../(blog)/news/_blog_components/MoreStories";
 
 const News = () => {
   return (
-    <Container className="py-32 px-0 md:min-h-screen flex flex-col justify-center text-center">
+    <Container mb className="px-0 flex flex-col justify-center text-center">
       <div>
         <H2
           mb

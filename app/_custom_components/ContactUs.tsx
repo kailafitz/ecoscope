@@ -8,7 +8,7 @@ import BookingForm from "./BookingForm";
 const ContactUs = () => {
   return (
     <>
-      <Container className="py-32 text-center">
+      <Container mb className="text-center">
         <H2
           mb
           subtitle="If you're interested in certifying your business today, fill out the
@@ -20,7 +20,7 @@ const ContactUs = () => {
           <BookingForm homepage />
         </div>
       </Container>
-      <Container className="w-full flex flex-row justify-end pb-32">
+      <Container mb className="w-full flex flex-row justify-end">
         <div className="w-full md:w-7/12">
           <H3 mb className="text-right">
             For any queries, contact us

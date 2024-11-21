@@ -14,7 +14,7 @@ export default function AlertBanner() {
   const shouldShow = useSyncExternalStore(
     emptySubscribe,
     () => window.top === window,
-    () => false,
+    () => false
   );
 
   if (!shouldShow) return null;
@@ -22,7 +22,7 @@ export default function AlertBanner() {
   return (
     <div
       className={`${
-        pending ? "animate-pulse" : ""
+        pending && "animate-pulse"
       } fixed top-0 left-0 z-50 w-full border-b bg-white/95 text-black backdrop-blur`}
     >
       <div className="py-2 text-center text-sm">
@@ -37,7 +37,7 @@ export default function AlertBanner() {
                 startTransition(() =>
                   disableDraftMode().then(() => {
                     router.refresh();
-                  }),
+                  })
                 )
               }
               className="hover:text-cyan underline transition-colors duration-200"

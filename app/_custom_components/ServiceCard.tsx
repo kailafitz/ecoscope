@@ -111,11 +111,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <Container
-      id="services"
-      py
-      className="flex flex-col justify-center pt-48 lg:py-0 lg:min-h-screen text-center"
-    >
+    <Container id="services" mb className="text-center">
       <H2 mb>Our Services</H2>
       <div className="flex flex-col lg:flex-row md:justify-evenly space-y-9 lg:space-y-0">
         {servicesData.map((service, i) => {
