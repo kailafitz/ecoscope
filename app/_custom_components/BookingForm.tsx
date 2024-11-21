@@ -80,12 +80,14 @@ const BookingForm = (props: Props) => {
       );
   };
 
+  console.log(props.homepage);
+
   return (
     <Form {...form}>
       <form
         noValidate
         onSubmit={form.handleSubmit(onSubmit)}
-        className={`flex-1 grid grid-cols-1 ${props.homepage ? "md:grid-cols-3" : "md:grid-cols-1 lg:grid-cols-2"} gap-x-5 gap-y-10 sm:gap-x-10`}
+        className={`flex-1 grid grid-cols-1 ${props.homepage ? "md:grid-cols-3" : "md:grid-cols-1 xl:grid-cols-2"} gap-x-5 gap-y-10 sm:gap-x-10`}
       >
         <FormField
           control={form.control}

@@ -19,17 +19,19 @@ type ServiceProps = {
 
 const ServiceCard = (props: ServiceProps) => {
   return (
-    <Card className="max-w-full w-[300px]">
-      <CardHeader className="text-center [&_svg]:block [&_svg]:mx-auto [&_svg]:w-28">
+    <Card className="max-w-full w-[300px] flex flex-col justify-between">
+      <CardHeader className="text-center [&_svg]:block [&_svg]:mx-auto [&_svg]:w-28 [&_svg]:h-28">
         {props.icon}
+      </CardHeader>
+      <div className="space-y-2.5 p-6">
         <CardTitle>{props.name}</CardTitle>
         <CardDescription>{props.description}</CardDescription>
-      </CardHeader>
-      <CardFooter>
-        <EcoscopeButton full href={props.href ? props.href : " "}>
-          Read more
-        </EcoscopeButton>
-      </CardFooter>
+        <CardFooter className="pt-2">
+          <EcoscopeButton full href={props.href ? props.href : " "}>
+            Read more
+          </EcoscopeButton>
+        </CardFooter>
+      </div>
     </Card>
   );
 };
@@ -111,10 +113,11 @@ const Services = () => {
   return (
     <Container
       id="services"
-      className="flex flex-col justify-center py-32 md:py-0 md:min-h-screen text-center"
+      py
+      className="flex flex-col justify-center pt-48 lg:py-0 lg:min-h-screen text-center"
     >
       <H2 mb>Our Services</H2>
-      <div className="flex flex-col lg:flex-row items-center md:justify-evenly space-y-9 lg:space-y-0">
+      <div className="flex flex-col lg:flex-row md:justify-evenly space-y-9 lg:space-y-0">
         {servicesData.map((service, i) => {
           let href = service?.name.replace(/ /g, "-").toLowerCase();
           return (

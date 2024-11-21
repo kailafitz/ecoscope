@@ -16,7 +16,7 @@ const Landing = () => {
         width={600}
       /> */}
       <div className="flex flex-col justify-end top-height relative">
-        <div className="bg-curve block pt-32">
+        <div className="bg-curve block pt-32 -m-1">
           <Container className="pb-10">
             <div className="w-full md:w-fit">
               <div className="table">
