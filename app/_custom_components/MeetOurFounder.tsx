@@ -7,7 +7,7 @@ import MailIcon from "./icons/MailIcon";
 
 const MeetOurFounder = () => {
   return (
-    <Container className="flex flex-col md:flex-row justify-between items-center pb-20 gap-y-10">
+    <Container className="flex flex-col md:flex-row justify-between items-center pb-20 gap-y-10 lg:pt-32">
       <div className="flex flex-col md:w-7/12">
         <DualHeading subtitle="Behind the Company">
           Meet our Founder

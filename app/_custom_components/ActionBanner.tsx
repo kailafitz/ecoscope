@@ -4,6 +4,7 @@ import Container from "./Container";
 
 type Props = {
   mt?: boolean;
+  bottomBorder?: boolean;
 };
 
 const ActionBanner = (props: Props) => {
@@ -23,6 +24,9 @@ const ActionBanner = (props: Props) => {
           Book a Consultation
         </Button>
       </div>
+      {props.bottomBorder && (
+        <div className="bg-primary w-full h-px mt-10"></div>
+      )}
     </Container>
   );
 };
