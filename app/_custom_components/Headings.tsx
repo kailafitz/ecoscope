@@ -52,7 +52,7 @@ export const H2 = (props: Props) => {
       </h2>
       {props.subtitle && (
         <p
-          className={`text-md md:text-lg w-full md:w-1/2 mx-auto ${props.mb && props.subtitle && mb}`}
+          className={`text-md md:text-lg w-full md:w-3/4 lg:w-1/2 mx-auto ${props.mb && props.subtitle && mb}`}
         >
           {props.subtitle}
         </p>
