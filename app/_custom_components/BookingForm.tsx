@@ -25,6 +25,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import ClipLoader from "react-spinners/ClipLoader";
+import { PhoneInput } from "./PhoneInput";
 
 type Props = {
   homepage?: boolean;
@@ -143,15 +144,16 @@ const BookingForm = (props: Props) => {
               control={form.control}
               name="phone"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="flex flex-col">
                   <FormLabel>* Phone</FormLabel>
                   <FormControl>
-                    <Input
+                    {/* <Input
                       type="tel"
                       id="phone"
                       placeholder="1234567890"
                       {...field}
-                    />
+                    /> */}
+                    <PhoneInput id="phone" defaultCountry="IE" {...field} />
                   </FormControl>
                   {/* <FormDescription>
                 This is your public display name.
@@ -188,7 +190,6 @@ const BookingForm = (props: Props) => {
                 <FormItem key={field.value}>
                   <FormLabel>* Industry</FormLabel>
                   <Select
-                    // onValueChange={field.onChange}
                     onValueChange={(value) => value && field.onChange(value)}
                     defaultValue={field.value}
                     value={field.value}

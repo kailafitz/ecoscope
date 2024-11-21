@@ -47,7 +47,6 @@ export const H2 = (props: Props) => {
     <>
       <h2
         className={`font-heading text-3xl md:text-5xl ${props.mb && !props.subtitle && mb} ${props.subtitle && "mb-3"} ${props.className} `}
-        {...props}
       >
         {props.children}
       </h2>

@@ -10,7 +10,6 @@ const ContactUs = () => {
     <>
       <Container className="py-32 text-center">
         <H2
-          id="booking-form"
           mb
           subtitle="If you're interested in certifying your business today, fill out the
           form below and our team will get back to you as soon as possible!"

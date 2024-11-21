@@ -23,9 +23,9 @@ export const formSchema = z.object({
       invalid_type_error: "Please do not use special characters",
       required_error: "Phone cannot be blank",
     })
-    .regex(/([0-9])\w+/g, "Please enter a valid phone number")
+    .regex(/^\+[1-9]\d{10,14}$/, "Please enter a valid phone number")
     .min(10, "Please enter a valid phone number")
-    .max(10, "Please enter a valid phone number"),
+    .max(14, "Please enter a valid phone number"),
   companyName: z
     .string({
       invalid_type_error: "Please do not use special characters",
