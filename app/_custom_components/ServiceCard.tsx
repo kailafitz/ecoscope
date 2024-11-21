@@ -114,7 +114,7 @@ const Services = () => {
       className="flex flex-col justify-center py-32 md:py-0 md:min-h-screen text-center"
     >
       <H2 mb>Our Services</H2>
-      <div className="flex flex-wrap flex-col md:flex-row items-center md:justify-evenly space-y-9 md:space-y-0">
+      <div className="flex flex-col lg:flex-row items-center md:justify-evenly space-y-9 lg:space-y-0">
         {servicesData.map((service, i) => {
           let href = service?.name.replace(/ /g, "-").toLowerCase();
           return (
