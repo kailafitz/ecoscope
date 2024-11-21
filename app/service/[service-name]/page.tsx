@@ -29,6 +29,7 @@ const Service = () => {
     <>
       <Container
         mb
+        topSectionPadding
         className="flex flex-col md:flex-row items-center justify-between gap-y-10"
       >
         <div className="flex flex-col md:w-7/12">

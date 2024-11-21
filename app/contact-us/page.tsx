@@ -6,7 +6,7 @@ import ContactDetails from "../_custom_components/ContactDetails";
 
 const ContactUs = () => {
   return (
-    <Container mb className="flex flex-col">
+    <Container mb topSectionPadding className="flex flex-col">
       <div className="flex flex-col">
         <H1 mb>Contact Us</H1>
         <div className="relative flex flex-col sm:flex-row sm:gap-x-14 gap-y-20 xl:gap-x-24 lg:gap-y-0">
