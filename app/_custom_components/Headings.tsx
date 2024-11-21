@@ -7,6 +7,7 @@ type Props = {
   className?: string;
   mb?: boolean;
   subtitle?: string;
+  id?: string;
 };
 
 export const DualHeading = (props: Props) => {
@@ -46,6 +47,7 @@ export const H2 = (props: Props) => {
     <>
       <h2
         className={`font-heading text-3xl md:text-5xl ${props.mb && !props.subtitle && mb} ${props.subtitle && "mb-3"} ${props.className} `}
+        {...props}
       >
         {props.children}
       </h2>
