@@ -9,10 +9,10 @@ const MeetOurFounder = () => {
   return (
     <Container mb>
       {/* <DualHeading subtitle="Behind the Company">Meet our Founder</DualHeading> */}
-      <H2>Meet our Founder</H2>
+      <H2 mb>Meet our Founder</H2>
       <div className="flex flex-col md:flex-row justify-between items-center gap-x-16 gap-y-10">
         <div className="flex flex-col">
-          <p className="py-10">
+          <p className="md:mb-10">
             Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id
             laoreet ultrices. Sit diam risus tempus dis amet varius. Duis eu
             pretium felis a semper et. Dignissim mauris commodo lectus ultrices
@@ -41,11 +41,12 @@ const MeetOurFounder = () => {
           alt="Headshot of Alexandra de Valera"
           width="400"
           height="400"
+          className="mb-10 md:mb-0"
         />
       </div>
 
       <div>
-        <div className="primary-gradient h-0.5 w-full rounded-full my-5"></div>
+        <div className="primary-gradient h-0.5 w-full rounded-full mb-10"></div>
         <p className="text-xl mb-3">Why not get in touch?</p>
         <div className="flex flex-row items-center gap-x-3">
           <MailIcon className="w-8 text-primary" />
