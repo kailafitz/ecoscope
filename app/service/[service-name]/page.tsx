@@ -30,9 +30,9 @@ const Service = () => {
       <Container
         mb
         topSectionPadding
-        className="flex flex-col md:flex-row items-center justify-between gap-y-10"
+        className="flex flex-col lg:flex-row items-center justify-between gap-x-16 gap-y-10"
       >
-        <div className="flex flex-col md:w-7/12">
+        <div className="flex flex-col lg:w-7/12">
           <DualHeading subtitle={service?.title}>Services</DualHeading>
           <p className="pt-10">
             Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id
@@ -61,10 +61,10 @@ const Service = () => {
           alt="Headshot of Alexandra de Valera"
           width="400"
           height="400"
-          className="h-fit"
+          className="rounded-full h-unset"
         />
       </Container>
-      <div className="relative w-full">
+      <div className="relative w-full mb-16 md:mb-32 lg:mb-0">
         <div className="bg-landscape absolute top-0 left-0 w-full h-full lg:h-1/2"></div>
         <Container mb className="pt-20">
           {/* <H2 className="z-20">How We Work</H2> */}
@@ -99,7 +99,7 @@ const Service = () => {
           </div>
         </Container>
       </div>
-      <ActionBanner />
+      <ActionBanner bottomBorder />
     </>
   );
 };

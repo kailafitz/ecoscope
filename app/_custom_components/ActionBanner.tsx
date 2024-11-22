@@ -13,7 +13,7 @@ const ActionBanner = (props: Props) => {
       <p className="text-center text-2xl font-heading">
         Start the Conversation
       </p>
-      <p className="text-md mx-auto md:w-1/3 text-center">
+      <p className="text-md mx-auto md:w-3/5 xl:w-1/3 text-center">
         Let’s talk about it. Get in touch to see how we can help you get started
         on your business sustainability goals.
       </p>

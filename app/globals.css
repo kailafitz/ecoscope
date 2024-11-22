@@ -80,6 +80,10 @@
   height: calc(100vh - 78.7px);
 }
 
+.h-unset {
+  height: revert-layer;
+}
+
 .content-links {
   a:not(:last-child) {
     padding-bottom: 1rem;
