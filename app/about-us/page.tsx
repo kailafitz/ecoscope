@@ -11,7 +11,7 @@ const AboutUs = () => {
       <div className="about-top relative w-full mb-16 md:mb-32">
         <div className="bg-primary top-0 left-0 absolute w-full h-full opacity-80" />
         <svg
-          className="absolute w-full bottom-0 right-0 -m-0 z-20"
+          className="absolute w-full bottom-0 right-0 -m-px z-20"
           viewBox="0 0 1827 77"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

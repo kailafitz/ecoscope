@@ -19,7 +19,7 @@ type ServiceProps = {
 
 const ServiceCard = (props: ServiceProps) => {
   return (
-    <Card className="max-w-full w-[300px] flex flex-col justify-between">
+    <Card className="max-w-full mx-auto w-[300px] flex flex-col justify-between">
       <CardHeader className="text-center [&_svg]:block [&_svg]:mx-auto [&_svg]:w-28 [&_svg]:h-28">
         {props.icon}
       </CardHeader>
