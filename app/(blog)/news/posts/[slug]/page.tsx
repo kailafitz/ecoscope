@@ -77,7 +77,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <>
-      <Container className="mx-auto px-5" id="news-article">
+      <Container mb className="mx-auto px-5" id="news-article">
         <h2 className="mt-10 mb-3 text-xl font-heading opacity-50 leading-tight tracking-tight md:text-2xl md:tracking-tighter">
           <Link href="/news" className="hover:underline">
             Back to News
@@ -124,19 +124,19 @@ export default async function PostPage({ params }: Props) {
         /> */}
           {post.content?.length && (
             <PortableText
-              className="mx-auto"
+              className="mx-auto mb-16 md:mb-32"
               value={post.content as PortableTextBlock[]}
             />
           )}
         </article>
-        <aside className="my-20">
+        <aside>
           <H3 mb>Other News Articles</H3>
           <Suspense>
             <MoreStories skip={post._id} limit={3} />
           </Suspense>
         </aside>
       </Container>
-      <ActionBanner />
+      <ActionBanner bottomBorder />
     </>
   );
 }

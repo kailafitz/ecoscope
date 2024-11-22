@@ -65,7 +65,7 @@ export default async function Page() {
           </aside>
         )}
       </Container>
-      <ActionBanner mt />
+      <ActionBanner bottomBorder />
     </>
   );
 }
