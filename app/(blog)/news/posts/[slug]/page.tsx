@@ -82,7 +82,7 @@ export default async function PostPage({ params }: Props) {
             Back to News
           </Link> */}
         <article>
-          <p className="text-primary">{post.industry}</p>
+          <p className="text-primary mb-2">{post.industry}</p>
           <H1 className="mb-5">{post.title}</H1>
           {post.excerpt && <H3 className="mb-10">{post.excerpt}</H3>}
           <div className="hidden md:mb-6 md:block">
