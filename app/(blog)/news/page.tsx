@@ -1,16 +1,11 @@
 import Link from "next/link";
 import { Suspense } from "react";
-
 import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 import Container from "../../_custom_components/Container";
 import ActionBanner from "../../_custom_components/ActionBanner";
-import EcoscopeButton from "../../_custom_components/Button";
-import CoverImage from "./_blog_components/CoverImage";
 import MoreStories from "./_blog_components/MoreStories";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import DateComponent from "./_blog_components/Date";
-import Avatar from "./_blog_components/Author";
 import Intro from "./_blog_components/Intro";
 import LatestFeaturesPost from "./_blog_components/LatestFeaturesPost";
 import {
@@ -20,7 +15,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Button from "../../_custom_components/Button";
 import { H3 } from "@/app/_custom_components/Headings";
 
 export default async function Page() {

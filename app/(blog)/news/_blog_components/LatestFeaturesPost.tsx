@@ -4,7 +4,6 @@ import DateComponent from "./Date";
 import Link from "next/link";
 import CoverImage from "./CoverImage";
 import { HeroQueryResult } from "@/sanity.types";
-
 import { H3 } from "@/app/_custom_components/Headings";
 
 const LatestFeaturesPost = ({
