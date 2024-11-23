@@ -55,6 +55,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  console.log("Hi ", draftMode().isEnabled);
   return (
     <>
       {draftMode().isEnabled && <AlertBanner />}
