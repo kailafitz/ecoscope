@@ -1,4 +1,4 @@
-import { FilmPostQueryResult } from "@/sanity.types";
+import { FilmPostsQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { filmPostsQuery } from "@/sanity/lib/queries";
 import React from "react";
@@ -9,7 +9,7 @@ const MoreFilmStoriesData = async (params: {
   limit: number;
   industry: string;
 }) => {
-  const data = await sanityFetch<FilmPostQueryResult>({
+  const data = await sanityFetch<FilmPostsQueryResult>({
     query: filmPostsQuery,
     params,
   });
