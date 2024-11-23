@@ -22,6 +22,7 @@ import Container from "@/app/_custom_components/Container";
 import { H1, H2, H3 } from "@/app/_custom_components/Headings";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
 import ShareButtons from "../../_blog_components/ShareButtons";
+import MoreFilmStories from "../../_blog_components/MoreSimilarStories";
 
 type Props = {
   params: { slug: string };
@@ -119,6 +120,17 @@ export default async function PostPage({ params }: Props) {
             />
           )}
         </article>
+        {/* <aside>
+          <H3 mb>Other Film Articles</H3>
+          <Suspense>
+            <MoreFilmStories
+              skip={post._id}
+              limit={3}
+              industry={post.industry!}
+            />
+          </Suspense>
+        </aside> */}
+
         <aside>
           <H3 mb>Other News Articles</H3>
           <Suspense>

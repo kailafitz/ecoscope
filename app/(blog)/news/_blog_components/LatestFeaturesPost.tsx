@@ -17,7 +17,6 @@ const LatestFeaturesPost = ({
   Exclude<HeroQueryResult, null>,
   "title" | "coverImage" | "date" | "excerpt" | "author" | "slug" | "industry"
 >) => {
-  console.log(industry);
   return (
     <article className="flex flex-col md:flex-row mb-16 shadow-xl rounded-lg">
       <Link
