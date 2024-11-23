@@ -8,12 +8,14 @@ import {
   SanityImageCrop,
   SanityImageHotspot,
 } from "@/sanity.types";
+import DateComponent from "./Date";
 
 type Props = {
   _id: string;
   title: string;
   slug: string | null;
   industry: string | null;
+  date: string;
   coverImage: {
     asset?: {
       _ref: string;
@@ -42,12 +44,17 @@ const NewsCard = (props: Props) => {
           <CoverImage image={props.coverImage} priority={false} />
         </Link>
         <div className="h-full flex flex-col justify-end">
-          <div className="bg-transparent-primary backdrop-blur bottom-0 flex flex-col justify-between group-hover:justify-center p-5 rounded-b-lg h-44 sm:h-32 group-hover:h-full group-hover:rounded-t-lg group-hover:transition-all transition-all">
-            <h3 className="text-balance mb-5 text-3xl leading-snug font-heading text-white group-hover:hidden">
-              <Link href={`/posts/${props.slug}`} className="hover:underline">
-                {props.title}
-              </Link>
-            </h3>
+          <div className="bg-transparent-primary backdrop-blur bottom-0 flex flex-col justify-between group-hover:justify-center p-5 rounded-b-lg h-44 sm:h-36 group-hover:h-full group-hover:rounded-t-lg group-hover:transition-all transition-all">
+            <div>
+              <h3 className="text-balance text-3xl leading-snug font-heading text-white group-hover:hidden">
+                <Link href={`/posts/${props.slug}`} className="hover:underline">
+                  {props.title}
+                </Link>
+              </h3>
+              <div className="text-base text-white group-hover:hidden">
+                <DateComponent dateString={props.date} />
+              </div>
+            </div>
             <p className="font-body text-lg md:text-sm text-white group-hover:hidden">
               {props.industry}
             </p>
@@ -59,15 +66,6 @@ const NewsCard = (props: Props) => {
             </EcoscopeButton>
           </div>
         </div>
-        {/* <div className="mb-4 text-lg">
-                <DateComponent dateString={post.date} />
-              </div> */}
-        {/* {excerpt && (
-                  <p className="text-pretty mb-4 text-lg leading-relaxed">
-                    {excerpt}
-                  </p>
-                )} */}
-        {/* {author && <Author name={author.name} picture={author.picture} />} */}
       </Card>
     </article>
   );
