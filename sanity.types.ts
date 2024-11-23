@@ -518,7 +518,7 @@ export type MoreStoriesQueryResult = Array<{
     alt?: string;
     _type: "image";
   } | null;
-  industry: "Film" | "Commercial" | "Hospitality" | "Other";
+  industry: string | null;
   date: string;
   author: {
     name: string | "Anonymous";

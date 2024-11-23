@@ -13,6 +13,7 @@ import {
   type PortableTextComponents,
   type PortableTextBlock,
 } from "next-sanity";
+import { H4 } from "../_custom_components/Headings";
 
 export default function CustomPortableText({
   className,
@@ -23,11 +24,13 @@ export default function CustomPortableText({
 }) {
   const components: PortableTextComponents = {
     block: {
+      normal: ({ children }) => <p className="mb-5">{children}</p>,
+      h4: ({ children }) => <H4 className="mt-10 mb-4">{children}</H4>,
       h5: ({ children }) => (
-        <h5 className="mb-2 text-sm font-semibold">{children}</h5>
+        <h5 className="mt-4 mb-1 font-medium font-body">{children}</h5>
       ),
       h6: ({ children }) => (
-        <h6 className="mb-1 text-xs font-semibold">{children}</h6>
+        <h6 className="mt-4 mb-1 font-medium font-body">{children}</h6>
       ),
     },
     marks: {

@@ -128,11 +128,14 @@
   left: 0;
 }
 
-#news-article ul {
-  margin-left: 3rem;
+#news-article {
+  ul {
+    margin-left: 3rem;
+  }
 
   li {
     list-style-type: disc;
     padding-left: 10px;
+    line-height: 2;
   }
 }
