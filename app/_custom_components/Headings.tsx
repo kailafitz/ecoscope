@@ -7,6 +7,7 @@ type Props = {
   className?: string;
   mb?: boolean;
   subtitle?: string;
+  left?: boolean;
   id?: string;
 };
 
@@ -33,7 +34,7 @@ export const H1 = (props: Props) => {
       </h1>
       {props.subtitle && (
         <p
-          className={`text-md md:text-lg w-full md:w-1/2 mx-auto ${props.mb && props.subtitle && mb}`}
+          className={`text-md md:text-lg w-full md:w-1/2 ${!props.left && "mx-auto"} ${props.mb && props.subtitle && mb}`}
         >
           {props.subtitle}
         </p>

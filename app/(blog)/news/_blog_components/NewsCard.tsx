@@ -13,6 +13,7 @@ type Props = {
   _id: string;
   title: string;
   slug: string | null;
+  industry: "Film" | "Commercial" | "Hospitality" | "Other";
   coverImage: {
     asset?: {
       _ref: string;
@@ -48,7 +49,7 @@ const NewsCard = (props: Props) => {
               </Link>
             </h3>
             <p className="font-body text-lg md:text-sm text-white group-hover:hidden">
-              Film and Production
+              {props.industry}
             </p>
             <EcoscopeButton
               className="hidden group-hover:block text-center"

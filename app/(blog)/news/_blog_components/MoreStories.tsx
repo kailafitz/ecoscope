@@ -48,7 +48,8 @@ const MoreStoriesData = async (params: { skip: string; limit: number }) => {
   });
 
   return data?.map((post) => {
-    const { _id, title, slug, coverImage, excerpt, author, date } = post;
+    const { _id, title, slug, coverImage, industry, excerpt, author, date } =
+      post;
 
     const NewsCards = (
       <NewsCard
@@ -57,6 +58,7 @@ const MoreStoriesData = async (params: { skip: string; limit: number }) => {
         title={title}
         slug={slug}
         coverImage={coverImage}
+        industry={industry}
       />
     );
 

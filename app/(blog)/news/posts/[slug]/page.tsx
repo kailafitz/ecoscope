@@ -19,7 +19,7 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { postQuery, settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Container from "@/app/_custom_components/Container";
-import { H1, H3 } from "@/app/_custom_components/Headings";
+import { H1, H2, H3 } from "@/app/_custom_components/Headings";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
 import ShareButtons from "../../_blog_components/ShareButtons";
 
@@ -77,23 +77,18 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <>
-      <Container mb className="mx-auto px-5" id="news-article">
-        <h2 className="mt-10 mb-3 text-xl font-heading opacity-50 leading-tight tracking-tight md:text-2xl md:tracking-tighter">
-          <Link href="/news" className="hover:underline">
+      <Container mb topSectionPadding id="news-article">
+        {/* <Link href="/news" className="hover:underline">
             Back to News
-          </Link>
-        </h2>
+          </Link> */}
         <article>
-          <H1
-            mb
-            className="text-balance font-heading text-2xl leading-tight tracking-tighter md:text-4xl md:leading-none"
-          >
-            {post.title}
-          </H1>
+          <p className="text-primary">{post.industry}</p>
+          <H1 className="mb-5">{post.title}</H1>
+          {post.excerpt && <H3 className="mb-10">{post.excerpt}</H3>}
           <div className="hidden md:mb-6 md:block">
-            {post.author && (
+            {/* {post.author && (
               <Avatar name={post.author.name} picture={post.author.picture} />
-            )}
+            )} */}
             <div className="my-6 text-lg">
               <div className="mb-4 text-lg">
                 <DateComponent dateString={post.date} />
@@ -117,11 +112,6 @@ export default async function PostPage({ params }: Props) {
             value={post.content as PortableTextBlock[]}
           />
         )} */}
-          {/* <FacebookShareButton
-          hashtag="ecoscope"
-          url={`https://ecoscope/news/posts/${post.slug}`}
-          children={undefined}
-        /> */}
           {post.content?.length && (
             <PortableText
               className="mx-auto mb-16 md:mb-32"

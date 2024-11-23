@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import Button from "../../_custom_components/Button";
+import { H3 } from "@/app/_custom_components/Headings";
 
 export default async function Page() {
   const [settings, heroPost] = await Promise.all([
@@ -32,8 +33,10 @@ export default async function Page() {
 
   return (
     <>
-      <Container mb>
+      <Container mb topSectionPadding>
         <Intro />
+        <H3 className="mb-4">Latest Story</H3>
+        <hr className="w-full border-primary mb-10" />
         {heroPost && (
           <LatestFeaturesPost
             title={heroPost.title}
