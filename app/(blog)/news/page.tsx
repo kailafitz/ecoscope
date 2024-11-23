@@ -45,6 +45,7 @@ export default async function Page() {
             excerpt={heroPost.excerpt}
             date={heroPost.date}
             author={heroPost.author}
+            industry={heroPost.industry}
           />
         )}
         <div className="w-full sm:w-1/3 md:w-1/5 lg:w-1/6 mb-10">

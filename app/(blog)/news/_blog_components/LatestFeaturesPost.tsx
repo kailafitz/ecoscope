@@ -4,7 +4,7 @@ import DateComponent from "./Date";
 import Link from "next/link";
 import CoverImage from "./CoverImage";
 import { HeroQueryResult } from "@/sanity.types";
-import Author from "./Author";
+
 import { H3 } from "@/app/_custom_components/Headings";
 
 const LatestFeaturesPost = ({
@@ -13,11 +13,12 @@ const LatestFeaturesPost = ({
   excerpt,
   coverImage,
   date,
-  author,
+  industry,
 }: Pick<
   Exclude<HeroQueryResult, null>,
-  "title" | "coverImage" | "date" | "excerpt" | "author" | "slug"
+  "title" | "coverImage" | "date" | "excerpt" | "author" | "slug" | "industry"
 >) => {
+  console.log(industry);
   return (
     <article className="flex flex-col md:flex-row mb-16 shadow-xl rounded-lg">
       <Link
@@ -28,26 +29,21 @@ const LatestFeaturesPost = ({
       </Link>
       <div className="md:w-1/3 flex flex-col p-6">
         <div>
-          <H3>
-            <Link href={`/news/posts/${slug}`}>{title} Title</Link>
+          <p className="text-primary mb-1">{industry}</p>
+          <H3 className="mb-3">
+            <Link href={`/news/posts/${slug}`}>{title}</Link>
           </H3>
-          {/* <p className="mb-6 font-heading opacity-70">Film and Television</p> */}
-          <div className="mb-4 text-sm">
+          <div>
             <DateComponent dateString={date} />
           </div>
         </div>
         <div className="flex flex-1 flex-col justify-between">
           {excerpt && (
-            <p className="text-pretty mb-4 leading-relaxed">
-              {excerpt} Lorem ipsum dolor sit amet consectetur. Vestibulum
-              aliquam semper id laoreet ultrices. Sit diam risus tempus dis amet
-              varius. Duis eu pretium felis a semper et.
-            </p>
+            <p className="text-pretty mb-4 leading-relaxed">{excerpt}</p>
           )}
           <EcoscopeButton href={`/news/posts/${slug}`}>
             Read more
           </EcoscopeButton>
-          {/* {author && <Author name={author.name} picture={author.picture} />} */}
         </div>
       </div>
     </article>

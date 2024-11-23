@@ -13,7 +13,7 @@ type Props = {
   _id: string;
   title: string;
   slug: string | null;
-  industry: "Film" | "Commercial" | "Hospitality" | "Other";
+  industry: string | null;
   coverImage: {
     asset?: {
       _ref: string;
