@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Suspense } from "react";
 import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
@@ -45,9 +44,10 @@ export default async function Page() {
         <div className="w-full sm:w-1/3 md:w-1/5 lg:w-1/6 mb-10">
           <Select>
             <SelectTrigger>
-              <SelectValue placeholder="Filter" />
+              <SelectValue placeholder="Select..." />
             </SelectTrigger>
             <SelectContent>
+              <SelectItem value="all">All</SelectItem>
               <SelectItem value="film">Film</SelectItem>
               <SelectItem value="commercial">Commercial</SelectItem>
               <SelectItem value="hospitality">Hospitality</SelectItem>
@@ -58,7 +58,9 @@ export default async function Page() {
         {heroPost?._id && (
           <aside>
             <Suspense>
-              <MoreStories skip={heroPost._id} limit={10} />
+              <MoreStories
+                params={{ skip: "", limit: 3, industry: "Film and Television" }}
+              />
             </Suspense>
           </aside>
         )}

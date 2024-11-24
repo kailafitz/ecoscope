@@ -29,6 +29,10 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug] [0] {
   ${postFields}
 }`;
 
-export const filmPostsQuery = groq`*[_type == "post" && _id != $skip && defined(slug.current) && industry == $industry] | order(date desc, _updatedAt desc) [0...$limit] {
+export const industryPostsQuery = groq`*[_type == "post" && _id != $skip && defined(slug.current) && industry == $industry] | order(date desc, _updatedAt desc) [0...$limit] {
   ${postFields}
 }`;
+
+// export const allPostsQuery = groq`*[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) {
+//   ${postFields}
+// }`;

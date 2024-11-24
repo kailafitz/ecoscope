@@ -499,7 +499,7 @@ export type HeroQueryResult = {
   } | null;
 } | null;
 // Variable: moreStoriesQuery
-// Query: *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  industry,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},}
+// Query: *[_type == "post" && _id != $skip && defined(slug.current) && industry == $industry] | order(date desc, _updatedAt desc) [0...$limit] {    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  industry,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},}
 export type MoreStoriesQueryResult = Array<{
   _id: string;
   status: "draft" | "published";
@@ -592,44 +592,81 @@ export type PostQueryResult = {
     } | null;
   } | null;
 } | null;
-// Variable: filmPostsQuery
+// Variable: industryPostsQuery
 // Query: *[_type == "post" && _id != $skip && defined(slug.current) && industry == $industry] | order(date desc, _updatedAt desc) [0...$limit] {    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  industry,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},}
-export type FilmPostsQueryResult = Array<{
-  _id: string;
-  status: "draft" | "published";
-  title: string | "Untitled";
-  slug: string | null;
-  excerpt: string | null;
-  coverImage: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  } | null;
-  industry: string | null;
-  date: string;
-  author: {
-    name: string | "Anonymous";
-    picture: {
-      asset?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      };
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      alt?: string;
-      _type: "image";
-    } | null;
-  } | null;
-}>;
+// export type IndustryPostsQueryResult = Array<{
+//   _id: string;
+//   status: "draft" | "published";
+//   title: string | "Untitled";
+//   slug: string | null;
+//   excerpt: string | null;
+//   coverImage: {
+//     asset?: {
+//       _ref: string;
+//       _type: "reference";
+//       _weak?: boolean;
+//       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+//     };
+//     hotspot?: SanityImageHotspot;
+//     crop?: SanityImageCrop;
+//     alt?: string;
+//     _type: "image";
+//   } | null;
+//   industry: string | null;
+//   date: string;
+//   author: {
+//     name: string | "Anonymous";
+//     picture: {
+//       asset?: {
+//         _ref: string;
+//         _type: "reference";
+//         _weak?: boolean;
+//         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+//       };
+//       hotspot?: SanityImageHotspot;
+//       crop?: SanityImageCrop;
+//       alt?: string;
+//       _type: "image";
+//     } | null;
+//   } | null;
+// }>;
+
+// export type AllPostsQueryResult = Array<{
+//   _id: string;
+//   status: "draft" | "published";
+//   title: string | "Untitled";
+//   slug: string | null;
+//   excerpt: string | null;
+//   coverImage: {
+//     asset?: {
+//       _ref: string;
+//       _type: "reference";
+//       _weak?: boolean;
+//       [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+//     };
+//     hotspot?: SanityImageHotspot;
+//     crop?: SanityImageCrop;
+//     alt?: string;
+//     _type: "image";
+//   } | null;
+//   industry: string | null;
+//   date: string;
+//   author: {
+//     name: string | "Anonymous";
+//     picture: {
+//       asset?: {
+//         _ref: string;
+//         _type: "reference";
+//         _weak?: boolean;
+//         [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+//       };
+//       hotspot?: SanityImageHotspot;
+//       crop?: SanityImageCrop;
+//       alt?: string;
+//       _type: "image";
+//     } | null;
+//   } | null;
+// }>;
 
 // Source: app/(blog)/news/posts/[slug]/page.tsx
 // Variable: postSlugs
@@ -646,7 +683,8 @@ declare module "@sanity/client" {
     "*[_type == \"post\" && defined(slug.current)] | order(date desc, _updatedAt desc) [0] {\n  content,\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  industry,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": HeroQueryResult;
     "*[_type == \"post\" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  industry,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": MoreStoriesQueryResult;
     "*[_type == \"post\" && slug.current == $slug] [0] {\n  content,\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  industry,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": PostQueryResult;
-    "*[_type == \"post\" && _id != $skip && defined(slug.current) && industry == $industry] | order(date desc, _updatedAt desc) [0...$limit] {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  industry,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": FilmPostsQueryResult;
+    "*[_type == \"post\" && _id != $skip && defined(slug.current) && industry == $industry] | order(date desc, _updatedAt desc) [0...$limit] {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  industry,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": MoreStoriesQueryResult;
+    // "*[_type == \"post\" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  industry,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": AllPostsQueryResult;
     "*[_type == \"post\"]{slug}": PostSlugsResult;
   }
 }

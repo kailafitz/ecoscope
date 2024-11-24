@@ -1,17 +1,22 @@
 import Link from "next/link";
-import type { MoreStoriesQueryResult } from "@/sanity.types";
-import { sanityFetch } from "@/sanity/lib/fetch";
-import { moreStoriesQuery } from "@/sanity/lib/queries";
 import { Card } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import NewsCard from "./NewsCard";
 import React from "react";
+import { useDataFetch } from "@/hooks/useDataFetch";
+
+type Props = {
+  params: {
+    skip: string;
+    limit: number;
+    industry: string;
+  };
+  homepage?: boolean;
+};
 
 const ViewMoreCardButton = () => {
   return (
@@ -26,26 +31,8 @@ const ViewMoreCardButton = () => {
   );
 };
 
-const MobileCarousel = () => {
-  return (
-    <Carousel className="lg:hidden overflow-hidden">
-      <CarouselContent className="[&_div:not(:last-child)]:pr-6">
-        <MoreStoriesData skip={""} limit={2} />
-        <CarouselItem className="sm:basis-96 lg:hidden">
-          <ViewMoreCardButton />
-        </CarouselItem>
-      </CarouselContent>
-      {/* <CarouselPrevious />
-      <CarouselNext /> */}
-    </Carousel>
-  );
-};
-
-const MoreStoriesData = async (params: { skip: string; limit: number }) => {
-  const data = await sanityFetch<MoreStoriesQueryResult>({
-    query: moreStoriesQuery,
-    params,
-  });
+const MoreStoriesData = async (props: Props) => {
+  const { data } = await useDataFetch(props.params);
 
   return data?.map((post) => {
     const { _id, title, slug, coverImage, industry, date } = post;
@@ -73,17 +60,32 @@ const MoreStoriesData = async (params: { skip: string; limit: number }) => {
   });
 };
 
-export default async function MoreStories(params: {
-  skip: string;
-  limit: number;
-  homepage?: boolean;
-}) {
+const MobileCarousel = () => {
+  return (
+    <Carousel className="lg:hidden overflow-hidden">
+      <CarouselContent className="[&_div:not(:last-child)]:pr-6">
+        <MoreStoriesData params={{ skip: "", limit: 2, industry: "" }} />
+        <CarouselItem className="sm:basis-96 lg:hidden">
+          <ViewMoreCardButton />
+        </CarouselItem>
+      </CarouselContent>
+    </Carousel>
+  );
+};
+
+export default async function MoreStories(props: Props) {
   return (
     <>
       <MobileCarousel />
       <div className="hidden lg:flex flex-col lg:flex-row items-center lg:justify-between space-y-9 lg:space-y-0">
-        <MoreStoriesData skip={params.skip} limit={params.limit} />
-        {params.homepage && <ViewMoreCardButton />}
+        <MoreStoriesData
+          params={{
+            skip: props.params.skip,
+            limit: props.params.limit,
+            industry: props.params.industry,
+          }}
+        />
+        {props.homepage && <ViewMoreCardButton />}
       </div>
     </>
   );
