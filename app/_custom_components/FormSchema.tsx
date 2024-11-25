@@ -34,7 +34,7 @@ export const formSchema = z.object({
     .regex(/^[a-zA-Z0-9]{2,50}$/g, "Please enter a valid company name")
     .min(2, "Please enter a valid company name")
     .max(50, "Please use no more than 50 characters"),
-  industry: z.enum(["film", "commercial", "hospitality", "other"], {
+  industry: z.enum(["film", "advertising", "hospitality", "other"], {
     invalid_type_error: "Please only select one of the options provided",
     required_error: "Please select an option",
   }),

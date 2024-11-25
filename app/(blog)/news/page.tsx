@@ -1,20 +1,14 @@
-import { Suspense } from "react";
 import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 import Container from "../../_custom_components/Container";
 import ActionBanner from "../../_custom_components/ActionBanner";
-import MoreStories from "./_blog_components/MoreStories";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import Intro from "./_blog_components/Intro";
 import LatestFeaturesPost from "./_blog_components/LatestFeaturesPost";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { H3 } from "@/app/_custom_components/Headings";
+import FilteredResults from "./_blog_components/FilteredResults";
+import { Suspense } from "react";
+import MoreStories from "./_blog_components/MoreStories";
 
 export default async function Page() {
   const [settings, heroPost] = await Promise.all([
@@ -41,29 +35,19 @@ export default async function Page() {
             industry={heroPost.industry}
           />
         )}
-        <div className="w-full sm:w-1/3 md:w-1/5 lg:w-1/6 mb-10">
-          <Select>
-            <SelectTrigger>
-              <SelectValue placeholder="Select..." />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All</SelectItem>
-              <SelectItem value="film">Film</SelectItem>
-              <SelectItem value="commercial">Commercial</SelectItem>
-              <SelectItem value="hospitality">Hospitality</SelectItem>
-              <SelectItem value="other">Other</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        {heroPost?._id && (
-          <aside>
-            <Suspense>
-              <MoreStories
-                params={{ skip: "", limit: 3, industry: "Film and Television" }}
-              />
-            </Suspense>
-          </aside>
-        )}
+
+        {heroPost?._id && <FilteredResults />}
+        <aside>
+          <Suspense>
+            <MoreStories
+              params={{
+                skip: heroPost?._id!,
+                limit: 10,
+                industry: "",
+              }}
+            />
+          </Suspense>
+        </aside>
       </Container>
       <ActionBanner bottomBorder />
     </>

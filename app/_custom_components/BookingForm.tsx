@@ -191,7 +191,7 @@ const BookingForm = (props: Props) => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="film">Film</SelectItem>
-                  <SelectItem value="commercial">Commercial</SelectItem>
+                  <SelectItem value="advertising">Advertising</SelectItem>
                   <SelectItem value="hospitality">Hospitality</SelectItem>
                   <SelectItem value="other">Other</SelectItem>
                 </SelectContent>

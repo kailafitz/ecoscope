@@ -1,5 +1,4 @@
 "use client";
-// import FacebookIcon from "@/app/_custom_components/icons/FacebookIcon";
 import React from "react";
 import {
   FacebookIcon,

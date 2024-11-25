@@ -47,7 +47,7 @@ export default defineType({
       options: {
         list: [
           { title: "Film", value: "film" },
-          { title: "Commercial", value: "commercial" },
+          { title: "Advertising", value: "advertising" },
           { title: "Hospitality", value: "hospitality" },
           { title: "Other", value: "other" }
         ],

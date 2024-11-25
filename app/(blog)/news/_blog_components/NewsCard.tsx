@@ -38,7 +38,7 @@ const NewsCard = (props: Props) => {
     >
       <Card className="max-w-full w-[300px] flex flex-col flex-1 relative rounded-lg">
         <Link
-          href={`/posts/${props.slug}`}
+          href={`/news/posts/${props.slug}`}
           className="group absolute top-0 left-0 h-full w-full z-0 rounded-lg"
         >
           <CoverImage image={props.coverImage} priority={false} />
@@ -47,7 +47,10 @@ const NewsCard = (props: Props) => {
           <div className="bg-transparent-primary backdrop-blur bottom-0 flex flex-col justify-between group-hover:justify-center p-5 rounded-b-lg h-44 sm:h-36 group-hover:h-full group-hover:rounded-t-lg group-hover:transition-all transition-all">
             <div>
               <h3 className="text-balance text-3xl leading-snug font-heading text-white group-hover:hidden">
-                <Link href={`/posts/${props.slug}`} className="hover:underline">
+                <Link
+                  href={`/news//posts/${props.slug}`}
+                  className="hover:underline"
+                >
                   {props.title}
                 </Link>
               </h3>
