@@ -9,6 +9,17 @@ import { H3 } from "@/app/_custom_components/Headings";
 import FilteredResults from "./_blog_components/FilteredResults";
 import { Suspense } from "react";
 import MoreStories from "./_blog_components/MoreStories";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "News",
+    description: "News",
+    // openGraph: {
+    //   images: ogImage ? [ogImage, ...previousImages] : previousImages,
+    // },
+  } satisfies Metadata;
+}
 
 export default async function Page({
   searchParams,

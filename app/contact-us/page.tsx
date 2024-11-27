@@ -3,6 +3,17 @@ import { H1, H4 } from "../_custom_components/Headings";
 import Container from "../_custom_components/Container";
 import BookingForm from "../_custom_components/BookingForm";
 import ContactDetails from "../_custom_components/ContactDetails";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Contact Us",
+    description: "Contact Us",
+    // openGraph: {
+    //   images: ogImage ? [ogImage, ...previousImages] : previousImages,
+    // },
+  } satisfies Metadata;
+}
 
 const ContactUs = () => {
   return (

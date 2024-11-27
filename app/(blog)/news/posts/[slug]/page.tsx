@@ -121,7 +121,7 @@ export default async function PostPage({ params }: Props) {
 
         <aside>
           <H3 mb>
-            Other <span className="text-primary">{post.industry}</span> Articles
+            Other <span className="text-primary">{post.industry}</span> Stories
           </H3>
           <Suspense>
             <MoreStories
