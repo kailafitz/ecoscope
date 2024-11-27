@@ -9,6 +9,7 @@ import {
   SanityImageHotspot,
 } from "@/sanity.types";
 import DateComponent from "./Date";
+import { H4 } from "@/app/_custom_components/Headings";
 
 type Props = {
   aside?: boolean;
@@ -42,7 +43,7 @@ const NewsCard = (props: Props) => {
       >
         <Link
           href={`/news/posts/${props.slug}`}
-          className={`group ${props.aside ? "" : "absolute"} top-0 left-0 h-full w-full z-0 rounded-lg`}
+          className={`group ${props.aside ? "mb-1.5" : "absolute"} top-0 left-0 h-full w-full z-0 rounded-lg`}
         >
           <CoverImage image={props.coverImage} priority={false} />
         </Link>
@@ -51,29 +52,32 @@ const NewsCard = (props: Props) => {
             className={`backdrop-blur bottom-0 flex flex-col justify-between ${props.aside ? "" : "p-5 text-white bg-transparent-primary sm:h-36 h-44 group-hover:h-full group-hover:rounded-t-lg group-hover:transition-all transition-all group-hover:justify-center"} rounded-b-lg`}
           >
             <div>
-              <h3
-                className={`text-balance text-3xl leading-snug font-heading ${props.aside ? "" : "group-hover:hidden"}`}
+              <p
+                className={`font-body text-lg md:text-sm text-primary ${props.aside ? "" : "hidden"}`}
               >
+                {props.industry}
+              </p>
+              <H4 className={`${props.aside ? "" : "group-hover:hidden"}`}>
                 <Link
                   href={`/news/posts/${props.slug}`}
-                  className="hover:underline"
+                  className="hover:opacity-40 transition-all hover:transition-all"
                 >
                   {props.title}
                 </Link>
-              </h3>
+              </H4>
               <div
-                className={`text-base ${props.aside ? "" : "group-hover:hidden"}`}
+                className={`text-base ${props.aside ? "mb-2" : "group-hover:hidden"}`}
               >
                 <DateComponent dateString={props.date} />
               </div>
             </div>
             <p
-              className={`font-body text-lg md:text-sm ${props.aside ? "mb-5" : "group-hover:hidden"}`}
+              className={`font-body text-lg md:text-sm text-primary ${props.aside ? "hidden" : "group-hover:hidden"}`}
             >
               {props.industry}
             </p>
             <EcoscopeButton
-              className={`${props.aside ? "" : "hidden group-hover:block"} text-center`}
+              className={`${props.aside ? "hidden" : "hidden group-hover:block"} text-center`}
               href={`/news/posts/${props.slug}`}
             >
               Read more
