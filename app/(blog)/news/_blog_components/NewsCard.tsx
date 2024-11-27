@@ -72,7 +72,7 @@ const NewsCard = (props: Props) => {
               </div>
             </div>
             <p
-              className={`font-body text-lg md:text-sm text-primary ${props.aside ? "hidden" : "group-hover:hidden"}`}
+              className={`font-body text-lg md:text-sm text-white ${props.aside ? "hidden" : "group-hover:hidden"}`}
             >
               {props.industry}
             </p>

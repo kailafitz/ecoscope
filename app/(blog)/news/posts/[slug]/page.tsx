@@ -21,6 +21,7 @@ import Container from "@/app/_custom_components/Container";
 import { H1, H3 } from "@/app/_custom_components/Headings";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
 import ShareButtons from "../../_blog_components/ShareButtons";
+import BackButton from "../../_blog_components/BackButton";
 
 type Props = {
   params: { slug: string };
@@ -76,12 +77,10 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <>
-      <Container mb topSectionPadding id="news-article" className="">
-        {/* <Link href="/news" className="hover:underline">
-            Back to News
-          </Link> */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-10">
+      <Container mb topSectionPadding id="news-article">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-10 mb-16 md:mb-32">
           <article className="lg:col-span-3 lg:border-r-2 lg:border-primary lg:pr-10">
+            <BackButton />
             <p className="text-primary mb-2">{post.industry}</p>
             <H1 className="mb-5">{post.title}</H1>
             {post.excerpt && <H3 className="mb-10">{post.excerpt}</H3>}
@@ -105,7 +104,7 @@ export default async function PostPage({ params }: Props) {
         )} */}
             {post.content?.length && (
               <PortableText
-                className="mx-auto mb-16 md:mb-32"
+                className="mx-auto"
                 value={post.content as PortableTextBlock[]}
               />
             )}
