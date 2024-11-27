@@ -85,7 +85,7 @@ export default async function PostPage({ params }: Props) {
             <p className="text-primary mb-2">{post.industry}</p>
             <H1 className="mb-5">{post.title}</H1>
             {post.excerpt && <H3 className="mb-10">{post.excerpt}</H3>}
-            <div className="hidden md:flex text-lg mb-3 md:space-x-2 md:items-center">
+            <div className="flex text-lg mb-3 space-x-2 items-center">
               <DateComponent dateString={post.date} />
               <span className="text-2xl opacity-80">|</span>
               {post.author && <Avatar name={post.author.name} />}
@@ -97,11 +97,6 @@ export default async function PostPage({ params }: Props) {
               <CoverImage image={post.coverImage} priority />
             </div>
             <ShareButtons slug={post.slug || ""} />
-            {/* <div className="mb-5 block">
-              {post.author && (
-                <Avatar name={post.author.name} picture={post.author.picture} />
-              )}
-            </div> */}
             {/* {post.content?.length && (
           <PortableText
             className="mx-auto max-w-2xl"

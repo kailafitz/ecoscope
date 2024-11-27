@@ -79,7 +79,7 @@ const BookingForm = (props: Props) => {
       <form
         noValidate
         onSubmit={form.handleSubmit(onSubmit)}
-        className={`flex-1 grid grid-cols-1 ${props.homepage ? "md:grid-cols-3" : "md:grid-cols-1 xl:grid-cols-2"} gap-x-5 gap-y-10 sm:gap-x-10`}
+        className={`grid grid-cols-1 ${props.homepage ? "md:grid-cols-3" : "lg:grid-cols-2"} gap-x-5 gap-y-10 sm:gap-x-10`}
       >
         <FormField
           control={form.control}
@@ -252,13 +252,19 @@ const BookingForm = (props: Props) => {
             </FormItem>
           )}
         />
-        <div className="hidden md:grid"></div>
-        <div className="hidden md:grid"></div>
+        <div
+          className={`hidden ${props.homepage ? "md:grid" : "lg:grid"}`}
+        ></div>
+        <div
+          className={`hidden ${props.homepage ? "md:grid" : "lg:grid"}`}
+        ></div>
         <FormField
           control={form.control}
           name="message"
           render={({ field }) => (
-            <FormItem className="md:col-span-2">
+            <FormItem
+              className={` ${props.homepage ? "md:col-span-2" : "lg:col-span-2"}`}
+            >
               <FormLabel>More Information</FormLabel>
               <FormControl>
                 <Textarea
