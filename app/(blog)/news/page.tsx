@@ -10,7 +10,13 @@ import FilteredResults from "./_blog_components/FilteredResults";
 import { Suspense } from "react";
 import MoreStories from "./_blog_components/MoreStories";
 
-export default async function Page() {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const industry = ((await searchParams).industry as string) || "";
+
   const [settings, heroPost] = await Promise.all([
     sanityFetch<SettingsQueryResult>({
       query: settingsQuery,
@@ -43,7 +49,7 @@ export default async function Page() {
               params={{
                 skip: heroPost?._id!,
                 limit: 10,
-                industry: "",
+                industry: industry === "" || industry === "all" ? "" : industry,
               }}
             />
           </Suspense>

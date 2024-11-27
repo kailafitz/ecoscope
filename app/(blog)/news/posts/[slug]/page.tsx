@@ -81,8 +81,8 @@ export default async function PostPage({ params }: Props) {
         {/* <Link href="/news" className="hover:underline">
             Back to News
           </Link> */}
-        <div className="grid grid-cols-1 lg:grid-cols-3">
-          <article className="col-span-2">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-10">
+          <article className="lg:col-span-3 lg:border-r-2 lg:border-primary lg:pr-10">
             <p className="text-primary mb-2">{post.industry}</p>
             <H1 className="mb-5">{post.title}</H1>
             {post.excerpt && <H3 className="mb-10">{post.excerpt}</H3>}
@@ -123,7 +123,13 @@ export default async function PostPage({ params }: Props) {
               />
             )}
           </article>
-          <MoreStories params={{ skip: "", limit: 3, industry: "" }} />
+          <div className="mb-16 md:mb-32 lg:mb-0">
+            <H3 mb>Other Stories</H3>
+            <MoreStories
+              aside
+              params={{ skip: post._id, limit: 3, industry: "" }}
+            />
+          </div>
         </div>
 
         <aside>
@@ -132,7 +138,7 @@ export default async function PostPage({ params }: Props) {
           </H3>
           <Suspense>
             <MoreStories
-              params={{ skip: "", limit: 3, industry: post.industry! }}
+              params={{ skip: post._id, limit: 3, industry: post.industry! }}
             />
           </Suspense>
         </aside>

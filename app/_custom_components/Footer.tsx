@@ -17,7 +17,7 @@ const Footer = () => {
         />
         <div className="flex flex-1 flex-col justify-between pb-3">
           <div>
-            <div className="flex flex-col md:flex-row w-full justify-end pb-6 [&_a:not(:last-child)]:mr-0 md:[&_a:not(:last-child)]:mr-8 border-b border-white">
+            <div className="flex flex-col md:flex-row w-full justify-end pb-6 space-y-3 md:space-y-0 [&_a:not(:last-child)]:mr-0 md:[&_a:not(:last-child)]:mr-8 border-b border-white">
               <Link href="/news" className="text-white">
                 News
               </Link>

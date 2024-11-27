@@ -16,6 +16,7 @@ type Props = {
     industry: string;
   };
   homepage?: boolean;
+  aside?: boolean;
 };
 
 const ViewMoreCardButton = () => {
@@ -31,42 +32,35 @@ const ViewMoreCardButton = () => {
   );
 };
 
-const MoreStoriesData = async (props: Props) => {
+const MobileCarousel = async (props: Props) => {
   const { data } = await useDataFetch(props.params);
-
-  return data?.map((post) => {
-    const { _id, title, slug, coverImage, industry, date } = post;
-
-    const NewsCards = (
-      <NewsCard
-        key={_id}
-        _id={_id}
-        title={title}
-        date={date}
-        slug={slug}
-        coverImage={coverImage}
-        industry={industry}
-      />
-    );
-
-    return (
-      <>
-        {/* <CarouselItem className="sm:basis-96 lg:hidden">
-          {NewsCards}
-        </CarouselItem> */}
-        {NewsCards}
-      </>
-    );
-  });
-};
-
-const MobileCarousel = () => {
   return (
-    <Carousel className="lg:hidden overflow-hidden">
-      <CarouselContent className="[&_div:not(:last-child)]:pr-6">
-        <MoreStoriesData params={{ skip: "", limit: 2, industry: "" }} />
+    <Carousel className="lg:hidden">
+      <CarouselContent className="[&_div:not(:last-child)]:mr-6">
+        {data?.map((post) => {
+          const { _id, title, slug, coverImage, industry, date } = post;
+
+          const NewsCards = (
+            <NewsCard
+              key={_id}
+              _id={_id}
+              title={title}
+              date={date}
+              slug={slug}
+              coverImage={coverImage}
+              industry={industry}
+            />
+          );
+
+          return (
+            <CarouselItem className="sm:basis-96 lg:hidden">
+              {NewsCards}
+            </CarouselItem>
+          );
+        })}
+
         <CarouselItem className="sm:basis-96 lg:hidden">
-          <ViewMoreCardButton />
+          {props.homepage && <ViewMoreCardButton />}
         </CarouselItem>
       </CarouselContent>
     </Carousel>
@@ -74,17 +68,33 @@ const MobileCarousel = () => {
 };
 
 export default async function MoreStories(props: Props) {
+  const { data } = await useDataFetch(props.params);
   return (
     <>
-      <MobileCarousel />
-      <div className="hidden lg:flex flex-col lg:flex-row items-center lg:justify-between space-y-9 lg:space-y-0">
-        <MoreStoriesData
-          params={{
-            skip: props.params.skip,
-            limit: props.params.limit,
-            industry: props.params.industry,
-          }}
-        />
+      <MobileCarousel
+        homepage={props.homepage}
+        aside={props.aside}
+        params={props.params}
+      />
+      <div
+        className={`hidden lg:flex ${props.aside ? "lg:flex-col lg:space-y-10" : "flex-col lg:flex-row items-center lg:justify-between space-y-9 lg:space-y-0"} `}
+      >
+        {data?.map((post) => {
+          const { _id, title, slug, coverImage, industry, date } = post;
+
+          return (
+            <NewsCard
+              aside={props.aside}
+              key={_id}
+              _id={_id}
+              title={title}
+              date={date}
+              slug={slug}
+              coverImage={coverImage}
+              industry={industry}
+            />
+          );
+        })}
         {props.homepage && <ViewMoreCardButton />}
       </div>
     </>

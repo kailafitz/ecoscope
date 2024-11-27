@@ -16,7 +16,7 @@ const ContactUs = () => {
         >
           Book a Consultation
         </H2>
-        <div className="w-full lg:w-4/5 mx-auto rounded-md shadow-2xl p-10">
+        <div className="w-full lg:w-4/5 mx-auto rounded-md shadow-2xl py-10 px-5 lg:p-10">
           <BookingForm homepage />
         </div>
       </Container>

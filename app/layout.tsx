@@ -66,7 +66,9 @@ export default function RootLayout({
           )}
         >
           <Navigation />
-          <main className={`${varela} flex-1 flex flex-col`}>{children}</main>
+          <main className={`${varela} flex-1 flex flex-col overflow-hidden`}>
+            {children}
+          </main>
           <Footer />
         </body>
       </html>
