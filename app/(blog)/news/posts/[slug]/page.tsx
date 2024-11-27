@@ -78,7 +78,7 @@ export default async function PostPage({ params }: Props) {
   return (
     <>
       <Container mb topSectionPadding id="news-article">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-10 mb-16 md:mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-y-16 md:gap-y-32 lg:gap-y-0 gap-x-10 mb-16 md:mb-32">
           <article className="lg:col-span-3 lg:border-r-2 lg:border-primary lg:pr-10">
             <BackButton />
             <p className="text-primary mb-2">{post.industry}</p>
@@ -109,7 +109,7 @@ export default async function PostPage({ params }: Props) {
               />
             )}
           </article>
-          <div className="mb-16 md:mb-32 lg:mb-0">
+          <div>
             <H3 mb>Other Stories</H3>
             <MoreStories
               aside
@@ -124,7 +124,7 @@ export default async function PostPage({ params }: Props) {
           </H3>
           <Suspense>
             <MoreStories
-              params={{ skip: post._id, limit: 3, industry: post.industry! }}
+              params={{ skip: post._id, limit: 5, industry: post.industry! }}
             />
           </Suspense>
         </aside>
