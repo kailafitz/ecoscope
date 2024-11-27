@@ -1,6 +1,5 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { groq, type PortableTextBlock } from "next-sanity";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -86,30 +85,23 @@ export default async function PostPage({ params }: Props) {
             <p className="text-primary mb-2">{post.industry}</p>
             <H1 className="mb-5">{post.title}</H1>
             {post.excerpt && <H3 className="mb-10">{post.excerpt}</H3>}
-            <div className="hidden md:mb-6 md:block">
+            <div className="hidden md:flex text-lg mb-3 md:space-x-2 md:items-center">
+              <DateComponent dateString={post.date} />
+              <span className="text-2xl opacity-80">|</span>
+              {post.author && <Avatar name={post.author.name} />}
               {/* {post.author && (
-              <Avatar name={post.author.name} picture={post.author.picture} />
-            )} */}
-              <div className="my-6 text-lg">
-                <div className="mb-4 text-lg">
-                  <DateComponent dateString={post.date} />
-                </div>
-              </div>
+                <Avatar name={post.author.name} picture={post.author.picture} />
+              )} */}
             </div>
-            <div className="mb-8 sm:mx-0 md:mb-6">
+            <div className="mb-5">
               <CoverImage image={post.coverImage} priority />
             </div>
             <ShareButtons slug={post.slug || ""} />
-            <div className="max-w-2xl">
-              <div className="mb-6 block md:hidden">
-                {post.author && (
-                  <Avatar
-                    name={post.author.name}
-                    picture={post.author.picture}
-                  />
-                )}
-              </div>
-            </div>
+            {/* <div className="mb-5 block">
+              {post.author && (
+                <Avatar name={post.author.name} picture={post.author.picture} />
+              )}
+            </div> */}
             {/* {post.content?.length && (
           <PortableText
             className="mx-auto max-w-2xl"

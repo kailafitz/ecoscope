@@ -5,13 +5,13 @@ import { urlForImage } from "@/sanity/lib/utils";
 
 interface Props {
   name: string;
-  picture: Exclude<Author["picture"], undefined> | null;
+  picture?: Exclude<Author["picture"], undefined> | null;
 }
 
 export default function Author({ name, picture }: Props) {
   return (
     <div className="flex items-center text-xl">
-      {picture?.asset?._ref ? (
+      {/* {picture?.asset?._ref ? (
         <div className="mr-4 h-12 w-12">
           <Image
             alt={picture?.alt || ""}
@@ -29,8 +29,8 @@ export default function Author({ name, picture }: Props) {
         </div>
       ) : (
         <div className="mr-1">By </div>
-      )}
-      <div className="text-pretty text-xl font-bold">{name}</div>
+      )} */}
+      <div className="text-xl opacity-65">{name} Fitzpatrick</div>
     </div>
   );
 }

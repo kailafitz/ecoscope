@@ -37,7 +37,7 @@ const MobileCarousel = async (props: Props) => {
   return (
     <Carousel className="lg:hidden">
       <CarouselContent className="[&_div:not(:last-child)]:mr-6">
-        {data?.map((post) => {
+        {data?.map((post, i: number) => {
           const { _id, title, slug, coverImage, industry, date } = post;
 
           const NewsCards = (
@@ -53,7 +53,7 @@ const MobileCarousel = async (props: Props) => {
           );
 
           return (
-            <CarouselItem className="sm:basis-96 lg:hidden">
+            <CarouselItem key={i} className="sm:basis-96 lg:hidden">
               {NewsCards}
             </CarouselItem>
           );
