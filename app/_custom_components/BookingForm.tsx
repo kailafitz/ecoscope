@@ -25,7 +25,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { PhoneInput } from "./PhoneInput";
-import { Loader2 } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 
 type Props = {
   homepage?: boolean;
@@ -44,6 +44,7 @@ const defaultValues = {
 
 const BookingForm = (props: Props) => {
   const [loading, setLoading] = useState<Boolean>(false);
+  const [success, setSuccess] = useState<Boolean>(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: defaultValues,
@@ -67,6 +68,12 @@ const BookingForm = (props: Props) => {
           setTimeout(() => {
             setLoading(false);
           }, 2000);
+
+          setTimeout(() => {
+            setSuccess(true);
+          }, 2000);
+
+          setSuccess(false);
         },
         (error) => {
           console.warn("FAILED...", JSON.stringify(error));
@@ -283,8 +290,17 @@ const BookingForm = (props: Props) => {
           )}
         />
         <div className="flex flex-col justify-end">
-          <Button disabled={loading ? true : false}>
-            {loading ? <Loader2 className="animate-spin" /> : "Submit"}
+          <Button
+            disabled={loading || success ? true : false}
+            className={success && "bg-green-500 opacity-100"}
+          >
+            {loading ? (
+              <Loader2 className="animate-spin" />
+            ) : success ? (
+              <Check />
+            ) : (
+              "Submit"
+            )}
           </Button>
         </div>
       </form>
