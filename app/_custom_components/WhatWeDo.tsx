@@ -6,32 +6,32 @@ const whatWeDo = [
   {
     name: "Certification",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Mi ut eu vel libero. Quam tincidunt ut dignissim tristique consequat tristique sed. Proin iaculis consectetur lacus luctus sed. Turpis odio augue sagittis risus sollicitudin commodo.",
+      "Ecoscope helps productions navigate meeting industry targets and regulation requirements, guiding you through the setup process while managing the production's sustainability deliverable, which enhances your production, save costs, and meaningfully reduce your environmental impact.",
   },
   {
     name: "Consultancy",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Mi ut eu vel libero. Quam tincidunt ut dignissim tristique consequat tristique sed. Proin iaculis consectetur lacus luctus sed. Turpis odio augue sagittis risus sollicitudin commodo.",
+      "Sustainable Production is a journey and navigating the evolving industry standards can be challenging. Ecoscope is here to offer consulting services to help you implement sustainable practices without the need for a full-time commitment.",
   },
   {
     name: "Strategy",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Mi ut eu vel libero. Quam tincidunt ut dignissim tristique consequat tristique sed. Proin iaculis consectetur lacus luctus sed. Turpis odio augue sagittis risus sollicitudin commodo.",
+      "We believe that without a strategic plan, nothing can be managed meaningfully. Ecoscope assists businesses by strategising how to incorporate sustainability principles meaningfully into your company ethos, ensuring you stay on track with your commitment to sustainability.",
   },
   {
     name: "Training",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Mi ut eu vel libero. Quam tincidunt ut dignissim tristique consequat tristique sed. Proin iaculis consectetur lacus luctus sed. Turpis odio augue sagittis risus sollicitudin commodo.",
+      "Ecoscope is dedicated to a sustainable future, helping industries gain a deeper understanding of the supports available to manage their productions sustainably so they have an overarching positive impact.",
   },
   {
     name: "Carbon Reporting",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Mi ut eu vel libero. Quam tincidunt ut dignissim tristique consequat tristique sed. Proin iaculis consectetur lacus luctus sed. Turpis odio augue sagittis risus sollicitudin commodo.",
+      "Ecoscope offers a package that integrates data from various departments into carbon reporting software, streamlining the process and easing the burden on your team.",
   },
   {
     name: "Raising Awareness",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Mi ut eu vel libero. Quam tincidunt ut dignissim tristique consequat tristique sed. Proin iaculis consectetur lacus luctus sed. Turpis odio augue sagittis risus sollicitudin commodo.",
+      "Ecoscope's main goal is to raise awareness amongst stakeholders in the creative industries. With your leadership team committed to sustainability principles and goals, we can drive meaningful change in our industry, benefiting future generations.",
   },
 ];
 
