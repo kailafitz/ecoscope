@@ -20,13 +20,13 @@ type ServiceProps = {
 const ServiceCard = (props: ServiceProps) => {
   return (
     <Card className="max-w-full mx-auto w-[300px] flex flex-col justify-between">
-      <CardHeader className="text-center [&_svg]:block [&_svg]:mx-auto [&_svg]:w-28 [&_svg]:h-28">
+      <CardHeader className="text-center [&_svg]:block [&_svg]:mx-auto [&_svg]:w-28 [&_svg]:h-28 [&_svg]:mb-7">
         {props.icon}
-      </CardHeader>
-      <div className="space-y-2.5 p-6">
-        <CardTitle>{props.name}</CardTitle>
+        <CardTitle className="mb-4">{props.name}</CardTitle>
         <CardDescription>{props.description}</CardDescription>
-        <CardFooter className="pt-2">
+      </CardHeader>
+      <div className="space-y-2.5 pb-6 pl-6 pr-6">
+        <CardFooter>
           <EcoscopeButton full href={props.href ? props.href : " "}>
             Read more
           </EcoscopeButton>
@@ -55,7 +55,7 @@ const servicesData = [
     ),
     name: "Film and Television",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Adipiscing neque suspendisse arcu ullamcorper aliquet vitae ut viverra.",
+      "Ecoscope helps productions adopt cost saving sustainable practices to become more efficient and align with industry standards for responsible filmmaking, both behind the scenes and on-screen.",
   },
   {
     icon: (
@@ -74,7 +74,7 @@ const servicesData = [
     ),
     name: "Advertising",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Adipiscing neque suspendisse arcu ullamcorper aliquet vitae ut viverra.",
+      "Ecoscope helps campaigns achieve impactful results while promoting responsible practices and reducing environmental impact.",
   },
   ,
   {
@@ -105,7 +105,7 @@ const servicesData = [
     ),
     name: "Hospitality",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Adipiscing neque suspendisse arcu ullamcorper aliquet vitae ut viverra.",
+      "Ecoscope provides expert guidance on sustainable practices that reflect consumer/market trends towards sustainable alternatives, strengthening brand reputation, and contributing to a positive environmental footprint.",
   },
 ];
 
