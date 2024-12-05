@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import Container from "@/app/_custom_components/Container";
 import { DualHeading } from "@/app/_custom_components/Headings";
 import Image from "next/image";
@@ -8,12 +8,15 @@ import { data } from "@/data";
 
 type Props = {
   title: string;
-  description: string;
-  steps: {
-    name: string;
-    details: string;
-  }[];
+  information: ReactNode;
 };
+
+const steps = [
+  "Scope Out",
+  "Strategise",
+  "Engage, Implement & Track",
+  "Report",
+];
 
 const ServicePageContent = () => {
   const [service, setService] = useState<Props>();
@@ -23,6 +26,7 @@ const ServicePageContent = () => {
     let key: string = params["service-name"][0];
     setService(data[key as keyof typeof data]);
   });
+
   return (
     <>
       <Container
@@ -32,27 +36,7 @@ const ServicePageContent = () => {
       >
         <div className="flex flex-col lg:w-7/12">
           <DualHeading subtitle={service?.title}>Services</DualHeading>
-          <p className="pt-10">
-            Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id
-            laoreet ultrices. Sit diam risus tempus dis amet varius. Duis eu
-            pretium felis a semper et. Dignissim mauris commodo lectus ultrices
-            aliquam. Dignissim sed aliquam odio aliquet molestie. Consequat in
-            eget sed amet ornare nunc penatibus egestas. Blandit massa tempor
-            lacus a sollicitudin malesuada mi. Tristique semper amet aliquam
-            congue posuere eget etiam etiam. Imperdiet curabitur molestie amet
-            eu aliquam tristique ornare ante pellentesque. Ut ultrices faucibus
-            at sed eget et quisque. Ut tellus vestibulum habitant curabitur.
-            Dignissim mauris commodo lectus ultrices aliquam. Dignissim sed
-            aliquam odio aliquet molestie.
-            <br />
-            <br />
-            Consequat in eget sed amet ornare nunc penatibus egestas. Blandit
-            massa tempor lacus a sollicitudin malesuada mi. Tristique semper
-            amet aliquam congue posuere eget etiam etiam. Imperdiet curabitur
-            molestie amet eu aliquam tristique ornare ante pellentesque.
-            Consequat in eget sed amet ornare nunc penatibus egestas. Blandit
-            massa tempor lacus a sollicitudin malesuada mi.
-          </p>
+          <p className="pt-10">{service?.information}</p>
         </div>
         <Image
           src="/_assets/service.png"
@@ -67,7 +51,7 @@ const ServicePageContent = () => {
         <Container mb className="pt-20">
           {/* <H2 className="z-20">How We Work</H2> */}
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {service?.steps.map((step, i) => {
+            {steps.map((step, i) => {
               return (
                 <div
                   key={`Service steps ${i}`}
@@ -76,21 +60,7 @@ const ServicePageContent = () => {
                   <p className="opacity-50 text-2xl text-primary font-heading">
                     0{i + 1}
                   </p>
-                  <p className="text-xl mb-5">{step.name}</p>
-                  <ul>
-                    <li className="list-disc ml-5 text-sm">
-                      Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam
-                      semper id
-                    </li>
-                    <li className="list-disc ml-5 text-sm">
-                      Lorem amet consectetur. Vestibulum aliquam semper id
-                      laoreet ultrices
-                    </li>
-                    <li className="list-disc ml-5 text-sm">
-                      Lorem ipsum dolor estibulum aliquam semper id laoreet
-                      ultrices
-                    </li>
-                  </ul>
+                  <p className="text-xl mb-5">{step}</p>
                 </div>
               );
             })}

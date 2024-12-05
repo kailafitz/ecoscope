@@ -58,6 +58,11 @@ const Navigation = () => {
                     Hospitality
                   </NavigationMenuLink>
                 </Link>
+                <Link href="/service/other" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Other
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
