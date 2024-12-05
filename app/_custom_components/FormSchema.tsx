@@ -29,31 +29,33 @@ export const formSchema = z.object({
   companyName: z
     .string({
       invalid_type_error: "Please do not use special characters",
-      required_error: "Company Name cannot be blank",
     })
     .regex(/^[a-zA-Z0-9]{2,50}$/g, "Please enter a valid company name")
     .min(2, "Please enter a valid company name")
-    .max(50, "Please use no more than 50 characters"),
-  industry: z.enum(["film", "advertising", "hospitality", "other"], {
-    invalid_type_error: "Please only select one of the options provided",
-    required_error: "Please select an option",
-  }),
-  companySize: z.enum(
-    [
-      "0-10",
-      "11-50",
-      "51-200",
-      "201-500",
-      "501-1000",
-      "1001-5000",
-      "5001-10000",
-      "10001+",
-    ],
-    {
+    .max(50, "Please use no more than 50 characters")
+    .or(z.string().max(0)),
+  industry: z
+    .enum(["film", "advertising", "hospitality", "other"], {
       invalid_type_error: "Please only select one of the options provided",
-      required_error: "Please select an option",
-    }
-  ),
+    })
+    .optional(),
+  companySize: z
+    .enum(
+      [
+        "0-10",
+        "11-50",
+        "51-200",
+        "201-500",
+        "501-1000",
+        "1001-5000",
+        "5001-10000",
+        "10001+",
+      ],
+      {
+        invalid_type_error: "Please only select one of the options provided",
+      }
+    )
+    .optional(),
   certification: z
     .string({ invalid_type_error: "Please do not use special characters" })
     .regex(/[A-Za-zÀ-ú0-9ა-ჰ一-蠼赋]+/g, "Please do not use special characters")

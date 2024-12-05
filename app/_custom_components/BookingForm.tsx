@@ -164,7 +164,7 @@ const BookingForm = (props: Props) => {
           name="companyName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>* Company Name</FormLabel>
+              <FormLabel>Company Name</FormLabel>
               <FormControl>
                 <Input
                   type="text"
@@ -186,7 +186,7 @@ const BookingForm = (props: Props) => {
           name="industry"
           render={({ field }) => (
             <FormItem key={field.value}>
-              <FormLabel>* Industry</FormLabel>
+              <FormLabel>Industry</FormLabel>
               <Select
                 onValueChange={(value) => value && field.onChange(value)}
                 defaultValue={field.value}
@@ -212,7 +212,7 @@ const BookingForm = (props: Props) => {
           name="companySize"
           render={({ field }) => (
             <FormItem key={field.value}>
-              <FormLabel>* Company Size</FormLabel>
+              <FormLabel>Company Size</FormLabel>
               <Select
                 onValueChange={field.onChange}
                 value={field.value}
