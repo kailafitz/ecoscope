@@ -39,17 +39,15 @@ const ServicePageContent = () => {
           <p className="pt-10">{service?.information}</p>
         </div>
         <Image
-          src="/_assets/service.png"
+          src={`/_assets/service-${params["service-name"]}.png`}
           alt="Headshot of Alexandra de Valera"
           width="400"
           height="400"
           className="rounded-full h-unset"
         />
       </Container>
-      <div className="relative w-full mb-16 md:mb-32 lg:mb-0">
-        <div className="bg-landscape absolute top-0 left-0 w-full h-full lg:h-1/2"></div>
-        <Container mb className="pt-20">
-          {/* <H2 className="z-20">How We Work</H2> */}
+      {/* <div className="relative bg-landscape w-full mb-16 md:mb-32 lg:mb-0">
+        <Container mb>
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {steps.map((step, i) => {
               return (
@@ -66,7 +64,7 @@ const ServicePageContent = () => {
             })}
           </div>
         </Container>
-      </div>
+      </div> */}
     </>
   );
 };

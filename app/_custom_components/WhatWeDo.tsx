@@ -29,7 +29,7 @@ const whatWeDo = [
       "Ecoscope offers a package that integrates data from various departments into carbon reporting software, streamlining the process and easing the burden on your team.",
   },
   {
-    name: "Raising Awareness",
+    name: "Outreach & Raising Awareness",
     description:
       "Ecoscope's main goal is to raise awareness amongst stakeholders in the creative industries. With your leadership team committed to sustainability principles and goals, we can drive meaningful change in our industry, benefiting future generations.",
   },
