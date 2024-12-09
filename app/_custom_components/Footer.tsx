@@ -4,17 +4,29 @@ import Container from "./Container";
 import LinkedInIcon from "./icons/LinkedInIcon";
 import InstagramIcon from "./icons/InstagramIcon";
 import FacebookIcon from "./icons/FacebookIcon";
+import Image from "next/image";
 
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <div className="bg-primary pt-16">
       <Container className="flex flex-col md:flex-row justify-between items-stretch md:space-x-24">
-        <img
-          src="/_assets/logo-white-vertical-full.png"
-          alt="Ecoscope white logo"
-          className="w-full max-w-xs mx-auto sm:max-w-sm md:max-w-none md:w-3/12 pb-16"
-        />
+        <Link href="/">
+          <Image
+            src="/_assets/logo-white-vertical-full.png"
+            alt="Ecoscope white logo"
+            height={600}
+            width={800}
+            className="w-full max-w-xs mx-auto pb-16"
+          />
+          {/* <Image
+            src="/_assets/logo-white-vertical-full.png"
+            alt="Ecoscope white logo"
+            height={650}
+            width={800}
+            className="w-full max-w-xs mx-auto sm:max-w-sm md:max-w-none md:w-3/12 pb-16"
+          /> */}
+        </Link>
         <div className="flex flex-1 flex-col justify-between pb-3">
           <div>
             <div className="flex flex-col md:flex-row w-full justify-end pb-6 space-y-3 md:space-y-0 [&_a:not(:last-child)]:mr-0 md:[&_a:not(:last-child)]:mr-8 border-b border-white">

@@ -98,7 +98,7 @@ const BookingForm = (props: Props) => {
                 <Input
                   type="text"
                   id="name"
-                  placeholder="Hi there!"
+                  placeholder=""
                   disabled={loading ? true : false}
                   {...field}
                 />
