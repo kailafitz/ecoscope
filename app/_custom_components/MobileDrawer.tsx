@@ -21,6 +21,7 @@ import Link from "next/link";
 import LinkedInIcon from "./icons/LinkedInIcon";
 import MailIcon from "./icons/MailIcon";
 import EcoscopeButton from "./Button";
+import FacebookIcon from "./icons/FacebookIcon";
 
 export const MobileDrawer = () => {
   return (
@@ -35,7 +36,7 @@ export const MobileDrawer = () => {
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm flex flex-1 flex-col p-6">
-          <NavigationMenuList className="pt-4 pr-4 pb-10">
+          <NavigationMenuList className="pb-10">
             <NavigationMenuItem className="hover:cursor-pointer">
               <Link href="/" legacyBehavior passHref>
                 <Image
@@ -82,6 +83,15 @@ export const MobileDrawer = () => {
                         <Link href="/service/hospitality">Hospitality</Link>
                       </NavigationMenuLink>
                     </DrawerClose>
+
+                    <DrawerClose asChild>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                        asChild
+                      >
+                        <Link href="/service/other">Other</Link>
+                      </NavigationMenuLink>
+                    </DrawerClose>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
@@ -104,6 +114,16 @@ export const MobileDrawer = () => {
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <DrawerClose asChild>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                      asChild
+                    >
+                      <Link href="/news">News</Link>
+                    </NavigationMenuLink>
+                  </DrawerClose>
+                </NavigationMenuItem>
                 <DrawerClose asChild>
                   <NavigationMenuItem asChild>
                     <EcoscopeButton href="contact-us#book-a-consultation">
@@ -114,9 +134,10 @@ export const MobileDrawer = () => {
               </NavigationMenuList>
             </div>
             <div className="bg-primary h-px w-full my-10"></div>
-            <div className="flex flex-row gap-x-5 text-primary">
-              <LinkedInIcon className="w-10" />
-              <MailIcon className="w-10" />
+            <div className="flex flex-row gap-x-3 text-primary">
+              <LinkedInIcon className="w-8" />
+              <MailIcon className="w-8" />
+              <FacebookIcon className="w-8" />
             </div>
           </NavigationMenu>
         </div>
