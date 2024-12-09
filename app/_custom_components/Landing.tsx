@@ -18,9 +18,8 @@ const Landing = () => {
                   Greener Productions
                 </H1>
                 <h2 className="mb-6 md:table-caption md:caption-bottom">
-                  Empowering businesses with trusted sustainability
-                  certifications for environmental responsibility and a greener,
-                  more sustainable future.
+                  Empowering the creative industry on their decarbonisation
+                  journey in line with scientific guidance and recommendations.
                 </h2>
               </div>
               <div className="flex flex-col sm:flex-row justify-between space-y-3 sm:space-x-6 sm:space-y-0">
