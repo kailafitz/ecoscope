@@ -19,7 +19,7 @@ type ServiceProps = {
 
 const ServiceCard = (props: ServiceProps) => {
   return (
-    <Card className="max-w-full mx-auto w-[300px] flex flex-col justify-between">
+    <Card className="max-w-full mx-auto sm:w-[340px] flex flex-col justify-between">
       <CardHeader className="text-center [&_svg]:block [&_svg]:mx-auto [&_svg]:w-28 [&_svg]:h-28 [&_svg]:mb-7">
         {props.icon}
         <CardTitle className="mb-4">{props.name}</CardTitle>
@@ -113,7 +113,7 @@ const Services = () => {
   return (
     <Container id="services" mb className="text-center">
       <H2 mb>Our Services</H2>
-      <div className="flex flex-col lg:flex-row md:justify-evenly space-y-9 lg:space-y-0">
+      <div className="grid grid-cols-1 xl:grid-cols-3 space-y-9 xl:space-y-0">
         {servicesData.map((service, i) => {
           let href = service?.name.replace(/ /g, "-").toLowerCase();
           return (

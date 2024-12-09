@@ -28,7 +28,7 @@ const ContactUs = () => {
             <H4
               mb
               subtitle="Please fill out the form below if you're interested in finding
-              out more about what Ecoscope can do for your business"
+              out more about what Ecoscope can do for your business."
             >
               Book a Consultation
             </H4>
