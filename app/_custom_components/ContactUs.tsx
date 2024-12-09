@@ -31,7 +31,7 @@ const ContactUs = () => {
             luctus sed. Turpis odio augue sagittis risus sollicitudin.
           </p>
           <div className="flex flex-col md:flex-row justify-end items-center">
-            <div className="w-full flex flex-row items-center justify-end md:mr-8 mb-6 md:mb-0">
+            <div className="w-full flex flex-row items-center justify-end md:mr-8 mb-3 md:mb-0">
               <MapIcon className="w-7 mr-2 text-primary" />
 
               <p>Dublin, Ireland</p>

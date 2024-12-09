@@ -631,7 +631,7 @@ export type IndustryPostsQueryResult = Array<{
   } | null;
 }>;
 
-// Source: app/(blog)/news/posts/[slug]/page.tsx
+// Source: app/(news)/news/posts/[slug]/page.tsx
 // Variable: postSlugs
 // Query: *[_type == "post"]{slug}
 export type PostSlugsResult = Array<{

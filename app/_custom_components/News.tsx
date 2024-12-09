@@ -13,7 +13,7 @@ const News = () => {
         >
           Explore our News
         </H2>
-        <MoreStories params={{ skip: "", limit: 2, industry: "" }} homepage />
+        <MoreStories params={{ skip: "", limit: 3, industry: "" }} />
       </div>
     </Container>
   );
