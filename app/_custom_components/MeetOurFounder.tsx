@@ -8,29 +8,30 @@ import MailIcon from "./icons/MailIcon";
 const MeetOurFounder = () => {
   return (
     <div className="bg-[#40c1ab1c] pt-16 md:pt-32 relative">
-      <div className="hidden lg:block absolute -z-0 bg-primary h-1/2 w-1/3 right-0 top-0 rounded-bl-full"></div>
+      {/* <div className="hidden lg:block absolute -z-0 bg-primary h-1/2 w-1/3 right-0 top-0 rounded-bl-full"></div> */}
       <Container mb>
-        {/* <DualHeading subtitle="Behind the Company">Meet our Founder</DualHeading> */}
-        <H2 mb>Meet our Founder</H2>
-        <div className="grid grid-cols-1 lg:grid-cols-5 lg:gap-x-10 xl:gap-x-0 gap-y-10 mb-10">
-          <p className="lg:col-span-3">
-            Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper id
-            laoreet ultrices. Sit diam risus tempus dis amet varius. Duis eu
-            pretium felis a semper et. Dignissim mauris commodo lectus ultrices
-            aliquam. Dignissim sed aliquam odio aliquet molestie. Consequat in
-            eget sed amet ornare nunc penatibus egestas. Blandit massa tempor
-            lacus a sollicitudin malesuada mi.
-            <br />
-            Tristique semper amet aliquam congue posuere eget etiam etiam.
-            Imperdiet curabitur molestie amet eu aliquam tristique ornare ante
-            pellentesque. Ut ultrices faucibus at sed eget et quisque. Ut tellus
-            vestibulum habitant curabitur. Mattis odio sagittis enim et nisi
-            pharetra. Dolor amet consectetur suspendisse viverra ut sed molestie
-            a.
-            <br />
-            Porttitor orci et ultrices risus neque id netus scelerisque. Amet ut
-            id et iaculis ac amet eget aliquam pellentesque.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-5 lg:gap-x-14 xl:gap-x-0 gap-y-10 mb-10 items-center">
+          <div className="lg:col-span-3">
+            <H2 mb>The Mind Behind the Mission</H2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper
+              id laoreet ultrices. Sit diam risus tempus dis amet varius. Duis
+              eu pretium felis a semper et. Dignissim mauris commodo lectus
+              ultrices aliquam. Dignissim sed aliquam odio aliquet molestie.
+              Consequat in eget sed amet ornare nunc penatibus egestas. Blandit
+              massa tempor lacus a sollicitudin malesuada mi.
+              <br />
+              Tristique semper amet aliquam congue posuere eget etiam etiam.
+              Imperdiet curabitur molestie amet eu aliquam tristique ornare ante
+              pellentesque. Ut ultrices faucibus at sed eget et quisque. Ut
+              tellus vestibulum habitant curabitur. Mattis odio sagittis enim et
+              nisi pharetra. Dolor amet consectetur suspendisse viverra ut sed
+              molestie a.
+              <br />
+              Porttitor orci et ultrices risus neque id netus scelerisque. Amet
+              ut id et iaculis ac amet eget aliquam pellentesque.
+            </p>
+          </div>
           <Image
             src="/_assets/headshot.png"
             alt="Headshot of Alexandra de Valera"
