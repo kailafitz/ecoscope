@@ -10,6 +10,7 @@ import FilteredResults from "./_news_components/FilteredResults";
 import { Suspense } from "react";
 import MoreStories from "./_news_components/MoreStories";
 import { Metadata } from "next";
+import AllStories from "./_news_components/AllStories";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -53,18 +54,7 @@ export default async function Page({
           />
         )}
 
-        {heroPost?._id && <FilteredResults />}
-        <aside>
-          <Suspense>
-            <MoreStories
-              params={{
-                skip: heroPost?._id!,
-                limit: 10,
-                industry: industry === "" || industry === "all" ? "" : industry,
-              }}
-            />
-          </Suspense>
-        </aside>
+        <AllStories skip={heroPost?._id!} industry={industry} />
       </Container>
       <ActionBanner bottomBorder />
     </>
