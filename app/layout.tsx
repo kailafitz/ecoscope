@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 import { open, varela } from "@/lib/fonts";
 import Navigation from "./_custom_components/Navigation";
 import Footer from "./_custom_components/Footer";
-import AlertBanner from "./(blog)/alert-banner";
+import AlertBanner from "./(news)/alert-banner";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({

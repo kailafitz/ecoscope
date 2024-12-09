@@ -3,12 +3,12 @@ import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 import Container from "../../_custom_components/Container";
 import ActionBanner from "../../_custom_components/ActionBanner";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import Intro from "./_blog_components/Intro";
-import LatestFeaturesPost from "./_blog_components/LatestFeaturesPost";
+import Intro from "./_news_components/Intro";
+import LatestFeaturesPost from "./_news_components/LatestFeaturesPost";
 import { H3 } from "@/app/_custom_components/Headings";
-import FilteredResults from "./_blog_components/FilteredResults";
+import FilteredResults from "./_news_components/FilteredResults";
 import { Suspense } from "react";
-import MoreStories from "./_blog_components/MoreStories";
+import MoreStories from "./_news_components/MoreStories";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {

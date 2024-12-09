@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "./Container";
 import { H2 } from "./Headings";
-import MoreStories from "../(blog)/news/_blog_components/MoreStories";
+import MoreStories from "../(news)/news/_news_components/MoreStories";
 
 const News = () => {
   return (

@@ -8,5 +8,5 @@ export const useDataFetch = async (params: { skip: string; limit: number; indust
         params,
     });
 
-    return { data };
+    return { data, dataLength: data.length };
 }

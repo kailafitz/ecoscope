@@ -3,10 +3,10 @@ import { groq, type PortableTextBlock } from "next-sanity";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
-import Avatar from "../../_blog_components/Author";
-import CoverImage from "../../_blog_components/CoverImage";
-import DateComponent from "../../_blog_components/Date";
-import MoreStories from "../../_blog_components/MoreStories";
+import Avatar from "../../_news_components/Author";
+import CoverImage from "../../_news_components/CoverImage";
+import DateComponent from "../../_news_components/Date";
+import MoreStories from "../../_news_components/MoreStories";
 import PortableText from "../../../portable-text";
 
 import type {
@@ -20,8 +20,9 @@ import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Container from "@/app/_custom_components/Container";
 import { H1, H3 } from "@/app/_custom_components/Headings";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
-import ShareButtons from "../../_blog_components/ShareButtons";
-import BackButton from "../../_blog_components/BackButton";
+import ShareButtons from "../../_news_components/ShareButtons";
+import BackButton from "../../_news_components/BackButton";
+import MoreSimilarStories from "../../_news_components/MoreSimilarStories";
 
 type Props = {
   params: { slug: string };
@@ -118,16 +119,11 @@ export default async function PostPage({ params }: Props) {
           </div>
         </div>
 
-        <aside>
-          <H3 mb>
-            Other <span className="text-primary">{post.industry}</span> Stories
-          </H3>
-          <Suspense>
-            <MoreStories
-              params={{ skip: post._id, limit: 5, industry: post.industry! }}
-            />
-          </Suspense>
-        </aside>
+        <MoreSimilarStories
+          skip={post._id}
+          limit={3}
+          industry={post.industry!}
+        />
       </Container>
       <ActionBanner bottomBorder />
     </>
