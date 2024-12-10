@@ -94,7 +94,7 @@ export default async function PostPage({ params }: Props) {
               )} */}
             </div>
             <div className="mb-5">
-              <CoverImage image={post.coverImage} priority />
+              <CoverImage image={post.coverImage} priority post />
             </div>
             <ShareButtons slug={post.slug || ""} />
             {/* {post.content?.length && (

@@ -34,14 +34,14 @@ const NewsCard = (props: Props) => {
   return (
     <article
       key={props._id}
-      className={`group flex flex-col rounded-lg text-left`}
+      className={`group flex flex-col rounded-lg text-left shadow-lg`}
     >
-      <Card className="max-w-full w-[300px] flex flex-col relative rounded-lg shadow-none space-y-3">
+      <Card className="max-w-full w-[300px] flex flex-col relative rounded-lg shadow-none bg-transparent">
         <Link href={`/news/posts/${props.slug}`}>
-          <CoverImage image={props.coverImage} priority={false} />
+          <CoverImage image={props.coverImage} priority={false} card />
         </Link>
 
-        <div className={`flex flex-col`}>
+        <div className={`flex flex-col p-5`}>
           <p className={`font-body text-md md:text-sm text-primary`}>
             {props.industry}
           </p>

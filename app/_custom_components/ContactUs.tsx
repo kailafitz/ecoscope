@@ -4,11 +4,13 @@ import { H2, H3 } from "./Headings";
 import MapIcon from "./icons/MapIcon";
 import MailIcon from "./icons/MailIcon";
 import BookingForm from "./BookingForm";
+import LogoIcon from "./icons/LogoIcon";
 
 const ContactUs = () => {
   return (
-    <>
-      <Container mb className="text-center">
+    <div className="relative overflow-hidden">
+      <LogoIcon className="absolute top-60 -left-1/2 -z-0 text-primary opacity-30 w-full" />
+      <Container mb className="text-center relative z-10">
         <H2
           mb
           subtitle="If you're interested in certifying your business today, fill out the
@@ -16,7 +18,7 @@ const ContactUs = () => {
         >
           Book a Consultation
         </H2>
-        <div className="w-full lg:w-4/5 mx-auto rounded-md shadow-2xl py-10 px-5 lg:p-10">
+        <div className="w-full lg:w-4/5 mx-auto rounded-md shadow-2xl py-10 px-5 lg:p-10 backdrop-blur-sm">
           <BookingForm homepage />
         </div>
       </Container>
@@ -48,7 +50,7 @@ const ContactUs = () => {
           </div>
         </div>
       </Container>
-    </>
+    </div>
   );
 };
 
