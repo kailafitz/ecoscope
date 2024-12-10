@@ -7,9 +7,9 @@ export const data = {
         implementing systems that monitor energy, transportation, and waste,
         along with setting achievable goals. We offer tailored emission
         reduction strategies like switching to renewable energy and sourcing
-        local materials, which reduce carbon emissions and your production&39;s
+        local materials, which reduce carbon emissions and your production&#39;s
         overall carbon footprint. By engaging with Ecoscope, not only will your
-        production&39;s be eco-conscious, financial incentives and cost
+        production&#39;s be eco-conscious, financial incentives and cost
         reduction strategies will also be holistically considered at each stage
         of the process in areas such as energy usage, waste, catering and
         materials.
@@ -17,11 +17,11 @@ export const data = {
         <br />
         Beyond emissions and costs, Ecoscope supports production teams by
         providing consulting, on-set sustainability officers, and crew
-        engagement strategies. This not only boosts a production&39;s reputation
-        among audiences and investors but also creates scalable practices that
-        benefit future projects. As these sustainable practices become
-        standardised across industries, the film industry moves closer to a
-        low-carbon future in line with national and EU targets, where each
+        engagement strategies. This not only boosts a production&#39;s
+        reputation among audiences and investors but also creates scalable
+        practices that benefit future projects. As these sustainable practices
+        become standardised across industries, the film industry moves closer to
+        a low-carbon future in line with national and EU targets, where each
         production meaningfully contributes to industry-wide improvements and a
         more environmentally responsible way of storytelling.
       </>
