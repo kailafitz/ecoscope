@@ -39,7 +39,7 @@ const WhatWeDo = () => {
   return (
     <Container mb className="flex flex-col justify-center text-center">
       <H2 mb>What We Do</H2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 lg:gap-x-16 xl:gap-x-40 gap-y-10 lg:gap-y-24 text-left">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 lg:gap-x-16 gap-y-10 lg:gap-y-24 text-left">
         {whatWeDo.map((value, i) => {
           return (
             <div key={`${i}-what-we-do`}>

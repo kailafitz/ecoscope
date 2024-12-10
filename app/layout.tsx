@@ -17,6 +17,7 @@ import { open, varela } from "@/lib/fonts";
 import Navigation from "./_custom_components/Navigation";
 import Footer from "./_custom_components/Footer";
 import AlertBanner from "./(news)/alert-banner";
+import OpeningAnimation from "./_custom_components/OpeningAnimation";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -65,10 +66,11 @@ export default function RootLayout({
       <html lang="en" className={"bg-white text-black scroll-smooth"}>
         <body
           className={cn(
-            "min-h-screen bg-background font-body antialiased flex flex-col HOME LAYOUT",
+            "min-h-screen bg-background font-body antialiased flex flex-col",
             open
           )}
         >
+          <OpeningAnimation />
           <Navigation />
           <main className={`${varela} flex-1 flex flex-col overflow-hidden`}>
             {children}

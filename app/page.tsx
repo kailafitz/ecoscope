@@ -20,7 +20,6 @@ export async function generateMetadata(): Promise<Metadata> {
 const Home = () => {
   return (
     <>
-      <OpeningAnimation />
       <Landing />
       <Services />
       <WhatWeDo />
