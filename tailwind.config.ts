@@ -82,7 +82,7 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade 1s ease 2s both",
-        "fade-out": "fade 1s ease 3.5s reverse both",
+        "fade-out": "fade 1s ease 3.8s reverse both",
       },
     },
   },
