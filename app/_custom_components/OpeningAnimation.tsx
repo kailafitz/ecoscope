@@ -22,12 +22,12 @@ const OpeningAnimation = () => {
           controls={false}
           muted
           playsInline
-          className="w-1/6 h-auto mx-auto block mb-4"
+          className="w-1/2 lg:w-1/6 h-auto mx-auto block mb-4"
         >
           <source src="/_assets/opening-animation-logo.MP4"></source>
         </video>
         <svg
-          className="text-primary w-1/4 mx-auto block animate-fade-in"
+          className="text-primary w-10/12 lg:w-1/4 mx-auto block animate-fade-in"
           version="1.1"
           id="Layer_1"
           xmlns="http://www.w3.org/2000/svg"
