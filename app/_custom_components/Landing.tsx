@@ -8,7 +8,7 @@ const Landing = () => {
   return (
     <>
       <LandingMontage />
-      <div className="flex flex-col justify-end top-height relative mb-16 md:mb-32">
+      <div className="flex flex-col justify-end h-[calc(100vh_-_78.7px)] relative mb-16 md:mb-32">
         <div className="bg-curve block pt-32 -m-1">
           <Container className="pb-10">
             <div className="w-full md:w-fit">

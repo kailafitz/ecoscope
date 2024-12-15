@@ -22,21 +22,23 @@ import LinkedInIcon from "./icons/LinkedInIcon";
 import MailIcon from "./icons/MailIcon";
 import EcoscopeButton from "./Button";
 import FacebookIcon from "./icons/FacebookIcon";
+import Container from "./Container";
 
 export const MobileDrawer = () => {
   return (
     <Drawer>
       <DrawerTrigger asChild className="flex flex-col justify-center">
         <div className="flex flex-col gap-y-2 w-9 md:hidden group/root">
-          <span className="h-0.5 bg-primary w-full group-data-[state=open]/root:rotate-45 group-data-[state=open]/root:translate-x-1 group-data-[state=open]/root:translate-y-4 group-data-[state=open]/root:transition-all transition-all group-data-[state=open]/root:duration-500"></span>
+          <span className="h-0.5 bg-primary w-full group-data-[state=open]/root:rotate-45 group-data-[state=open]/root:translate-x-[0.10rem] group-data-[state=open]/root:translate-y-[0.95rem] group-data-[state=open]/root:transition-all transition-all group-data-[state=open]/root:duration-500"></span>
           <span className="h-0.5 bg-primary w-full"></span>
           {/* rotate(45deg) translateY(11px) translateX(8px) */}
           <span className="h-0.5 bg-primary w-full"></span>
         </div>
       </DrawerTrigger>
       <DrawerContent>
-        <div className="mx-auto w-full max-w-sm flex flex-1 flex-col p-6">
-          <NavigationMenuList className="pb-10">
+        {/* <div className="mx-auto w-full flex flex-1 flex-col"> */}
+        <Container className="pt-6 px-10">
+          {/* <NavigationMenuList className="pb-10">
             <NavigationMenuItem className="hover:cursor-pointer">
               <Link href="/" legacyBehavior passHref>
                 <Image
@@ -48,13 +50,13 @@ export const MobileDrawer = () => {
                 />
               </Link>
             </NavigationMenuItem>
-          </NavigationMenuList>
+          </NavigationMenuList> */}
           <NavigationMenu className="block">
             <div className="flex flex-col">
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Our Services</NavigationMenuTrigger>
-                  <NavigationMenuContent>
+                  <NavigationMenuContent className="pb-0 md:pb-4">
                     <DrawerClose asChild>
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
@@ -133,14 +135,15 @@ export const MobileDrawer = () => {
                 </DrawerClose>
               </NavigationMenuList>
             </div>
-            <div className="bg-primary h-px w-full my-10"></div>
+            {/* <div className="bg-primary h-px w-full my-10"></div>
             <div className="flex flex-row gap-x-3 text-primary">
               <LinkedInIcon className="w-8" />
               <MailIcon className="w-8" />
               <FacebookIcon className="w-8" />
-            </div>
+            </div> */}
           </NavigationMenu>
-        </div>
+          {/* </div> */}
+        </Container>
       </DrawerContent>
     </Drawer>
   );

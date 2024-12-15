@@ -76,10 +76,6 @@
   }
 }
 
-.top-height {
-  height: calc(100vh - 78.7px);
-}
-
 .h-unset {
   height: revert-layer;
 }

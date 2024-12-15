@@ -10,7 +10,7 @@ type Props = {
 const ActionBanner = (props: Props) => {
   return (
     <div className="relative overflow-hidden">
-      <LogoIcon className="w-[120%] left-[50%] translate-x-[-50%] text-[#40c1ab1c] absolute -z-0" />
+      <LogoIcon className="w-[200%] lg:w-[120%] left-[50%] translate-x-[-50%] text-[#40c1ab1c] absolute -z-0" />
       <Container
         mb
         className={`flex flex-col justify-center gap-y-5 pt-48 relative z-0`}

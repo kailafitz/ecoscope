@@ -9,7 +9,7 @@ import LogoIcon from "./icons/LogoIcon";
 const ContactUs = () => {
   return (
     <div className="relative overflow-hidden">
-      <LogoIcon className="absolute top-1/3 -left-3/4 h-[60%] opacity-10 md:top-60 md:-left-1/2 -z-0 text-primary md:opacity-30 md:w-full" />
+      <LogoIcon className="absolute top-1/3 -left-[150%] h-[60%] opacity-10 md:top-60 md:-left-1/2 -z-0 text-primary md:opacity-30 md:w-full" />
       <Container mb className="text-center relative z-10">
         <H2
           mb
