@@ -50,6 +50,8 @@ const BookingForm = (props: Props) => {
     defaultValues: defaultValues,
   });
 
+  console.log(loading, success);
+
   const onSubmit = () => {
     setLoading(true);
     emailjs
@@ -292,7 +294,7 @@ const BookingForm = (props: Props) => {
         <div className="flex flex-col justify-end">
           <Button
             disabled={loading || success ? true : false}
-            className={success && "bg-green-500 opacity-100"}
+            className={success && "bg-green-500 disabled:opacity-100"}
           >
             {loading ? (
               <Loader2 className="animate-spin" />
