@@ -16,8 +16,11 @@ import Link from "next/link";
 import { MobileDrawer } from "./MobileDrawer";
 import Container from "./Container";
 import EcoscopeButton from "./Button";
+import { usePathname } from "next/navigation";
 
 const Navigation = () => {
+  const pathname = usePathname();
+
   return (
     <NavigationMenu>
       <Container className="flex flex-row justify-between">
@@ -37,29 +40,41 @@ const Navigation = () => {
         <div className="hidden md:flex md:flex-col md:justify-center [&>div]:flex [&>div]:flex-1">
           <NavigationMenuList className="[&_li:not(:last-child)]:pr-6">
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Our Services</NavigationMenuTrigger>
+              <NavigationMenuTrigger
+                className={`${(pathname === "/service/film-and-television" || pathname === "/service/advertising" || pathname === "/service/hospitality" || pathname === "/service/other") && "font-bold"}`}
+              >
+                Our Services
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <Link
                   href="/service/film-and-television"
                   legacyBehavior
                   passHref
                 >
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/film-and-television" && "font-bold"}`}
+                  >
                     Film and Television
                   </NavigationMenuLink>
                 </Link>
                 <Link href="/service/advertising" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/advertising" && "font-bold"}`}
+                  >
                     Advertising
                   </NavigationMenuLink>
                 </Link>
                 <Link href="/service/hospitality" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/hospitality" && "font-bold"}`}
+                  >
                     Hospitality
                   </NavigationMenuLink>
                 </Link>
                 <Link href="/service/other" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/other" && "font-bold"}`}
+                  >
                     Other
                   </NavigationMenuLink>
                 </Link>
@@ -67,14 +82,18 @@ const Navigation = () => {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/about-us" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink
+                  className={`${navigationMenuTriggerStyle()} ${pathname === "/about-us" && "font-bold"}`}
+                >
                   About Us
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/contact-us" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink
+                  className={`${navigationMenuTriggerStyle()} ${pathname === "/contact-us" && "font-bold"}`}
+                >
                   Contact Us
                 </NavigationMenuLink>
               </Link>
