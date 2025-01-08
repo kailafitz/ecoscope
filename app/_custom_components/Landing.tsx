@@ -15,10 +15,10 @@ const Landing = () => {
               <div className="table">
                 <H1 className="text-left m-0 mb-4">
                   Your Guide to <br />
-                  Greener Productions
+                  Greener Productions <br />& Making a Positive Impact
                 </H1>
                 <h2 className="mb-6 md:table-caption md:caption-bottom">
-                  Empowering the creative industry on their decarbonisation
+                  Empowering the creative industries on their decarbonisation
                   journey in line with scientific guidance and recommendations.
                 </h2>
               </div>
