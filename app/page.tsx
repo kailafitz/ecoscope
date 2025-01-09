@@ -25,7 +25,6 @@ const Home = () => {
       <News />
       <HowWeWork />
       <OurServices />
-      {/* <ContactUs /> */}
       <ActionBanner />
     </>
   );

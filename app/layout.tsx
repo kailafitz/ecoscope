@@ -9,8 +9,10 @@ import type { SettingsQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import Image from "next/image";
 import AlertBanner from "./(news)/alert-banner";
 import Footer from "./_custom_components/Footer";
+import { H4 } from "./_custom_components/Headings";
 import Navigation from "./_custom_components/Navigation";
 import OpeningAnimation from "./_custom_components/OpeningAnimation";
 
@@ -65,6 +67,16 @@ export default function RootLayout({
             open
           )}
         >
+          <div className="bg-primary h-screen w-screen fixed z-50 flex flex-col justify-center items-center text-white">
+            <Image
+              src="/_assets/logo-white-vertical-full.png"
+              alt="logo"
+              width={500}
+              height={200}
+              className="mb-5 xs:min-w-full md:min-w-0"
+            />
+            <H4>January 2025</H4>
+          </div>
           <OpeningAnimation />
           <Navigation />
           <main className={`${varela} flex-1 flex flex-col overflow-hidden`}>
