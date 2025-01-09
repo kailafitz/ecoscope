@@ -32,11 +32,11 @@ const Footer = () => {
               <Link href="/news" className="text-white">
                 News
               </Link>
-              <Link href="/faqs" className="text-white">
-                FAQs
+              <Link href="/resources" className="text-white">
+                Resources
               </Link>
-              <Link href="/research-and-development" className="text-white">
-                Research and Development
+              <Link href="/join-the-mission" className="text-white">
+                Join the Mission
               </Link>
               <Link href="/terms-and-conditions" className="text-white">
                 Terms and Conditions
