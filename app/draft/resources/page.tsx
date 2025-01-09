@@ -1,8 +1,7 @@
-import { Card } from "@/components/ui/card";
+import ActionBanner from "@/app/_custom_components/ActionBanner";
+import Container from "@/app/_custom_components/Container";
+import { H1, H4 } from "@/app/_custom_components/Headings";
 import Link from "next/link";
-import ActionBanner from "../_custom_components/ActionBanner";
-import Container from "../_custom_components/Container";
-import { H1, H4 } from "../_custom_components/Headings";
 
 const resourcesData = [
   {

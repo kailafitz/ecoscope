@@ -12,7 +12,7 @@ const OpeningAnimation = () => {
     }, 6500);
   });
 
-  if (current === "/" && active) {
+  if (current === "/draft" && active) {
     return (
       <div className="fixed top-0 left-0 z-20 h-screen w-screen bg-white flex flex-col justify-center animate-fade-out scroll-auto">
         <video

@@ -1,8 +1,8 @@
+import BookingForm from "@/app/_custom_components/BookingForm";
+import ContactDetails from "@/app/_custom_components/ContactDetails";
+import Container from "@/app/_custom_components/Container";
+import { H1, H4 } from "@/app/_custom_components/Headings";
 import { Metadata } from "next";
-import BookingForm from "../_custom_components/BookingForm";
-import ContactDetails from "../_custom_components/ContactDetails";
-import Container from "../_custom_components/Container";
-import { H1, H4 } from "../_custom_components/Headings";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
