@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Drawer,
   DrawerClose,
@@ -14,14 +13,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
-import Image from "next/image";
 import Link from "next/link";
-import LinkedInIcon from "./icons/LinkedInIcon";
-import MailIcon from "./icons/MailIcon";
 import EcoscopeButton from "./Button";
-import FacebookIcon from "./icons/FacebookIcon";
 import Container from "./Container";
 
 export const MobileDrawer = () => {

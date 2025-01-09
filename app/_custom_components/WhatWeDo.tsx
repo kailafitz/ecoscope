@@ -1,4 +1,3 @@
-import React from "react";
 import Container, { containerMb } from "./Container";
 import { H2, H4 } from "./Headings";
 

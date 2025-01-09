@@ -1,8 +1,6 @@
-import React from "react";
+import MoreStories from "../(news)/news/_news_components/MoreStories";
 import Container from "./Container";
 import { H2 } from "./Headings";
-import MoreStories from "../(news)/news/_news_components/MoreStories";
-import EcoscopeButton from "./Button";
 
 const News = () => {
   return (

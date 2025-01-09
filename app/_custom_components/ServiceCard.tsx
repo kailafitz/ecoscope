@@ -1,4 +1,3 @@
-import React, { ReactNode } from "react";
 import {
   Card,
   CardDescription,
@@ -6,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ReactNode } from "react";
 import EcoscopeButton from "./Button";
 
 type ServiceProps = {

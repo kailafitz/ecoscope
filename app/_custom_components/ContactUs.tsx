@@ -1,10 +1,9 @@
-import React from "react";
+import BookingForm from "./BookingForm";
 import Container from "./Container";
 import { H2, H3 } from "./Headings";
-import MapIcon from "./icons/MapIcon";
-import MailIcon from "./icons/MailIcon";
-import BookingForm from "./BookingForm";
 import LogoIcon from "./icons/LogoIcon";
+import MailIcon from "./icons/MailIcon";
+import MapIcon from "./icons/MapIcon";
 
 const ContactUs = () => {
   return (

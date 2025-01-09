@@ -1,10 +1,9 @@
-import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
-import LinkedInIcon from "./icons/LinkedInIcon";
-import InstagramIcon from "./icons/InstagramIcon";
 import FacebookIcon from "./icons/FacebookIcon";
-import Image from "next/image";
+import InstagramIcon from "./icons/InstagramIcon";
+import LinkedInIcon from "./icons/LinkedInIcon";
 
 const Footer = () => {
   const year = new Date().getFullYear();

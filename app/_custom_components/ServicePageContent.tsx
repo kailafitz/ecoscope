@@ -1,10 +1,10 @@
 "use client";
-import { useParams } from "next/navigation";
-import React, { ReactNode, useEffect, useState } from "react";
 import Container from "@/app/_custom_components/Container";
 import { DualHeading } from "@/app/_custom_components/Headings";
-import Image from "next/image";
 import { data } from "@/data";
+import Image from "next/image";
+import { useParams } from "next/navigation";
+import { ReactNode, useEffect, useState } from "react";
 
 type Props = {
   title: string;

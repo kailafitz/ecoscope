@@ -1,7 +1,6 @@
-import React from "react";
 import { buttonVariants } from "@/components/ui/button";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 type Props = {
   href: string;

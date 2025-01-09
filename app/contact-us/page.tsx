@@ -1,9 +1,8 @@
-import React from "react";
-import { H1, H4 } from "../_custom_components/Headings";
-import Container from "../_custom_components/Container";
+import { Metadata } from "next";
 import BookingForm from "../_custom_components/BookingForm";
 import ContactDetails from "../_custom_components/ContactDetails";
-import { Metadata } from "next";
+import Container from "../_custom_components/Container";
+import { H1, H4 } from "../_custom_components/Headings";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

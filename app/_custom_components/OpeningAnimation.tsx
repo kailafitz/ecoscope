@@ -1,7 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { H1 } from "./Headings";
+import { useEffect, useState } from "react";
 
 const OpeningAnimation = () => {
   const [active, setActive] = useState<Boolean>(true);

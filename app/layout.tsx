@@ -1,22 +1,17 @@
-import "./globals.css";
 import type { Metadata } from "next";
-import {
-  VisualEditing,
-  toPlainText,
-  type PortableTextBlock,
-} from "next-sanity";
+import { VisualEditing, toPlainText } from "next-sanity";
 import { draftMode } from "next/headers";
-import { Suspense } from "react";
+import "./globals.css";
 
+import { open, varela } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 import type { SettingsQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
-import { cn } from "@/lib/utils";
-import { open, varela } from "@/lib/fonts";
-import Navigation from "./_custom_components/Navigation";
-import Footer from "./_custom_components/Footer";
 import AlertBanner from "./(news)/alert-banner";
+import Footer from "./_custom_components/Footer";
+import Navigation from "./_custom_components/Navigation";
 import OpeningAnimation from "./_custom_components/OpeningAnimation";
 
 export async function generateMetadata(): Promise<Metadata> {

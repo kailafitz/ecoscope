@@ -1,8 +1,7 @@
-import React from "react";
-import { H2 } from "./Headings";
-import Container from "./Container";
 import Image from "next/image";
 import Link from "next/link";
+import Container from "./Container";
+import { H2 } from "./Headings";
 import MailIcon from "./icons/MailIcon";
 
 const MeetOurFounder = () => {

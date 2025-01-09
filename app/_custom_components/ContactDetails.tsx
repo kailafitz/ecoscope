@@ -1,10 +1,9 @@
-import React from "react";
-import LinkedInIcon from "../_custom_components/icons/LinkedInIcon";
-import MapIcon from "../_custom_components/icons/MapIcon";
-import InstagramIcon from "../_custom_components/icons/InstagramIcon";
 import Link from "next/link";
-import MailIcon from "../_custom_components/icons/MailIcon";
 import FacebookIcon from "../_custom_components/icons/FacebookIcon";
+import InstagramIcon from "../_custom_components/icons/InstagramIcon";
+import LinkedInIcon from "../_custom_components/icons/LinkedInIcon";
+import MailIcon from "../_custom_components/icons/MailIcon";
+import MapIcon from "../_custom_components/icons/MapIcon";
 
 const ContactDetails = () => {
   return (

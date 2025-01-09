@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "./Button";
 import Container from "./Container";
 import LogoIcon from "./icons/LogoIcon";

@@ -1,8 +1,7 @@
-import React from "react";
-import Container from "./Container";
-import { H2, H3, H4, mb } from "./Headings";
-import ServiceCard from "./ServiceCard";
 import EcoscopeButton from "./Button";
+import Container from "./Container";
+import { H2, H4 } from "./Headings";
+import ServiceCard from "./ServiceCard";
 
 const servicesData = [
   {
@@ -81,7 +80,7 @@ const OurServices = () => {
   return (
     <>
       <Container mb id="services" className="text-center">
-        <H2 mb>We Speacilise In</H2>
+        <H2 mb>We Specialise In</H2>
         <div className="grid grid-cols-1 xl:grid-cols-3 space-y-9 xl:space-y-0 mb-16">
           {servicesData.map((service, i) => {
             let href = service?.name.replace(/ /g, "-").toLowerCase();

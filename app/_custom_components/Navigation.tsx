@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -8,15 +7,14 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import Link from "next/link";
-import { MobileDrawer } from "./MobileDrawer";
-import Container from "./Container";
-import EcoscopeButton from "./Button";
 import { usePathname } from "next/navigation";
+import EcoscopeButton from "./Button";
+import Container from "./Container";
+import { MobileDrawer } from "./MobileDrawer";
 
 const Navigation = () => {
   const pathname = usePathname();
