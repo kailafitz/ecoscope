@@ -11,13 +11,6 @@ type Props = {
   information: ReactNode;
 };
 
-const steps = [
-  "Scope Out",
-  "Strategise",
-  "Engage, Implement & Track",
-  "Report",
-];
-
 const ServicePageContent = () => {
   const [service, setService] = useState<Props>();
   const params = useParams();

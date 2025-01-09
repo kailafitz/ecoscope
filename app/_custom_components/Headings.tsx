@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-let mb = "mb-8 md:mb-10";
+export const mb = "mb-8 md:mb-10";
 
 type Props = {
   children: ReactNode;
@@ -14,10 +14,14 @@ type Props = {
 export const DualHeading = (props: Props) => {
   return (
     <>
-      <h1 className={`${props.className} font-heading text-xl mb-0`}>
+      <h1
+        className={`font-heading text-xl ${props.mb && !props.subtitle && mb} ${props.subtitle && "mb-3"} ${props.className}`}
+      >
         {props.children}
       </h1>
-      <p className="text-3xl md:text-5xl text-primary font-heading opacity-60">
+      <p
+        className={`text-3xl md:text-5xl text-primary font-heading opacity-60 ${props.mb && props.subtitle && mb}`}
+      >
         {props.subtitle}
       </p>
     </>

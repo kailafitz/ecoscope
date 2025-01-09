@@ -50,8 +50,6 @@ const BookingForm = (props: Props) => {
     defaultValues: defaultValues,
   });
 
-  console.log(loading, success);
-
   const onSubmit = () => {
     setLoading(true);
     emailjs

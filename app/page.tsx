@@ -1,11 +1,13 @@
 import React from "react";
 import Landing from "./_custom_components/Landing";
-import Services from "./_custom_components/ServiceCard";
 import WhatWeDo from "./_custom_components/WhatWeDo";
 import News from "./_custom_components/News";
 import ContactUs from "./_custom_components/ContactUs";
 import { Metadata } from "next";
 import OpeningAnimation from "./_custom_components/OpeningAnimation";
+import OurServices from "./_custom_components/OurServices";
+import HowWeWork from "./_custom_components/HowWeWork";
+import ActionBanner from "./_custom_components/ActionBanner";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -21,10 +23,13 @@ const Home = () => {
   return (
     <>
       <Landing />
-      <Services />
+      <HowWeWork />
       <WhatWeDo />
       <News />
-      <ContactUs />
+      <HowWeWork />
+      <OurServices />
+      {/* <ContactUs /> */}
+      <ActionBanner />
     </>
   );
 };

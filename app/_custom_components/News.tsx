@@ -12,7 +12,7 @@ const News = () => {
           mb
           subtitle="Get insights into our company and the ever-growing industry of sustainability in business"
         >
-          Explore our News
+          Stay Tuned In and Explore our Latest News
         </H2>
         <MoreStories params={{ skip: "", limit: 3, industry: "" }} />
       </Container>
