@@ -13,31 +13,49 @@ const MeetOurFounder = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 lg:gap-x-14 xl:gap-x-0 gap-y-10 mb-10 items-center">
           <div className="lg:col-span-3">
             <H2 mb>The Mind Behind the Mission</H2>
+            <p className="mb-5">
+              Alexandra de Valera{" "}
+              <span className="font-bold">
+                Director of Ecoscope Ltd., Sustainability Strategist & Impact
+                Producer
+              </span>
+            </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Vestibulum aliquam semper
-              id laoreet ultrices. Sit diam risus tempus dis amet varius. Duis
-              eu pretium felis a semper et. Dignissim mauris commodo lectus
-              ultrices aliquam. Dignissim sed aliquam odio aliquet molestie.
-              Consequat in eget sed amet ornare nunc penatibus egestas. Blandit
-              massa tempor lacus a sollicitudin malesuada mi.
+              Alexandra de Valera, bringing over a decade of experience leading
+              transformative projects, founded Ecoscope Ltd. in 2022 to address
+              and provide meaningful and resilient solutions to critical
+              challenges the creative industries face amidst the climate crisis.
               <br />
-              Tristique semper amet aliquam congue posuere eget etiam etiam.
-              Imperdiet curabitur molestie amet eu aliquam tristique ornare ante
-              pellentesque. Ut ultrices faucibus at sed eget et quisque. Ut
-              tellus vestibulum habitant curabitur. Mattis odio sagittis enim et
-              nisi pharetra. Dolor amet consectetur suspendisse viverra ut sed
-              molestie a.
               <br />
-              Porttitor orci et ultrices risus neque id netus scelerisque. Amet
-              ut id et iaculis ac amet eget aliquam pellentesque.
+              Known for her dynamic leadership and collaborative approach,
+              Alexandra has spearheaded initiatives that bridge science,
+              business, policy, and community development and engagement. Under
+              her guidance and visionary approach, Ecoscope has become a
+              recognised leader in empowering communities, fostering
+              cross-sector partnerships, and implementing data-driven strategies
+              and has earned her recognition as a driving force for meaningful
+              environmental change in the creative industries. Passionate about
+              research and innovation, Alex streamlines work processes to
+              achieve positive impacts on and off-screen. Holding advisory roles
+              and participating in industry events, Alexandra is committed to
+              advancing sustainability in the creative industries and has
+              recently been engaged as the Global Production Network’s
+              Sustainability Consultant.
+              <br />
+              <br />
+              An advocate for equitable environmental practices, Alexandra’s
+              work reflects her unwavering dedication to combining technical
+              expertise with a deep commitment to social and environmental
+              justice. Her work continues to inspire action and drive meaningful
+              change in the pursuit of building a sustainable future for all.
             </p>
           </div>
           <Image
-            src="/_assets/headshot.png"
+            src="/_assets/headshot-2.jpg"
             alt="Headshot of Alexandra de Valera"
             width="400"
             height="400"
-            className="justify-self-center lg:justify-self-end lg:col-span-2 rounded-full z-10 lg:w-96 xl:h-auto"
+            className="saturate-0 justify-self-center lg:justify-self-end lg:col-span-2 rounded-full z-10 lg:w-96 xl:h-auto"
           />
         </div>
 

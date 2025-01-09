@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const AboutUs = () => {
   return (
     <>
-      <div className="about-top relative w-full py-16 lg:py-0 mb-16 md:mb-32">
+      {/* <div className="about-top relative w-full py-16 lg:py-0 mb-16 md:mb-32">
         <div className="bg-primary top-0 left-0 absolute w-full h-full opacity-80" />
         <svg
           className="absolute w-full bottom-0 right-0 -m-px z-20"
@@ -36,29 +36,12 @@ const AboutUs = () => {
         <Container topViewHeight className="flex flex-col justify-center">
           <div className="w-full md:w-8/12 xl:w-6/12 relative z-20 text-primary-foreground">
             <H2 mb>About Us</H2>
-            <p className="text-xl mb-8">
-              Lorem ipsum dolor sit amet consectetur. Mi ut eu vel libero. Quam
-              tincidunt ut dignissim tristique consequat tristique sed.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur. Mi ut eu vel libero. Quam
-              tincidunt ut dignissim tristique consequat tristique sed. Proin
-              iaculis consectetur lacus luctus sed. Turpis odio augue sagittis
-              risus sollicitudin commodo.
-              <br />
-              Lorem dolor faucibus convallis lacinia nisl orci. Metus commodo
-              elit ac pellentesque amet interdum eu. Ornare risus est nulla
-              bibendum sed. Quam risus sapien euismod auctor aliquet amet dis
-              lectus. Nulla sem egestas mauris lectus lacus tempus ut odio.
-              Cursus semper quis lorem pellentesque sollicitudin lectus montes
-              eget vitae. Gravida id sit bibendum phasellus. Duis in ut mauris
-              cras in odio convallis. Dolor at enim odio facilisi. At morbi nunc
-              leo vel dictum.
-            </p>
           </div>
         </Container>
+      </div> */}
+      <div className="pt-10 md:pt-14">
+        <WhatWeDo />
       </div>
-      <WhatWeDo />
       <ActionBanner bottomBorder />
       <MeetOurFounder />
     </>
