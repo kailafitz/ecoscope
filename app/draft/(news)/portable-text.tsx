@@ -8,12 +8,12 @@
  *
  */
 
+import { H4 } from "@/app/_custom_components/Headings";
 import {
   PortableText,
   type PortableTextComponents,
   type PortableTextBlock,
 } from "next-sanity";
-import { H4 } from "../_custom_components/Headings";
 
 export default function CustomPortableText({
   className,

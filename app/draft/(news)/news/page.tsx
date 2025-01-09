@@ -1,16 +1,13 @@
-import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
-import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
-import Container from "../../_custom_components/Container";
-import ActionBanner from "../../_custom_components/ActionBanner";
-import { sanityFetch } from "@/sanity/lib/fetch";
-import Intro from "./_news_components/Intro";
-import LatestFeaturesPost from "./_news_components/LatestFeaturesPost";
 import { H3 } from "@/app/_custom_components/Headings";
-import FilteredResults from "./_news_components/FilteredResults";
-import { Suspense } from "react";
-import MoreStories from "./_news_components/MoreStories";
+import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 import { Metadata } from "next";
 import AllStories from "./_news_components/AllStories";
+import Intro from "./_news_components/Intro";
+import LatestFeaturesPost from "./_news_components/LatestFeaturesPost";
+import Container from "@/app/_custom_components/Container";
+import ActionBanner from "@/app/_custom_components/ActionBanner";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
