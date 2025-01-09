@@ -35,7 +35,7 @@ const OpeningAnimation = () => {
           y="0px"
           width="100%"
           viewBox="0 0 2788 252"
-          enable-background="new 0 0 2788 252"
+          enableBackground="new 0 0 2788 252"
           // xml:space="preserve"
         >
           <path
