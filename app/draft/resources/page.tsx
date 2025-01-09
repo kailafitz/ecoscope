@@ -1,7 +1,18 @@
 import ActionBanner from "@/app/_custom_components/ActionBanner";
 import Container from "@/app/_custom_components/Container";
 import { H1, H4 } from "@/app/_custom_components/Headings";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Resources",
+    description: "Resources",
+    // openGraph: {
+    //   images: ogImage ? [ogImage, ...previousImages] : previousImages,
+    // },
+  } satisfies Metadata;
+}
 
 const resourcesData = [
   {
