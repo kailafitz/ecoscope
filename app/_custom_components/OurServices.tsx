@@ -96,9 +96,11 @@ const OurServices = () => {
             );
           })}
         </div>
-        <H4 className="lg:w-5/6 mx-auto mb-5">
+        <H4 className="sm:w-3/4 md:w-3/5 xl:w-5/6 mx-auto mb-5">
           Looking for something different? At Ecoscope, we know that one size
-          does not fit all. Get in touch to share your story.
+          does not fit all.
+          <br />
+          Get in touch to share your story.
         </H4>
         <EcoscopeButton href={"/contact-us"}>Contact Us</EcoscopeButton>
       </Container>

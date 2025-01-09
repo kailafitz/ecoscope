@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "./Container";
 import { H2 } from "./Headings";
-import { Card } from "@/components/ui/card";
 
 const steps = [
   "Scope Out",

@@ -9,6 +9,8 @@ type Props = {
   id?: string;
 };
 
+export const containerMb = "mb-16 md:mb-32";
+
 const Container = (props: Props) => {
   return (
     <div

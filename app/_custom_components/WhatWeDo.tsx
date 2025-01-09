@@ -1,6 +1,6 @@
 import React from "react";
-import Container from "./Container";
-import { DualHeading, H2, H4, mb } from "./Headings";
+import Container, { containerMb } from "./Container";
+import { H2, H4 } from "./Headings";
 
 const whatWeDo = [
   {
@@ -37,38 +37,50 @@ const whatWeDo = [
 
 const WhatWeDo = () => {
   return (
-    <Container mb className="flex flex-col justify-center text-center">
-      <H2>What We Do</H2>
-      <p className={`mt-5 ${mb}`}>
-        One of the key hallmarks of a sustainable and thriving business is that
-        it is adaptable. At Ecoscope, we are specialists at scoping out
-        sustainable solutions and want to engage with like-minded individuals
-        and organisations of all sizes across the creative industries committed
-        to making a positive impact through their operations. We are creative
-        problem solvers here to help creative entrepreneurs and industries build
-        a sustainable future and develop feasible, just and meaningful
-        mitigation and adaptation solutions to the climate crisis. The best
-        antidote to climate anxiety is taking action and Ecoscope is here as a
-        guide to meet you where you are on on your sustainability journey.{" "}
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 lg:gap-x-16 gap-y-10 lg:gap-y-24 text-left">
-        {whatWeDo.map((value, i) => {
-          return (
-            <div key={`${i}-what-we-do`}>
-              <H4>
-                <span className="text-primary text-2xl opacity-70 mr-2.5">
-                  0{i + 1}
-                </span>
-                {value.name}
-              </H4>
-              <hr className="h-0.5 primary-gradient my-3 border-none rounded-full" />
-              <p className="text-base">{value.description}</p>
-            </div>
-          );
-        })}
+    <>
+      <Container>
+        <H2 mb className="text-center">
+          What We Do
+        </H2>
+      </Container>
+      <div className={`bg-primary ${containerMb} flex flex-col lg:flex-row`}>
+        <Container className="text-white w-full lg:w-1/2 py-10">
+          <H4 mb>For Creatives, led by Creatives</H4>
+          <p>
+            One of the key hallmarks of a sustainable and thriving business is
+            that it is adaptable. At Ecoscope, we are specialists at scoping out
+            sustainable solutions and want to engage with like-minded
+            individuals and organisations of all sizes across the creative
+            industries committed to making a positive impact through their
+            operations. We are creative problem solvers here to help creative
+            entrepreneurs and industries build a sustainable future and develop
+            feasible, just and meaningful mitigation and adaptation solutions to
+            the climate crisis. The best antidote to climate anxiety is taking
+            action and Ecoscope is here as a guide to meet you where you are on
+            on your sustainability journey.{" "}
+          </p>
+        </Container>
+        <div className="about-top h-80 lg:h-auto lg:w-1/2 bg-cover saturate-0"></div>
       </div>
-    </Container>
+      <Container mb>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 lg:gap-x-16 gap-y-10 lg:gap-y-24 text-left">
+          {whatWeDo.map((value, i) => {
+            return (
+              <div key={`${i}-what-we-do`}>
+                <H4>
+                  <span className="text-primary text-2xl opacity-70 mr-2.5">
+                    0{i + 1}
+                  </span>
+                  {value.name}
+                </H4>
+                <hr className="h-0.5 primary-gradient my-3 border-none rounded-full" />
+                <p className="text-base">{value.description}</p>
+              </div>
+            );
+          })}
+        </div>
+      </Container>
+    </>
   );
 };
 
