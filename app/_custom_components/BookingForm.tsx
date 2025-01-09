@@ -242,12 +242,14 @@ const BookingForm = (props: Props) => {
           name="certification"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Certification</FormLabel>
+              <FormLabel>
+                Are you enquiring about Certification or Carbon Reporting?
+              </FormLabel>
               <FormControl>
                 <Input
                   type="text"
                   id="certification"
-                  placeholder="ESG, CPD, etc."
+                  placeholder="e.g. Albert, AdGreen, ESG"
                   disabled={loading ? true : false}
                   {...field}
                 />
@@ -272,19 +274,17 @@ const BookingForm = (props: Props) => {
             <FormItem
               className={` ${props.homepage ? "md:col-span-2" : "lg:col-span-2"}`}
             >
-              <FormLabel>More Information</FormLabel>
+              <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea
                   // defaultValue={field.value}
-                  placeholder="Write your messager here"
+                  placeholder="Share your story. The more information the better!"
                   className="resize-none"
                   disabled={loading ? true : false}
                   {...field}
                 />
               </FormControl>
-              <FormDescription>
-                Please inform us of any other important information
-              </FormDescription>
+              {/* <FormDescription></FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
