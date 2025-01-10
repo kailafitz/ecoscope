@@ -8,7 +8,7 @@ import WhatWeDo from "../_custom_components/WhatWeDo";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Home | Ecoscope",
+    title: "Home",
     description: "Home",
     // openGraph: {
     //   images: ogImage ? [ogImage, ...previousImages] : previousImages,

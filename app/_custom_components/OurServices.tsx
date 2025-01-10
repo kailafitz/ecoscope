@@ -22,7 +22,7 @@ const servicesData = [
     ),
     name: "Film and Television",
     description:
-      "Ecoscope helps productions adopt cost saving sustainable practices to become more efficient and align with industry standards for responsible filmmaking, both behind the scenes and on-screen.",
+      "Ecoscope helps Film & TV productions adopt cost saving sustainable practices to become more efficient and align with industry standards for responsible filmmaking, both behind the scenes and on-screen. By engaging with Ecoscope, not only will your production's be eco-conscious, editorial considerations, financial incentives and cost reduction strategies will also be holistically considered at each stage of the process in areas such as energy usage, waste, catering, materials and on-screen messaging through editorial consultation.",
   },
   {
     icon: (
@@ -41,7 +41,7 @@ const servicesData = [
     ),
     name: "Advertising",
     description:
-      "Ecoscope helps campaigns achieve impactful results while promoting responsible practices and reducing environmental impact.",
+      "Ecoscope helps campaigns achieve impactful results by embedding sustainable practices which help position brands as environmentally responsible. We are accustomed to the fast-paced nature of shorter production timelines and will assist your team integrating sustainability principles and strategies in areas such as energy usage, waste, catering and materials. ",
   },
   ,
   {
@@ -72,7 +72,7 @@ const servicesData = [
     ),
     name: "Hospitality",
     description:
-      "Ecoscope provides expert guidance on sustainable practices that reflect consumer/market trends towards sustainable alternatives, strengthening brand reputation, and contributing to a positive environmental footprint.",
+      "Ecoscope provides expert guidance on sustainable practices that reflect consumer/market trends towards sustainable alternatives, strengthening your company’s reputation, and contributing to a positive environmental footprint. We help businesses establish clear, actionable guidelines and strategies in areas such as energy usage, waste management and reduction and sustainable sourcing and disposal, making it easier for your business to adopt eco-friendly practices. ",
   },
 ];
 
@@ -81,7 +81,7 @@ const OurServices = () => {
     <>
       <Container mb id="services" className="text-center">
         <H2 mb>We Specialise In</H2>
-        <div className="grid grid-cols-1 xl:grid-cols-3 space-y-9 xl:space-y-0 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16 justify-center">
           {servicesData.map((service, i) => {
             let href = service?.name.replace(/ /g, "-").toLowerCase();
             return (
