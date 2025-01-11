@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <div className="bg-primary pt-16">
       <Container className="flex flex-col md:flex-row justify-between items-stretch md:space-x-24">
-        <Link href="/">
+        <Link href="/draft">
           <Image
             src="/_assets/logo-white-vertical-full.png"
             alt="Ecoscope white logo"
@@ -31,13 +31,13 @@ const Footer = () => {
           <div>
             <div className="flex flex-col md:flex-row w-full justify-end pb-6 space-y-3 md:space-y-0 text-white [&_a:not(:last-child)]:mr-0 md:[&_a:not(:last-child)]:mr-8">
               <Link
-                href="/news"
+                href="/draft/news"
                 className="transition-all hover:opacity-70 hover:transition-all"
               >
                 News
               </Link>
               <Link
-                href="/resources"
+                href="/draft/resources"
                 className="transition-all hover:opacity-70 hover:transition-all"
               >
                 Resources

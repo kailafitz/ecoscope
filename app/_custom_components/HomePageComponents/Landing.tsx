@@ -22,12 +22,12 @@ const Landing = () => {
                 </h2>
               </div>
               <div className="flex flex-col sm:flex-row justify-between space-y-3 sm:space-x-6 sm:space-y-0">
-                <EcoscopeButton href="#services" className="w-full">
+                <EcoscopeButton href="/draft/our-services" className="w-full">
                   Our Services
                 </EcoscopeButton>
                 <EcoscopeButton
                   variant="outline"
-                  href="contact-us"
+                  href="/draft/contact-us"
                   className="w-full"
                 >
                   Contact Us

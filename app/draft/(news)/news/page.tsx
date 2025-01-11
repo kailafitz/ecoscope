@@ -56,7 +56,9 @@ export default async function Page({
             return (
               <Card key={i} className="flex flex-col justify-between space-y-5">
                 <CardHeader>
-                  <H4 className="text-gray-600">{link.title}</H4>
+                  <H4 left className="text-gray-600">
+                    {link.title}
+                  </H4>
                   <p className="text-muted-foreground">{link.source}</p>
                 </CardHeader>
 

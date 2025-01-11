@@ -6,7 +6,7 @@ import { H4 } from "./_custom_components/Headings";
 const Draft = () => {
   const pathname = usePathname();
 
-  if (pathname === "/") {
+  if (pathname === "/draft") {
     return (
       <div className="absolute top-0 left-0 bg-primary h-screen w-screen z-[999] flex flex-col justify-center items-center text-white">
         <Image

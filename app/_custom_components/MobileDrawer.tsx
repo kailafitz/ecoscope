@@ -35,7 +35,7 @@ export const MobileDrawer = () => {
         <Container className="pt-6 px-10">
           {/* <NavigationMenuList className="pb-10">
             <NavigationMenuItem className="hover:cursor-pointer">
-              <Link href="/" legacyBehavior passHref>
+              <Link href="/draft" legacyBehavior passHref>
                 <Image
                   src="/_assets/logo-primary-horizontal.png"
                   alt="Navigation bar"
@@ -97,7 +97,7 @@ export const MobileDrawer = () => {
                       className={navigationMenuTriggerStyle()}
                       asChild
                     >
-                      <Link href="/our-services">Our Services</Link>
+                      <Link href="/draft/our-services">Our Services</Link>
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
@@ -107,7 +107,7 @@ export const MobileDrawer = () => {
                       className={navigationMenuTriggerStyle()}
                       asChild
                     >
-                      <Link href="/about-us">About Us</Link>
+                      <Link href="/draft/about-us">About Us</Link>
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
@@ -117,7 +117,7 @@ export const MobileDrawer = () => {
                       className={navigationMenuTriggerStyle()}
                       asChild
                     >
-                      <Link href="/contact-us">Contact Us</Link>
+                      <Link href="/draft/contact-us">Contact Us</Link>
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
@@ -128,7 +128,7 @@ export const MobileDrawer = () => {
                       className={navigationMenuTriggerStyle()}
                       asChild
                     >
-                      <Link href="/news">News</Link>
+                      <Link href="/draft/news">News</Link>
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
@@ -138,7 +138,7 @@ export const MobileDrawer = () => {
                       className={navigationMenuTriggerStyle()}
                       asChild
                     >
-                      <Link href="/resources">Resources</Link>
+                      <Link href="/draft/resources">Resources</Link>
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
