@@ -81,7 +81,7 @@ const OurServices = () => {
     <>
       <Container mb id="services" className="text-center">
         <H2 mb>We Specialise In</H2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16 justify-center">
+        <div className="flex flex-wrap mb-16 gap-10 justify-center">
           {servicesData.map((service, i) => {
             let href = service?.name.replace(/ /g, "-").toLowerCase();
             return (
