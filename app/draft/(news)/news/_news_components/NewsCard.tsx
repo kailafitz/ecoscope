@@ -36,7 +36,7 @@ const NewsCard = (props: Props) => {
       key={props._id}
       className={`group flex flex-col rounded-lg text-left shadow-lg`}
     >
-      <Card className="max-w-full w-[300px] flex flex-col relative rounded-lg shadow-none bg-transparent">
+      <Card className="max-w-full w-[300px] flex flex-col relative rounded-lg shadow-none bg-white">
         <Link href={`/news/posts/${props.slug}`}>
           <CoverImage image={props.coverImage} priority={false} card />
         </Link>

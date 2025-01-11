@@ -25,7 +25,11 @@ const Landing = () => {
                 <EcoscopeButton href="#services" className="w-full">
                   Our Services
                 </EcoscopeButton>
-                <EcoscopeButton href="contact-us" className="w-full">
+                <EcoscopeButton
+                  variant="outline"
+                  href="contact-us"
+                  className="w-full"
+                >
                   Contact Us
                 </EcoscopeButton>
               </div>

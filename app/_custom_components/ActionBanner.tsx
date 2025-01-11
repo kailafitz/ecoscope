@@ -24,7 +24,7 @@ const ActionBanner = (props: Props) => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button href="/contact-us">Contact Us</Button>
-          <Button href="/contact-us#book-a-consultation">
+          <Button variant="outline" href="/contact-us#book-a-consultation">
             Book a Consultation
           </Button>
         </div>
