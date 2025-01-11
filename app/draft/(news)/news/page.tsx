@@ -53,7 +53,7 @@ export default async function Page({
 
         <AllStories skip={heroPost?._id!} industry={industry} />
       </Container>
-      <ActionBanner bottomBorder />
+      <ActionBanner />
     </>
   );
 }
