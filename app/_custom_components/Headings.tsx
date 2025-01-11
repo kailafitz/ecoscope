@@ -89,12 +89,14 @@ export const H4 = (props: Props) => {
   return (
     <>
       <h4
-        className={`font-heading text-xl md:text-2xl ${props.mb && !props.subtitle && mb} ${props.subtitle && "mb-3"} ${props.className} `}
+        className={`font-heading text-xl md:text-2xl ${props.mb && !props.subtitle && mb} ${props.subtitle && "mb-3"} ${!props.left && "text-center mx-auto"} ${props.className} `}
       >
         {props.children}
       </h4>
       {props.subtitle && (
-        <p className={`text-md md:text-lg ${props.mb && props.subtitle && mb}`}>
+        <p
+          className={`text-md md:text-lg ${!props.left && "text-center mx-auto"} ${props.mb && props.subtitle && mb}`}
+        >
           {props.subtitle}
         </p>
       )}

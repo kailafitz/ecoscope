@@ -52,7 +52,9 @@ const WhatWeDo = () => {
       </Container>
       <div className={`${containerMb} flex flex-col lg:flex-row`}>
         <Container className="w-full lg:w-1/2 py-10">
-          <H4 mb>For Creatives, led by Creatives</H4>
+          <H4 left mb>
+            For Creatives, led by Creatives
+          </H4>
           <p>
             One of the key hallmarks of a sustainable and thriving business is
             that it is adaptable. At Ecoscope, we are specialists at scoping out
@@ -78,7 +80,7 @@ const WhatWeDo = () => {
                 data-aos-delay={i * 100}
                 key={`${i}-what-we-do`}
               >
-                <H4>
+                <H4 left>
                   <span className="text-primary text-2xl opacity-70 mr-2.5">
                     0{i + 1}
                   </span>

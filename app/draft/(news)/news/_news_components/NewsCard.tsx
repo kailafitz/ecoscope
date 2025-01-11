@@ -45,7 +45,7 @@ const NewsCard = (props: Props) => {
           <p className={`font-body text-md md:text-sm text-primary`}>
             {props.industry}
           </p>
-          <H4>
+          <H4 left>
             <Link
               href={`/news/posts/${props.slug}`}
               className="hover:opacity-60"

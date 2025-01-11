@@ -4,6 +4,7 @@ import Container from "./Container";
 import FacebookIcon from "../_icons/FacebookIcon";
 import InstagramIcon from "../_icons/InstagramIcon";
 import LinkedInIcon from "../_icons/LinkedInIcon";
+import { JoinMissionModal } from "../HomePageComponents/JoinMissionModal";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -41,15 +42,16 @@ const Footer = () => {
               >
                 Resources
               </Link>
-              <Link
+              {/* <Link
                 href="/join-the-mission"
                 className="transition-all hover:opacity-70 hover:transition-all"
               >
                 Join the Mission
-              </Link>
+              </Link> */}
               {/* <Link href="/terms-and-conditions" className="text-white">
                 Terms and Conditions
               </Link> */}
+              <JoinMissionModal />
             </div>
             <div className="primary-gradient h-0.5 w-full rounded-full"></div>
             <div className="w-full text-white flex flex-row justify-between pt-6">

@@ -17,6 +17,7 @@ import {
 import Link from "next/link";
 import EcoscopeButton from "./Button";
 import Container from "./Layout/Container";
+import { JoinMissionModal } from "./HomePageComponents/JoinMissionModal";
 
 export const MobileDrawer = () => {
   return (
@@ -138,6 +139,16 @@ export const MobileDrawer = () => {
                       asChild
                     >
                       <Link href="/resources">Resources</Link>
+                    </NavigationMenuLink>
+                  </DrawerClose>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <DrawerClose asChild>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                      asChild
+                    >
+                      <JoinMissionModal />
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>

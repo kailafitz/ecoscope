@@ -36,7 +36,7 @@ const OurServices = () => {
               className={`grid grid-cols-1 md:grid-cols-3 gap-10 [&_svg]:text-primary [&:nth-child(2)_svg]:rotate-45 [&:nth-child(4)_svg]:rotate-12 ${containerMb}`}
             >
               <div>
-                <H4>{service.title}</H4>
+                <H4 left>{service.title}</H4>
                 <div className="primary-gradient h-0.5 w-full rounded-full my-3"></div>
               </div>
               <div className="relative z-10 col-span-2">

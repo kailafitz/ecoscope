@@ -1,6 +1,7 @@
 import MoreStories from "../../draft/(news)/news/_news_components/MoreStories";
 import Container, { containerMb } from "../Layout/Container";
 import { H2 } from "../Headings";
+import EcoscopeButton from "../Button";
 
 const News = () => {
   return (
@@ -12,7 +13,10 @@ const News = () => {
         >
           Stay Tuned In and Explore our Latest News
         </H2>
-        <MoreStories params={{ skip: "", limit: 3, industry: "" }} />
+        <EcoscopeButton className="w-fit mx-auto" href={"/news"}>
+          News
+        </EcoscopeButton>
+        {/* <MoreStories params={{ skip: "", limit: 3, industry: "" }} /> */}
       </Container>
     </div>
   );
