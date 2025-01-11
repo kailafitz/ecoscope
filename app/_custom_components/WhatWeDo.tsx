@@ -1,7 +1,9 @@
 "use client";
 import Container, { containerMb } from "./Layout/Container";
 import { H2, H4 } from "./Headings";
-import { motion } from "motion/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const whatWeDo = [
   {
@@ -37,6 +39,10 @@ const whatWeDo = [
 ];
 
 const WhatWeDo = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       <Container>
@@ -61,22 +67,17 @@ const WhatWeDo = () => {
             on your sustainability journey.{" "}
           </p>
         </Container>
-        <motion.div
-          initial={{ opacity: 0, translateX: 500 }}
-          animate={{ opacity: 1, translateX: 0 }}
-          exit={{ opacity: 0, translateX: 500 }}
-          transition={{
-            duration: 0.6,
-            delay: 1,
-          }}
-          className="about-top h-80 lg:h-auto lg:w-1/2 bg-cover saturate-0 rounded-tl-lg rounded-bl-lg"
-        ></motion.div>
+        <div className="about-top h-80 lg:h-auto lg:w-1/2 bg-cover saturate-0 rounded-tl-lg rounded-bl-lg"></div>
       </div>
       <Container mb>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 lg:gap-x-16 gap-y-10 lg:gap-y-24 text-left">
           {whatWeDo.map((value, i) => {
             return (
-              <div key={`${i}-what-we-do`}>
+              <div
+                data-aos="fade-up"
+                data-aos-delay={i * 100}
+                key={`${i}-what-we-do`}
+              >
                 <H4>
                   <span className="text-primary text-2xl opacity-70 mr-2.5">
                     0{i + 1}
