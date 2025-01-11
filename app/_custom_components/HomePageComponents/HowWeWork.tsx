@@ -20,7 +20,7 @@ const HowWeWork = () => {
   return (
     <Container id="how-we-work" mb className="text-center">
       <H2 mb>How We Work</H2>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-7 gap-y-9 xl:gap-y-0">
+      <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-x-7 gap-y-9 xl:gap-y-0">
         {steps.map((service, i) => {
           return (
             <div

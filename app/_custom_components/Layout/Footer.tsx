@@ -28,7 +28,7 @@ const Footer = () => {
         </Link>
         <div className="flex flex-1 flex-col justify-between pb-3">
           <div>
-            <div className="flex flex-col md:flex-row w-full justify-end pb-6 space-y-3 md:space-y-0 [&_a:not(:last-child)]:mr-0 md:[&_a:not(:last-child)]:mr-8 border-b border-white">
+            <div className="flex flex-col md:flex-row w-full justify-end pb-6 space-y-3 md:space-y-0 [&_a:not(:last-child)]:mr-0 md:[&_a:not(:last-child)]:mr-8">
               <Link href="/news" className="text-white">
                 News
               </Link>
@@ -42,6 +42,7 @@ const Footer = () => {
                 Terms and Conditions
               </Link> */}
             </div>
+            <div className="primary-gradient h-0.5 w-full rounded-full"></div>
             <div className="w-full text-white flex flex-row justify-between pt-6">
               <p>Dublin, Ireland</p>
               <div className="[&_svg]:h-7 flex flex-row space-x-3 text-white">

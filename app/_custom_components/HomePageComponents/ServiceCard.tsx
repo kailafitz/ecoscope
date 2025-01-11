@@ -13,22 +13,27 @@ type ServiceProps = {
   name?: string;
   description?: string;
   href?: string;
+  i: number;
 };
 
 const ServiceCard = (props: ServiceProps) => {
   return (
-    <Card className="flex flex-col justify-between w-full md:w-[500px]">
+    <Card
+      data-aos="fade-up"
+      data-aos-delay={props.i * 100}
+      className="flex flex-col justify-between w-full md:max-w-[350px]"
+    >
       <CardHeader className="text-center [&_svg]:block [&_svg]:mx-auto [&_svg]:w-28 [&_svg]:h-28 [&_svg]:mb-7 [&_svg]:text-primary">
         {props.icon}
         <CardTitle className="mb-4">{props.name}</CardTitle>
-        <CardDescription className="text-left">
+        <CardDescription className="text-center">
           {props.description}
         </CardDescription>
       </CardHeader>
       <div className="space-y-2.5 pb-6 pl-6 pr-6">
         {props.href && (
           <CardFooter className="flex justify-end">
-            <EcoscopeButton href={props.href ? props.href : " "}>
+            <EcoscopeButton full href={props.href ? props.href : " "}>
               Read more
             </EcoscopeButton>
           </CardFooter>
