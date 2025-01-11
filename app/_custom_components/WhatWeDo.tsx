@@ -67,7 +67,7 @@ const WhatWeDo = () => {
             on your sustainability journey.{" "}
           </p>
         </Container>
-        <div className="about-top h-80 lg:h-auto lg:w-1/2 bg-cover saturate-0 rounded-tl-lg rounded-bl-lg"></div>
+        <div className="about-top h-80 lg:h-auto lg:w-1/2 bg-cover saturate-0 lg:rounded-tl-lg lg:rounded-bl-lg"></div>
       </div>
       <Container mb>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 lg:gap-x-16 gap-y-10 lg:gap-y-24 text-left">

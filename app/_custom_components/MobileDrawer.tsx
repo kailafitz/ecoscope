@@ -48,7 +48,7 @@ export const MobileDrawer = () => {
           <NavigationMenu className="block">
             <div className="flex flex-col">
               <NavigationMenuList>
-                <NavigationMenuItem>
+                {/* <NavigationMenuItem>
                   <NavigationMenuTrigger>Our Services</NavigationMenuTrigger>
                   <NavigationMenuContent className="pb-0 md:pb-4">
                     <DrawerClose asChild>
@@ -89,6 +89,16 @@ export const MobileDrawer = () => {
                       </NavigationMenuLink>
                     </DrawerClose>
                   </NavigationMenuContent>
+                </NavigationMenuItem> */}
+                <NavigationMenuItem>
+                  <DrawerClose asChild>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                      asChild
+                    >
+                      <Link href="/our-services">Our Services</Link>
+                    </NavigationMenuLink>
+                  </DrawerClose>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <DrawerClose asChild>
@@ -110,6 +120,7 @@ export const MobileDrawer = () => {
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
+                <hr className="h-0.5 w-full primary-gradient border-none rounded-full mb-4" />
                 <NavigationMenuItem>
                   <DrawerClose asChild>
                     <NavigationMenuLink
@@ -117,6 +128,16 @@ export const MobileDrawer = () => {
                       asChild
                     >
                       <Link href="/news">News</Link>
+                    </NavigationMenuLink>
+                  </DrawerClose>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <DrawerClose asChild>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                      asChild
+                    >
+                      <Link href="/resources">Resources</Link>
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>

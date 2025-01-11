@@ -60,7 +60,7 @@ const OurServices = () => {
                 name={service?.name}
                 description={service?.description}
                 icon={service?.icon}
-                href={`service/${href}`}
+                href={`our-services/#${href}`}
               />
             );
           })}
