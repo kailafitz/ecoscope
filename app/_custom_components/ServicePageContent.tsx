@@ -1,5 +1,5 @@
 "use client";
-import Container from "@/app/_custom_components/Container";
+import Container from "@/app/_custom_components/Layout/Container";
 import { DualHeading } from "@/app/_custom_components/Headings";
 import { data } from "@/data";
 import Image from "next/image";
@@ -39,25 +39,6 @@ const ServicePageContent = () => {
           className="rounded-full h-unset"
         />
       </Container>
-      {/* <div className="relative bg-landscape w-full mb-16 md:mb-32 lg:mb-0">
-        <Container mb>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {steps.map((step, i) => {
-              return (
-                <div
-                  key={`Service steps ${i}`}
-                  className="bg-white rounded-lg z-20 relative p-5 shadow-xl"
-                >
-                  <p className="opacity-50 text-2xl text-primary font-heading">
-                    0{i + 1}
-                  </p>
-                  <p className="text-xl mb-5">{step}</p>
-                </div>
-              );
-            })}
-          </div>
-        </Container>
-      </div> */}
     </>
   );
 };

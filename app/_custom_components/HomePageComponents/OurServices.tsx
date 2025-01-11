@@ -1,6 +1,6 @@
-import EcoscopeButton from "./Button";
-import Container from "./Container";
-import { H2, H4 } from "./Headings";
+import EcoscopeButton from "../Button";
+import { H2, H4 } from "../Headings";
+import Container from "../Layout/Container";
 import ServiceCard from "./ServiceCard";
 
 const servicesData = [

@@ -12,9 +12,9 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import EcoscopeButton from "./Button";
+import EcoscopeButton from "../Button";
 import Container from "./Container";
-import { MobileDrawer } from "./MobileDrawer";
+import { MobileDrawer } from "../MobileDrawer";
 
 const Navigation = () => {
   const pathname = usePathname();

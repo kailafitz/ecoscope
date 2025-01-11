@@ -24,8 +24,8 @@ import { Check, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { PhoneInput } from "./PhoneInput";
-import { consultationFormSchema } from "../schemas/consultationFormSchema";
+import { PhoneInput } from "../PhoneInput";
+import { consultationFormSchema } from "../../schemas/consultationFormSchema";
 
 type Props = {
   homepage?: boolean;

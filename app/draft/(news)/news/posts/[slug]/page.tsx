@@ -17,7 +17,7 @@ import type {
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { postQuery, settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
-import Container from "@/app/_custom_components/Container";
+import Container from "@/app/_custom_components/Layout/Container";
 import { H1, H3 } from "@/app/_custom_components/Headings";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
 import ShareButtons from "../../_news_components/ShareButtons";

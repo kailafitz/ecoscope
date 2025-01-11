@@ -1,5 +1,7 @@
-import Container, { containerMb } from "./Container";
+"use client";
+import Container, { containerMb } from "./Layout/Container";
 import { H2, H4 } from "./Headings";
+import { motion } from "motion/react";
 
 const whatWeDo = [
   {
@@ -42,8 +44,8 @@ const WhatWeDo = () => {
           What We Do
         </H2>
       </Container>
-      <div className={`bg-primary ${containerMb} flex flex-col lg:flex-row`}>
-        <Container className="text-white w-full lg:w-1/2 py-10">
+      <div className={`${containerMb} flex flex-col lg:flex-row`}>
+        <Container className="w-full lg:w-1/2 py-10">
           <H4 mb>For Creatives, led by Creatives</H4>
           <p>
             One of the key hallmarks of a sustainable and thriving business is
@@ -59,7 +61,16 @@ const WhatWeDo = () => {
             on your sustainability journey.{" "}
           </p>
         </Container>
-        <div className="about-top h-80 lg:h-auto lg:w-1/2 bg-cover saturate-0"></div>
+        <motion.div
+          initial={{ opacity: 0, translateX: 500 }}
+          animate={{ opacity: 1, translateX: 0 }}
+          exit={{ opacity: 0, translateX: 500 }}
+          transition={{
+            duration: 0.6,
+            delay: 1,
+          }}
+          className="about-top h-80 lg:h-auto lg:w-1/2 bg-cover saturate-0 rounded-tl-lg rounded-bl-lg"
+        ></motion.div>
       </div>
       <Container mb>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 lg:gap-x-16 gap-y-10 lg:gap-y-24 text-left">

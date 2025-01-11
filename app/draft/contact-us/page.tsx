@@ -1,6 +1,6 @@
-import ConsultationForm from "@/app/_custom_components/ConsultationForm";
-import ContactDetails from "@/app/_custom_components/ContactDetails";
-import Container from "@/app/_custom_components/Container";
+import ConsultationForm from "@/app/_custom_components/ContactUsPageComponents/ConsultationForm";
+import ContactDetails from "@/app/_custom_components/ContactUsPageComponents/ContactDetails";
+import Container from "@/app/_custom_components/Layout/Container";
 import { H1, H4 } from "@/app/_custom_components/Headings";
 import { Metadata } from "next";
 

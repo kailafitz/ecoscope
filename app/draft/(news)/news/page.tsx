@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import AllStories from "./_news_components/AllStories";
 import Intro from "./_news_components/Intro";
 import LatestFeaturesPost from "./_news_components/LatestFeaturesPost";
-import Container from "@/app/_custom_components/Container";
+import Container from "@/app/_custom_components/Layout/Container";
 import ActionBanner from "@/app/_custom_components/ActionBanner";
 
 export async function generateMetadata(): Promise<Metadata> {

@@ -1,5 +1,5 @@
 import ActionBanner from "@/app/_custom_components/ActionBanner";
-import MeetOurFounder from "@/app/_custom_components/MeetOurFounder";
+import MeetOurFounder from "@/app/_custom_components/AboutUsPageComponents/MeetOurFounder";
 import WhatWeDo from "@/app/_custom_components/WhatWeDo";
 import { Metadata } from "next";
 

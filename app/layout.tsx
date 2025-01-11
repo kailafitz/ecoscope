@@ -10,9 +10,9 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 
-import Footer from "./_custom_components/Footer";
-import Navigation from "./_custom_components/Navigation";
-import OpeningAnimation from "./_custom_components/OpeningAnimation";
+import Footer from "./_custom_components/Layout/Footer";
+import Navigation from "./_custom_components/Layout/Navigation";
+import OpeningAnimation from "./_custom_components/HomePageComponents/OpeningAnimation";
 import Draft from "./draft/page";
 import AlertBanner from "./draft/(news)/alert-banner";
 
@@ -67,7 +67,7 @@ export default function RootLayout({
             open
           )}
         >
-          <OpeningAnimation />
+          {/* <OpeningAnimation /> */}
           <Navigation />
           <main className={`${varela} flex-1 flex flex-col overflow-hidden`}>
             {children}

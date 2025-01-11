@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
-import FacebookIcon from "./icons/FacebookIcon";
-import InstagramIcon from "./icons/InstagramIcon";
-import LinkedInIcon from "./icons/LinkedInIcon";
+import FacebookIcon from "../_icons/FacebookIcon";
+import InstagramIcon from "../_icons/InstagramIcon";
+import LinkedInIcon from "../_icons/LinkedInIcon";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -38,9 +38,9 @@ const Footer = () => {
               <Link href="/join-the-mission" className="text-white">
                 Join the Mission
               </Link>
-              <Link href="/terms-and-conditions" className="text-white">
+              {/* <Link href="/terms-and-conditions" className="text-white">
                 Terms and Conditions
-              </Link>
+              </Link> */}
             </div>
             <div className="w-full text-white flex flex-row justify-between pt-6">
               <p>Dublin, Ireland</p>

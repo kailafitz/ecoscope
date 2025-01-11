@@ -1,9 +1,9 @@
-import ConsultationForm from "./ConsultationForm";
-import Container from "./Container";
+import ConsultationForm from "./ContactUsPageComponents/ConsultationForm";
+import Container from "./Layout/Container";
 import { H2, H3 } from "./Headings";
-import LogoIcon from "./icons/LogoIcon";
-import MailIcon from "./icons/MailIcon";
-import MapIcon from "./icons/MapIcon";
+import LogoIcon from "./_icons/LogoIcon";
+import MailIcon from "./_icons/MailIcon";
+import MapIcon from "./_icons/MapIcon";
 
 const ContactUs = () => {
   return (

@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ReactNode } from "react";
-import EcoscopeButton from "./Button";
+import EcoscopeButton from "../Button";
 
 type ServiceProps = {
   icon?: ReactNode;

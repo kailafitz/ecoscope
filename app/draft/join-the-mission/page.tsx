@@ -1,4 +1,6 @@
-import Container, { containerMb } from "@/app/_custom_components/Container";
+import Container, {
+  containerMb,
+} from "@/app/_custom_components/Layout/Container";
 import { H1 } from "@/app/_custom_components/Headings";
 import JoinMissionForm from "@/app/_custom_components/JoinMissionForm";
 

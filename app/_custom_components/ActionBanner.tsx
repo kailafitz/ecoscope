@@ -1,15 +1,11 @@
 import Button from "./Button";
-import Container from "./Container";
-import LogoIcon from "./icons/LogoIcon";
+import Container from "./Layout/Container";
+import LogoIcon from "./_icons/LogoIcon";
 
-type Props = {
-  bottomBorder?: boolean;
-};
-
-const ActionBanner = (props: Props) => {
+const ActionBanner = () => {
   return (
     <div className="relative overflow-hidden">
-      <LogoIcon className="w-[200%] lg:w-[120%] left-[50%] translate-x-[-50%] text-[#40c1ab1c] absolute -z-0" />
+      <LogoIcon className="w-[200%] lg:w-[120%] left-[50%] translate-x-[-50%] text-primary/20 absolute -z-0" />
       <Container
         mb
         className={`flex flex-col justify-center gap-y-5 pt-48 relative z-0`}

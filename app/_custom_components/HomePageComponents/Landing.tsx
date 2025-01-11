@@ -1,6 +1,6 @@
-import EcoscopeButton from "./Button";
-import Container from "./Container";
-import { H1 } from "./Headings";
+import EcoscopeButton from "../Button";
+import Container from "../Layout/Container";
+import { H1 } from "../Headings";
 import LandingMontage from "./LandingMontage";
 
 const Landing = () => {
