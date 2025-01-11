@@ -48,7 +48,7 @@ const NewsCard = (props: Props) => {
           <H4>
             <Link
               href={`/news/posts/${props.slug}`}
-              className="hover:opacity-40"
+              className="hover:opacity-60"
             >
               {props.title}
             </Link>

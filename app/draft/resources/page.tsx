@@ -3,6 +3,7 @@ import Container from "@/app/_custom_components/Layout/Container";
 import { H1, H4 } from "@/app/_custom_components/Headings";
 import { Metadata } from "next";
 import Link from "next/link";
+import { Card } from "@/components/ui/card";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -96,33 +97,40 @@ const Resources = () => {
         <H1 mb className="text-center">
           Resources
         </H1>
-        <div className="space-y-3">
+        <div className="grid grid-cols-3 gap-10">
           {resourcesData.map((resource, i) => {
             return (
-              <H4 key={i} className="">
-                <Link href={resource.link} target="_blank">
-                  <span className="mr-5">{`[${i + 1}]`}</span>
-                  <span>{resource.title}</span>
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-square-arrow-out-up-right inline ml-2"
-                    >
-                      <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
-                      <path d="m21 3-9 9" />
-                      <path d="M15 3h6v6" />
-                    </svg>
-                  </span>
-                </Link>
-              </H4>
+              <Card key={i} className="flex flex-col p-5 min-h-[200px]">
+                <p className="font-heading mb-5">{`[${i + 1}]`}</p>
+                <div className="primary-gradient h-0.5 w-full rounded-full mb-5"></div>
+                <H4>
+                  <Link
+                    href={resource.link}
+                    target="_blank"
+                    className="hover:opacity-60"
+                  >
+                    {resource.title}
+                  </Link>
+                </H4>
+                <div className="flex flex-1 flex-row justify-end items-end">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-square-arrow-out-up-right"
+                  >
+                    <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+                    <path d="m21 3-9 9" />
+                    <path d="M15 3h6v6" />
+                  </svg>
+                </div>
+              </Card>
             );
           })}
         </div>
