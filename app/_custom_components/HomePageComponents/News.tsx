@@ -1,4 +1,3 @@
-import MoreStories from "../../draft/(news)/draft/news/_news_components/MoreStories";
 import Container, { containerMb } from "../Layout/Container";
 import { H2 } from "../Headings";
 import EcoscopeButton from "../Button";
