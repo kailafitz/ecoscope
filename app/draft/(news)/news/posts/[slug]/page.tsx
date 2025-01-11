@@ -125,7 +125,6 @@ export default async function PostPage({ params }: Props) {
           industry={post.industry!}
         />
       </Container>
-      <ActionBanner bottomBorder />
     </>
   );
 }

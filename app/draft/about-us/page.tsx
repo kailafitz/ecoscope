@@ -39,7 +39,6 @@ const AboutUs = () => {
       <div className="pt-10 md:pt-14">
         <WhatWeDo />
       </div>
-      <ActionBanner bottomBorder />
       <MeetOurFounder />
     </>
   );

@@ -4,23 +4,47 @@ import Container, {
   containerMb,
 } from "@/app/_custom_components/Layout/Container";
 import { data2 } from "@/data";
+import Link from "next/link";
 
 const OurServices = () => {
   return (
     <>
-      <Container topSectionPadding className="">
+      <Container topSectionPadding>
         <H1 mb>Our Services</H1>
+        <div className={`${containerMb} mx-auto flex justify-center space-x-3`}>
+          <Link href="#film-and-television">
+            Film and Television
+            <div className="bg-gray-600 h-px w-full"></div>
+          </Link>
+          <span>|</span>
+          <Link href="#advertising">
+            Advertising
+            <div className="bg-gray-600 h-px w-full"></div>
+          </Link>
+          <span>|</span>
+          <Link href="#hospitality">
+            Hospitality
+            <div className="bg-gray-600 h-px w-full"></div>
+          </Link>
+        </div>
         {data2.map((service, i) => {
+          let id = service.title.toLowerCase().replace(/\s/g, "-");
           return (
             <div
               key={i}
-              className={`grid grid-cols-1 md:grid-cols-2 gap-4 ${containerMb} [&_svg:nth-of-type(2)]:text-primary`}
+              id={id}
+              className={`grid grid-cols-1 md:grid-cols-3 gap-10 [&_svg]:text-primary [&:nth-child(2)_svg]:rotate-45 [&:nth-child(4)_svg]:rotate-12 ${containerMb}`}
             >
               <div>
-                <H4 mb>{service.title}</H4>
-                <p>{service.information}</p>
+                <H4>{service.title}</H4>
+                <div className="primary-gradient h-0.5 w-full rounded-full my-3"></div>
               </div>
-              {service.icon}
+              <div className="relative z-10 col-span-2">
+                <p>{service.information}</p>
+                <div className="about-top bg-bottom"></div>
+              </div>
+
+              {/* {service.icon} */}
             </div>
           );
         })}

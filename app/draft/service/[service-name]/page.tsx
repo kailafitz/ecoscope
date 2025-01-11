@@ -16,7 +16,6 @@ const Service = () => {
   return (
     <>
       <ServicePageContent />
-      <ActionBanner bottomBorder />
     </>
   );
 };

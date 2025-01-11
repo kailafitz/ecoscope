@@ -37,7 +37,7 @@ const Navigation = () => {
         <MobileDrawer />
         <div className="hidden md:flex md:flex-col md:justify-center [&>div]:flex [&>div]:flex-1">
           <NavigationMenuList className="[&_li:not(:last-child)]:pr-6">
-            <NavigationMenuItem>
+            {/* <NavigationMenuItem>
               <NavigationMenuTrigger
                 className={`${(pathname === "/service/film-and-television" || pathname === "/service/advertising" || pathname === "/service/hospitality" || pathname === "/service/other") && "font-bold"}`}
               >
@@ -77,6 +77,15 @@ const Navigation = () => {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuContent>
+            </NavigationMenuItem> */}
+            <NavigationMenuItem>
+              <Link href="/our-services" legacyBehavior passHref>
+                <NavigationMenuLink
+                  className={`${navigationMenuTriggerStyle()} ${pathname === "/our-services" && "font-bold"}`}
+                >
+                  Our Services
+                </NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/about-us" legacyBehavior passHref>
