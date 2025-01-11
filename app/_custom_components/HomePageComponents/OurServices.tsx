@@ -40,7 +40,7 @@ const servicesData = [
 const OurServices = () => {
   useEffect(() => {
     AOS.init({
-      duration: 100,
+      duration: 400,
     });
   }, []);
 

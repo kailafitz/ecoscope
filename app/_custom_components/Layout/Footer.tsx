@@ -14,7 +14,7 @@ const Footer = () => {
           <Image
             src="/_assets/logo-white-vertical-full.png"
             alt="Ecoscope white logo"
-            height={600}
+            height={700}
             width={800}
             className="w-full max-w-xs mx-auto pb-16"
           />
@@ -28,14 +28,23 @@ const Footer = () => {
         </Link>
         <div className="flex flex-1 flex-col justify-between pb-3">
           <div>
-            <div className="flex flex-col md:flex-row w-full justify-end pb-6 space-y-3 md:space-y-0 [&_a:not(:last-child)]:mr-0 md:[&_a:not(:last-child)]:mr-8">
-              <Link href="/news" className="text-white">
+            <div className="flex flex-col md:flex-row w-full justify-end pb-6 space-y-3 md:space-y-0 text-white [&_a:not(:last-child)]:mr-0 md:[&_a:not(:last-child)]:mr-8">
+              <Link
+                href="/news"
+                className="transition-all hover:opacity-70 hover:transition-all"
+              >
                 News
               </Link>
-              <Link href="/resources" className="text-white">
+              <Link
+                href="/resources"
+                className="transition-all hover:opacity-70 hover:transition-all"
+              >
                 Resources
               </Link>
-              <Link href="/join-the-mission" className="text-white">
+              <Link
+                href="/join-the-mission"
+                className="transition-all hover:opacity-70 hover:transition-all"
+              >
                 Join the Mission
               </Link>
               {/* <Link href="/terms-and-conditions" className="text-white">
@@ -46,15 +55,24 @@ const Footer = () => {
             <div className="w-full text-white flex flex-row justify-between pt-6">
               <p>Dublin, Ireland</p>
               <div className="[&_svg]:h-7 flex flex-row space-x-3 text-white">
-                <Link href={""}>
+                <Link
+                  href={""}
+                  className="transition-all hover:opacity-70 hover:transition-all"
+                >
                   <LinkedInIcon />
                 </Link>
 
-                <Link href={""}>
+                <Link
+                  href={""}
+                  className="transition-all hover:opacity-70 hover:transition-all"
+                >
                   <InstagramIcon />
                 </Link>
 
-                <Link href={""}>
+                <Link
+                  href={""}
+                  className="transition-all hover:opacity-70 hover:transition-all"
+                >
                   <FacebookIcon />
                 </Link>
               </div>

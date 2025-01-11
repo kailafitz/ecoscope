@@ -3,7 +3,7 @@ import { H1, H4 } from "@/app/_custom_components/Headings";
 import Container, {
   containerMb,
 } from "@/app/_custom_components/Layout/Container";
-import { data2 } from "@/data";
+import { data2 } from "@/data/Services";
 import Link from "next/link";
 
 const OurServices = () => {

@@ -11,12 +11,8 @@ const ActionBanner = () => {
     AOS.init();
   }, []);
   return (
-    <div className="relative overflow-hidden">
-      <LogoIcon
-        data-aos="fade-up"
-        data-aos-delay="200"
-        className="w-[200%] lg:w-[120%] left-[50%] translate-x-[-50%] text-primary/20 absolute -z-0"
-      />
+    <div className="relative overflow-hidden" data-aos="fade-up">
+      <LogoIcon className="w-[200%] lg:w-[120%] left-[50%] translate-x-[-50%] text-primary/20 absolute -z-0" />
       <Container
         mb
         className={`flex flex-col justify-center gap-y-5 pt-48 relative z-0`}

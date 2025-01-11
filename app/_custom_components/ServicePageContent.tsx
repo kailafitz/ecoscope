@@ -1,7 +1,7 @@
 "use client";
 import Container from "@/app/_custom_components/Layout/Container";
 import { DualHeading } from "@/app/_custom_components/Headings";
-import { data } from "@/data";
+import { data } from "@/data/Services";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
