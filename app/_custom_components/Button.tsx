@@ -6,7 +6,7 @@ type Props = {
   href: string;
   full?: boolean;
   className?: string;
-  variant?: string;
+  variant?: "secondary" | "outline";
   children: string;
 };
 
@@ -15,7 +15,7 @@ const EcoscopeButton = (props: Props) => {
     <Link
       className={cn(
         buttonVariants({
-          variant: props.variant ? props.variant : "default",
+          variant: props.variant ? props.variant! : "default",
         }),
         props.full && "w-full",
         `${props.className} min-w-full sm:min-w-40 text-lg md:text-sm`

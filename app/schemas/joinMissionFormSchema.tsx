@@ -54,14 +54,11 @@ export const joinMissionFormSchema = z.object({
     )
     .optional(),
   file: z
-    .instanceof(FileList)
+    .instanceof(File)
     // .refine((file) => file?.length == 1, "File is required")
+    .refine((file) => file?.size <= MAX_UPLOAD_SIZE, `Max file size is 1MB`)
     .refine(
-      (files) => files?.[0]?.size <= MAX_UPLOAD_SIZE,
-      `Max file size is 1MB`
-    )
-    .refine(
-      (files) => ACCEPTED_FILE_TYPES.includes(files?.[0]?.type),
+      (files) => ACCEPTED_FILE_TYPES.includes(files?.type),
       "Only PDF files are accepted"
     ),
   message: z
