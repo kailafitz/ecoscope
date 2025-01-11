@@ -12,7 +12,7 @@ const Landing = () => {
           <Container className="pb-10">
             <div className="w-full md:w-fit">
               <div className="table">
-                <H1 className="text-left m-0 mb-4">
+                <H1 left className="m-0 mb-4">
                   Your Guide to <br />
                   Greener Productions <br />& Making a Positive Impact
                 </H1>

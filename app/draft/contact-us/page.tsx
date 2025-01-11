@@ -1,4 +1,4 @@
-import BookingForm from "@/app/_custom_components/BookingForm";
+import ConsultationForm from "@/app/_custom_components/ConsultationForm";
 import ContactDetails from "@/app/_custom_components/ContactDetails";
 import Container from "@/app/_custom_components/Container";
 import { H1, H4 } from "@/app/_custom_components/Headings";
@@ -31,7 +31,7 @@ const ContactUs = () => {
             >
               Book a Consultation
             </H4>
-            <BookingForm />
+            <ConsultationForm />
           </div>
         </div>
       </div>

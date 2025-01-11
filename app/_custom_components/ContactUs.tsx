@@ -1,4 +1,4 @@
-import BookingForm from "./BookingForm";
+import ConsultationForm from "./ConsultationForm";
 import Container from "./Container";
 import { H2, H3 } from "./Headings";
 import LogoIcon from "./icons/LogoIcon";
@@ -18,7 +18,7 @@ const ContactUs = () => {
           Book a Consultation
         </H2>
         <div className="w-full lg:w-4/5 mx-auto rounded-md shadow-2xl py-10 px-5 lg:p-10 backdrop-blur-sm">
-          <BookingForm homepage />
+          <ConsultationForm homepage />
         </div>
       </Container>
       <Container mb className="w-full flex flex-row justify-end">

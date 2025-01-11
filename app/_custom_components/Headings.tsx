@@ -32,13 +32,13 @@ export const H1 = (props: Props) => {
   return (
     <>
       <h1
-        className={`font-heading text-3xl md:text-5xl ${props.mb && !props.subtitle && mb} ${props.subtitle && "mb-3"} ${props.className} `}
+        className={`font-heading text-3xl md:text-5xl ${props.mb && !props.subtitle && mb} ${props.subtitle && "mb-3"} ${!props.left && "text-center mx-auto"} ${props.className}`}
       >
         {props.children}
       </h1>
       {props.subtitle && (
         <p
-          className={`text-md md:text-lg w-full md:w-1/2 ${!props.left && "mx-auto"} ${props.mb && props.subtitle && mb}`}
+          className={`text-md md:text-lg w-full md:w-1/2 ${!props.left && "text-center mx-auto"} ${props.mb && props.subtitle && mb}`}
         >
           {props.subtitle}
         </p>

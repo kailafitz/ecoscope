@@ -24,8 +24,8 @@ import { Check, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { formSchema } from "./FormSchema";
 import { PhoneInput } from "./PhoneInput";
+import { consultationFormSchema } from "../schemas/consultationFormSchema";
 
 type Props = {
   homepage?: boolean;
@@ -42,11 +42,11 @@ const defaultValues = {
   message: "",
 };
 
-const BookingForm = (props: Props) => {
+const ConsultationForm = (props: Props) => {
   const [loading, setLoading] = useState<Boolean>(false);
   const [success, setSuccess] = useState<Boolean>(false);
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof consultationFormSchema>>({
+    resolver: zodResolver(consultationFormSchema),
     defaultValues: defaultValues,
   });
 
@@ -308,4 +308,4 @@ const BookingForm = (props: Props) => {
   );
 };
 
-export default BookingForm;
+export default ConsultationForm;

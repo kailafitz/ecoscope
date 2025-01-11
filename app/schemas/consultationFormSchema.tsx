@@ -1,7 +1,7 @@
 "use client";
 import { z } from "zod";
 
-export const formSchema = z.object({
+export const consultationFormSchema = z.object({
   name: z
     .string({
       invalid_type_error: "Please do not use special characters",
