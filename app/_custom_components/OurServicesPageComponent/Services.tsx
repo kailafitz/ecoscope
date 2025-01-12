@@ -20,7 +20,7 @@ const Services = () => {
             id={id}
             data-aos="fade-up"
             data-aos-delay={i * 100}
-            className={`grid grid-cols-1 md:grid-cols-3 md:gap-10 [&_svg]:text-primary [&:nth-child(2)_svg]:rotate-45 [&:nth-child(4)_svg]:rotate-12 ${containerMb}`}
+            className={`grid grid-cols-1 md:grid-cols-3 md:gap-10 [&_svg]:text-primary [&:nth-child(2)_svg]:rotate-45 [&:nth-child(4)_svg]:rotate-12 ${containerMb} pt-20 -mt-20`}
           >
             <div>
               <H4 left>{service.title}</H4>

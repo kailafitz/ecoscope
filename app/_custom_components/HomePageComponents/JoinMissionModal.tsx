@@ -18,9 +18,9 @@ export function JoinMissionModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <p className="transition-all hover:opacity-70 hover:cursor-pointer hover:transition-all text-lg md:text-base">
+        <a className="transition-all hover:opacity-70 hover:cursor-pointer hover:transition-all text-lg md:text-base">
           Join the Mission
-        </p>
+        </a>
       </DialogTrigger>
       <DialogContent className="max-h-[80%] md:max-h-[95%] w-[90%] lg:max-w-[700px] overflow-y-scroll">
         <div>

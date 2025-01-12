@@ -18,7 +18,8 @@ import Link from "next/link";
 import EcoscopeButton from "./Button";
 import Container from "./Layout/Container";
 import { JoinMissionModal } from "./HomePageComponents/JoinMissionModal";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const MobileDrawer = () => {
   return (
@@ -48,7 +49,7 @@ export const MobileDrawer = () => {
             </NavigationMenuItem>
           </NavigationMenuList> */}
           <NavigationMenu className="block">
-            <div className="flex flex-col">
+            <div className="flex flex-col [&_li]:w-full">
               <NavigationMenuList>
                 {/* <NavigationMenuItem>
                   <NavigationMenuTrigger>Our Services</NavigationMenuTrigger>
@@ -160,11 +161,25 @@ export const MobileDrawer = () => {
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
-                <NavigationMenuItem asChild>
+                <NavigationMenuItem>
                   <DrawerClose asChild>
-                    <EcoscopeButton href="/draft/contact-us#book-a-consultation">
-                      Book a Consultation
-                    </EcoscopeButton>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                      asChild
+                    >
+                      <Link
+                        className={cn(
+                          buttonVariants({
+                            variant: "default",
+                          }),
+                          "w-full",
+                          `min-w-full sm:min-w-40 text-md md:text-sm`
+                        )}
+                        href="/draft/contact-us#book-a-consultation"
+                      >
+                        Book a Consultation
+                      </Link>
+                    </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
               </NavigationMenuList>

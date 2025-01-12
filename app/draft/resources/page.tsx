@@ -145,34 +145,22 @@ const Resources = () => {
 
         <div>
           <H3 mb>Companies and Agencies of Interest</H3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="flex flex-col space-y-5">
             {resourcesCompaniesData.map((resource, i) => {
               return (
-                <Card key={i} className="flex flex-col p-5 space-y-5">
-                  {/* <p className="font-heading mb-5">{`[${i + 1}]`}</p>
-                  <div className="bg-gradient-to-r from-primary to-white h-0.5 w-full rounded-full mb-5"></div> */}
+                <div key={i} className="flex flex-col">
                   <H4 left>
                     <Link
                       href={resource.link}
                       target="_blank"
-                      className="hover:opacity-60"
+                      className="hover:opacity-60 transition-all hover:transition-all flex flex-row items-center"
                     >
-                      {resource.title}
+                      <span>{resource.title}</span>
+                      <ExternalLinkIcon className="inline w-5 ml-2" />
                     </Link>
                   </H4>
-                  <div className="flex flex-1 flex-row justify-end items-end">
-                    <Button>
-                      <Link
-                        href={resource.link}
-                        target="_blank"
-                        className="flex flex-row items-end"
-                      >
-                        <span>Read more</span>
-                        <ExternalLinkIcon className="inline w-5 ml-2" />
-                      </Link>
-                    </Button>
-                  </div>
-                </Card>
+                  <div className="bg-gradient-to-r from-primary to-white h-0.5 w-full rounded-full mt-5"></div>
+                </div>
               );
             })}
           </div>

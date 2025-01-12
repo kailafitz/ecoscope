@@ -25,7 +25,7 @@ const OurServices = () => {
   return (
     <>
       <Container topSectionPadding>
-        <H1>Our Services</H1>
+        <H1 mb>Our Services</H1>
         <div
           className={`${containerMb} sticky top-0 z-10 mx-auto flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3 [&_:nth-child(6)]:hidden py-4 bg-white/70 backdrop-blur-sm`}
         >
