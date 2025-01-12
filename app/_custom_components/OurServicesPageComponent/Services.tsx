@@ -39,14 +39,23 @@ const Services = () => {
         data-aos="fade-up"
         className={`flex flex-col md:flex-row justify-between shadow-2xl [&_:nth-child(1)]:rounded-t-md [&_:nth-child(3)]:rounded-b-md md:[&_:nth-child(1)]:rounded-tl-md md:[&_:nth-child(1)]:rounded-bl-md md:[&_:nth-child(3)]:rounded-tr-md md:[&_:nth-child(3)]:rounded-br-md ${containerMb}`}
       >
-        {[1, 2, 3].map((i) => {
+        {/* {[1, 2, 3].map((i) => {
           return (
             <div
               key={i}
               className={`bg-[url('/_assets/our-services-${i}.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0`}
             ></div>
           );
-        })}
+        })} */}
+        <div
+          className={`bg-[url('/_assets/our-services-1.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0`}
+        ></div>
+        <div
+          className={`bg-[url('/_assets/our-services-2.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0 -ml-px`}
+        ></div>
+        <div
+          className={`bg-[url('/_assets/our-services-3.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0 -ml-px`}
+        ></div>
         {/* Photo by Ron Lach :
           https://www.pexels.com/photo/happy-woman-doing-an-environmental-cleanup-9543745/ */}
         {/* Photo by{" "}
