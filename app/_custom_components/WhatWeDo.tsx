@@ -86,7 +86,7 @@ const WhatWeDo = () => {
                   </span>
                   {value.name}
                 </H4>
-                <hr className="h-0.5 primary-gradient my-3 border-none rounded-full" />
+                <hr className="h-0.5 bg-gradient-to-r from-primary to-white my-3 border-none rounded-full" />
                 <p className="text-base">{value.description}</p>
               </div>
             );

@@ -122,7 +122,7 @@ export const MobileDrawer = () => {
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
-                <hr className="h-0.5 w-full primary-gradient border-none rounded-full mb-4" />
+                <hr className="h-0.5 w-full bg-gradient-to-r from-primary to-white border-none rounded-full mb-4" />
                 <NavigationMenuItem>
                   <DrawerClose asChild>
                     <NavigationMenuLink

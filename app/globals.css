@@ -90,14 +90,6 @@
   background-image: url("/_assets/dublin.png");
 }
 
-.primary-gradient {
-  background: linear-gradient(90deg, rgb(62, 193, 171) 0%, rgba(255, 255, 255, 1) 82%);
-}
-
-.primary-gradient-reverse {
-  background: linear-gradient(90deg, rgba(64, 193, 172, 1) 0%, rgba(255, 255, 255, 1) 82%);
-}
-
 .email-icon-padding {
   padding: 3px;
 }

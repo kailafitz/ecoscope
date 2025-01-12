@@ -9,7 +9,7 @@ import { JoinMissionModal } from "../HomePageComponents/JoinMissionModal";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <div className="bg-primary pt-16">
+    <div className="bg-gray-600 pt-16">
       <Container className="flex flex-col md:flex-row justify-between items-stretch md:space-x-24">
         <Link href="/draft">
           <Image
@@ -53,7 +53,7 @@ const Footer = () => {
               </Link> */}
               <JoinMissionModal />
             </div>
-            <div className="primary-gradient h-0.5 w-full rounded-full"></div>
+            <div className="bg-gradient-to-r from-foreground to-white h-0.5 w-full rounded-full"></div>
             <div className="w-full text-white flex flex-row justify-between pt-6">
               <p>Dublin, Ireland</p>
               <div className="[&_svg]:h-7 flex flex-row space-x-3 text-white">

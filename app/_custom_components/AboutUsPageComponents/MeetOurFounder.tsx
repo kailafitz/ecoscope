@@ -59,7 +59,7 @@ const MeetOurFounder = () => {
         </div>
 
         <div>
-          <div className="primary-gradient h-0.5 w-full rounded-full mb-10"></div>
+          <div className="bg-gradient-to-r from-primary to-primary/20 h-0.5 w-full rounded-full mb-10"></div>
           <p className="text-xl mb-3">Why not get in touch?</p>
           <div className="flex flex-row items-center gap-x-3">
             <MailIcon className="w-8 text-primary" />

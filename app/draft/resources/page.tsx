@@ -112,7 +112,7 @@ const Resources = () => {
               return (
                 <Card key={i} className="flex flex-col p-5 min-h-[200px]">
                   <p className="font-heading mb-5">{`[${i + 1}]`}</p>
-                  <div className="primary-gradient h-0.5 w-full rounded-full mb-5"></div>
+                  <div className="bg-gradient-to-r from-primary to-white h-0.5 w-full rounded-full mb-5"></div>
                   <H4 left>
                     <Link
                       href={resource.link}
@@ -150,7 +150,7 @@ const Resources = () => {
               return (
                 <Card key={i} className="flex flex-col p-5 space-y-5">
                   {/* <p className="font-heading mb-5">{`[${i + 1}]`}</p>
-                  <div className="primary-gradient h-0.5 w-full rounded-full mb-5"></div> */}
+                  <div className="bg-gradient-to-r from-primary to-white h-0.5 w-full rounded-full mb-5"></div> */}
                   <H4 left>
                     <Link
                       href={resource.link}

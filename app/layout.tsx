@@ -60,7 +60,7 @@ export default function RootLayout({
     <>
       {draftMode().isEnabled && <AlertBanner />}
 
-      <html lang="en" className={"bg-white text-black scroll-smooth"}>
+      <html lang="en" className={"bg-white text-foreground scroll-smooth"}>
         <body
           className={cn(
             "min-h-screen bg-background font-body antialiased flex flex-col relative",

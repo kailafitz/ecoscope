@@ -51,7 +51,7 @@ const OurServices = () => {
             >
               <div>
                 <H4 left>{service.title}</H4>
-                <div className="primary-gradient h-0.5 w-full rounded-full my-3"></div>
+                <div className="bg-gradient-to-r from-primary to-white h-0.5 w-full rounded-full my-3"></div>
               </div>
               <div className="relative z-10 col-span-2">
                 <p>{service.information}</p>
