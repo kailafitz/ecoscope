@@ -30,7 +30,7 @@ export const MobileDrawer = () => {
           <span className="h-0.5 bg-primary w-full"></span>
         </div>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className="h-[calc(100%_-_78.7px)] bottom-0">
         {/* <div className="mx-auto w-full flex flex-1 flex-col"> */}
         <Container className="pt-6 px-10">
           {/* <NavigationMenuList className="pb-10">
@@ -154,7 +154,7 @@ export const MobileDrawer = () => {
                 </NavigationMenuItem>
                 <DrawerClose asChild>
                   <NavigationMenuItem asChild>
-                    <EcoscopeButton href="contact-us#book-a-consultation">
+                    <EcoscopeButton href="/draft/contact-us#book-a-consultation">
                       Book a Consultation
                     </EcoscopeButton>
                   </NavigationMenuItem>

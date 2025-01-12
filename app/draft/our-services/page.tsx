@@ -11,17 +11,19 @@ const OurServices = () => {
     <>
       <Container topSectionPadding>
         <H1 mb>Our Services</H1>
-        <div className={`${containerMb} mx-auto flex justify-center space-x-3`}>
+        <div
+          className={`${containerMb} mx-auto flex flex-col md:flex-row justify-center space-x-3`}
+        >
           <Link href="#film-and-television">
             Film and Television
             <div className="bg-gray-600 h-px w-full"></div>
           </Link>
-          <span>|</span>
+          <span className="hidden md:inline">|</span>
           <Link href="#advertising">
             Advertising
             <div className="bg-gray-600 h-px w-full"></div>
           </Link>
-          <span>|</span>
+          <span className="hidden md:inline">|</span>
           <Link href="#hospitality">
             Hospitality
             <div className="bg-gray-600 h-px w-full"></div>
@@ -33,7 +35,7 @@ const OurServices = () => {
             <div
               key={i}
               id={id}
-              className={`grid grid-cols-1 md:grid-cols-3 gap-10 [&_svg]:text-primary [&:nth-child(2)_svg]:rotate-45 [&:nth-child(4)_svg]:rotate-12 ${containerMb}`}
+              className={`grid grid-cols-1 md:grid-cols-3 md:gap-10 [&_svg]:text-primary [&:nth-child(2)_svg]:rotate-45 [&:nth-child(4)_svg]:rotate-12 ${containerMb}`}
             >
               <div>
                 <H4 left>{service.title}</H4>
