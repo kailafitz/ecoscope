@@ -23,7 +23,7 @@ const Navigation = () => {
     <NavigationMenu>
       <Container className="flex flex-row justify-between">
         <NavigationMenuList className="pt-4 pr-4 pb-4">
-          <NavigationMenuItem className="hover:cursor-pointer">
+          <NavigationMenuItem className="hover:cursor-pointer mb-0">
             <Link href="/draft" legacyBehavior passHref>
               <Image
                 src="/_assets/logo-primary-horizontal.png"

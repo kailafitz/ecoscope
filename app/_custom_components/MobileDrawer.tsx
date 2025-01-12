@@ -20,6 +20,9 @@ import Container from "./Layout/Container";
 import { JoinMissionModal } from "./HomePageComponents/JoinMissionModal";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import LinkedInIcon from "./_icons/LinkedInIcon";
+import MailIcon from "./_icons/MailIcon";
+import FacebookIcon from "./_icons/FacebookIcon";
 
 export const MobileDrawer = () => {
   return (
@@ -50,7 +53,7 @@ export const MobileDrawer = () => {
           </NavigationMenuList> */}
           <NavigationMenu className="block">
             <div className="flex flex-col [&_li]:w-full">
-              <NavigationMenuList>
+              <NavigationMenuList className="[&_li]:mb-4 md:[&_li:not(:last-child)]:mb-0">
                 {/* <NavigationMenuItem>
                   <NavigationMenuTrigger>Our Services</NavigationMenuTrigger>
                   <NavigationMenuContent className="pb-0 md:pb-4">
@@ -161,7 +164,7 @@ export const MobileDrawer = () => {
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                {/* <NavigationMenuItem>
                   <DrawerClose asChild>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
@@ -181,15 +184,15 @@ export const MobileDrawer = () => {
                       </Link>
                     </NavigationMenuLink>
                   </DrawerClose>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
               </NavigationMenuList>
+              <hr className="h-0.5 w-full bg-gradient-to-r from-primary to-white border-none rounded-full mb-4" />
+              <div className="flex flex-row gap-x-3">
+                <LinkedInIcon className="w-8 text-foreground" />
+                <MailIcon className="w-8 text-foreground" />
+                <FacebookIcon className="w-8 text-foreground -ml-1.5" />
+              </div>
             </div>
-            {/* <div className="bg-primary h-px w-full my-10"></div>
-            <div className="flex flex-row gap-x-3 text-primary">
-              <LinkedInIcon className="w-8" />
-              <MailIcon className="w-8" />
-              <FacebookIcon className="w-8" />
-            </div> */}
           </NavigationMenu>
           {/* </div> */}
         </Container>
