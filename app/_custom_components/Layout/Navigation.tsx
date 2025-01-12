@@ -15,6 +15,7 @@ import { usePathname } from "next/navigation";
 import EcoscopeButton from "../Button";
 import Container from "./Container";
 import { MobileDrawer } from "../MobileDrawer";
+import { TransitionLink } from "../TransitionLink";
 
 const Navigation = () => {
   const pathname = usePathname();
@@ -88,13 +89,13 @@ const Navigation = () => {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/draft/about-us" legacyBehavior passHref>
+              <TransitionLink href="/draft/about-us" legacyBehavior passHref>
                 <NavigationMenuLink
                   className={`${navigationMenuTriggerStyle()} ${pathname === "/draft/about-us" && "font-bold opacity-70"}`}
                 >
                   About Us
                 </NavigationMenuLink>
-              </Link>
+              </TransitionLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/draft/contact-us" legacyBehavior passHref>
