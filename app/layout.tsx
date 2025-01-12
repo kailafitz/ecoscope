@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { VisualEditing, toPlainText } from "next-sanity";
 import { draftMode } from "next/headers";
 import "./globals.css";
@@ -13,7 +13,6 @@ import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Footer from "./_custom_components/Layout/Footer";
 import Navigation from "./_custom_components/Layout/Navigation";
 import OpeningAnimation from "./_custom_components/HomePageComponents/OpeningAnimation";
-import Draft from "./draft/page";
 import AlertBanner from "./draft/(news)/alert-banner";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -40,16 +39,18 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | Ecoscope`,
       default: title || "",
     },
-    // title: {
-    //   template: `%s | ${title}`,
-    //   default: title || "",
-    // },
     description: toPlainText(description),
     openGraph: {
       images: ogImage ? [ogImage] : [],
     },
   };
 }
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export default function RootLayout({
   children,
