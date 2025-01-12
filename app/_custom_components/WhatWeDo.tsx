@@ -51,7 +51,7 @@ const WhatWeDo = () => {
         </H2>
       </Container>
       <div className={`${containerMb} flex flex-col lg:flex-row`}>
-        <Container className="w-full lg:w-1/2 py-10">
+        <Container className="w-full lg:w-1/2 pb-10 lg:pb-0">
           <H4 left mb>
             For Creatives, led by Creatives
           </H4>
@@ -69,7 +69,7 @@ const WhatWeDo = () => {
             on your sustainability journey.{" "}
           </p>
         </Container>
-        <div className="about-top h-80 lg:h-auto lg:w-1/2 bg-cover saturate-0 lg:rounded-tl-lg lg:rounded-bl-lg"></div>
+        <div className="about-top h-80 lg:h-auto lg:w-1/2 bg-cover bg-bottom saturate-0 lg:rounded-tl-lg lg:rounded-bl-lg shadow-2xl"></div>
       </div>
       <Container mb>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 lg:gap-x-16 gap-y-10 lg:gap-y-24 text-left">

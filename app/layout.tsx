@@ -63,15 +63,13 @@ export default function RootLayout({
       <html lang="en" className={"bg-white text-black scroll-smooth"}>
         <body
           className={cn(
-            "min-h-screen bg-background font-body antialiased flex flex-col",
+            "min-h-screen bg-background font-body antialiased flex flex-col relative",
             open
           )}
         >
           {/* <OpeningAnimation /> */}
           <Navigation />
-          <main className={`${varela} flex-1 flex flex-col overflow-hidden`}>
-            {children}
-          </main>
+          <main className={`${varela} flex-1 flex flex-col`}>{children}</main>
           <Footer />
         </body>
       </html>

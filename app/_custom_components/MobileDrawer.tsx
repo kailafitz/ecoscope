@@ -18,6 +18,7 @@ import Link from "next/link";
 import EcoscopeButton from "./Button";
 import Container from "./Layout/Container";
 import { JoinMissionModal } from "./HomePageComponents/JoinMissionModal";
+import { Button } from "@/components/ui/button";
 
 export const MobileDrawer = () => {
   return (
@@ -30,7 +31,7 @@ export const MobileDrawer = () => {
           <span className="h-0.5 bg-primary w-full"></span>
         </div>
       </DrawerTrigger>
-      <DrawerContent className="h-[calc(100%_-_78.7px)] bottom-0">
+      <DrawerContent className="h-[calc(100%_-_78.7px)] bottom-0 focus-visible:outline-none">
         {/* <div className="mx-auto w-full flex flex-1 flex-col"> */}
         <Container className="pt-6 px-10">
           {/* <NavigationMenuList className="pb-10">
@@ -149,16 +150,23 @@ export const MobileDrawer = () => {
                       asChild
                     >
                       <JoinMissionModal />
+                      {/* <EcoscopeButton
+                        className="w-full"
+                        variant="outline"
+                        href={""}
+                      >
+                        Join the Mission
+                      </EcoscopeButton> */}
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
-                <DrawerClose asChild>
-                  <NavigationMenuItem asChild>
+                <NavigationMenuItem asChild>
+                  <DrawerClose asChild>
                     <EcoscopeButton href="/draft/contact-us#book-a-consultation">
                       Book a Consultation
                     </EcoscopeButton>
-                  </NavigationMenuItem>
-                </DrawerClose>
+                  </DrawerClose>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </div>
             {/* <div className="bg-primary h-px w-full my-10"></div>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "../Layout/Container";
-import { H2 } from "../Headings";
+import { H2, H4 } from "../Headings";
 import MailIcon from "../_icons/MailIcon";
 
 const MeetOurFounder = () => {
@@ -12,13 +12,13 @@ const MeetOurFounder = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 lg:gap-x-14 xl:gap-x-0 gap-y-10 mb-10 items-center">
           <div className="lg:col-span-3">
             <H2 mb>The Mind Behind the Mission</H2>
-            <p className="mb-5">
-              Alexandra de Valera{" "}
+            <H4 left className="mb-5">
+              Alexandra de Valera |{" "}
               <span className="font-bold">
                 Director of Ecoscope Ltd., Sustainability Strategist & Impact
                 Producer
               </span>
-            </p>
+            </H4>
             <p>
               Alexandra de Valera, bringing over a decade of experience leading
               transformative projects, founded Ecoscope Ltd. in 2022 to address
@@ -50,7 +50,7 @@ const MeetOurFounder = () => {
             </p>
           </div>
           <Image
-            src="/_assets/headshot-2.jpg"
+            src="/_assets/headshots/headshot-2.jpg"
             alt="Headshot of Alexandra de Valera"
             width="400"
             height="400"

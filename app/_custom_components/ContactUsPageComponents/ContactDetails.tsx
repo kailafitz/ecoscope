@@ -8,7 +8,7 @@ import MapIcon from "../_icons/MapIcon";
 const ContactDetails = () => {
   return (
     <div className="bg-primary shadow-2xl p-7 md:p-10 rounded-xl text-primary-foreground">
-      <div className="mb-10 sm:mb-16 lg:mb-20">
+      <div className="mb-10">
         <h6 className="text-xl md:text-2xl">Get in Touch</h6>
         <div className="primary-gradient-reverse h-px mb-5 mt-2"></div>
         <Link href="" className="flex flex-row items-center mb-4 text-md">

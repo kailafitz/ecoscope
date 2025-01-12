@@ -39,7 +39,7 @@ const Navigation = () => {
           <NavigationMenuList className="[&_li:not(:last-child)]:pr-6">
             {/* <NavigationMenuItem>
               <NavigationMenuTrigger
-                className={`${(pathname === "/service/film-and-television" || pathname === "/service/advertising" || pathname === "/service/hospitality" || pathname === "/service/other") && "font-bold"}`}
+                className={`${(pathname === "/service/film-and-television" || pathname === "/service/advertising" || pathname === "/service/hospitality" || pathname === "/service/other") && "font-bold opacity-70"}`}
               >
                 Our Services
               </NavigationMenuTrigger>
@@ -50,28 +50,28 @@ const Navigation = () => {
                   passHref
                 >
                   <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/film-and-television" && "font-bold"}`}
+                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/film-and-television" && "font-bold opacity-70"}`}
                   >
                     Film and Television
                   </NavigationMenuLink>
                 </Link>
                 <Link href="/service/advertising" legacyBehavior passHref>
                   <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/advertising" && "font-bold"}`}
+                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/advertising" && "font-bold opacity-70"}`}
                   >
                     Advertising
                   </NavigationMenuLink>
                 </Link>
                 <Link href="/service/hospitality" legacyBehavior passHref>
                   <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/hospitality" && "font-bold"}`}
+                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/hospitality" && "font-bold opacity-70"}`}
                   >
                     Hospitality
                   </NavigationMenuLink>
                 </Link>
                 <Link href="/service/other" legacyBehavior passHref>
                   <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/other" && "font-bold"}`}
+                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/other" && "font-bold opacity-70"}`}
                   >
                     Other
                   </NavigationMenuLink>
@@ -81,7 +81,7 @@ const Navigation = () => {
             <NavigationMenuItem>
               <Link href="/draft/our-services" legacyBehavior passHref>
                 <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()} ${pathname === "/draft/our-services" && "font-bold"}`}
+                  className={`${navigationMenuTriggerStyle()} ${pathname === "/draft/our-services" && "font-bold opacity-70 "}`}
                 >
                   Our Services
                 </NavigationMenuLink>
@@ -90,7 +90,7 @@ const Navigation = () => {
             <NavigationMenuItem>
               <Link href="/draft/about-us" legacyBehavior passHref>
                 <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()} ${pathname === "/draft/about-us" && "font-bold"}`}
+                  className={`${navigationMenuTriggerStyle()} ${pathname === "/draft/about-us" && "font-bold opacity-70"}`}
                 >
                   About Us
                 </NavigationMenuLink>
@@ -99,7 +99,7 @@ const Navigation = () => {
             <NavigationMenuItem>
               <Link href="/draft/contact-us" legacyBehavior passHref>
                 <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()} ${pathname === "/draft/contact-us" && "font-bold"}`}
+                  className={`${navigationMenuTriggerStyle()} ${pathname === "/draft/contact-us" && "font-bold opacity-70"}`}
                 >
                   Contact Us
                 </NavigationMenuLink>

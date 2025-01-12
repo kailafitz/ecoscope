@@ -32,7 +32,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row w-full justify-end pb-6 space-y-3 md:space-y-0 text-white [&_a:not(:last-child)]:mr-0 md:[&_a:not(:last-child)]:mr-8">
               <Link
                 href="/draft/news"
-                className="transition-all hover:opacity-70 hover:transition-all"
+                className="transition-all hover:opacity-70 hover:transition-all text-lg md:text-base"
               >
                 News
               </Link>
