@@ -64,13 +64,13 @@ const OurServices = () => {
         })}
         <div
           data-aos="fade-up"
-          className={`flex flex-col md:flex-row justify-between [&_:nth-child(1)]:rounded-t-md [&_:nth-child(3)]:rounded-b-md  md:[&_:nth-child(1)]:rounded-tl-md md:[&_:nth-child(1)]:rounded-bl-md md:[&_:nth-child(3)]:rounded-tr-md md:[&_:nth-child(3)]:rounded-br-md ${containerMb}`}
+          className={`flex flex-col md:flex-row justify-between shadow-2xl [&_:nth-child(1)]:rounded-t-md [&_:nth-child(3)]:rounded-b-md md:[&_:nth-child(1)]:rounded-tl-md md:[&_:nth-child(1)]:rounded-bl-md md:[&_:nth-child(3)]:rounded-tr-md md:[&_:nth-child(3)]:rounded-br-md ${containerMb}`}
         >
           {[1, 2, 3].map((i) => {
             return (
               <div
                 key={i}
-                className={`shadow-2xl bg-[url('/_assets/our-services-${i}.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0`}
+                className={`bg-[url('/_assets/our-services-${i}')] bg-center bg-cover h-60 md:w-1/3 saturate-0`}
               ></div>
             );
           })}
