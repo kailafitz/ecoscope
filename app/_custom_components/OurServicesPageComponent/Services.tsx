@@ -43,7 +43,7 @@ const Services = () => {
           return (
             <div
               key={i}
-              className={`bg-[url('/_assets/our-services-${i}')] bg-center bg-cover h-60 md:w-1/3 saturate-0`}
+              className={`bg-[url('/_assets/our-services-${i}.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0`}
             ></div>
           );
         })}
