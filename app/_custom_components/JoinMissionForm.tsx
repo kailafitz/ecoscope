@@ -244,7 +244,8 @@ const JoinMissionForm = () => {
             </FormItem>
           )}
         />
-        <div className="flex flex-col justify-end">
+        <div className="hidden md:block"></div>
+        <div className="flex flex-col items-end justify-end">
           <Button
             disabled={loading || success ? true : false}
             className={success && "bg-green-500 disabled:opacity-100"}

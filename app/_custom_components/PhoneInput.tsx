@@ -90,7 +90,7 @@ const CountrySelect = ({
         <Button
           type="button"
           variant="ghost"
-          className="flex gap-1 px-3 rounded-none border-r-0 border-b-2 border-primary focus:z-10"
+          className="flex gap-1 px-3 rounded-none border-r-0 border-b-2 border-primary focus:z-10 !min-w-0"
           disabled={disabled}
         >
           <FlagComponent

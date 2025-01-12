@@ -27,10 +27,6 @@ import { z } from "zod";
 import { PhoneInput } from "../PhoneInput";
 import { consultationFormSchema } from "../../schemas/consultationFormSchema";
 
-type Props = {
-  homepage?: boolean;
-};
-
 const defaultValues = {
   name: "",
   email: "",
@@ -42,7 +38,7 @@ const defaultValues = {
   message: "",
 };
 
-const ConsultationForm = (props: Props) => {
+const ConsultationForm = () => {
   const [loading, setLoading] = useState<Boolean>(false);
   const [success, setSuccess] = useState<Boolean>(false);
   const form = useForm<z.infer<typeof consultationFormSchema>>({
@@ -86,7 +82,7 @@ const ConsultationForm = (props: Props) => {
       <form
         noValidate
         onSubmit={form.handleSubmit(onSubmit)}
-        className={`grid grid-cols-1 ${props.homepage ? "md:grid-cols-3" : "lg:grid-cols-2"} gap-x-5 gap-y-10 sm:gap-x-10`}
+        className={`grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-10 sm:gap-x-10`}
       >
         <FormField
           control={form.control}
@@ -261,19 +257,13 @@ const ConsultationForm = (props: Props) => {
             </FormItem>
           )}
         />
-        <div
-          className={`hidden ${props.homepage ? "md:grid" : "lg:grid"}`}
-        ></div>
-        <div
-          className={`hidden ${props.homepage ? "md:grid" : "lg:grid"}`}
-        ></div>
+        <div className={"hidden lg:grid"}></div>
+        <div className={"hidden lg:grid"}></div>
         <FormField
           control={form.control}
           name="message"
           render={({ field }) => (
-            <FormItem
-              className={` ${props.homepage ? "md:col-span-2" : "lg:col-span-2"}`}
-            >
+            <FormItem className="lg:col-span-2">
               <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea
@@ -289,7 +279,8 @@ const ConsultationForm = (props: Props) => {
             </FormItem>
           )}
         />
-        <div className="flex flex-col justify-end">
+        <div className="hidden lg:grid"></div>
+        <div className="flex flex-col items-end justify-end">
           <Button
             disabled={loading || success ? true : false}
             className={success && "bg-green-500 disabled:opacity-100"}

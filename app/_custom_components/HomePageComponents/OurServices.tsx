@@ -67,10 +67,9 @@ const OurServices = () => {
         </div>
         <H4 className="sm:w-3/4 md:w-3/5 xl:w-5/6 mx-auto mb-5">
           Looking for something different?
-          <br className="md:hidden" />
-          At Ecoscope, we know that one size does not fit all.
-          <br />
-          Get in touch to share your story.
+          <br className="md:hidden" /> At Ecoscope, we know that one size does
+          not fit all.
+          <br /> Get in touch to share your story.
         </H4>
         <EcoscopeButton href={"/draft/contact-us"}>Contact Us</EcoscopeButton>
       </Container>
