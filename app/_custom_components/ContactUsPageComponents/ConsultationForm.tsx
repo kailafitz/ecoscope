@@ -47,8 +47,6 @@ const ConsultationForm = () => {
     defaultValues: defaultValues,
   });
 
-  console.log(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
-
   const formRef = useRef<HTMLFormElement>(null);
 
   const onSubmit = async () => {

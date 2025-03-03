@@ -37,7 +37,7 @@ const Services = () => {
       })}
       <div
         data-aos="fade-up"
-        className={`flex flex-col md:flex-row justify-between shadow-2xl [&_:nth-child(1)]:rounded-t-md [&_:nth-child(3)]:rounded-b-md md:[&_:nth-child(1)]:rounded-tl-md md:[&_:nth-child(1)]:rounded-bl-md md:[&_:nth-child(3)]:rounded-tr-md md:[&_:nth-child(3)]:rounded-br-md ${containerMb}`}
+        className={`flex flex-col md:flex-row justify-between shadow-2xl [&_:nth-child(1)]:rounded-t-md [&_:nth-child(3)]:rounded-b-md md:[&_:nth-child(1)]:rounded-tl-md md:[&_:nth-child(1)]:rounded-tr-none md:[&_:nth-child(1)]:rounded-bl-md md:[&_:nth-child(3)]:rounded-tr-md md:[&_:nth-child(3)]:rounded-br-md md:[&_:nth-child(3)]:rounded-bl-none ${containerMb}`}
       >
         {/* {[1, 2, 3].map((i) => {
           return (
