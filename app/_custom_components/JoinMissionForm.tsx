@@ -278,7 +278,6 @@ const JoinMissionForm = () => {
             />
           </div>
           <Button
-            type="button"
             disabled={loading || success ? true : false}
             className={success && "bg-green-500 disabled:opacity-100"}
           >
