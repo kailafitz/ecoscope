@@ -6,12 +6,19 @@ import LogoIcon from "./_icons/LogoIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const ActionBanner = () => {
+type Props = {
+  footer?: Boolean;
+};
+
+const ActionBanner = (props: Props) => {
   useEffect(() => {
     AOS.init();
   }, []);
   return (
-    <div className="relative overflow-hidden" data-aos="fade-up">
+    <div
+      className={`relative ${props.footer ? "" : "overflow-hidden"}`}
+      data-aos="fade-up"
+    >
       <LogoIcon className="w-[200%] lg:w-[120%] left-[50%] translate-x-[-50%] text-primary/20 absolute -z-0" />
       <Container
         mb
