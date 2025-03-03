@@ -78,8 +78,8 @@ const JoinMissionForm = () => {
         )
         .then(
           () => {
-            form.resetField("industry");
-            form.reset();
+            // form.resetField("industry");
+            // form.reset();
             setTimeout(() => {
               setLoading(false);
             }, 2000);
