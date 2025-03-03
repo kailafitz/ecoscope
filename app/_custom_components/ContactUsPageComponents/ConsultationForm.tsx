@@ -306,7 +306,7 @@ const ConsultationForm = () => {
         <div className="hidden lg:grid"></div>
         <div className="w-full flex flex-end justify-end">
           <Turnstile
-            siteKey={process.env.TURNSTILE_SITE_KEY!}
+            siteKey={process.env.TURNSTILE_SITE_KEY || ""}
             as="div"
             options={{
               action: "submit-form",
