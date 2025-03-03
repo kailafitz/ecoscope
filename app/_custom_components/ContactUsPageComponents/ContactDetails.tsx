@@ -11,7 +11,11 @@ const ContactDetails = () => {
       <div className="mb-10">
         <h6 className="text-xl md:text-2xl">Get in Touch</h6>
         <div className="bg-gradient-to-r from-primary to-white h-px mb-5 mt-2"></div>
-        <Link href="" className="flex flex-row items-center mb-4 text-md">
+        <Link
+          href="https://maps.app.goo.gl/mWczquGu8rGmMXyEA"
+          target="_blank"
+          className="flex flex-row items-center mb-4 text-md"
+        >
           <MapIcon className="w-5 text-inherit mr-4 ml-0.5" />
           Dublin, Ireland
         </Link>

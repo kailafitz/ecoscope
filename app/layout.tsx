@@ -14,6 +14,7 @@ import Footer from "./_custom_components/Layout/Footer";
 import Navigation from "./_custom_components/Layout/Navigation";
 import OpeningAnimation from "./_custom_components/HomePageComponents/OpeningAnimation";
 import AlertBanner from "./draft/(news)/alert-banner";
+import Script from "next/script";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -72,6 +73,11 @@ export default function RootLayout({
           <Navigation />
           <main className={`${varela} flex-1 flex flex-col`}>{children}</main>
           <Footer />
+          <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer
+          ></Script>
         </body>
       </html>
 

@@ -58,6 +58,7 @@ const JoinMissionForm = () => {
 
     const formData = new FormData(formRef.current!);
     const token = formData.get("cf-turnstile-response");
+    console.log(token);
 
     const res = await fetch("/api/verify", {
       method: "POST",
@@ -265,13 +266,12 @@ const JoinMissionForm = () => {
         <div className="hidden lg:block"></div>
         <div className="w-full flex flex-end justify-end">
           <Turnstile
-            // siteKey={
-            //   process.env.TURNSTILE_SITE_KEY
-            //     ? process.env.TURNSTILE_SITE_KEY!
-            //     : ""
-            // }
+            siteKey={
+              process.env.TURNSTILE_SITE_KEY
+                ? process.env.TURNSTILE_SITE_KEY!
+                : ""
+            }
             as="div"
-            siteKey="0x4AAAAAAA_VZ5IUbBYJ9H-U"
             options={{
               action: "submit-form",
               theme: "light",
