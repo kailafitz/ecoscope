@@ -21,10 +21,11 @@ import { Textarea } from "@/components/ui/textarea";
 import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { PhoneInput } from "../PhoneInput";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { consultationFormSchema } from "../../schemas/consultationFormSchema";
 
 const defaultValues = {
@@ -46,40 +47,62 @@ const ConsultationForm = () => {
     defaultValues: defaultValues,
   });
 
-  const onSubmit = () => {
+  console.log(process.env.TURNSTILE_SITE_KEY);
+
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const onSubmit = async () => {
     setLoading(true);
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        form.getValues(),
-        {
-          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-        }
-      )
-      .then(
-        () => {
-          form.resetField("industry");
-          form.reset();
-          setTimeout(() => {
-            setLoading(false);
-          }, 2000);
 
-          setTimeout(() => {
-            setSuccess(true);
-          }, 2000);
+    const formData = new FormData(formRef.current!);
 
-          setSuccess(false);
-        },
-        (error) => {
-          console.warn("FAILED...", JSON.stringify(error));
-        }
-      );
+    const token = formData.get("cf-turnstile-response");
+    console.log(token);
+
+    const res = await fetch("/api/verify", {
+      method: "POST",
+      body: JSON.stringify({ token }),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      emailjs
+        .send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+          form.getValues(),
+          {
+            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+          }
+        )
+        .then(
+          () => {
+            form.resetField("industry");
+            form.reset();
+            setTimeout(() => {
+              setLoading(false);
+            }, 2000);
+
+            setTimeout(() => {
+              setSuccess(true);
+            }, 2000);
+
+            setSuccess(false);
+          },
+          (error) => {
+            console.warn("FAILED...", JSON.stringify(error));
+          }
+        );
+    }
   };
 
   return (
     <Form {...form}>
       <form
+        ref={formRef}
         noValidate
         onSubmit={form.handleSubmit(onSubmit)}
         className={`grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-10 sm:gap-x-10`}
@@ -279,6 +302,23 @@ const ConsultationForm = () => {
             </FormItem>
           )}
         />
+
+        <div className="hidden lg:grid"></div>
+        <div className="w-full flex flex-end justify-end">
+          <Turnstile
+            siteKey={process.env.TURNSTILE_SITE_KEY!}
+            as="div"
+            options={{
+              action: "submit-form",
+              theme: "light",
+              size: "normal",
+              language: "en",
+            }}
+            scriptOptions={{
+              appendTo: "body",
+            }}
+          />
+        </div>
         <div className="hidden lg:grid"></div>
         <div className="flex flex-col items-end justify-end">
           <Button
