@@ -47,7 +47,7 @@ const ConsultationForm = () => {
     defaultValues: defaultValues,
   });
 
-  console.log(process.env.TURNSTILE_SITE_KEY);
+  console.log(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -260,7 +260,7 @@ const ConsultationForm = () => {
           control={form.control}
           name="certification"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="lg:col-span-2">
               <FormLabel>
                 Are you enquiring about Certification or Carbon Reporting?
               </FormLabel>
@@ -280,8 +280,6 @@ const ConsultationForm = () => {
             </FormItem>
           )}
         />
-        <div className={"hidden lg:grid"}></div>
-        <div className={"hidden lg:grid"}></div>
         <FormField
           control={form.control}
           name="message"
@@ -302,25 +300,22 @@ const ConsultationForm = () => {
             </FormItem>
           )}
         />
-
-        <div className="hidden lg:grid"></div>
-        <div className="w-full flex flex-end justify-end">
-          <Turnstile
-            siteKey={process.env.TURNSTILE_SITE_KEY || ""}
-            as="div"
-            options={{
-              action: "submit-form",
-              theme: "light",
-              size: "normal",
-              language: "en",
-            }}
-            scriptOptions={{
-              appendTo: "body",
-            }}
-          />
-        </div>
-        <div className="hidden lg:grid"></div>
-        <div className="flex flex-col items-end justify-end">
+        <div className="flex flex-col lg:flex-row items-end justify-end lg:col-span-2 gap-5">
+          <div className="w-full flex flex-end justify-end">
+            <Turnstile
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""}
+              as="div"
+              options={{
+                action: "submit-form",
+                theme: "light",
+                size: "normal",
+                language: "en",
+              }}
+              scriptOptions={{
+                appendTo: "body",
+              }}
+            />
+          </div>
           <Button
             disabled={loading || success ? true : false}
             className={success && "bg-green-500 disabled:opacity-100"}

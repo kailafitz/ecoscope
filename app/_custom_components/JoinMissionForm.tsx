@@ -47,7 +47,7 @@ const JoinMissionForm = () => {
 
   const turnstileWidget = useRef<HTMLFormElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
-  console.log(process.env.TURNSTILE_SITE_KEY);
+  console.log(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
   // const fileRef = form.register("file");
 
   // console.log(formRef);
@@ -264,25 +264,22 @@ const JoinMissionForm = () => {
           )}
         />
 
-        <div className="hidden lg:block"></div>
-        <div className="w-full flex flex-end justify-end">
-          <Turnstile
-            siteKey={process.env.TURNSTILE_SITE_KEY || ""}
-            as="div"
-            options={{
-              action: "submit-form",
-              theme: "light",
-              size: "normal",
-              language: "en",
-            }}
-            scriptOptions={{
-              appendTo: "body",
-            }}
-          />
-        </div>
-
-        <div className="hidden lg:block"></div>
-        <div className="flex flex-col items-end justify-end">
+        <div className="flex flex-col lg:flex-row items-end justify-end lg:col-span-2 gap-5">
+          <div className="w-full flex flex-end justify-end">
+            <Turnstile
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""}
+              as="div"
+              options={{
+                action: "submit-form",
+                theme: "light",
+                size: "normal",
+                language: "en",
+              }}
+              scriptOptions={{
+                appendTo: "body",
+              }}
+            />
+          </div>
           <Button
             disabled={loading || success ? true : false}
             className={success && "bg-green-500 disabled:opacity-100"}
