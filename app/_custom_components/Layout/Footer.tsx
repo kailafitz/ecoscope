@@ -49,13 +49,13 @@ const Footer = () => {
               <div className="flex flex-col md:flex-row w-full justify-end pb-6 space-y-3 md:space-y-0 text-primary [&_a:not(:last-child)]:mr-0 md:[&_a:not(:last-child)]:mr-8">
                 <Link
                   href="/draft/news"
-                  className="transition-all hover:text-foreground hover:transition-all text-lg md:text-base"
+                  className={`transition-all hover:text-foreground hover:transition-all text-lg md:text-base ${pathname === "/draft/news" && "font-bold opacity-70 text-foreground"}`}
                 >
                   News
                 </Link>
                 <Link
                   href="/draft/resources"
-                  className="transition-all hover:text-foreground hover:transition-all"
+                  className={`transition-all hover:text-foreground hover:transition-all ${pathname === "/draft/resources" && "font-bold opacity-70 text-foreground"}`}
                 >
                   Resources
                 </Link>

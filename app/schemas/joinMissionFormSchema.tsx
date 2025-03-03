@@ -53,14 +53,14 @@ export const joinMissionFormSchema = z.object({
       }
     )
     .optional(),
-  file: z
-    .instanceof(File)
-    // .refine((file) => file?.length == 1, "File is required")
-    .refine((file) => file?.size <= MAX_UPLOAD_SIZE, `Max file size is 1MB`)
-    .refine(
-      (files) => ACCEPTED_FILE_TYPES.includes(files?.type),
-      "Only PDF files are accepted"
-    ),
+  // file: z
+  //   .instanceof(File)
+  //   // .refine((file) => file?.length == 1, "File is required")
+  //   .refine((file) => file?.size <= MAX_UPLOAD_SIZE, `Max file size is 1MB`)
+  //   .refine(
+  //     (files) => ACCEPTED_FILE_TYPES.includes(files?.type),
+  //     "Only PDF files are accepted"
+  //   ),
   message: z
     .string({ invalid_type_error: "Please do not use special characters" })
     .regex(/[A-Za-zÀ-ú0-9ა-ჰ一-蠼赋]+/g, "Please do not use special characters")

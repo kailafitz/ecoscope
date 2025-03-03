@@ -166,7 +166,7 @@ const Resources = () => {
           </div>
         </div>
       </Container>
-      <ActionBanner />
+      {/* <ActionBanner /> */}
     </>
   );
 };

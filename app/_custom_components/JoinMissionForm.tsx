@@ -24,6 +24,7 @@ import { Check, Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { PhoneInput } from "./PhoneInput";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { joinMissionFormSchema } from "../schemas/joinMissionFormSchema";
 
 const defaultValues = {
@@ -32,7 +33,7 @@ const defaultValues = {
   phone: "",
   companyName: "",
   industry: undefined,
-  file: undefined,
+  // file: undefined,
   message: "",
 };
 
@@ -44,42 +45,58 @@ const JoinMissionForm = () => {
     defaultValues: defaultValues,
   });
 
+  const turnstileWidget = useRef<HTMLFormElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
-  const fileRef = form.register("file");
+  // const fileRef = form.register("file");
 
   // console.log(formRef);
-  console.log(form.getValues("file"));
-  console.log(form.formState.errors);
+  // console.log(form.getValues("file"));
+  console.log("form errors ", form.formState.errors);
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     setLoading(true);
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_MISSION_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_MISSION_TEMPLATE_ID!,
-        formRef.current!,
-        {
-          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-        }
-      )
-      .then(
-        () => {
-          form.resetField("industry");
-          form.reset();
-          setTimeout(() => {
-            setLoading(false);
-          }, 2000);
 
-          setTimeout(() => {
-            setSuccess(true);
-          }, 2000);
+    const formData = new FormData(formRef.current!);
+    const token = formData.get("cf-turnstile-response");
 
-          setSuccess(false);
-        },
-        (error) => {
-          console.warn("FAILED...", JSON.stringify(error));
-        }
-      );
+    const res = await fetch("/api/verify", {
+      method: "POST",
+      body: JSON.stringify({ token }),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_MISSION_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_MISSION_TEMPLATE_ID!,
+          formRef.current!,
+          {
+            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+          }
+        )
+        .then(
+          () => {
+            form.resetField("industry");
+            form.reset();
+            setTimeout(() => {
+              setLoading(false);
+            }, 2000);
+
+            setTimeout(() => {
+              setSuccess(true);
+            }, 2000);
+
+            setSuccess(false);
+          },
+          (error) => {
+            console.warn("FAILED...", JSON.stringify(error));
+          }
+        );
+    }
   };
 
   return (
@@ -205,7 +222,7 @@ const JoinMissionForm = () => {
             </FormItem>
           )}
         />
-        <FormField
+        {/* <FormField
           control={form.control}
           name="file"
           render={({ field }) => (
@@ -225,7 +242,7 @@ const JoinMissionForm = () => {
               </FormControl>
             </FormItem>
           )}
-        />
+        /> */}
         <FormField
           control={form.control}
           name="message"
@@ -244,7 +261,30 @@ const JoinMissionForm = () => {
             </FormItem>
           )}
         />
-        <div className="hidden md:block"></div>
+
+        <div className="hidden lg:block"></div>
+        <div className="w-full flex flex-end justify-end">
+          <Turnstile
+            // siteKey={
+            //   process.env.TURNSTILE_SITE_KEY
+            //     ? process.env.TURNSTILE_SITE_KEY!
+            //     : ""
+            // }
+            as="div"
+            siteKey="0x4AAAAAAA_VZ5IUbBYJ9H-U"
+            options={{
+              action: "submit-form",
+              theme: "light",
+              size: "normal",
+              language: "en",
+            }}
+            scriptOptions={{
+              appendTo: "body",
+            }}
+          />
+        </div>
+
+        <div className="hidden lg:block"></div>
         <div className="flex flex-col items-end justify-end">
           <Button
             disabled={loading || success ? true : false}

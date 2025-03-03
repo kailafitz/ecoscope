@@ -1,29 +1,25 @@
-import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
   DialogTitle,
+  DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import Link from "next/link";
 import JoinMissionForm from "../JoinMissionForm";
 import { H4 } from "../Headings";
 
 export function JoinMissionModal() {
   return (
-    <Dialog>
+    <Dialog aria-describedby="join-mission-modal">
       <DialogTrigger asChild>
         <a className="transition-all hover:text-foreground hover:cursor-pointer hover:transition-all text-lg md:text-base">
           Join the Mission
         </a>
       </DialogTrigger>
-      <DialogContent className="max-h-[80%] md:max-h-[95%] w-[90%] lg:max-w-[700px] overflow-y-scroll">
-        <div>
+      <DialogContent
+        title="Join the Mission"
+        className="max-h-[80%] md:max-h-[95%] w-[90%] lg:max-w-[700px] overflow-y-scroll"
+      >
+        <DialogTitle>
           <H4
             mb
             className="text-center"
@@ -31,7 +27,7 @@ export function JoinMissionModal() {
           >
             Join the Mission
           </H4>
-        </div>
+        </DialogTitle>
         <JoinMissionForm />
       </DialogContent>
     </Dialog>
