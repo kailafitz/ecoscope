@@ -47,6 +47,7 @@ const JoinMissionForm = () => {
 
   const turnstileWidget = useRef<HTMLFormElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  console.log(process.env.TURNSTILE_SITE_KEY);
   // const fileRef = form.register("file");
 
   // console.log(formRef);
