@@ -70,7 +70,7 @@ const JoinMissionForm = () => {
     if (data.success) {
       emailjs
         .sendForm(
-          process.env.NEXT_PUBLIC_EMAILJS_MISSION_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_CONTACT_SERVICE_ID!,
           process.env.NEXT_PUBLIC_EMAILJS_MISSION_TEMPLATE_ID!,
           formRef.current!,
           {
@@ -79,8 +79,9 @@ const JoinMissionForm = () => {
         )
         .then(
           () => {
-            // form.resetField("industry");
-            // form.reset();
+            console.log("Success");
+            form.resetField("industry");
+            form.reset();
             setTimeout(() => {
               setLoading(false);
             }, 2000);
