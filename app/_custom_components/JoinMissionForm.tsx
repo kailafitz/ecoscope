@@ -48,6 +48,7 @@ const JoinMissionForm = () => {
   // const fileRef = form.register("file");
 
   console.log(form.getValues());
+  console.log(formRef.current);
   // console.log(form.getValues("file"));
   // console.log("form errors ", form.formState.errors);
 
