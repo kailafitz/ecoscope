@@ -8,26 +8,26 @@ import MapIcon from "../_icons/MapIcon";
 const ContactDetails = () => {
   return (
     <div className="bg-primary shadow-2xl p-7 md:p-10 rounded-xl text-primary-foreground">
-      <div className="mb-10">
-        <h6 className="text-xl md:text-2xl">Get in Touch</h6>
-        <div className="bg-gradient-to-r from-primary to-white h-px mb-5 mt-2"></div>
-        <Link
-          href="https://maps.app.goo.gl/mWczquGu8rGmMXyEA"
-          target="_blank"
-          className="flex flex-row items-center mb-4 text-md"
-        >
-          <MapIcon className="w-5 text-inherit mr-4 ml-0.5" />
-          Dublin, Ireland
-        </Link>
-        <Link
-          href="mailto:info@ecoscope.ie"
-          className="flex flex-row items-center text-md break-all"
-        >
-          <MailIcon className="w-6 text-inherit mr-4" />
-          info@ecoscope.ie
-        </Link>
-      </div>
-      <div>
+      {/* <div className="mb-10"> */}
+      <h6 className="text-xl md:text-2xl">Get in Touch</h6>
+      <div className="bg-gradient-to-r from-primary to-white h-px mb-5 mt-2"></div>
+      <Link
+        href="https://maps.app.goo.gl/mWczquGu8rGmMXyEA"
+        target="_blank"
+        className="flex flex-row items-center mb-4 text-md"
+      >
+        <MapIcon className="w-5 text-inherit mr-4 ml-0.5" />
+        Dublin, Ireland
+      </Link>
+      <Link
+        href="mailto:info@ecoscope.ie"
+        className="flex flex-row items-center text-md break-all"
+      >
+        <MailIcon className="w-6 text-inherit mr-4" />
+        info@ecoscope.ie
+      </Link>
+      {/* </div> */}
+      {/* <div>
         <h6 className="text-xl md:text-2xl">Follow Us</h6>
         <div className="bg-gradient-to-r from-primary to-white h-px mb-5 mt-2"></div>
         <Link href="" className="flex flex-row items-center mb-4">
@@ -42,7 +42,7 @@ const ContactDetails = () => {
           <InstagramIcon className="w-6 text-inherit mr-4" />
           @ecoscope
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

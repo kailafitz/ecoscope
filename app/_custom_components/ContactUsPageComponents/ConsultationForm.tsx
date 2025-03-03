@@ -69,8 +69,8 @@ const ConsultationForm = () => {
     if (data.success) {
       emailjs
         .send(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_CONTACT_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID!,
           form.getValues(),
           {
             publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,

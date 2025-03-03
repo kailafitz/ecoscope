@@ -187,11 +187,11 @@ export const MobileDrawer = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
               {/* <hr className="h-0.5 w-full bg-gradient-to-r from-primary to-white border-none rounded-full mb-4" /> */}
-              <div className="flex flex-row gap-x-3">
+              {/* <div className="flex flex-row gap-x-3">
                 <LinkedInIcon className="w-8 text-foreground" />
                 <FacebookIcon className="w-8 text-foreground -ml-1.5" />
-                {/* <MailIcon className="w-8 text-foreground" /> */}
-              </div>
+                <MailIcon className="w-8 text-foreground" />
+              </div> */}
             </div>
           </NavigationMenu>
           {/* </div> */}

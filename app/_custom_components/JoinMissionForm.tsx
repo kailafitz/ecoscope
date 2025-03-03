@@ -44,21 +44,18 @@ const JoinMissionForm = () => {
     resolver: zodResolver(joinMissionFormSchema),
     defaultValues: defaultValues,
   });
-
-  const turnstileWidget = useRef<HTMLFormElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   // const fileRef = form.register("file");
 
-  // console.log(formRef);
+  console.log(form.getValues());
   // console.log(form.getValues("file"));
-  console.log("form errors ", form.formState.errors);
+  // console.log("form errors ", form.formState.errors);
 
   const onSubmit = async () => {
     setLoading(true);
 
     const formData = new FormData(formRef.current!);
     const token = formData.get("cf-turnstile-response");
-    console.log(token);
 
     const res = await fetch("/api/verify", {
       method: "POST",

@@ -73,7 +73,7 @@ const Footer = () => {
               <div className="bg-gradient-to-r from-primary to-white h-0.5 w-full rounded-full"></div>
               <div className="w-full text-primary flex flex-row justify-between pt-6">
                 <p>Dublin, Ireland</p>
-                <div className="[&_svg]:h-7 flex flex-row space-x-3 text-primary">
+                {/* <div className="[&_svg]:h-7 flex flex-row space-x-3 text-primary">
                   <Link
                     href={""}
                     className="transition-all hover:text-foreground hover:transition-all"
@@ -94,7 +94,7 @@ const Footer = () => {
                   >
                     <FacebookIcon />
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="flex flex-row justify-end opacity-65 pt-10 md:pt-0">
