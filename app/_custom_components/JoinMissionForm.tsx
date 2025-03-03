@@ -67,12 +67,13 @@ const JoinMissionForm = () => {
     });
 
     const data = await res.json();
+
     if (data.success) {
       emailjs
-        .sendForm(
+        .send(
           process.env.NEXT_PUBLIC_EMAILJS_CONTACT_SERVICE_ID!,
           process.env.NEXT_PUBLIC_EMAILJS_MISSION_TEMPLATE_ID!,
-          formRef.current!,
+          form.getValues()!,
           {
             publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
           }

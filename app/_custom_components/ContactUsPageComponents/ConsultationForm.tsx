@@ -53,9 +53,7 @@ const ConsultationForm = () => {
     setLoading(true);
 
     const formData = new FormData(formRef.current!);
-
     const token = formData.get("cf-turnstile-response");
-    console.log(token);
 
     const res = await fetch("/api/verify", {
       method: "POST",
@@ -66,6 +64,7 @@ const ConsultationForm = () => {
     });
 
     const data = await res.json();
+
     if (data.success) {
       emailjs
         .send(
