@@ -12,6 +12,7 @@ const LandingMontage = async () => {
   return (
     data && (
       <video
+        poster=""
         className="object-cover h-screen left-0 top-0 absolute"
         height="100%"
         width="100%"
