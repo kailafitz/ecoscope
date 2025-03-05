@@ -3,7 +3,7 @@ import { H1 } from "@/app/_custom_components/Layout/Headings";
 import Container, {
   containerMb,
 } from "@/app/_custom_components/Layout/Container";
-import { data2 } from "@/data/Services";
+import { serviceDescriptionsData } from "@/data/Services";
 
 import OtherServices from "@/app/_custom_components/OurServicesPageComponents/OtherServices";
 import Services from "@/app/_custom_components/OurServicesPageComponents/Services";
@@ -29,22 +29,31 @@ const OurServices = () => {
         <div
           className={`${containerMb} sticky top-0 z-10 mx-auto flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3 [&_:nth-child(6)]:hidden py-4 bg-white/70 backdrop-blur-sm`}
         >
-          {data2.map((service, i) => {
-            let id = service.title.toLowerCase().replace(/\s/g, "-");
-            return (
-              <Fragment key={i}>
-                <Link
-                  href={`#${id}`}
-                  className="w-fit hover:text-gray-600/60 hover:transition-all transition-all"
-                >
-                  {service.title}
-                  <div className="bg-gray-600 h-px w-full"></div>
-                </Link>
+          {serviceDescriptionsData.map(
+            (
+              service: {
+                title: string;
+                information: JSX.Element;
+                icon: JSX.Element;
+              },
+              i: number
+            ) => {
+              let id = service.title.toLowerCase().replace(/\s/g, "-");
+              return (
+                <Fragment key={i}>
+                  <Link
+                    href={`#${id}`}
+                    className="w-fit hover:text-gray-600/60 hover:transition-all transition-all"
+                  >
+                    {service.title}
+                    <div className="bg-gray-600 h-px w-full"></div>
+                  </Link>
 
-                <span className="hidden sm:inline">|</span>
-              </Fragment>
-            );
-          })}
+                  <span className="hidden sm:inline">|</span>
+                </Fragment>
+              );
+            }
+          )}
         </div>
         <Services />
       </Container>

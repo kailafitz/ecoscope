@@ -23,7 +23,7 @@ export const serviceCardsData = [
   },
 ];
 
-export const data2 = [
+export const serviceDescriptionsData = [
   {
     title: "Film and Television",
     information: (
