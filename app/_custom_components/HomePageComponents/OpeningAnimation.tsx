@@ -12,7 +12,7 @@ const OpeningAnimation: React.FC = () => {
     }, 6500);
   });
 
-  if (current === "/draft" && active) {
+  if (current === "/" && active) {
     return (
       <div className="fixed top-0 left-0 z-20 h-screen w-screen bg-white flex flex-col justify-center animate-fade-out scroll-auto">
         <video
@@ -338,9 +338,6 @@ M1479.678467,99.687088
 z"
           />
         </svg>
-        {/* <H1 className="text-center text-primary animate-fade-in tracking-[0.4em] uppercase">
-          Ecoscope
-        </H1> */}
       </div>
     );
   }

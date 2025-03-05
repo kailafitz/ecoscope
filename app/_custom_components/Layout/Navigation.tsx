@@ -24,7 +24,7 @@ const Navigation: React.FC = () => {
       <Container className="flex flex-row justify-between">
         <NavigationMenuList className="pt-4 pr-4 pb-4">
           <NavigationMenuItem className="hover:cursor-pointer mb-0">
-            <Link href="/draft" legacyBehavior passHref>
+            <Link href="/" legacyBehavior passHref>
               <Image
                 src="/_assets/logos/logo-primary-horizontal.png"
                 alt="Navigation bar"
@@ -79,33 +79,33 @@ const Navigation: React.FC = () => {
               </NavigationMenuContent>
             </NavigationMenuItem> */}
             <NavigationMenuItem>
-              <Link href="/draft/our-services" legacyBehavior passHref>
+              <Link href="/our-services" legacyBehavior passHref>
                 <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()} ${pathname === "/draft/our-services" && "font-bold opacity-70 "}`}
+                  className={`${navigationMenuTriggerStyle()} ${pathname === "/our-services" && "font-bold opacity-70 "}`}
                 >
                   Our Services
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/draft/about-us" legacyBehavior passHref>
+              <Link href="/about-us" legacyBehavior passHref>
                 <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()} ${pathname === "/draft/about-us" && "font-bold opacity-70"}`}
+                  className={`${navigationMenuTriggerStyle()} ${pathname === "/about-us" && "font-bold opacity-70"}`}
                 >
                   About Us
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/draft/contact-us" legacyBehavior passHref>
+              <Link href="/contact-us" legacyBehavior passHref>
                 <NavigationMenuLink
-                  className={`${navigationMenuTriggerStyle()} ${pathname === "/draft/contact-us" && "font-bold opacity-70"}`}
+                  className={`${navigationMenuTriggerStyle()} ${pathname === "/contact-us" && "font-bold opacity-70"}`}
                 >
                   Contact Us
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
-            <EcoscopeButton href="/draft/contact-us/#booking-form">
+            <EcoscopeButton href="/contact-us/#booking-form">
               Book a Consultation
             </EcoscopeButton>
           </NavigationMenuList>

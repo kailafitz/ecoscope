@@ -24,7 +24,7 @@ const Landing: React.FC = () => {
               <div className="flex flex-col sm:flex-row justify-between space-y-3 sm:space-x-6 sm:space-y-0">
                 <EcoscopeButton
                   full
-                  href="/draft/our-services"
+                  href="/our-services"
                   className="md:max-w-full"
                 >
                   Our Services
@@ -32,7 +32,7 @@ const Landing: React.FC = () => {
                 <EcoscopeButton
                   full
                   variant="outline"
-                  href="/draft/contact-us"
+                  href="/contact-us"
                   className="md:max-w-full"
                 >
                   Contact Us

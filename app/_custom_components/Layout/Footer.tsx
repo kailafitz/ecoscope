@@ -8,14 +8,14 @@ import LinkedInIcon from "../_icons/LinkedInIcon";
 import ActionBanner from "../ActionBanner";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import JoinMissionModal from "../HomePageComponents/JoinMissionModal";
+import JoinMissionModal from "../JoinMissionModal";
 
 const Footer = () => {
   const [location, setLocation] = useState<Boolean>(true);
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname === "/draft/contact-us" || pathname === "/draft/about-us") {
+    if (pathname === "/contact-us" || pathname === "/about-us") {
       setLocation(false);
     } else {
       setLocation(true);
@@ -28,7 +28,7 @@ const Footer = () => {
       {location && <ActionBanner footer />}
       <div className="bg-white/50 backdrop-blur-md pt-16">
         <Container className="flex flex-col md:flex-row justify-between items-stretch md:space-x-24">
-          <Link href="/draft">
+          <Link href="">
             <Image
               src="/_assets/logos/logo-primary-vertical-full.png"
               alt="Ecoscope logo"
@@ -48,14 +48,14 @@ const Footer = () => {
             <div>
               <div className="flex flex-col md:flex-row w-full justify-end pb-6 space-y-3 md:space-y-0 text-primary [&_a:not(:last-child)]:mr-0 md:[&_a:not(:last-child)]:mr-8">
                 <Link
-                  href="/draft/news"
-                  className={`transition-all hover:text-foreground hover:transition-all text-lg md:text-base ${pathname === "/draft/news" && "font-bold opacity-70 text-foreground"}`}
+                  href="/news"
+                  className={`transition-all hover:text-foreground hover:transition-all text-lg md:text-base ${pathname === "/news" && "font-bold opacity-70 text-foreground"}`}
                 >
                   News
                 </Link>
                 <Link
-                  href="/draft/resources"
-                  className={`transition-all hover:text-foreground hover:transition-all ${pathname === "/draft/resources" && "font-bold opacity-70 text-foreground"}`}
+                  href="/resources"
+                  className={`transition-all hover:text-foreground hover:transition-all text-lg md:text-base ${pathname === "/resources" && "font-bold opacity-70 text-foreground"}`}
                 >
                   Resources
                 </Link>

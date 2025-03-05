@@ -4,8 +4,8 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import JoinMissionForm from "../JoinMissionForm";
-import { H4 } from "../Layout/Headings";
+import JoinMissionForm from "./JoinMissionForm";
+import { H4 } from "./Layout/Headings";
 
 const JoinMissionModal: React.FC = () => {
   return (

@@ -1,25 +1,33 @@
-"use client";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { H4 } from "./_custom_components/Layout/Headings";
+import { Metadata } from "next";
+import Landing from "./_custom_components/HomePageComponents/Landing";
+import ActionBanner from "./_custom_components/ActionBanner";
+import HowWeWork from "./_custom_components/HomePageComponents/HowWeWork";
+import News from "./_custom_components/HomePageComponents/News";
+import OurServices from "./_custom_components/HomePageComponents/OurServiceCards";
+import WhatWeDo from "./_custom_components/HomePageComponents/WhatWeDo";
 
-const Draft = () => {
-  const pathname = usePathname();
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Home",
+    description: "Home",
+    // openGraph: {
+    //   images: ogImage ? [ogImage, ...previousImages] : previousImages,
+    // },
+  } satisfies Metadata;
+}
 
-  if (pathname === "/") {
-    return (
-      <div className="absolute top-0 left-0 bg-primary h-screen w-screen z-[999] flex flex-col justify-center items-center text-white">
-        <Image
-          src="/_assets/logos/logo-white-vertical-full.png"
-          alt="logo"
-          width={500}
-          height={200}
-          className="mb-5 xs:min-w-full md:min-w-0"
-        />
-        <H4>January 2025</H4>
-      </div>
-    );
-  }
+const Home = () => {
+  return (
+    <>
+      <Landing />
+      <HowWeWork />
+      <WhatWeDo />
+      <News />
+      <HowWeWork />
+      <OurServices />
+      {/* <ActionBanner /> */}
+    </>
+  );
 };
 
-export default Draft;
+export default Home;

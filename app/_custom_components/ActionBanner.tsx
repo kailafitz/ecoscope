@@ -30,11 +30,8 @@ const ActionBanner: React.FC<ActionBannerProps> = (props) => {
           started on your business sustainability goals.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button href="/draft/contact-us">Contact Us</Button>
-          <Button
-            variant="outline"
-            href="/draft/contact-us#book-a-consultation"
-          >
+          <Button href="/contact-us">Contact Us</Button>
+          <Button variant="outline" href="/contact-us#book-a-consultation">
             Book a Consultation
           </Button>
         </div>

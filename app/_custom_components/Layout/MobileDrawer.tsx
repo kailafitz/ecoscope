@@ -22,7 +22,7 @@ import { cn } from "@/lib/utils";
 import LinkedInIcon from "../_icons/LinkedInIcon";
 import MailIcon from "../_icons/MailIcon";
 import FacebookIcon from "../_icons/FacebookIcon";
-import JoinMissionModal from "../HomePageComponents/JoinMissionModal";
+import JoinMissionModal from "../JoinMissionModal";
 
 export const MobileDrawer: React.FC = () => {
   return (
@@ -40,7 +40,7 @@ export const MobileDrawer: React.FC = () => {
         <Container className="pt-6 px-10">
           {/* <NavigationMenuList className="pb-10">
             <NavigationMenuItem className="hover:cursor-pointer">
-              <Link href="/draft" legacyBehavior passHref>
+              <Link href="" legacyBehavior passHref>
                 <Image
                   src="/_assets/logos/logo-primary-horizontal.png"
                   alt="Navigation bar"
@@ -102,7 +102,7 @@ export const MobileDrawer: React.FC = () => {
                       className={navigationMenuTriggerStyle()}
                       asChild
                     >
-                      <Link href="/draft/our-services">Our Services</Link>
+                      <Link href="/our-services">Our Services</Link>
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
@@ -112,7 +112,7 @@ export const MobileDrawer: React.FC = () => {
                       className={navigationMenuTriggerStyle()}
                       asChild
                     >
-                      <Link href="/draft/about-us">About Us</Link>
+                      <Link href="/about-us">About Us</Link>
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
@@ -122,7 +122,7 @@ export const MobileDrawer: React.FC = () => {
                       className={navigationMenuTriggerStyle()}
                       asChild
                     >
-                      <Link href="/draft/contact-us">Contact Us</Link>
+                      <Link href="/contact-us">Contact Us</Link>
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
@@ -133,7 +133,7 @@ export const MobileDrawer: React.FC = () => {
                       className={navigationMenuTriggerStyle()}
                       asChild
                     >
-                      <Link href="/draft/news">News</Link>
+                      <Link href="/news">News</Link>
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
@@ -143,7 +143,7 @@ export const MobileDrawer: React.FC = () => {
                       className={navigationMenuTriggerStyle()}
                       asChild
                     >
-                      <Link href="/draft/resources">Resources</Link>
+                      <Link href="/resources">Resources</Link>
                     </NavigationMenuLink>
                   </DrawerClose>
                 </NavigationMenuItem>
@@ -178,7 +178,7 @@ export const MobileDrawer: React.FC = () => {
                           "w-full",
                           `min-w-full sm:min-w-40 text-md md:text-sm`
                         )}
-                        href="/draft/contact-us#book-a-consultation"
+                        href="/contact-us#book-a-consultation"
                       >
                         Book a Consultation
                       </Link>

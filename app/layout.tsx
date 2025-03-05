@@ -13,7 +13,7 @@ import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Footer from "./_custom_components/Layout/Footer";
 import Navigation from "./_custom_components/Layout/Navigation";
 import OpeningAnimation from "./_custom_components/HomePageComponents/OpeningAnimation";
-import AlertBanner from "./draft/(news)/alert-banner";
+import AlertBanner from "./(news)/alert-banner";
 import Script from "next/script";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -69,7 +69,7 @@ export default function RootLayout({
             open
           )}
         >
-          {/* <OpeningAnimation /> */}
+          <OpeningAnimation />
           <Navigation />
           <main className={`${varela} flex-1 flex flex-col`}>{children}</main>
           <Footer />

@@ -47,7 +47,7 @@ const OurServices = () => {
           not fit all.
           <br /> Get in touch to share your story.
         </H4>
-        <EcoscopeButton href={"/draft/contact-us"}>Contact Us</EcoscopeButton>
+        <EcoscopeButton href={"/contact-us"}>Contact Us</EcoscopeButton>
       </Container>
     </>
   );
