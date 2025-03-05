@@ -25,7 +25,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { PhoneInput } from "./PhoneInput";
 import { Turnstile } from "@marsidev/react-turnstile";
-import { joinMissionFormSchema } from "../schemas/joinMissionFormSchema";
+import { joinMissionFormSchema } from "../formSchemas/joinMissionFormSchema";
 
 const defaultValues = {
   name: "",
