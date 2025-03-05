@@ -1,4 +1,4 @@
-import { H3 } from "@/app/_custom_components/Headings";
+import { H3 } from "@/app/_custom_components/Layout/Headings";
 import React, { Suspense } from "react";
 import MoreStories from "./MoreStories";
 import { useDataFetch } from "@/hooks/useDataFetch";

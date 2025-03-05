@@ -1,5 +1,5 @@
 import ActionBanner from "@/app/_custom_components/ActionBanner";
-import ServicePageContent from "@/app/_custom_components/ServicePageContent";
+import ServicePageContent from "@/app/_custom_components/OurServicesPageComponents/ServicePageContent";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {

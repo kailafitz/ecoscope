@@ -1,17 +1,8 @@
-import { ReactNode } from "react";
+import { HeadingsProps } from "../../interfaces";
 
 export const mb = "mb-8 md:mb-10";
 
-type Props = {
-  children: ReactNode;
-  className?: string;
-  mb?: boolean;
-  subtitle?: string;
-  left?: boolean;
-  id?: string;
-};
-
-export const DualHeading = (props: Props) => {
+export const DualHeading: React.FC<HeadingsProps> = (props) => {
   return (
     <>
       <h1
@@ -28,7 +19,7 @@ export const DualHeading = (props: Props) => {
   );
 };
 
-export const H1 = (props: Props) => {
+export const H1: React.FC<HeadingsProps> = (props) => {
   return (
     <>
       <h1
@@ -47,7 +38,7 @@ export const H1 = (props: Props) => {
   );
 };
 
-export const H2 = (props: Props) => {
+export const H2: React.FC<HeadingsProps> = (props) => {
   return (
     <>
       <h2
@@ -66,7 +57,7 @@ export const H2 = (props: Props) => {
   );
 };
 
-export const H3 = (props: Props) => {
+export const H3: React.FC<HeadingsProps> = (props) => {
   return (
     <>
       <h3
@@ -85,7 +76,7 @@ export const H3 = (props: Props) => {
   );
 };
 
-export const H4 = (props: Props) => {
+export const H4: React.FC<HeadingsProps> = (props) => {
   return (
     <>
       <h4

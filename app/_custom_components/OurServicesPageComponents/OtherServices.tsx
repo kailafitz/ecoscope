@@ -1,9 +1,9 @@
 import React from "react";
 import Container, { containerMb } from "../Layout/Container";
-import { H4 } from "../Headings";
-import EcoscopeButton from "../Button";
+import { H4 } from "../Layout/Headings";
+import EcoscopeButton from "../Layout/EcoscopeButton";
 
-const OtherServices = () => {
+const OtherServices: React.FC = () => {
   return (
     <div
       className={`${containerMb} bg-secondary py-10 md:py-20 relative overflow-hidden`}

@@ -39,7 +39,7 @@ const defaultValues = {
   message: "",
 };
 
-const ConsultationForm = () => {
+const ConsultationForm: React.FC = () => {
   const [loading, setLoading] = useState<Boolean>(false);
   const [success, setSuccess] = useState<Boolean>(false);
   const form = useForm<z.infer<typeof consultationFormSchema>>({

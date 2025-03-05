@@ -1,12 +1,12 @@
 import ActionBanner from "@/app/_custom_components/ActionBanner";
-import { H1 } from "@/app/_custom_components/Headings";
+import { H1 } from "@/app/_custom_components/Layout/Headings";
 import Container, {
   containerMb,
 } from "@/app/_custom_components/Layout/Container";
 import { data2 } from "@/data/Services";
 
-import OtherServices from "@/app/_custom_components/OurServicesPageComponent/OtherServices";
-import Services from "@/app/_custom_components/OurServicesPageComponent/Services";
+import OtherServices from "@/app/_custom_components/OurServicesPageComponents/OtherServices";
+import Services from "@/app/_custom_components/OurServicesPageComponents/Services";
 import { Metadata } from "next";
 import Link from "next/link";
 import { Fragment } from "react";

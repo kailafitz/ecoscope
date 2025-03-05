@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "../Layout/Container";
-import { H2, H4 } from "../Headings";
+import { H2, H4 } from "../Layout/Headings";
 import MailIcon from "../_icons/MailIcon";
 
 const MeetOurFounder = () => {

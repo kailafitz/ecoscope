@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const OpeningAnimation = () => {
+const OpeningAnimation: React.FC = () => {
   const [active, setActive] = useState<Boolean>(true);
   const current = usePathname();
 

@@ -5,7 +5,7 @@ import LinkedInIcon from "../_icons/LinkedInIcon";
 import MailIcon from "../_icons/MailIcon";
 import MapIcon from "../_icons/MapIcon";
 
-const ContactDetails = () => {
+const ContactDetails: React.FC = () => {
   return (
     <div className="bg-primary shadow-2xl p-7 md:p-10 rounded-xl text-primary-foreground">
       {/* <div className="mb-10"> */}

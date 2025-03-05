@@ -15,16 +15,16 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import EcoscopeButton from "./Button";
-import Container from "./Layout/Container";
-import { JoinMissionModal } from "./HomePageComponents/JoinMissionModal";
+import EcoscopeButton from "./EcoscopeButton";
+import Container from "./Container";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import LinkedInIcon from "./_icons/LinkedInIcon";
-import MailIcon from "./_icons/MailIcon";
-import FacebookIcon from "./_icons/FacebookIcon";
+import LinkedInIcon from "../_icons/LinkedInIcon";
+import MailIcon from "../_icons/MailIcon";
+import FacebookIcon from "../_icons/FacebookIcon";
+import JoinMissionModal from "../HomePageComponents/JoinMissionModal";
 
-export const MobileDrawer = () => {
+export const MobileDrawer: React.FC = () => {
   return (
     <Drawer>
       <DrawerTrigger asChild className="flex flex-col justify-center">

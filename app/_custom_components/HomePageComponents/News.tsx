@@ -1,8 +1,8 @@
 import Container, { containerMb } from "../Layout/Container";
-import { H2 } from "../Headings";
-import EcoscopeButton from "../Button";
+import { H2 } from "../Layout/Headings";
+import EcoscopeButton from "../Layout/EcoscopeButton";
 
-const News = () => {
+const News: React.FC = () => {
   return (
     <div className={`bg-secondary pt-16 md:pt-32 ${containerMb} text-white`}>
       <Container mb className="px-0 flex flex-col justify-center text-center">

@@ -5,18 +5,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ReactNode } from "react";
-import EcoscopeButton from "../Button";
+import EcoscopeButton from "../Layout/EcoscopeButton";
+import { ServiceProps } from "@/app/interfaces";
 
-type ServiceProps = {
-  icon?: ReactNode;
-  name?: string;
-  description?: string;
-  href?: string;
-  i: number;
-};
-
-const ServiceCard = (props: ServiceProps) => {
+const ServiceCard: React.FC<ServiceProps> = (props) => {
   return (
     <Card
       data-aos="fade-up"

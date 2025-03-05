@@ -1,17 +1,9 @@
-import { ReactNode } from "react";
-
-type Props = {
-  children: ReactNode;
-  className?: string;
-  topViewHeight?: boolean;
-  topSectionPadding?: boolean;
-  mb?: boolean;
-  id?: string;
-};
+import { ContainerProps } from "@/app/interfaces";
+import PropTypes from "prop-types";
 
 export const containerMb = "mb-16 md:mb-32";
 
-const Container = (props: Props) => {
+const Container: React.FC<ContainerProps> = (props) => {
   return (
     <div
       id={props.id && props.id}
@@ -20,6 +12,15 @@ const Container = (props: Props) => {
       {props.children}
     </div>
   );
+};
+
+Container.propTypes = {
+  id: PropTypes.string,
+  className: PropTypes.string,
+  mb: PropTypes.bool,
+  topSectionPadding: PropTypes.bool,
+  topViewHeight: PropTypes.bool,
+  children: PropTypes.node.isRequired,
 };
 
 export default Container;

@@ -1,16 +1,14 @@
 "use client";
 import { useEffect } from "react";
-import Button from "./Button";
+import Button from "./Layout/EcoscopeButton";
 import Container from "./Layout/Container";
 import LogoIcon from "./_icons/LogoIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ActionBannerProps } from "../interfaces";
+import PropTypes from "prop-types";
 
-type Props = {
-  footer?: Boolean;
-};
-
-const ActionBanner = (props: Props) => {
+const ActionBanner: React.FC<ActionBannerProps> = (props) => {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -24,7 +22,6 @@ const ActionBanner = (props: Props) => {
         mb
         className={`flex flex-col justify-center gap-y-5 pt-48 relative z-0`}
       >
-        {/* <div className="bg-primary w-full h-px mb-10"></div> */}
         <p className="text-center text-2xl font-heading">
           Start the Conversation
         </p>
@@ -41,12 +38,13 @@ const ActionBanner = (props: Props) => {
             Book a Consultation
           </Button>
         </div>
-        {/* {props.bottomBorder && (
-          <div className="bg-primary w-full h-px mt-10"></div>
-        )} */}
       </Container>
     </div>
   );
+};
+
+ActionBanner.propTypes = {
+  footer: PropTypes.bool,
 };
 
 export default ActionBanner;

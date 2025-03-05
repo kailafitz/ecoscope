@@ -1,10 +1,10 @@
-import EcoscopeButton from "@/app/_custom_components/Button";
+import EcoscopeButton from "@/app/_custom_components/Layout/EcoscopeButton";
 import React from "react";
 import DateComponent from "./Date";
 import Link from "next/link";
 import CoverImage from "./CoverImage";
 import { HeroQueryResult } from "@/sanity.types";
-import { H3 } from "@/app/_custom_components/Headings";
+import { H3 } from "@/app/_custom_components/Layout/Headings";
 
 const LatestFeaturesPost = ({
   title,

@@ -8,7 +8,7 @@
  *
  */
 
-import { H4 } from "@/app/_custom_components/Headings";
+import { H4 } from "@/app/_custom_components/Layout/Headings";
 import {
   PortableText,
   type PortableTextComponents,

@@ -1,9 +1,9 @@
-import EcoscopeButton from "../Button";
+import EcoscopeButton from "../Layout/EcoscopeButton";
 import Container from "../Layout/Container";
-import { H1 } from "../Headings";
+import { H1 } from "../Layout/Headings";
 import LandingMontage from "./LandingMontage";
 
-const Landing = () => {
+const Landing: React.FC = () => {
   return (
     <>
       <LandingMontage />

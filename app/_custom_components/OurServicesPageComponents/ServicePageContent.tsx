@@ -1,18 +1,14 @@
 "use client";
 import Container from "@/app/_custom_components/Layout/Container";
-import { DualHeading } from "@/app/_custom_components/Headings";
+import { DualHeading } from "@/app/_custom_components/Layout/Headings";
 import { data } from "@/data/Services";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { ServicePageProps } from "../../interfaces";
 
-type Props = {
-  title: string;
-  information: ReactNode;
-};
-
-const ServicePageContent = () => {
-  const [service, setService] = useState<Props>();
+const ServicePageContent: React.FC = () => {
+  const [service, setService] = useState<ServicePageProps>();
   const params = useParams();
 
   useEffect(() => {

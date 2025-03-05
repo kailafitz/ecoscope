@@ -1,4 +1,4 @@
-import { H1 } from "@/app/_custom_components/Headings";
+import { H1 } from "@/app/_custom_components/Layout/Headings";
 import Container from "@/app/_custom_components/Layout/Container";
 import React from "react";
 

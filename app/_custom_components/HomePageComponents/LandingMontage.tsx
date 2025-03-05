@@ -1,4 +1,4 @@
-const LandingMontage = async () => {
+const LandingMontage: React.FC = async () => {
   const API_KEY = "CrPzvcCqf4j1bJUKwS3HqAdZTclKFg7cba5LjjjlcV4A5jlXRrLt5YDj";
   const data = await fetch("https://api.pexels.com/videos/videos/1828452", {
     headers: {

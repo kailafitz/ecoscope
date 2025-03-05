@@ -5,9 +5,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import JoinMissionForm from "../JoinMissionForm";
-import { H4 } from "../Headings";
+import { H4 } from "../Layout/Headings";
 
-export function JoinMissionModal() {
+const JoinMissionModal: React.FC = () => {
   return (
     <Dialog aria-describedby="join-mission-modal">
       <DialogTrigger asChild>
@@ -32,4 +32,6 @@ export function JoinMissionModal() {
       </DialogContent>
     </Dialog>
   );
-}
+};
+
+export default JoinMissionModal;

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { H4 } from "./_custom_components/Headings";
+import { H4 } from "./_custom_components/Layout/Headings";
 
 const Draft = () => {
   const pathname = usePathname();

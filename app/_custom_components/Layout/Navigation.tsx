@@ -12,12 +12,11 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import EcoscopeButton from "../Button";
+import EcoscopeButton from "./EcoscopeButton";
 import Container from "./Container";
-import { MobileDrawer } from "../MobileDrawer";
-import { TransitionLink } from "../TransitionLink";
+import { MobileDrawer } from "./MobileDrawer";
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   const pathname = usePathname();
 
   return (
@@ -89,13 +88,13 @@ const Navigation = () => {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <TransitionLink href="/draft/about-us" legacyBehavior passHref>
+              <Link href="/draft/about-us" legacyBehavior passHref>
                 <NavigationMenuLink
                   className={`${navigationMenuTriggerStyle()} ${pathname === "/draft/about-us" && "font-bold opacity-70"}`}
                 >
                   About Us
                 </NavigationMenuLink>
-              </TransitionLink>
+              </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/draft/contact-us" legacyBehavior passHref>

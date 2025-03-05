@@ -8,7 +8,7 @@ import {
   SanityImageHotspot,
 } from "@/sanity.types";
 import DateComponent from "./Date";
-import { H4 } from "@/app/_custom_components/Headings";
+import { H4 } from "@/app/_custom_components/Layout/Headings";
 
 type Props = {
   _id: string;

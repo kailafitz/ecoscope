@@ -37,7 +37,7 @@ const defaultValues = {
   message: "",
 };
 
-const JoinMissionForm = () => {
+const JoinMissionForm: React.FC = () => {
   const [loading, setLoading] = useState<Boolean>(false);
   const [success, setSuccess] = useState<Boolean>(false);
   const form = useForm<z.infer<typeof joinMissionFormSchema>>({
@@ -46,11 +46,6 @@ const JoinMissionForm = () => {
   });
   const formRef = useRef<HTMLFormElement>(null);
   // const fileRef = form.register("file");
-
-  console.log(form.getValues());
-  console.log(formRef.current);
-  // console.log(form.getValues("file"));
-  // console.log("form errors ", form.formState.errors);
 
   const onSubmit = async () => {
     setLoading(true);

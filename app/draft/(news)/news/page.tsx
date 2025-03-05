@@ -1,4 +1,4 @@
-import { H3, H4 } from "@/app/_custom_components/Headings";
+import { H3, H4 } from "@/app/_custom_components/Layout/Headings";
 import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";

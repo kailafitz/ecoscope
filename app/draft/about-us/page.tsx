@@ -1,6 +1,6 @@
 import ActionBanner from "@/app/_custom_components/ActionBanner";
 import MeetOurFounder from "@/app/_custom_components/AboutUsPageComponents/MeetOurFounder";
-import WhatWeDo from "@/app/_custom_components/WhatWeDo";
+import WhatWeDo from "@/app/_custom_components/HomePageComponents/WhatWeDo";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {

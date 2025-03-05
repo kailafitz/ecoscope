@@ -5,10 +5,10 @@ import Container from "./Container";
 import FacebookIcon from "../_icons/FacebookIcon";
 import InstagramIcon from "../_icons/InstagramIcon";
 import LinkedInIcon from "../_icons/LinkedInIcon";
-import { JoinMissionModal } from "../HomePageComponents/JoinMissionModal";
 import ActionBanner from "../ActionBanner";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import JoinMissionModal from "../HomePageComponents/JoinMissionModal";
 
 const Footer = () => {
   const [location, setLocation] = useState<Boolean>(true);
