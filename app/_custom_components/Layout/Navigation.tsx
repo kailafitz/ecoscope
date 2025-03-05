@@ -26,7 +26,7 @@ const Navigation: React.FC = () => {
           <NavigationMenuItem className="hover:cursor-pointer mb-0">
             <Link href="/draft" legacyBehavior passHref>
               <Image
-                src="/_assets/logo-primary-horizontal.png"
+                src="/_assets/logos/logo-primary-horizontal.png"
                 alt="Navigation bar"
                 width={200}
                 height={50}

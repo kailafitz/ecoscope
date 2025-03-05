@@ -42,7 +42,7 @@ export const MobileDrawer: React.FC = () => {
             <NavigationMenuItem className="hover:cursor-pointer">
               <Link href="/draft" legacyBehavior passHref>
                 <Image
-                  src="/_assets/logo-primary-horizontal.png"
+                  src="/_assets/logos/logo-primary-horizontal.png"
                   alt="Navigation bar"
                   width={200}
                   height={50}

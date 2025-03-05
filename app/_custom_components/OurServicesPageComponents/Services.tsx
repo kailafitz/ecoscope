@@ -47,13 +47,13 @@ const Services: React.FC = () => {
         className={`flex flex-col md:flex-row justify-between shadow-2xl [&_:nth-child(1)]:rounded-t-md [&_:nth-child(3)]:rounded-b-md md:[&_:nth-child(1)]:rounded-tl-md md:[&_:nth-child(1)]:rounded-tr-none md:[&_:nth-child(1)]:rounded-bl-md md:[&_:nth-child(3)]:rounded-tr-md md:[&_:nth-child(3)]:rounded-br-md md:[&_:nth-child(3)]:rounded-bl-none ${containerMb}`}
       >
         <div
-          className={`bg-[url('/_assets/our-services-1.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0`}
+          className={`bg-[url('/_assets/ourServices/our-services-1.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0`}
         ></div>
         <div
-          className={`bg-[url('/_assets/our-services-2.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0 -ml-px`}
+          className={`bg-[url('/_assets/ourServices/our-services-2.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0 -ml-px`}
         ></div>
         <div
-          className={`bg-[url('/_assets/our-services-3.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0 -ml-px`}
+          className={`bg-[url('/_assets/ourServices/our-services-3.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0 -ml-px`}
         ></div>
         {/* Photo by Ron Lach :
           https://www.pexels.com/photo/happy-woman-doing-an-environmental-cleanup-9543745/ */}

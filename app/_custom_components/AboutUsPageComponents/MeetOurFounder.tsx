@@ -49,7 +49,7 @@ const MeetOurFounder = () => {
             </p>
           </div>
           <Image
-            src="/_assets/headshots/headshot-2.jpg"
+            src="/_assets/aboutUs/headshot.jpg"
             alt="Headshot of Alexandra de Valera"
             width="400"
             height="400"

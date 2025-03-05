@@ -30,14 +30,14 @@ const Footer = () => {
         <Container className="flex flex-col md:flex-row justify-between items-stretch md:space-x-24">
           <Link href="/draft">
             <Image
-              src="/_assets/logo-primary-vertical-full.png"
+              src="/_assets/logos/logo-primary-vertical-full.png"
               alt="Ecoscope logo"
               height={700}
               width={800}
               className="w-full max-w-xs mx-auto pb-16"
             />
             {/* <Image
-            src="/_assets/logo-white-vertical-full.png"
+            src="/_assets/logos/logo-white-vertical-full.png"
             alt="Ecoscope white logo"
             height={650}
             width={800}

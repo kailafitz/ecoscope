@@ -100,11 +100,7 @@
 }
 
 .about-top {
-  background-image: url("/_assets/dublin.png");
-}
-
-.email-icon-padding {
-  padding: 3px;
+  background-image: url("/_assets/dublin-min.png");
 }
 
 .bg-landscape {
@@ -112,18 +108,18 @@
 }
 
 .bg-curve {
-  background: url("/_assets/bg-curve-xs.png") no-repeat top / cover;
+  background: url("/_assets/curvedShapes/bg-curve-xs.png") no-repeat top / cover;
 
   @media only screen and (min-width: 500px) {
-    background: url("/_assets/bg-curve-md.png") no-repeat top / cover;
+    background: url("/_assets/curvedShapes/bg-curve-md.png") no-repeat top / cover;
   }
 
   @media only screen and (min-width: 1000px) {
-    background: url("/_assets/bg-curve-lg.png") no-repeat top / cover;
+    background: url("/_assets/curvedShapes/bg-curve-lg.png") no-repeat top / cover;
   }
 
   @media only screen and (min-width: 1200px) {
-    background: url("/_assets/bg-curve-xl.png") no-repeat top / cover;
+    background: url("/_assets/curvedShapes/bg-curve-xl.png") no-repeat top / cover;
   }
 }
 

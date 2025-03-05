@@ -10,7 +10,7 @@ const Draft = () => {
     return (
       <div className="absolute top-0 left-0 bg-primary h-screen w-screen z-[999] flex flex-col justify-center items-center text-white">
         <Image
-          src="/_assets/logo-white-vertical-full.png"
+          src="/_assets/logos/logo-white-vertical-full.png"
           alt="logo"
           width={500}
           height={200}
