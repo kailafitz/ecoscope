@@ -1,10 +1,8 @@
+import { IconProps } from "@/app/interfaces";
 import React from "react";
+import PropTypes from "prop-types";
 
-type Props = {
-  className?: string;
-};
-
-const MailIcon = (props: Props) => {
+const MailIcon: React.FC<IconProps> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +18,10 @@ const MailIcon = (props: Props) => {
       <polyline points="22,6 12,13 2,6"></polyline>
     </svg>
   );
+};
+
+MailIcon.propTypes = {
+  className: PropTypes.string,
 };
 
 export default MailIcon;

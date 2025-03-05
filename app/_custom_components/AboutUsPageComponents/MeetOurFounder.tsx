@@ -7,7 +7,6 @@ import MailIcon from "../_icons/MailIcon";
 const MeetOurFounder = () => {
   return (
     <div className="bg-primary/20 pt-16 md:pt-32 relative">
-      {/* <div className="hidden lg:block absolute -z-0 bg-primary h-1/2 w-1/3 right-0 top-0 rounded-bl-full"></div> */}
       <Container mb>
         <div className="grid grid-cols-1 lg:grid-cols-5 lg:gap-x-14 xl:gap-x-0 gap-y-10 mb-10 items-center">
           <div className="lg:col-span-3">

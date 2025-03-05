@@ -26,21 +26,6 @@ const OtherServices = () => {
           </p>
           <EcoscopeButton href="contact-us">Contact Us</EcoscopeButton>
         </div>
-        {/* <div className="flex flex-col">
-          <p className="text-xl">
-            Feel free to get in touch and share your story
-          </p>
-          <EcoscopeButton href="contact-us">Contact Us</EcoscopeButton>
-        </div> */}
-        {/* <QuestionIcon className="absolute text-primary w-16 rotate=[55deg] top-[70%] right-[5%]" />
-          <QuestionIcon className="absolute text-primary w-24 rotate-[85deg] top-[60%] right-[20%]" />
-          <QuestionIcon className="absolute text-primary w-10 rotate-12 top-1/3 right-1/4" />
-          <QuestionIcon className="absolute text-primary w-16 -rotate-12 top-[60%] right-[35%]" />
-          <QuestionIcon
-            className="absolute text-primary w-32 rotate-[70deg] top-[15%] right-[8%]"
-            strokeWidth={1}
-          />
-          <QuestionIcon className="absolute text-primary w-20 rotate-45 top-[10%] right-[33%]" /> */}
       </Container>
     </div>
   );

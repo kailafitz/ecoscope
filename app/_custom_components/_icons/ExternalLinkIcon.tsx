@@ -1,10 +1,8 @@
+import { IconProps } from "@/app/interfaces";
 import React from "react";
+import PropTypes from "prop-types";
 
-type Props = {
-  className?: string;
-};
-
-const ExternalLinkIcon = (props: Props) => {
+const ExternalLinkIcon: React.FC<IconProps> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,6 +21,10 @@ const ExternalLinkIcon = (props: Props) => {
       <path d="M15 3h6v6" />
     </svg>
   );
+};
+
+ExternalLinkIcon.propTypes = {
+  className: PropTypes.string,
 };
 
 export default ExternalLinkIcon;

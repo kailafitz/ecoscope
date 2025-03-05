@@ -1,10 +1,8 @@
+import { IconProps } from "@/app/interfaces";
 import React from "react";
+import PropTypes from "prop-types";
 
-type Props = {
-  className?: string;
-};
-
-const AdvertisingIcon = (props: Props) => {
+const AdvertisingIcon: React.FC<IconProps> = (props) => {
   return (
     <svg
       viewBox="0 0 38 38"
@@ -24,6 +22,10 @@ const AdvertisingIcon = (props: Props) => {
       />
     </svg>
   );
+};
+
+AdvertisingIcon.propTypes = {
+  className: PropTypes.string,
 };
 
 export default AdvertisingIcon;

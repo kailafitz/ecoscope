@@ -1,10 +1,8 @@
+import { IconProps } from "@/app/interfaces";
 import React from "react";
+import PropTypes from "prop-types";
 
-type Props = {
-  className?: string;
-};
-
-const InstagramIcon = (props: Props) => {
+const InstagramIcon: React.FC<IconProps> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +19,10 @@ const InstagramIcon = (props: Props) => {
       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
     </svg>
   );
+};
+
+InstagramIcon.propTypes = {
+  className: PropTypes.string,
 };
 
 export default InstagramIcon;

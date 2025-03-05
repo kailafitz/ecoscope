@@ -1,10 +1,8 @@
+import { IconProps } from "@/app/interfaces";
 import React from "react";
+import PropTypes from "prop-types";
 
-type Props = {
-  className?: string;
-};
-
-const MapIcon = (props: Props) => {
+const MapIcon: React.FC<IconProps> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +19,10 @@ const MapIcon = (props: Props) => {
       <line x1="16" y1="6" x2="16" y2="22"></line>
     </svg>
   );
+};
+
+MapIcon.propTypes = {
+  className: PropTypes.string,
 };
 
 export default MapIcon;

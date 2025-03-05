@@ -1,10 +1,8 @@
+import { IconProps } from "@/app/interfaces";
 import React from "react";
+import PropTypes from "prop-types";
 
-type Props = {
-  className?: string;
-};
-
-const LogoIcon = (props: Props) => {
+const LogoIcon: React.FC<IconProps> = (props) => {
   return (
     <svg
       viewBox="0 0 121 117"
@@ -34,6 +32,10 @@ const LogoIcon = (props: Props) => {
       />
     </svg>
   );
+};
+
+LogoIcon.propTypes = {
+  className: PropTypes.string,
 };
 
 export default LogoIcon;

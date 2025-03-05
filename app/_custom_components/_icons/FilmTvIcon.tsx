@@ -1,10 +1,8 @@
+import { IconProps } from "@/app/interfaces";
 import React from "react";
+import PropTypes from "prop-types";
 
-type Props = {
-  className?: string;
-};
-
-const FilmTvIcon = (props: Props) => {
+const FilmTvIcon: React.FC<IconProps> = (props) => {
   return (
     <svg
       viewBox="0 0 37 37"
@@ -25,6 +23,10 @@ const FilmTvIcon = (props: Props) => {
       </defs>
     </svg>
   );
+};
+
+FilmTvIcon.propTypes = {
+  className: PropTypes.string,
 };
 
 export default FilmTvIcon;

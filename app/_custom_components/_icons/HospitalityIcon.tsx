@@ -1,10 +1,8 @@
+import { IconProps } from "@/app/interfaces";
 import React from "react";
+import PropTypes from "prop-types";
 
-type Props = {
-  className?: string;
-};
-
-const HospitalityIcon = (props: Props) => {
+const HospitalityIcon: React.FC<IconProps> = (props) => {
   return (
     <svg
       viewBox="0 0 89 77"
@@ -35,6 +33,10 @@ const HospitalityIcon = (props: Props) => {
       />
     </svg>
   );
+};
+
+HospitalityIcon.propTypes = {
+  className: PropTypes.string,
 };
 
 export default HospitalityIcon;

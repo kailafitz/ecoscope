@@ -1,10 +1,9 @@
+import { IconProps } from "@/app/interfaces";
 import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "lucide-react";
 
-type Props = {
-  className?: string;
-};
-
-const LinkedInIcon = (props: Props) => {
+const LinkedInIcon: React.FC<IconProps> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,6 +20,10 @@ const LinkedInIcon = (props: Props) => {
       <circle cx="4" cy="4" r="2"></circle>
     </svg>
   );
+};
+
+LinkedInIcon.propTypes = {
+  className: PropTypes.string,
 };
 
 export default LinkedInIcon;
