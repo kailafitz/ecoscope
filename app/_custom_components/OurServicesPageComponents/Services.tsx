@@ -15,20 +15,20 @@ const Services: React.FC = () => {
       {data2.map((service, i) => {
         let id = service.title.toLowerCase().replace(/\s/g, "-");
         return (
-          <div
-            key={i}
-            id={id}
-            data-aos="fade-up"
-            data-aos-delay={i * 100}
-            className={`grid grid-cols-1 md:grid-cols-3 md:gap-10 [&_svg]:text-primary [&:nth-child(2)_svg]:rotate-45 [&:nth-child(4)_svg]:rotate-12 ${containerMb} pt-20 -mt-20`}
-          >
-            <div>
-              <H4 left>{service.title}</H4>
-              <div className="bg-gradient-to-r from-primary to-white h-0.5 w-full rounded-full my-3"></div>
-            </div>
-            <div className="relative z-10 col-span-2">
-              <p>{service.information}</p>
-              <div className="about-top bg-bottom"></div>
+          <div key={i} id={id}>
+            <div
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
+              className={`grid grid-cols-1 md:grid-cols-3 md:gap-10 [&_svg]:text-primary [&:nth-child(2)_svg]:rotate-45 [&:nth-child(4)_svg]:rotate-12 ${containerMb} pt-20 -mt-20`}
+            >
+              <div>
+                <H4 left>{service.title}</H4>
+                <div className="bg-gradient-to-r from-primary to-white h-0.5 w-full rounded-full my-3"></div>
+              </div>
+              <div className="relative z-10 col-span-2">
+                <p>{service.information}</p>
+                <div className="about-top bg-bottom"></div>
+              </div>
             </div>
           </div>
         );
