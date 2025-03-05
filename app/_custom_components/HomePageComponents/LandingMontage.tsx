@@ -1,9 +1,8 @@
 const LandingMontage: React.FC = async () => {
-  const API_KEY = "CrPzvcCqf4j1bJUKwS3HqAdZTclKFg7cba5LjjjlcV4A5jlXRrLt5YDj";
   const data = await fetch("https://api.pexels.com/videos/videos/1828452", {
     headers: {
       "media-type": "media",
-      Authorization: API_KEY,
+      Authorization: process.env.PEXELS_API_KEY || "",
     },
   }).then((res) => {
     return res.json();
@@ -12,7 +11,7 @@ const LandingMontage: React.FC = async () => {
   return (
     data && (
       <video
-        poster=""
+        poster="/_assets/poster.png"
         className="object-cover h-screen left-0 top-0 absolute"
         height="100%"
         width="100%"
@@ -23,7 +22,17 @@ const LandingMontage: React.FC = async () => {
         muted
         playsInline
       >
-        <source src={data["video_files"][2]["link"]} type="video/mp4" />
+        <source
+          src={data["video_files"][5]["link"]}
+          type="video/mp4"
+          media="(min-width: 1024px)"
+        />
+        <source
+          src={data["video_files"][2]["link"]}
+          type="video/mp4"
+          // media="(min-width: 768px)"
+        />
+        {/* <source src={data["video_files"][2]["link"]} type="video/mp4" /> */}
       </video>
     )
   );
