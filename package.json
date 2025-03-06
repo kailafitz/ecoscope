@@ -43,6 +43,7 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.3.1",
     "lucide-react": "^0.379.0",
+    "modernizr": "^3.13.1",
     "motion": "^11.17.0",
     "next": "latest",
     "next-sanity": "^9.5.0",

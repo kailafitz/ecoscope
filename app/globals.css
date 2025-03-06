@@ -99,12 +99,14 @@
   }
 }
 
-.about-top {
-  background-image: url("/_assets/dublin.png");
+@supports (background-image: url('data:image/webp;base64,UklGRiIAAABXRUJQVlA4WAoAAAAQAAAAFAAAQUxQSAIAAAAA')) {
+  .about-top {
+    background-image: url("/_assets/dublin.webp");
+  }
 }
 
-.bg-landscape {
-  background: url("/_assets/landscape.png") no-repeat center / cover;
+.about-top {
+  background-image: url("/_assets/dublin.png");
 }
 
 .bg-curve {
@@ -120,6 +122,24 @@
 
   @media only screen and (min-width: 1200px) {
     background: url("/_assets/curvedShapes/bg-curve-xl.png") no-repeat top / cover;
+  }
+}
+
+@supports (background-image: url('data:image/webp;base64,UklGRiIAAABXRUJQVlA4WAoAAAAQAAAAFAAAQUxQSAIAAAAA')) {
+  .bg-curve {
+    background: url("/_assets/curvedShapes/bg-curve-xs.webp") no-repeat top / cover;
+
+    @media only screen and (min-width: 500px) {
+      background: url("/_assets/curvedShapes/bg-curve-md.webp") no-repeat top / cover;
+    }
+
+    @media only screen and (min-width: 1000px) {
+      background: url("/_assets/curvedShapes/bg-curve-lg.webp") no-repeat top / cover;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      background: url("/_assets/curvedShapes/bg-curve-xl.webp") no-repeat top / cover;
+    }
   }
 }
 
