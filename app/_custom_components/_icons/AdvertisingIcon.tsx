@@ -2,6 +2,8 @@ import { IconProps } from "@/app/interfaces";
 import React from "react";
 import PropTypes from "prop-types";
 
+// Credit to creator of this icon, to which copyright belongs to -> https://iconscout.com/contributors/graphic-room
+// No changes have been made to the original icon, except for the adjustments in color and stroke width for the purpose of this website
 const AdvertisingIcon: React.FC<IconProps> = (props) => {
   return (
     <svg
