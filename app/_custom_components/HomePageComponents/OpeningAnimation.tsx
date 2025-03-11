@@ -3,16 +3,31 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const OpeningAnimation: React.FC = () => {
-  const [active, setActive] = useState<Boolean>(true);
-  const current = usePathname();
+  const [animationActivate, setAnimationActivate] = useState<Boolean>(true);
+  const pathname = usePathname();
 
   useEffect(() => {
-    setTimeout(() => {
-      setActive(false);
-    }, 6500);
-  });
+    const body = document.getElementById("body");
 
-  if (current === "/" && active) {
+    if (animationActivate) {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+    if (pathname === "/") {
+      body?.classList.add("animate-disable-scroll");
+    }
+
+    setTimeout(() => {
+      setAnimationActivate(false);
+    }, 6500);
+
+    setTimeout(() => {
+      body?.classList.remove("animate-disable-scroll");
+    }, 5000);
+  }, []);
+
+  if (pathname === "/" && animationActivate) {
     return (
       <div className="fixed top-0 left-0 z-20 h-screen w-screen bg-white flex flex-col justify-center animate-fade-out scroll-auto">
         <video

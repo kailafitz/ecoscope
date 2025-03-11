@@ -76,13 +76,18 @@ const config = {
         "fade": {
           from: { opacity: "0" },
           to: { opacity: "1" },
-        }
+        },
+        "disable-scroll": {
+          from: { overflow: "hidden" },
+          to: { overflow: "scroll" }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade 1s ease 2s both",
         "fade-out": "fade 1s ease 3.8s reverse both",
+        "disable-scroll": "disable-scroll .5s linear 6.5s both",
       },
     },
   },

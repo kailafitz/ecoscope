@@ -64,6 +64,7 @@ export default function RootLayout({
 
       <html lang="en" className={"bg-white text-foreground scroll-smooth"}>
         <body
+          id="body"
           className={cn(
             "min-h-screen bg-background font-body antialiased flex flex-col relative",
             open
