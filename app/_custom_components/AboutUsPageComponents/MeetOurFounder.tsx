@@ -4,7 +4,7 @@ import Container from "../Layout/Container";
 import { H2, H4 } from "../Layout/Headings";
 import MailIcon from "../_icons/MailIcon";
 
-const MeetOurFounder = () => {
+const MeetOurFounder: React.FC = () => {
   return (
     <div className="bg-primary/20 pt-16 md:pt-32 relative">
       <Container mb>

@@ -1,9 +1,17 @@
+import { DateComponentProps } from "@/app/interfaces";
 import { format } from "date-fns";
+// import PropTypes from "prop-types";
 
-export default function DateComponent({ dateString }: { dateString: string }) {
+const DateComponent: React.FC<DateComponentProps> = (props) => {
   return (
-    <time dateTime={dateString}>
-      {format(new Date(dateString), "LLLL	d, yyyy")}
+    <time dateTime={props.dateString}>
+      {format(new Date(props.dateString), "LLLL	d, yyyy")}
     </time>
   );
-}
+};
+
+// DateComponent.propTypes = {
+//   dateString: PropTypes.string.isRequired,
+// };
+
+export default DateComponent;

@@ -2,35 +2,12 @@ import React from "react";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import CoverImage from "./CoverImage";
-import {
-  internalGroqTypeReferenceTo,
-  SanityImageCrop,
-  SanityImageHotspot,
-} from "@/sanity.types";
 import DateComponent from "./Date";
 import { H4 } from "@/app/_custom_components/Layout/Headings";
+import { NewsCardProps } from "@/app/interfaces";
+import PropTypes from "prop-types";
 
-type Props = {
-  _id: string;
-  title: string;
-  slug: string | null;
-  industry: string | null;
-  date: string;
-  coverImage: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  } | null;
-};
-
-const NewsCard = (props: Props) => {
+const NewsCard: React.FC<NewsCardProps> = (props) => {
   return (
     <article
       key={props._id}
@@ -60,6 +37,15 @@ const NewsCard = (props: Props) => {
       </Card>
     </article>
   );
+};
+
+NewsCard.propTypes = {
+  _id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  industry: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  // coverImage: ,
 };
 
 export default NewsCard;

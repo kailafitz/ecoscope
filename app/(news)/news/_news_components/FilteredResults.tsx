@@ -11,11 +11,11 @@ import {
 import MoreStories from "./MoreStories";
 import { useRouter } from "next/navigation";
 
-type Props = {
-  //   id: string;
-};
+// type Props = {
+//     id: string;
+// };
 
-const FilteredResults = () => {
+const FilteredResults: React.FC = () => {
   const router = useRouter();
 
   const changeIndustry = (value: string) => {

@@ -2,13 +2,10 @@ import { H3 } from "@/app/_custom_components/Layout/Headings";
 import React, { Suspense } from "react";
 import FilteredResults from "./FilteredResults";
 import MoreStories from "./MoreStories";
+import { AllStoriesProps } from "@/app/interfaces";
+import PropTypes from "prop-types";
 
-type Props = {
-  skip: string;
-  industry: string;
-};
-
-const AllStories = (props: Props) => {
+const AllStories: React.FC<AllStoriesProps> = (props) => {
   return (
     <>
       <H3 className="mb-4">All Stories</H3>
@@ -30,6 +27,11 @@ const AllStories = (props: Props) => {
       </aside>
     </>
   );
+};
+
+AllStories.propTypes = {
+  skip: PropTypes.string.isRequired,
+  industry: PropTypes.string.isRequired,
 };
 
 export default AllStories;

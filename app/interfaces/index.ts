@@ -1,3 +1,4 @@
+import { Author, internalGroqTypeReferenceTo, SanityImageCrop, SanityImageHotspot } from "@/sanity.types";
 import { ReactNode } from "react";
 
 export interface HeadingsProps {
@@ -45,4 +46,75 @@ export interface ServicePageProps {
     title: string;
     information: ReactNode;
 
+};
+
+export interface AllStoriesProps {
+    skip: string;
+    industry: string;
+};
+
+export interface AuthorProps {
+    name: string;
+    picture?: Exclude<Author["picture"], undefined> | null;
+}
+
+export interface CoverImageProps {
+    image?: {
+        asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        }
+        alt?: string;
+    };
+    priority?: boolean;
+    feature?: boolean;
+    post?: boolean;
+    card?: boolean;
+}
+
+export interface DateComponentProps {
+    dateString: string;
+}
+
+export interface LatestFeaturesPostProps {
+    title: string;
+    slug: string;
+    excerpt: string;
+    coverImage: CoverImageProps["image"];
+    date: string;
+    industry: string;
+}
+
+export interface MoreStoriesProps {
+    skip: string;
+    limit: number;
+    industry: string;
+}
+
+export interface MoreStoriesProps2 {
+    params: {
+        skip: string;
+        limit: number;
+        industry: string;
+    };
+    aside?: boolean;
+};
+
+export interface NewsCardProps {
+    _id: string;
+    title: string;
+    slug: string | null;
+    industry: string | null;
+    date: string;
+    coverImage: CoverImageProps["image"];
+};
+
+export interface ShareButtonsProps {
+    slug: string;
+};
+
+export interface PostPageProps {
+    params: { slug: string };
 };

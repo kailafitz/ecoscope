@@ -1,4 +1,5 @@
 "use client";
+import { ShareButtonsProps } from "@/app/interfaces";
 import React from "react";
 import {
   FacebookIcon,
@@ -11,11 +12,7 @@ import {
   XIcon,
 } from "react-share";
 
-type Props = {
-  slug: string;
-};
-
-const ShareButtons = (props: Props) => {
+const ShareButtons: React.FC<ShareButtonsProps> = (props) => {
   const shareUrl = `https://ecoscope/news/${props.slug}`;
   return (
     <div className="flex flex-row gap-x-2 mb-16">

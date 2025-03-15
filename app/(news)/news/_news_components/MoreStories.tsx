@@ -8,17 +8,9 @@ import {
 import NewsCard from "./NewsCard";
 import React from "react";
 import { useDataFetch } from "@/hooks/useDataFetch";
+import { MoreStoriesProps2 } from "@/app/interfaces";
 
-type Props = {
-  params: {
-    skip: string;
-    limit: number;
-    industry: string;
-  };
-  aside?: boolean;
-};
-
-const MobileCarousel = async (props: Props) => {
+const MobileCarousel: React.FC<MoreStoriesProps2> = async (props) => {
   const { data } = await useDataFetch(props.params);
   return (
     <Carousel className="lg:hidden">
@@ -49,7 +41,7 @@ const MobileCarousel = async (props: Props) => {
   );
 };
 
-export default async function MoreStories(props: Props) {
+const MoreStories: React.FC<MoreStoriesProps2> = async (props) => {
   const { data } = await useDataFetch(props.params);
   return (
     <>
@@ -75,4 +67,6 @@ export default async function MoreStories(props: Props) {
       </div>
     </>
   );
-}
+};
+
+export default MoreStories;

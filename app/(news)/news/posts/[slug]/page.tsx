@@ -23,10 +23,7 @@ import ActionBanner from "@/app/_custom_components/ActionBanner";
 import ShareButtons from "../../_news_components/ShareButtons";
 import BackButton from "../../_news_components/BackButton";
 import MoreSimilarStories from "../../_news_components/MoreSimilarStories";
-
-type Props = {
-  params: { slug: string };
-};
+import { PostPageProps } from "@/app/interfaces";
 
 const postSlugs = groq`*[_type == "post"]{slug}`;
 
@@ -40,7 +37,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  { params }: Props,
+  { params }: PostPageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const post = await sanityFetch<PostQueryResult>({
@@ -61,7 +58,7 @@ export async function generateMetadata(
   } satisfies Metadata;
 }
 
-export default async function PostPage({ params }: Props) {
+const PostPage: React.FC<PostPageProps> = async ({ params }) => {
   const [post, settings] = await Promise.all([
     sanityFetch<PostQueryResult>({
       query: postQuery,
@@ -127,4 +124,6 @@ export default async function PostPage({ params }: Props) {
       </Container>
     </>
   );
-}
+};
+
+export default PostPage;

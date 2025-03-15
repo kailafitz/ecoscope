@@ -2,14 +2,10 @@ import { H3 } from "@/app/_custom_components/Layout/Headings";
 import React, { Suspense } from "react";
 import MoreStories from "./MoreStories";
 import { useDataFetch } from "@/hooks/useDataFetch";
+import { MoreStoriesProps } from "@/app/interfaces";
+import PropTypes from "prop-types";
 
-type Props = {
-  skip: string;
-  limit: number;
-  industry: string;
-};
-
-const MoreSimilarStories = async (props: Props) => {
+const MoreSimilarStories: React.FC<MoreStoriesProps> = async (props) => {
   const { dataLength } = await useDataFetch(props);
 
   if (dataLength > 0) {
@@ -30,6 +26,12 @@ const MoreSimilarStories = async (props: Props) => {
       </aside>
     );
   }
+};
+
+MoreSimilarStories.propTypes = {
+  skip: PropTypes.string.isRequired,
+  limit: PropTypes.number.isRequired,
+  industry: PropTypes.string.isRequired,
 };
 
 export default MoreSimilarStories;

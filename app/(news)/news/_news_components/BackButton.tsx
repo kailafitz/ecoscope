@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const BackButton = () => {
+const BackButton: React.FC = () => {
   const navigate = useRouter();
   return (
     <button

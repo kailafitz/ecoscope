@@ -15,13 +15,13 @@ import {
   type PortableTextBlock,
 } from "next-sanity";
 
-export default function CustomPortableText({
-  className,
-  value,
-}: {
+const CustomPortableText: React.FC<{
   className?: string;
   value: PortableTextBlock[];
-}) {
+}> = ({
+  className,
+  value,
+}) => {
   const components: PortableTextComponents = {
     block: {
       normal: ({ children }) => <p className="mb-5 last:mb-0">{children}</p>,
@@ -50,3 +50,5 @@ export default function CustomPortableText({
     </div>
   );
 }
+
+export default CustomPortableText;

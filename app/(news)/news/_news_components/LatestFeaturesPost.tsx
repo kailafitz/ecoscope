@@ -5,8 +5,10 @@ import Link from "next/link";
 import CoverImage from "./CoverImage";
 import { HeroQueryResult } from "@/sanity.types";
 import { H3 } from "@/app/_custom_components/Layout/Headings";
+import { LatestFeaturesPostProps } from "@/app/interfaces";
+import PropTypes from "prop-types";
 
-const LatestFeaturesPost = ({
+const LatestFeaturesPost: React.FC<LatestFeaturesPostProps> = ({
   title,
   slug,
   excerpt,
@@ -15,7 +17,7 @@ const LatestFeaturesPost = ({
   industry,
 }: Pick<
   Exclude<HeroQueryResult, null>,
-  "title" | "coverImage" | "date" | "excerpt" | "author" | "slug" | "industry"
+  "title" | "coverImage" | "date" | "excerpt" | "slug" | "industry"
 >) => {
   return (
     <article className="flex flex-col md:flex-row mb-16 shadow-xl rounded-lg">
@@ -23,7 +25,9 @@ const LatestFeaturesPost = ({
         className="group block w-full md:w-2/3"
         href={`/news/posts/${slug}`}
       >
-        <CoverImage feature image={coverImage} priority />
+        {coverImage?.asset && (
+          <CoverImage feature image={coverImage} priority />
+        )}
       </Link>
       <div className="md:w-1/3 flex flex-col p-6">
         <div>
@@ -46,6 +50,14 @@ const LatestFeaturesPost = ({
       </div>
     </article>
   );
+};
+
+LatestFeaturesPost.propTypes = {
+  title: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
+  // coverImage: 
+  date: PropTypes.string.isRequired,
 };
 
 export default LatestFeaturesPost;

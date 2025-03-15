@@ -2,13 +2,9 @@ import { Image } from "next-sanity/image";
 
 import type { Author } from "@/sanity.types";
 import { urlForImage } from "@/sanity/lib/utils";
+import { AuthorProps } from "@/app/interfaces";
 
-interface Props {
-  name: string;
-  picture?: Exclude<Author["picture"], undefined> | null;
-}
-
-export default function Author({ name, picture }: Props) {
+const Author: React.FC<AuthorProps> = (props) => {
   return (
     <div className="flex items-center text-xl">
       {/* {picture?.asset?._ref ? (
@@ -30,7 +26,9 @@ export default function Author({ name, picture }: Props) {
       ) : (
         <div className="mr-1">By </div>
       )} */}
-      <div className="text-xl opacity-65">{name} Fitzpatrick</div>
+      <div className="text-xl opacity-65">{props.name} Fitzpatrick</div>
     </div>
   );
-}
+};
+
+export default Author;
