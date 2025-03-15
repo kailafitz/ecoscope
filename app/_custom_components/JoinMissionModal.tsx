@@ -11,11 +11,12 @@ const JoinMissionModal: React.FC = () => {
   return (
     <Dialog aria-describedby="join-mission-modal">
       <DialogTrigger asChild>
-        <a className="transition-all hover:text-foreground hover:cursor-pointer hover:transition-all text-lg md:text-base">
+        <a className="transition-all hover:text-foreground hover:cursor-pointer hover:transition-all text-lg md:text-base" href="#join-mission-modal">
           Join the Mission
         </a>
       </DialogTrigger>
       <DialogContent
+        id="join-mission-modal"
         title="Join the Mission"
         className="max-h-[80%] md:max-h-[95%] w-[90%] lg:max-w-[700px] overflow-y-scroll"
       >
