@@ -11,7 +11,7 @@ const LandingMontage: React.FC = async () => {
   return (
     data && (
       <video
-        poster="/_assets/poster.png"
+        poster="/_assets/poster.webp"
         className="object-cover h-screen left-0 top-0 absolute"
         height="100%"
         width="100%"
