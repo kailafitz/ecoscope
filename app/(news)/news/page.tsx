@@ -44,7 +44,6 @@ export default async function Page() {
                   </H4>
                   <p className="text-muted-foreground">{link.source}</p>
                 </CardHeader>
-
                 <CardFooter className="flex justify-between items-end pb-5 px-5">
                   <p className="text-muted-foreground">
                     {link.date.toLocaleDateString("en-IE")}
@@ -54,7 +53,7 @@ export default async function Page() {
                       href={link.href}
                       target="_blank"
                       className="flex flex-row items-end"
-                    >
+                      legacyBehavior>
                       <span>Read more</span>
                       <ExternalLinkIcon className="inline w-5 ml-2" />
                     </Link>

@@ -15,14 +15,14 @@ const ContactDetails: React.FC = () => {
         href="https://maps.app.goo.gl/mWczquGu8rGmMXyEA"
         target="_blank"
         className="flex flex-row items-center mb-4 text-md"
-      >
+        legacyBehavior>
         <MapIcon className="w-5 text-inherit mr-4 ml-0.5" />
         Dublin, Ireland
       </Link>
       <Link
         href="mailto:info@ecoscope.ie"
         className="flex flex-row items-center text-md break-all"
-      >
+        legacyBehavior>
         <MailIcon className="w-6 text-inherit mr-4" />
         info@ecoscope.ie
       </Link>

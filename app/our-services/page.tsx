@@ -44,11 +44,10 @@ const OurServices = () => {
                   <Link
                     href={`#${id}`}
                     className="w-fit hover:text-gray-600/60 hover:transition-all transition-all"
-                  >
+                    legacyBehavior>
                     {service.title}
                     <div className="bg-gray-600 h-px w-full"></div>
                   </Link>
-
                   <span className="hidden sm:inline">|</span>
                 </Fragment>
               );

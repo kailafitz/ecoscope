@@ -28,7 +28,7 @@ const Footer = () => {
       {location && <ActionBanner footer />}
       <div className="bg-white/50 backdrop-blur-md pt-16">
         <Container className="flex flex-col md:flex-row justify-between items-stretch md:space-x-24">
-          <Link href="">
+          <Link href="" legacyBehavior>
             <Image
               src="/_assets/logos/logo-primary-vertical-full.png"
               alt="Ecoscope logo"

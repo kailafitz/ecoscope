@@ -47,7 +47,7 @@ const Resources = () => {
                         href={resource.link}
                         target="_blank"
                         className="hover:opacity-60"
-                      >
+                        legacyBehavior>
                         {resource.title}
                       </Link>
                     </H4>
@@ -60,7 +60,7 @@ const Resources = () => {
                           href={resource.link}
                           target="_blank"
                           className="flex flex-row items-end"
-                        >
+                          legacyBehavior>
                           <span>Read more</span>
                           <ExternalLinkIcon className="inline w-5 ml-2" />
                         </Link>
@@ -88,7 +88,7 @@ const Resources = () => {
                         href={resource.link}
                         target="_blank"
                         className="hover:opacity-60 transition-all hover:transition-all flex flex-row items-center"
-                      >
+                        legacyBehavior>
                         <span>{resource.title}</span>
                         <ExternalLinkIcon className="inline w-5 ml-2" />
                       </Link>
