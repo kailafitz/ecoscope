@@ -24,11 +24,11 @@ const Footer = () => {
 
   const year = new Date().getFullYear();
   return (
-    <div className={location && "overflow-hidden"}>
+    <div className={location ? "overflow-hidden" : ""}>
       {location && <ActionBanner footer />}
       <div className="bg-white/50 backdrop-blur-md pt-16">
         <Container className="flex flex-col md:flex-row justify-between items-stretch md:space-x-24">
-          <Link href="" legacyBehavior>
+          <Link href="/">
             <Image
               src="/_assets/logos/logo-primary-vertical-full.png"
               alt="Ecoscope logo"

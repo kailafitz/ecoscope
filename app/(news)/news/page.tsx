@@ -53,7 +53,7 @@ export default async function Page() {
                       href={link.href}
                       target="_blank"
                       className="flex flex-row items-end"
-                      legacyBehavior>
+                    >
                       <span>Read more</span>
                       <ExternalLinkIcon className="inline w-5 ml-2" />
                     </Link>

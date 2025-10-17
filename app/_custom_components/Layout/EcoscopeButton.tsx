@@ -14,7 +14,7 @@ const EcoscopeButton: React.FC<EcoscopeButtonProps> = (props) => {
         `${props.full ? "md:w-full" : "md:min-w-40 md:max-w-[15vw]"} ${props.className} w-full text-md md:text-sm`
       )}
       href={props.href}
-      legacyBehavior>
+    >
       {props.children}
     </Link>
   );

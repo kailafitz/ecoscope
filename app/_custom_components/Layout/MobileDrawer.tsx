@@ -23,10 +23,12 @@ import LinkedInIcon from "../_icons/LinkedInIcon";
 import MailIcon from "../_icons/MailIcon";
 import FacebookIcon from "../_icons/FacebookIcon";
 import JoinMissionModal from "../JoinMissionModal";
+import { DialogTitle } from "@/components/ui/dialog";
 
 export const MobileDrawer: React.FC = () => {
   return (
     <Drawer>
+      {/* <DialogTitle>Mobile Drawer</DialogTitle> */}
       <DrawerTrigger asChild className="flex flex-col justify-center">
         <div className="flex flex-col gap-y-2 w-9 md:hidden group/root">
           <span className="h-0.5 bg-primary w-full group-data-[state=open]/root:rotate-45 group-data-[state=open]/root:translate-x-[0.10rem] group-data-[state=open]/root:translate-y-[0.95rem] group-data-[state=open]/root:transition-all transition-all group-data-[state=open]/root:duration-500"></span>
@@ -40,7 +42,7 @@ export const MobileDrawer: React.FC = () => {
         <Container className="pt-6 px-10">
           {/* <NavigationMenuList className="pb-10">
             <NavigationMenuItem className="hover:cursor-pointer">
-              <Link href="" legacyBehavior passHref>
+              <Link href="">
                 <Image
                   src="/_assets/logos/logo-primary-horizontal.png"
                   alt="Navigation bar"
@@ -98,91 +100,77 @@ export const MobileDrawer: React.FC = () => {
                 </NavigationMenuItem> */}
                 <NavigationMenuItem>
                   <DrawerClose asChild>
-                    <NavigationMenuLink
+                    <Link 
+                      href="/our-services"
                       className={navigationMenuTriggerStyle()}
-                      asChild
                     >
-                      <Link href="/our-services">Our Services</Link>
-                    </NavigationMenuLink>
+                      Our Services
+                    </Link>
                   </DrawerClose>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <DrawerClose asChild>
-                    <NavigationMenuLink
+                    <Link 
+                      href="/about-us"
                       className={navigationMenuTriggerStyle()}
-                      asChild
                     >
-                      <Link href="/about-us">About Us</Link>
-                    </NavigationMenuLink>
+                      About Us
+                    </Link>
                   </DrawerClose>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <DrawerClose asChild>
-                    <NavigationMenuLink
+                    <Link 
+                      href="/contact-us"
                       className={navigationMenuTriggerStyle()}
-                      asChild
                     >
-                      <Link href="/contact-us">Contact Us</Link>
-                    </NavigationMenuLink>
+                      Contact Us
+                    </Link>
                   </DrawerClose>
                 </NavigationMenuItem>
                 <hr className="h-0.5 w-full bg-gradient-to-r from-primary to-white border-none rounded-full mb-4" />
                 <NavigationMenuItem>
                   <DrawerClose asChild>
-                    <NavigationMenuLink
+                    <Link 
+                      href="/news"
                       className={navigationMenuTriggerStyle()}
-                      asChild
                     >
-                      <Link href="/news">News</Link>
-                    </NavigationMenuLink>
+                      News
+                    </Link>
                   </DrawerClose>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <DrawerClose asChild>
-                    <NavigationMenuLink
+                    <Link 
+                      href="/resources"
                       className={navigationMenuTriggerStyle()}
-                      asChild
                     >
-                      <Link href="/resources">Resources</Link>
-                    </NavigationMenuLink>
+                      Resources
+                    </Link>
                   </DrawerClose>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <DrawerClose asChild>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                      asChild
-                    >
+                    <div className={navigationMenuTriggerStyle()}>
                       <JoinMissionModal />
-                      {/* <EcoscopeButton
-                        className="w-full"
-                        variant="outline"
-                        href={""}
-                      >
-                        Join the Mission
-                      </EcoscopeButton> */}
-                    </NavigationMenuLink>
+                    </div>
                   </DrawerClose>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <DrawerClose asChild>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                      asChild
+                    <Link
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        buttonVariants({
+                          variant: "default",
+                        }),
+                        "w-full",
+                        `min-w-full sm:min-w-40 text-md md:text-sm`
+                      )}
+                      href="/contact-us#book-a-consultation"
                     >
-                      <Link
-                        className={cn(
-                          buttonVariants({
-                            variant: "default",
-                          }),
-                          "w-full",
-                          `min-w-full sm:min-w-40 text-md md:text-sm`
-                        )}
-                        href="/contact-us#book-a-consultation"
-                      >
-                        Book a Consultation
-                      </Link>
-                    </NavigationMenuLink>
+                      Book a Consultation
+                    </Link>
                   </DrawerClose>
                 </NavigationMenuItem>
               </NavigationMenuList>

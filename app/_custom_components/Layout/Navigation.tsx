@@ -24,86 +24,50 @@ const Navigation: React.FC = () => {
       <Container className="flex flex-row justify-between">
         <NavigationMenuList className="pt-4 pr-4 pb-4">
           <NavigationMenuItem className="hover:cursor-pointer mb-0">
-            <Link href="/" legacyBehavior passHref>
-              <Image
-                src="/_assets/logos/logo-primary-horizontal.png"
-                alt="Navigation bar"
-                width={200}
-                height={50}
-              />
-            </Link>
+          <NavigationMenuLink asChild>
+            <Link href="/">
+                <Image
+                  src="/_assets/logos/logo-primary-horizontal.png"
+                  alt="Navigation bar"
+                  width={200}
+                  height={50}
+                />
+              </Link>
+            </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
         <MobileDrawer />
         <div className="hidden md:flex md:flex-col md:justify-center [&>div]:flex [&>div]:flex-1">
           <NavigationMenuList className="[&_li:not(:last-child)]:pr-6">
-            {/* <NavigationMenuItem>
-              <NavigationMenuTrigger
-                className={`${(pathname === "/service/film-and-television" || pathname === "/service/advertising" || pathname === "/service/hospitality" || pathname === "/service/other") && "font-bold opacity-70"}`}
-              >
-                Our Services
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <Link
-                  href="/service/film-and-television"
-                  legacyBehavior
-                  passHref
-                >
-                  <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/film-and-television" && "font-bold opacity-70"}`}
-                  >
-                    Film and Television
-                  </NavigationMenuLink>
-                </Link>
-                <Link href="/service/advertising" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/advertising" && "font-bold opacity-70"}`}
-                  >
-                    Advertising
-                  </NavigationMenuLink>
-                </Link>
-                <Link href="/service/hospitality" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/hospitality" && "font-bold opacity-70"}`}
-                  >
-                    Hospitality
-                  </NavigationMenuLink>
-                </Link>
-                <Link href="/service/other" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} ${pathname === "/service/other" && "font-bold opacity-70"}`}
-                  >
-                    Other
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuContent>
-            </NavigationMenuItem> */}
             <NavigationMenuItem>
-              <Link href="/our-services" legacyBehavior passHref>
-                <NavigationMenuLink
+              <NavigationMenuLink asChild>
+                <Link
+                  href="/our-services"
                   className={`${navigationMenuTriggerStyle()} ${pathname === "/our-services" && "font-bold opacity-70 "}`}
                 >
                   Our Services
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/about-us" legacyBehavior passHref>
-                <NavigationMenuLink
+              <NavigationMenuLink asChild>
+                <Link
+                  href="/about-us"
                   className={`${navigationMenuTriggerStyle()} ${pathname === "/about-us" && "font-bold opacity-70"}`}
                 >
                   About Us
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/contact-us" legacyBehavior passHref>
-                <NavigationMenuLink
+              <NavigationMenuLink asChild>
+                <Link
+                  href="/contact-us"
                   className={`${navigationMenuTriggerStyle()} ${pathname === "/contact-us" && "font-bold opacity-70"}`}
                 >
                   Contact Us
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <EcoscopeButton href="/contact-us/#booking-form">
               Book a Consultation
