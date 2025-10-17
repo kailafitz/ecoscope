@@ -1,13 +1,6 @@
-import { H3, H4 } from "@/app/_custom_components/Layout/Headings";
-import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
-import { sanityFetch } from "@/sanity/lib/fetch";
-import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
+import { H4 } from "@/app/_custom_components/Layout/Headings";
 import { Metadata } from "next";
-import AllStories from "./_news_components/AllStories";
-import Intro from "./_news_components/Intro";
-import LatestFeaturesPost from "./_news_components/LatestFeaturesPost";
 import Container from "@/app/_custom_components/Layout/Container";
-import ActionBanner from "@/app/_custom_components/ActionBanner";
 import {
   Card,
   CardContent,
@@ -29,20 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
   } satisfies Metadata;
 }
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
-  // const industry = ((await searchParams).industry as string) || "";
-
-  // const [settings, heroPost] = await Promise.all([
-  //   sanityFetch<SettingsQueryResult>({
-  //     query: settingsQuery,
-  //   }),
-  //   sanityFetch<HeroQueryResult>({ query: heroQuery }),
-  // ]);
-
+export default async function Page() {
   const sortedNewsLinks = newsLinks.sort(function (a, b) {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
@@ -50,7 +30,10 @@ export default async function Page({
   return (
     <>
       <Container mb topSectionPadding>
-        <Intro />
+        <div className="mb-8">
+          <H4 className="text-2xl font-bold mb-4">Latest News</H4>
+          <p className="text-gray-600">Stay updated with the latest sustainability news and insights.</p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {sortedNewsLinks.map((link, i) => {
             return (
@@ -81,23 +64,7 @@ export default async function Page({
             );
           })}
         </div>
-        {/* <H3 className="mb-4">Latest Story</H3>
-        <hr className="w-full border-primary mb-10" />
-        {heroPost && (
-          <LatestFeaturesPost
-            title={heroPost.title}
-            slug={heroPost.slug}
-            coverImage={heroPost.coverImage}
-            excerpt={heroPost.excerpt}
-            date={heroPost.date}
-            author={heroPost.author}
-            industry={heroPost.industry}
-          />
-        )}
-
-        <AllStories skip={heroPost?._id!} industry={industry} /> */}
       </Container>
-      {/* <ActionBanner /> */}
     </>
   );
 }
