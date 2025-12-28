@@ -6,12 +6,13 @@ import {
 } from "@/components/ui/dialog";
 import JoinMissionForm from "./JoinMissionForm";
 import { H4 } from "./Layout/Headings";
+import { JoinMissionModalProps } from "../interfaces";
 
-const JoinMissionModal: React.FC = () => {
+const JoinMissionModal: React.FC<JoinMissionModalProps> = ({ textSize }) => {
   return (
     <Dialog aria-describedby="join-mission-modal">
       <DialogTrigger asChild>
-        <a className="transition-all hover:text-foreground hover:cursor-pointer hover:transition-all text-lg md:text-base" href="#join-mission-modal">
+        <a className={`transition-all hover:text-foreground hover:cursor-pointer hover:transition-all ${textSize ? textSize : 'text-lg'} md:text-base`} href="#join-mission-modal">
           Join the Mission
         </a>
       </DialogTrigger>

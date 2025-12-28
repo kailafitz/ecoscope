@@ -22,7 +22,6 @@ const Home = () => {
       <HowWeWork />
       <WhatWeDo />
       <News />
-      <HowWeWork />
       <OurServices />
     </>
   );

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
+import { X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -36,23 +37,52 @@ DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <DrawerPortal>
-    <DrawerOverlay />
-    <DrawerPrimitive.Content
-      ref={ref}
-      className={cn(
-        "fixed inset-x-0 z-50 flex flex-col bg-background",
-        className
-      )}
-      {...props}
-    >
-      <div className="hidden mx-auto mt-4 h-2 w-[100px] rounded-full" />
-      {children}
-    </DrawerPrimitive.Content>
-  </DrawerPortal>
-));
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> & {
+    side?: "top" | "right" | "bottom" | "left";
+  }
+>(({ className, children, side = "bottom", ...props }, ref) => {
+  if (side === "right") {
+    return (
+      <DrawerPortal>
+        <DrawerOverlay />
+        <div
+          ref={ref}
+          className={cn(
+            "fixed inset-y-0 right-0 z-50 h-full w-3/4 max-w-sm bg-background border-l shadow-lg",
+            "transform transition-transform duration-300 ease-in-out",
+            "data-[state=open]:translate-x-0 data-[state=closed]:translate-x-full",
+            className
+          )}
+          {...props}
+        >
+          {children}
+        </div>
+      </DrawerPortal>
+    );
+  }
+
+  return (
+    <DrawerPortal>
+      <DrawerOverlay />
+      <DrawerPrimitive.Content
+        ref={ref}
+        className={cn(
+          "fixed z-50 flex flex-col bg-background",
+          side === "top" && "inset-x-0 top-0 border-b",
+          side === "bottom" && "inset-x-0 bottom-0 border-t",
+          side === "left" && "inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm",
+          className
+        )}
+        {...props}
+      >
+        {side === "bottom" && (
+          <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
+        )}
+        {children}
+      </DrawerPrimitive.Content>
+    </DrawerPortal>
+  );
+});
 DrawerContent.displayName = "DrawerContent";
 
 const DrawerHeader = ({

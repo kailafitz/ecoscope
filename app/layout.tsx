@@ -42,7 +42,7 @@ export default function RootLayout({
           open
         )}
       >
-        <OpeningAnimation />
+        {/* <OpeningAnimation /> */}
         <Navigation />
         <main className={`${varela} flex-1 flex flex-col`}>{children}</main>
         <Footer />

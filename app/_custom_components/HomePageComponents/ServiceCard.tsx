@@ -13,24 +13,24 @@ const ServiceCard: React.FC<ServiceProps> = (props) => {
     <Card
       data-aos="fade-up"
       data-aos-delay={props.i * 100}
-      className="flex flex-col justify-between w-full md:max-w-[350px]"
+      className="flex flex-col justify-between w-full"
     >
-      <CardHeader className="text-center [&_svg]:block [&_svg]:mx-auto [&_svg]:w-28 [&_svg]:h-28 [&_svg]:mb-7 [&_svg]:text-primary">
+      <CardHeader className="text-center flex flex-row gap-x-5 items-end [&_svg]:block [&_svg]:w-20 [&_svg]:h-auto [&_svg]:text-primary">
         {props.icon}
-        <CardTitle className="mb-4">{props.name}</CardTitle>
-        <CardDescription className="text-center">
-          {props.description}
-        </CardDescription>
+        <CardTitle>{props.name}</CardTitle>
       </CardHeader>
-      <div className="space-y-2.5 pb-6 pl-6 pr-6">
+      <CardDescription className="text-left">
+        {props.description}
+      </CardDescription>
+      {/* <div className="space-y-2.5 pb-6 pl-6 pr-6">
         {props.href && (
           <CardFooter className="flex justify-end">
             <EcoscopeButton full href={props.href ? props.href : " "}>
-              Read more
+              {props.name}
             </EcoscopeButton>
           </CardFooter>
         )}
-      </div>
+      </div> */}
     </Card>
   );
 };

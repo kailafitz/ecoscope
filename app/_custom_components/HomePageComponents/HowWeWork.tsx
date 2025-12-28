@@ -23,7 +23,20 @@ const HowWeWork: React.FC = () => {
               data-aos="fade-up"
               data-aos-delay={i * 100}
             >
-              <div className="text-primary text-6xl mx-auto mb-6">0{i + 1}</div>
+              <div className="text-primary text-6xl mx-auto">0{i + 1}</div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-x-7 gap-y-9 xl:gap-y-0 items-start">
+        {stepsData.map((step: string, i: number) => {
+          return (
+            <div
+              key={i}
+              className="p-5 font-heading flex flex-col"
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
+            >
               <div className="text-2xl flex-1 flex flex-col justify-center">
                 {step}
               </div>

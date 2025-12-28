@@ -2,6 +2,7 @@ import ActionBanner from "@/app/_custom_components/ActionBanner";
 import MeetOurFounder from "@/app/_custom_components/AboutUsPageComponents/MeetOurFounder";
 import WhatWeDo from "@/app/_custom_components/HomePageComponents/WhatWeDo";
 import { Metadata } from "next";
+import AboutIntro from "../_custom_components/AboutUsPageComponents/AboutIntro";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -36,7 +37,8 @@ const AboutUs = () => {
           </div>
         </Container>
       </div> */}
-      <div className="pt-10 md:pt-14">
+      <div className="pt-10 md:pt-28">
+        <AboutIntro about />
         <WhatWeDo />
       </div>
       <MeetOurFounder />

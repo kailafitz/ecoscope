@@ -35,7 +35,7 @@ export interface IconProps {
 
 export interface ServiceProps {
     icon?: ReactNode;
-    name?: string;
+    name: string;
     description?: string;
     href?: string;
     i: number;
@@ -45,4 +45,12 @@ export interface ServicePageProps {
     title: string;
     information: ReactNode;
 
+};
+
+export interface JoinMissionModalProps {
+    textSize?: string;
+}
+
+export interface ServiceProps {
+    page?: "home" | "about";
 };
