@@ -69,7 +69,7 @@ const Navigation: React.FC = () => {
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            <EcoscopeButton href="/contact-us/#booking-form">
+            <EcoscopeButton href="/contact-us#book-a-consultation">
               Book a Consultation
             </EcoscopeButton>
           </NavigationMenuList>

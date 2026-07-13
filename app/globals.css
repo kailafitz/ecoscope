@@ -142,24 +142,3 @@
     }
   }
 }
-
-#sanity {
-  position: absolute;
-  width: 100%;
-  left: 0;
-}
-
-#news-article {
-
-  ul,
-  ol {
-    margin-left: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  li {
-    list-style-type: disc;
-    padding-left: 10px;
-    line-height: 2;
-  }
-}

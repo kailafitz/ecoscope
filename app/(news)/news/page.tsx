@@ -1,5 +1,6 @@
-import { H4 } from "@/app/_custom_components/Layout/Headings";
+import { H1, H4 } from "@/app/_custom_components/Layout/Headings";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 import Container from "@/app/_custom_components/Layout/Container";
 import {
   Card,
@@ -13,13 +14,12 @@ import { Button } from "@/components/ui/button";
 import ExternalLinkIcon from "@/app/_custom_components/_icons/ExternalLinkIcon";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return {
+  return createPageMetadata({
     title: "News",
-    description: "News",
-    // openGraph: {
-    //   images: ogImage ? [ogImage, ...previousImages] : previousImages,
-    // },
-  } satisfies Metadata;
+    description:
+      "Latest sustainability news and insights from across the film, media, and creative industries.",
+    path: "/news",
+  });
 }
 
 export default async function Page() {
@@ -31,7 +31,7 @@ export default async function Page() {
     <>
       <Container mb topSectionPadding>
         <div className="mb-8">
-          <H4 className="text-2xl font-bold mb-4">Latest News</H4>
+          <H1 className="text-2xl font-bold mb-4">Latest News</H1>
           <p className="text-gray-600">Stay updated with the latest sustainability news and insights.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -48,10 +48,11 @@ export default async function Page() {
                   <p className="text-muted-foreground">
                     {link.date.toLocaleDateString("en-IE")}
                   </p>
-                  <Button>
+                  <Button asChild>
                     <Link
                       href={link.href}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="flex flex-row items-end"
                     >
                       <span>Read more</span>

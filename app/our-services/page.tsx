@@ -8,17 +8,17 @@ import { serviceDescriptionsData } from "@/data/Services";
 import OtherServices from "@/app/_custom_components/OurServicesPageComponents/OtherServices";
 import Services from "@/app/_custom_components/OurServicesPageComponents/Services";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Fragment } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return {
+  return createPageMetadata({
     title: "Our Services",
-    description: "Our Services",
-    // openGraph: {
-    //   images: ogImage ? [ogImage, ...previousImages] : previousImages,
-    // },
-  } satisfies Metadata;
+    description:
+      "Explore Ecoscope's sustainability services — carbon reporting, certification support, ESG strategy, and tailored consulting for creative businesses.",
+    path: "/our-services",
+  });
 }
 
 const OurServices = () => {

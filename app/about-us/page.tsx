@@ -2,16 +2,18 @@ import ActionBanner from "@/app/_custom_components/ActionBanner";
 import MeetOurFounder from "@/app/_custom_components/AboutUsPageComponents/MeetOurFounder";
 import WhatWeDo from "@/app/_custom_components/HomePageComponents/WhatWeDo";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 import AboutIntro from "../_custom_components/AboutUsPageComponents/AboutIntro";
+import Container from "@/app/_custom_components/Layout/Container";
+import { H1 } from "@/app/_custom_components/Layout/Headings";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return {
+  return createPageMetadata({
     title: "About Us",
-    description: "About Us",
-    // openGraph: {
-    //   images: ogImage ? [ogImage, ...previousImages] : previousImages,
-    // },
-  } satisfies Metadata;
+    description:
+      "Learn about Ecoscope — sustainability specialists for the creative industries, led by creatives and committed to meaningful climate action.",
+    path: "/about-us",
+  });
 }
 
 const AboutUs = () => {
@@ -38,6 +40,9 @@ const AboutUs = () => {
         </Container>
       </div> */}
       <div className="pt-10 md:pt-28">
+        <Container mb>
+          <H1 className="text-center">About Us</H1>
+        </Container>
         <AboutIntro about />
         <WhatWeDo />
       </div>

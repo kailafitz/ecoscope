@@ -15,7 +15,6 @@ const News: React.FC = () => {
         <EcoscopeButton className="w-fit mx-auto" href={"/news"}>
           News
         </EcoscopeButton>
-        {/* <MoreStories params={{ skip: "", limit: 3, industry: "" }} /> */}
       </Container>
     </div>
   );

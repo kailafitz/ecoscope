@@ -3,6 +3,7 @@ import Container, {
 } from "@/app/_custom_components/Layout/Container";
 import { H1, H3, H4 } from "@/app/_custom_components/Layout/Headings";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import ExternalLinkIcon from "@/app/_custom_components/_icons/ExternalLinkIcon";
@@ -13,13 +14,12 @@ import {
 } from "@/data/Resources";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return {
+  return createPageMetadata({
     title: "Resources",
-    description: "Resources",
-    // openGraph: {
-    //   images: ogImage ? [ogImage, ...previousImages] : previousImages,
-    // },
-  } satisfies Metadata;
+    description:
+      "Curated sustainability articles, guides, and organisations of interest for film, TV, and creative industry professionals.",
+    path: "/resources",
+  });
 }
 
 const Resources = () => {
@@ -46,6 +46,7 @@ const Resources = () => {
                       <Link
                         href={resource.link}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="hover:opacity-60"
                       >
                         {resource.title}
@@ -55,10 +56,11 @@ const Resources = () => {
                       {resource.source}
                     </p>
                     <div className="flex flex-1 flex-row justify-end items-end">
-                      <Button>
+                      <Button asChild>
                         <Link
                           href={resource.link}
                           target="_blank"
+                          rel="noopener noreferrer"
                           className="flex flex-row items-end"
                         >
                           <span>Read more</span>
@@ -87,6 +89,7 @@ const Resources = () => {
                       <Link
                         href={resource.link}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="hover:opacity-60 transition-all hover:transition-all flex flex-row items-center"
                       >
                         <span>{resource.title}</span>

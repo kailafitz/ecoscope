@@ -3,15 +3,15 @@ import ContactDetails from "@/app/_custom_components/ContactUsPageComponents/Con
 import Container from "@/app/_custom_components/Layout/Container";
 import { H1, H4 } from "@/app/_custom_components/Layout/Headings";
 import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return {
+  return createPageMetadata({
     title: "Contact Us",
-    description: "Contact Us",
-    // openGraph: {
-    //   images: ogImage ? [ogImage, ...previousImages] : previousImages,
-    // },
-  } satisfies Metadata;
+    description:
+      "Get in touch with Ecoscope to book a consultation. Based in Dublin, we help creative businesses start their sustainability journey.",
+    path: "/contact-us",
+  });
 }
 
 const ContactUs = () => {
@@ -25,7 +25,7 @@ const ContactUs = () => {
           <div className="flex flex-col w-full sm:w-2/5 xl:w-3/12">
             <ContactDetails />
           </div>
-          <div className="w-full flex-1">
+          <div id="book-a-consultation" className="w-full flex-1 scroll-mt-24">
             <H4
               mb
               left

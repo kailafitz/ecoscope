@@ -1,17 +1,10 @@
-"use client";
-import { useEffect } from "react";
 import Button from "./Layout/EcoscopeButton";
 import Container from "./Layout/Container";
 import LogoIcon from "./_icons/LogoIcon";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { ActionBannerProps } from "../interfaces";
 import PropTypes from "prop-types";
 
 const ActionBanner: React.FC<ActionBannerProps> = (props) => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <div
       className={`relative ${props.footer ? "" : "overflow-hidden"}`}

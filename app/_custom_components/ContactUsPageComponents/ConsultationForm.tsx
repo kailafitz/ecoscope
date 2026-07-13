@@ -40,8 +40,9 @@ const defaultValues = {
 };
 
 const ConsultationForm: React.FC = () => {
-  const [loading, setLoading] = useState<Boolean>(false);
-  const [success, setSuccess] = useState<Boolean>(false);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const form = useForm<z.infer<typeof consultationFormSchema>>({
     resolver: zodResolver(consultationFormSchema),
     defaultValues: defaultValues,
@@ -51,48 +52,52 @@ const ConsultationForm: React.FC = () => {
 
   const onSubmit = async () => {
     setLoading(true);
+    setError(null);
 
-    const formData = new FormData(formRef.current!);
-    const token = formData.get("cf-turnstile-response");
+    try {
+      const formData = new FormData(formRef.current!);
+      const token = formData.get("cf-turnstile-response");
 
-    const res = await fetch("/api/verify", {
-      method: "POST",
-      body: JSON.stringify({ token }),
-      headers: {
-        "content-type": "application/json",
-      },
-    });
+      if (!token) {
+        setError("Please complete the security check.");
+        setLoading(false);
+        return;
+      }
 
-    const data = await res.json();
+      const res = await fetch("/api/verify", {
+        method: "POST",
+        body: JSON.stringify({ token }),
+        headers: {
+          "content-type": "application/json",
+        },
+      });
 
-    if (data.success) {
-      emailjs
-        .send(
-          process.env.NEXT_PUBLIC_EMAILJS_CONTACT_SERVICE_ID!,
-          process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID!,
-          form.getValues(),
-          {
-            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-          }
-        )
-        .then(
-          () => {
-            form.resetField("industry");
-            form.reset();
-            setTimeout(() => {
-              setLoading(false);
-            }, 2000);
+      const data = await res.json();
 
-            setTimeout(() => {
-              setSuccess(true);
-            }, 2000);
+      if (!res.ok || !data.success) {
+        setError("Security verification failed. Please try again.");
+        setLoading(false);
+        return;
+      }
 
-            setSuccess(false);
-          },
-          (error) => {
-            console.warn("FAILED...", JSON.stringify(error));
-          }
-        );
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_CONTACT_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID!,
+        form.getValues(),
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        }
+      );
+
+      form.resetField("industry");
+      form.reset();
+      setLoading(false);
+      setSuccess(true);
+      setTimeout(() => setSuccess(false), 2000);
+    } catch (err) {
+      console.warn("FAILED...", err);
+      setError("Something went wrong. Please try again.");
+      setLoading(false);
     }
   };
 
@@ -298,6 +303,11 @@ const ConsultationForm: React.FC = () => {
           )}
         />
         <div className="flex flex-col lg:flex-row items-end justify-end lg:col-span-2 gap-5">
+          {error && (
+            <p className="w-full text-sm text-destructive text-right" role="alert">
+              {error}
+            </p>
+          )}
           <div className="w-full flex flex-end justify-end">
             <Turnstile
               siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""}
@@ -315,7 +325,7 @@ const ConsultationForm: React.FC = () => {
           </div>
           <Button
             disabled={loading || success ? true : false}
-            className={success && "bg-green-500 disabled:opacity-100"}
+            className={success ? "bg-green-500 disabled:opacity-100" : undefined}
           >
             {loading ? (
               <Loader2 className="animate-spin" />

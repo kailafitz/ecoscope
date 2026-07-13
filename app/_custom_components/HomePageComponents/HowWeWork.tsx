@@ -1,16 +1,8 @@
-"use client";
 import { stepsData } from "@/data/WhatWeDo";
 import Container from "../Layout/Container";
 import { H2 } from "../Layout/Headings";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 
 const HowWeWork: React.FC = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <Container id="how-we-work" mb className="text-center">
       <H2 mb>How We Work</H2>

@@ -14,7 +14,11 @@ export const MobileDrawer: React.FC = () => {
   return (
     <Drawer>
       <DrawerTrigger asChild className="flex flex-col justify-center md:hidden">
-        <button className="flex flex-col gap-y-2 w-9 group/root">
+        <button
+          type="button"
+          aria-label="Open menu"
+          className="flex flex-col gap-y-2 w-9 group/root"
+        >
           <span className="h-0.5 bg-primary w-full group-data-[state=open]/root:rotate-45 group-data-[state=open]/root:translate-x-[0.10rem] group-data-[state=open]/root:translate-y-[0.95rem] group-data-[state=open]/root:transition-all transition-all group-data-[state=open]/root:duration-500"></span>
           <span className="h-0.5 bg-primary w-full"></span>
           <span className="h-0.5 bg-primary w-full"></span>

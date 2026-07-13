@@ -14,6 +14,7 @@ const ContactDetails: React.FC = () => {
       <Link
         href="https://maps.app.goo.gl/mWczquGu8rGmMXyEA"
         target="_blank"
+        rel="noopener noreferrer"
         className="flex flex-row items-center mb-4 text-md"
       >
         <MapIcon className="w-5 text-inherit mr-4 ml-0.5" />

@@ -1,15 +1,8 @@
-"use client";
 import { serviceDescriptionsData } from "@/data/Services";
-import React, { useEffect } from "react";
 import { H4 } from "../Layout/Headings";
 import { containerMb } from "../Layout/Container";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Services: React.FC = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <>
       {serviceDescriptionsData.map(
@@ -55,24 +48,6 @@ const Services: React.FC = () => {
         <div
           className={`bg-[url('/_assets/ourServices/our-services-3.png')] bg-center bg-cover h-60 md:w-1/3 saturate-0 -ml-px`}
         ></div>
-        {/* Photo by Ron Lach :
-          https://www.pexels.com/photo/happy-woman-doing-an-environmental-cleanup-9543745/ */}
-        {/* Photo by{" "}
-          <a href="https://unsplash.com/@jakobowens1?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-            Jakob Owens
-          </a>{" "}
-          on{" "}
-          <a href="https://unsplash.com/photos/a-group-of-people-standing-around-a-camera-set-up-ntqaFfrDdEA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-            Unsplash
-          </a> */}
-        {/* Photo by{" "}
-          <a href="https://unsplash.com/@anniespratt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-            Annie Spratt
-          </a>{" "}
-          on{" "}
-          <a href="https://unsplash.com/photos/sittin-people-beside-table-inside-room-hCb3lIB8L8E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-            Unsplash
-          </a> */}
       </div>
     </>
   );
